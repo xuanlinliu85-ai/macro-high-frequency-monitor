@@ -1,18 +1,18 @@
 # 宏观高频监测 · 指标注册表
 # 依据 Spec §17。所有 field_code 均经 THS_EDB / THS_HQ 实测验证，无一处猜测。
 # verified_at: 2026-09-10
-version: "1.0"
+version: "2.0"
 verified_at: "2026-09-10"
 source_of_truth: ifind
 
 # 六维归属（Spec §19）
 dimensions:
-  growth:       { name_cn: 增长,   weight_source: [CN_PMI, CN_PMI_PROD, CN_IP, CN_PMI_PRICE] }
-  consumption:  { name_cn: 消费,   weight_source: [CN_RETAIL, CN_RETAIL_CATERING, HF_AUTO_PROD] }
-  property:     { name_cn: 地产,   weight_source: [CN_RE_INV, CN_RE_START, CN_RE_COMPLETE_YOY, CN_RE_SALES_YOY, HF_GLASS, HF_REBAR] }
-  inflation:    { name_cn: 通胀,   weight_source: [CN_CPI, CN_CPI_FOOD, CN_CPI_NONFOOD, CN_PPI, HF_PORK, HF_BRENT] }
-  liquidity:    { name_cn: 流动性, weight_source: [MKT_DR007, MKT_R007, MKT_CGB_10Y, CN_M2, CN_TSF] }
-  external:     { name_cn: 外需,   weight_source: [CN_EXPORT, CN_IMPORT, CN_PMI_EXPORT, HF_BALTIC, CN_USDCNY] }
+  growth:      { name_cn: 增长, score_axis: expansion_support, high_label: 增长偏强, neutral_label: 增长中性, low_label: 增长偏弱, weight_source: [CN_PMI, CN_PMI_PROD, CN_IP, CN_PMI_PRICE] }
+  consumption: { name_cn: 消费, score_axis: demand_support, high_label: 消费偏强, neutral_label: 消费中性, low_label: 消费偏弱, weight_source: [CN_RETAIL, CN_RETAIL_CATERING, HF_AUTO_PROD] }
+  property:    { name_cn: 地产, score_axis: property_support, high_label: 地产改善, neutral_label: 地产中性, low_label: 地产承压, weight_source: [CN_RE_INV, CN_RE_START, CN_RE_COMPLETE_YOY, CN_RE_SALES_YOY, HF_GLASS, HF_REBAR] }
+  inflation:   { name_cn: 通胀, score_axis: inflation_friendliness, high_label: 价格环境友好, neutral_label: 价格环境中性, low_label: 价格压力偏强, weight_source: [CN_CPI, CN_CPI_FOOD, CN_CPI_NONFOOD, CN_PPI, HF_PORK, HF_BRENT] }
+  liquidity:   { name_cn: 流动性, score_axis: liquidity_support, high_label: 偏宽松, neutral_label: 中性, low_label: 偏紧, weight_source: [MKT_DR007, MKT_R007, MKT_CGB_10Y, CN_M2, CN_TSF] }
+  external:    { name_cn: 外需, score_axis: external_support, high_label: 外需偏强, neutral_label: 外需中性, low_label: 外需偏弱, weight_source: [CN_EXPORT, CN_IMPORT, CN_PMI_EXPORT, HF_BALTIC, CN_USDCNY] }
 
 # ============================================================
 # L1 官方确认层（EDB，月/季频）

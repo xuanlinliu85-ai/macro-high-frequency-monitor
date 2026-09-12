@@ -7,6 +7,53 @@
 generated_at: "2026-09-10"
 window: { begin: "2025-07-10", end: "2026-09-10" }
 
+# 价差语义与行业系数唯一真源。运行时仅解释列出的 operation。
+spreads:
+  - id: FUT_SPREAD_REBAR_ORE
+    name_cn: 螺纹-铁矿价差
+    operation: linear_combination
+    terms: [{ member: FUT_RB, coefficient: 1.0 }, { member: FUT_I, coefficient: -1.6 }]
+    unit: cny_per_ton
+    change_mode: abs
+    desc: 高炉即期利润代理；价差压缩代表原料对钢厂利润的侵蚀增强。
+  - id: FUT_SPREAD_COKE_COAL
+    name_cn: 焦炭-焦煤价差
+    operation: linear_combination
+    terms: [{ member: FUT_J, coefficient: 1.0 }, { member: FUT_JM, coefficient: -1.3 }]
+    unit: cny_per_ton
+    change_mode: abs
+    desc: 焦化利润代理；价差走阔代表焦化环节利润改善。
+  - id: FUT_SPREAD_PTA_PX
+    name_cn: PTA-PX价差
+    operation: linear_combination
+    terms: [{ member: FUT_TA, coefficient: 1.0 }, { member: FUT_PX, coefficient: -0.655 }]
+    unit: cny_per_ton
+    change_mode: abs
+    desc: 聚酯加工费代理，反映 PX 与 PTA 之间的利润分配。
+  - id: FUT_SPREAD_GOLD_SILVER
+    name_cn: 金银比
+    operation: ratio
+    numerator: { member: FUT_AU, multiplier: 1000 }
+    denominator: { member: FUT_AG, multiplier: 1 }
+    unit: ratio
+    change_mode: pct
+    desc: 避险与工业属性相对强弱的辅助读数。
+  - id: FUT_SPREAD_OIL_MEAL
+    name_cn: 油粕比
+    operation: ratio
+    numerator: { member: FUT_Y, multiplier: 1 }
+    denominator: { member: FUT_M, multiplier: 1 }
+    unit: ratio
+    change_mode: pct
+    desc: 压榨价值在油脂与蛋白之间的相对分配。
+  - id: FUT_SPREAD_SA_FG
+    name_cn: 纯碱-玻璃价差
+    operation: linear_combination
+    terms: [{ member: FUT_SA, coefficient: 0.2 }, { member: FUT_FG, coefficient: -1.0 }]
+    unit: cny_per_ton
+    change_mode: abs
+    desc: 浮法玻璃的纯碱原料成本压力代理。
+
 # 交易所后缀实测更正（手册未记载或有误）
 exchange_notes:
   - { exchange: 郑州商品交易所, manual_says: .ZCE, actual: .CZC, note: 手册写错，实测 FG00.ZCE 全部 -4210 }
