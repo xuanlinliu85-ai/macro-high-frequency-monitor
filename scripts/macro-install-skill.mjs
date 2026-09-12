@@ -100,6 +100,7 @@ if (checkInstalled) {
       ? join(codexRoot, "skill-backups") : join(dirname(dirname(target)), "skill-backups");
     const staging = join(stagingRoot, `macro-high-frequency-monitor-${stamp}`);
     const backup = join(backupRoot, `macro-high-frequency-monitor-pre-v2-${stamp}`);
+    mkdirSync(stagingRoot, { recursive: true });
     mkdirSync(staging, { recursive: false });
     copyPlan(plan, staging);
     const installed = manifest(plan);
