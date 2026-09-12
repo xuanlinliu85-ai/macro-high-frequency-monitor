@@ -1,5 +1,7 @@
 # 让别人（ChatGPT / Codex）读懂并改进这个方案
 
+**仓库地址**：<https://github.com/xuanlinliu85-ai/macro-high-frequency-monitor> （public，只读即可）
+
 本仓库本身就是**自包含**的：知识层（技能定义 + 配置真源）与代码层（流水线）在同一个仓库里，
 不依赖任何外部目录。所以「让别人读到」这件事只需要**把仓库给它**。
 
@@ -10,8 +12,8 @@
 把仓库设为 public，然后让它先读这两页：
 
 ```text
-<repo>/MANIFEST.md    ← 方案由什么组成、数据流、代码文件地图、待完善清单
-<repo>/SKILL.md       ← 技能定义、调用契约、解释框架、口径纪律
+https://github.com/xuanlinliu85-ai/macro-high-frequency-monitor/blob/main/MANIFEST.md    ← 方案由什么组成、数据流、代码文件地图、待完善清单
+https://github.com/xuanlinliu85-ai/macro-high-frequency-monitor/blob/main/SKILL.md       ← 技能定义、调用契约、解释框架、口径纪律
 ```
 
 `MANIFEST.md` 里有一张「按顺序读什么」的表，它会自己往下读。

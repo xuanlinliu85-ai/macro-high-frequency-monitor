@@ -5,6 +5,10 @@
 
 这是一个**独立仓库**，不依赖任何其它项目。克隆下来即可运行，也可以直接作为 agent 技能加载。
 
+**仓库地址**：<https://github.com/xuanlinliu85-ai/macro-high-frequency-monitor>
+
+> 让 ChatGPT / Codex 读懂并改进本方案 → 读 [`docs/USING_WITH_AI.md`](docs/USING_WITH_AI.md)（含可直接照抄的开场白）。
+
 ---
 
 ## 30 秒看懂
