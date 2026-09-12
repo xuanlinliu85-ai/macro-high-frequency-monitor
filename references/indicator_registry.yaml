@@ -1,0 +1,930 @@
+# 宏观高频监测 · 指标注册表
+# 依据 Spec §17。所有 field_code 均经 THS_EDB / THS_HQ 实测验证，无一处猜测。
+# verified_at: 2026-09-10
+version: "1.0"
+verified_at: "2026-09-10"
+source_of_truth: ifind
+
+# 六维归属（Spec §19）
+dimensions:
+  growth:       { name_cn: 增长,   weight_source: [CN_PMI, CN_PMI_PROD, CN_IP, CN_PMI_PRICE] }
+  consumption:  { name_cn: 消费,   weight_source: [CN_RETAIL, CN_RETAIL_CATERING, HF_AUTO_PROD] }
+  property:     { name_cn: 地产,   weight_source: [CN_RE_INV, CN_RE_START, CN_RE_COMPLETE_YOY, CN_RE_SALES_YOY, HF_GLASS, HF_REBAR] }
+  inflation:    { name_cn: 通胀,   weight_source: [CN_CPI, CN_CPI_FOOD, CN_CPI_NONFOOD, CN_PPI, HF_PORK, HF_BRENT] }
+  liquidity:    { name_cn: 流动性, weight_source: [MKT_DR007, MKT_R007, MKT_CGB_10Y, CN_M2, CN_TSF] }
+  external:     { name_cn: 外需,   weight_source: [CN_EXPORT, CN_IMPORT, CN_PMI_EXPORT, HF_BALTIC, CN_USDCNY] }
+
+# ============================================================
+# L1 官方确认层（EDB，月/季频）
+# ============================================================
+layer_official:
+  - id: CN_GDP_REAL
+    name_cn: GDP:不变价:当季同比
+    category: growth
+    dimension: growth
+    frequency: quarterly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002834227, verified: true, latest_obs: "2026-06-30", latest_value: 4.3 }
+    transforms: [level, qoq, yoy]
+    signal: { direction: higher_is_stronger }
+    chart: { type: bar, default_window: 5y }
+    importance: high
+
+  - id: CN_IP
+    name_cn: 规模以上工业增加值:当月同比
+    category: growth
+    dimension: growth
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001622302, verified: true, latest_obs: "2026-07-31", latest_value: 4.5 }
+    transforms: [level, mom, yoy, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: bar, default_window: 2y }
+    importance: high
+
+  - id: CN_IP_PROFIT
+    name_cn: 规模以上工业企业:利润总额:累计同比
+    category: growth
+    dimension: growth
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002851137, verified: true, latest_obs: "2026-07-31", latest_value: 17.6 }
+    transforms: [level, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: CN_FAI_BUSINESS
+    name_cn: 企业景气指数
+    category: growth
+    dimension: growth
+    frequency: quarterly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043825, verified: true, latest_obs: "2026-06-30", latest_value: 109.5 }
+    transforms: [level, qoq, zscore_3y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: low
+
+  - id: CN_RETAIL
+    name_cn: 社会消费品零售总额:当月同比
+    category: consumption
+    dimension: consumption
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001625520, verified: true, latest_obs: "2026-07-31", latest_value: 0.6 }
+    transforms: [level, mom, yoy, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: bar, default_window: 2y }
+    importance: high
+
+  - id: CN_RETAIL_CUM
+    name_cn: 社会消费品零售总额:累计同比
+    category: consumption
+    dimension: consumption
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001625521, verified: true, latest_obs: "2026-07-31", latest_value: 1.2 }
+    transforms: [level, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: CN_RETAIL_CATERING
+    name_cn: 社会消费品零售总额:餐饮业:当月同比
+    category: consumption
+    dimension: consumption
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001625542, verified: true, latest_obs: "2026-07-31", latest_value: 1.4 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 2y }
+    importance: low
+
+  - id: CN_PMI
+    name_cn: 制造业PMI
+    category: sentiment
+    dimension: growth
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043802, verified: true, latest_obs: "2026-08-31", latest_value: 49.8 }
+    transforms: [level, mom, ma3, percentile_5y]
+    signal: { direction: higher_is_stronger, threshold_expansion: 50 }
+    chart: { type: line, default_window: 3y }
+    importance: high
+
+  - id: CN_PMI_PROD
+    name_cn: 制造业PMI:生产
+    category: sentiment
+    dimension: growth
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043803, verified: true, latest_obs: "2026-08-31", latest_value: 50.4 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: high
+
+  - id: CN_PMI_ORDER
+    name_cn: 制造业PMI:新订单
+    category: sentiment
+    dimension: growth
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043804, verified: true, latest_obs: "2026-08-31", latest_value: 50.6 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: high
+
+  - id: CN_PMI_EXPORT
+    name_cn: 制造业PMI:新出口订单
+    category: external
+    dimension: external
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043805, verified: true, latest_obs: "2026-08-31", latest_value: 50.1 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: high
+
+  - id: CN_PMI_INVENTORY
+    name_cn: 制造业PMI:产成品库存
+    category: sentiment
+    dimension: growth
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043807, verified: true, latest_obs: "2026-08-31", latest_value: 48.4 }
+    transforms: [level, mom]
+    signal: { direction: contextual, note: 被动补库与主动去库含义不同 }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: CN_PMI_IMPORT
+    name_cn: 制造业PMI:进口
+    category: external
+    dimension: external
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043809, verified: true, latest_obs: "2026-08-31", latest_value: 48.6 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: CN_PMI_PRICE
+    name_cn: 制造业PMI:主要原材料购进价格
+    category: inflation
+    dimension: inflation
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043810, verified: true, latest_obs: "2026-08-31", latest_value: 56.6 }
+    transforms: [level, mom, zscore_3y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: CN_PMI_EMPLOY
+    name_cn: 制造业PMI:从业人员
+    category: sentiment
+    dimension: growth
+    frequency: monthly
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002043812, verified: true, latest_obs: "2026-08-31", latest_value: 48.7 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: low
+
+  - id: CN_CPI
+    name_cn: CPI:当月同比
+    category: inflation
+    dimension: inflation
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002826730, verified: true, latest_obs: "2026-08-31", latest_value: 0.8 }
+    transforms: [level, mom, ma3, percentile_5y]
+    signal: { direction: contextual, note: 通缩侧关注是否为负 }
+    chart: { type: bar, default_window: 3y }
+    importance: high
+
+  - id: CN_CPI_FOOD
+    name_cn: CPI:食品:当月同比
+    category: inflation
+    dimension: inflation
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002826732, verified: true, latest_obs: "2026-08-31", latest_value: -1.4 }
+    transforms: [level, mom]
+    signal: { direction: contextual }
+    chart: { type: bar, default_window: 3y }
+    importance: medium
+
+  - id: CN_CPI_NONFOOD
+    name_cn: CPI:非食品:当月同比
+    category: inflation
+    dimension: inflation
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002826748, verified: true, latest_obs: "2026-08-31", latest_value: 1.2 }
+    transforms: [level, mom, ma3]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+    note: 作为核心 CPI 的代理指标（核心 CPI 未检索到）
+
+  - id: CN_CPI_MOM
+    name_cn: CPI:环比
+    category: inflation
+    dimension: inflation
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002826785, verified: true, latest_obs: "2026-08-31", latest_value: 0.4 }
+    transforms: [level, ma3]
+    signal: { direction: higher_is_tighter }
+    chart: { type: bar, default_window: 2y }
+    importance: low
+
+  - id: CN_PPI
+    name_cn: PPI:当月同比
+    category: inflation
+    dimension: inflation
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002826865, verified: true, latest_obs: "2026-08-31", latest_value: 3.8 }
+    transforms: [level, mom, ma3, percentile_5y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: bar, default_window: 3y }
+    importance: high
+
+  - id: CN_M2
+    name_cn: M2(货币和准货币):同比
+    category: credit
+    dimension: liquidity
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001625222, verified: true, latest_obs: "2026-07-31", latest_value: 7.7 }
+    transforms: [level, mom, ma3]
+    signal: { direction: higher_is_looser }
+    chart: { type: line, default_window: 5y }
+    importance: high
+
+  - id: CN_M1
+    name_cn: M1(货币):同比
+    category: credit
+    dimension: liquidity
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001625224, verified: true, latest_obs: "2026-07-31", latest_value: 4.0 }
+    transforms: [level, mom, ma3]
+    signal: { direction: higher_is_stronger, note: 关注 M1-M2 剪刀差 }
+    chart: { type: line, default_window: 5y }
+    importance: high
+
+  - id: CN_TSF
+    name_cn: 社会融资规模存量:期末同比
+    category: credit
+    dimension: liquidity
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M004891021, verified: true, latest_obs: "2026-07-31", latest_value: 7.4 }
+    transforms: [level, mom, ma3]
+    signal: { direction: higher_is_looser }
+    chart: { type: line, default_window: 5y }
+    importance: high
+
+  - id: CN_TSF_FLOW
+    name_cn: 社会融资规模增量:当月值
+    category: credit
+    dimension: liquidity
+    frequency: monthly
+    unit: cny_100m
+    ifind: { tool: THS_EDB, field_code: M004891015, verified: true, latest_obs: "2026-07-31", latest_value: 14017 }
+    transforms: [level, mom, ma12]
+    signal: { direction: higher_is_looser }
+    chart: { type: bar, default_window: 3y }
+    importance: medium
+
+  - id: CN_TSF_GOV
+    name_cn: 社会融资规模存量:政府债券:期末同比
+    category: credit
+    dimension: liquidity
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M004891018, verified: true, latest_obs: "2026-07-31", latest_value: 14.1 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_looser }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: CN_EXPORT
+    name_cn: 出口总值(美元计价):当月同比
+    category: external
+    dimension: external
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: S002808932, verified: true, latest_obs: "2026-08-31", latest_value: 25.0 }
+    transforms: [level, mom, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: bar, default_window: 3y }
+    importance: high
+
+  - id: CN_IMPORT
+    name_cn: 进口总值(美元计价):当月同比
+    category: external
+    dimension: external
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: S002808933, verified: true, latest_obs: "2026-08-31", latest_value: 28.2 }
+    transforms: [level, mom, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: bar, default_window: 3y }
+    importance: high
+
+  - id: CN_TRADE
+    name_cn: 进出口总值(美元计价):当月同比
+    category: external
+    dimension: external
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: S002808931, verified: true, latest_obs: "2026-08-31", latest_value: 26.3 }
+    transforms: [level, mom]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: CN_RE_INV
+    name_cn: 房地产开发投资:累计同比
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001620724, verified: true, latest_obs: "2026-07-31", latest_value: -19.2 }
+    transforms: [level, ma3, percentile_5y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: high
+
+  - id: CN_RE_CONSTRUCT
+    name_cn: 房屋施工面积:累计值
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: sqm_10k
+    ifind: { tool: THS_EDB, field_code: S000047974, verified: true, latest_obs: "2026-07-31", latest_value: 557572.46 }
+    transforms: [level, yoy]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: medium
+
+  - id: CN_RE_START
+    name_cn: 房屋新开工面积:累计值
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: sqm_10k
+    ifind: { tool: THS_EDB, field_code: S000047978, verified: true, latest_obs: "2026-07-31", latest_value: 26700.19 }
+    transforms: [level, yoy, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: high
+    note: 地产前端，领先竣工
+
+  - id: CN_RE_COMPLETE
+    name_cn: 房屋竣工面积:累计值
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: sqm_10k
+    ifind: { tool: THS_EDB, field_code: S000047982, verified: true, latest_obs: "2026-07-31", latest_value: 19195.35 }
+    transforms: [level, yoy]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: medium
+
+  - id: CN_RE_COMPLETE_YOY
+    name_cn: 房地产竣工面积:累计同比
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M001620758, verified: true, latest_obs: "2026-07-31", latest_value: -23.2 }
+    transforms: [level, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: medium
+
+  - id: CN_RE_SALES_AREA
+    name_cn: 商品房销售面积:累计值
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: sqm_10k
+    ifind: { tool: THS_EDB, field_code: S000047990, verified: true, latest_obs: "2026-07-31", latest_value: 45020.81 }
+    transforms: [level, yoy, ma3]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: high
+
+  - id: CN_RE_SALES_YOY
+    name_cn: 商品房销售额:累计同比
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: S000047995, verified: true, latest_obs: "2026-07-31", latest_value: -13.1 }
+    transforms: [level, ma3, percentile_5y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: high
+
+  - id: CN_RE_RES_SALES
+    name_cn: 商品房销售面积:住宅:累计值
+    category: property
+    dimension: property
+    frequency: monthly
+    unit: sqm_10k
+    ifind: { tool: THS_EDB, field_code: S000047991, verified: true, latest_obs: "2026-07-31", latest_value: 37425.0 }
+    transforms: [level, yoy]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 5y }
+    importance: low
+
+# ============================================================
+# L2 高频代理层（EDB 日频 + HQ 期货主力）
+# ============================================================
+layer_highfreq:
+  - id: HF_PORK
+    name_cn: 平均批发价:猪肉
+    category: inflation
+    dimension: inflation
+    frequency: daily
+    unit: cny_per_kg
+    ifind: { tool: THS_EDB, field_code: S002808935, verified: true, latest_obs: "2026-09-10", latest_value: 16.31 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_3y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: HF_BEEF
+    name_cn: 平均批发价:牛肉
+    category: inflation
+    dimension: inflation
+    frequency: daily
+    unit: cny_per_kg
+    ifind: { tool: THS_EDB, field_code: S002808936, verified: true, latest_obs: "2026-09-10", latest_value: 70.7 }
+    transforms: [level, d5, d20]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: low
+
+  - id: HF_EGG
+    name_cn: 平均批发价:鸡蛋
+    category: inflation
+    dimension: inflation
+    frequency: daily
+    unit: cny_per_kg
+    ifind: { tool: THS_EDB, field_code: S002808938, verified: true, latest_obs: "2026-09-10", latest_value: 10.98 }
+    transforms: [level, d5, d20]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: low
+
+  - id: HF_VEG
+    name_cn: 平均批发价:28种重点监测蔬菜
+    category: inflation
+    dimension: inflation
+    frequency: daily
+    unit: cny_per_kg
+    ifind: { tool: THS_EDB, field_code: S002808944, verified: true, latest_obs: "2026-09-10", latest_value: 4.7 }
+    transforms: [level, d5, d20, zscore_1y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: HF_FRUIT
+    name_cn: 平均批发价:6种重点监测水果
+    category: inflation
+    dimension: inflation
+    frequency: daily
+    unit: cny_per_kg
+    ifind: { tool: THS_EDB, field_code: S002808945, verified: true, latest_obs: "2026-09-10", latest_value: 6.8 }
+    transforms: [level, d5, d20]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: HF_COPPER_SPOT
+    name_cn: 现货价:铜
+    category: growth
+    dimension: growth
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_EDB, field_code: S004242370, verified: true, latest_obs: "2026-09-10", latest_value: 112490 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_3y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: high
+    note: 全球制造业景气代理
+
+  - id: HF_BRENT
+    name_cn: 期货收盘价(连续):布伦特原油:ICE
+    category: inflation
+    dimension: inflation
+    frequency: daily
+    unit: usd_per_barrel
+    ifind: { tool: THS_EDB, field_code: S004111384, verified: true, latest_obs: "2026-09-09", latest_value: 101.75 }
+    transforms: [level, d1, d5, d20, zscore_1y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: HF_BALTIC
+    name_cn: 波罗的海运费指数:干散货(BDI)
+    category: external
+    dimension: external
+    frequency: daily
+    unit: index
+    ifind: { tool: THS_EDB, field_code: S000042890, verified: true, latest_obs: "2026-09-10", latest_value: 3521.0 }
+    transforms: [level, d5, d20, zscore_1y, percentile_3y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: HF_REBAR
+    name_cn: 螺纹钢主力
+    category: property
+    dimension: property
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: RB00.SHF, verified: true }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: high
+    note: 工业与地产施工的交叉代理
+
+  - id: HF_HRC
+    name_cn: 热轧卷板主力
+    category: growth
+    dimension: growth
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: HC00.SHF, verified: true }
+    transforms: [level, d5, d20, zscore_1y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: HF_COPPER
+    name_cn: 沪铜主力
+    category: growth
+    dimension: growth
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: CU00.SHF, verified: true }
+    transforms: [level, d5, d20, zscore_1y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: HF_ALUMINUM
+    name_cn: 沪铝主力
+    category: growth
+    dimension: growth
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: AL00.SHF, verified: true }
+    transforms: [level, d5, d20]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: low
+
+  - id: HF_IRON_ORE
+    name_cn: 铁矿石主力
+    category: growth
+    dimension: growth
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: I00.DCE, verified: true }
+    transforms: [level, d5, d20, zscore_1y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: HF_COKING_COAL
+    name_cn: 焦煤主力
+    category: growth
+    dimension: growth
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: JM00.DCE, verified: true }
+    transforms: [level, d5, d20]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: HF_THERMAL_COAL
+    name_cn: 动力煤主力
+    category: growth
+    dimension: growth
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: ZC00.CZC, verified: true }
+    transforms: [level, d5, d20]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: low
+    note: 郑商所后缀为 .CZC，非手册所写 .ZCE
+
+  - id: HF_GLASS
+    name_cn: 玻璃主力
+    category: property
+    dimension: property
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: FG00.CZC, verified: true }
+    transforms: [level, d5, d20, zscore_1y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+    note: 地产竣工端代理；郑商所后缀为 .CZC
+
+  - id: HF_CRUDE
+    name_cn: 原油主力
+    category: inflation
+    dimension: inflation
+    frequency: daily
+    unit: cny_per_barrel
+    ifind: { tool: THS_HQ, field_code: SC00.INE, verified: true }
+    transforms: [level, d5, d20, zscore_1y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+# ============================================================
+# L3 市场验证层
+# ============================================================
+layer_market:
+  - id: MKT_DR001
+    name_cn: DR001
+    category: liquidity
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L001618739, verified: true, latest_obs: "2026-09-10", latest_value: 1.4079 }
+    transforms: [level, d1, d5, d20, percentile_3y, zscore_1y]
+    signal: { direction: lower_is_looser }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: MKT_DR007
+    name_cn: DR007
+    category: liquidity
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L001619493, verified: true, latest_obs: "2026-09-10", latest_value: 1.4113 }
+    transforms: [level, d1, d5, d20, ma20, percentile_3y, zscore_1y]
+    signal: { direction: lower_is_looser, note: 政策利率锚，偏离 7 天逆回购即信号 }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: MKT_R001
+    name_cn: R001
+    category: liquidity
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L004109429, verified: true, latest_obs: "2026-09-09", latest_value: 1.3888 }
+    transforms: [level, d5, d20, percentile_3y]
+    signal: { direction: lower_is_looser }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: MKT_R007
+    name_cn: R007
+    category: liquidity
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L004109430, verified: true, latest_obs: "2026-09-09", latest_value: 1.4133 }
+    transforms: [level, d5, d20, percentile_3y]
+    signal: { direction: lower_is_looser }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: MKT_SHIBOR_1W
+    name_cn: Shibor:1周
+    category: liquidity
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: M002816449, verified: true, latest_obs: "2026-09-10", latest_value: 1.41 }
+    transforms: [level, d5, d20]
+    signal: { direction: lower_is_looser }
+    chart: { type: line, default_window: 1y }
+    importance: low
+
+  - id: MKT_CGB_1Y
+    name_cn: 中债国债到期收益率:1年
+    category: rates
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L001618296, verified: true, latest_obs: "2026-09-10", latest_value: 1.2302 }
+    transforms: [level, d5, d20, percentile_3y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: MKT_CGB_3Y
+    name_cn: 中债国债到期收益率:3年
+    category: rates
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L001618297, verified: true, latest_obs: "2026-09-10", latest_value: 1.2506 }
+    transforms: [level, d5, d20, percentile_3y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+    note: 作为 MKT_CREDIT_SPREAD_3Y 的减数基准；单独展示价值低，主要为派生指标提供支撑序列
+
+  - id: MKT_CGB_10Y
+    name_cn: 中债国债到期收益率:10年
+    category: rates
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L001619604, verified: true, latest_obs: "2026-09-10", latest_value: 1.6797 }
+    variants: { alt_code: L001619518, alt_name: 国债到期收益率:10年 }
+    transforms: [level, d1, d5, d20, ma20, percentile_3y, zscore_1y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: high
+    note: 选用 L001619604 与 1Y/30Y 同族保证口径一致
+
+  - id: MKT_CGB_30Y
+    name_cn: 中债国债到期收益率:30年
+    category: rates
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L001618299, verified: true, latest_obs: "2026-09-10", latest_value: 2.139 }
+    transforms: [level, d5, d20, percentile_3y]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: MKT_CURVE_10Y1Y
+    name_cn: 10Y-1Y 期限利差
+    category: rates
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    derived: { formula: "MKT_CGB_10Y - MKT_CGB_1Y" }
+    transforms: [level, d5, d20, percentile_3y]
+    signal: { direction: higher_is_stronger, note: 陡峭化通常对应宽松预期 }
+    chart: { type: line, default_window: 3y }
+    importance: high
+
+  - id: MKT_CURVE_30Y10Y
+    name_cn: 30Y-10Y 期限利差
+    category: rates
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    derived: { formula: "MKT_CGB_30Y - MKT_CGB_10Y" }
+    transforms: [level, d5, d20]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 3y }
+    importance: medium
+
+  - id: MKT_AAA_3Y
+    name_cn: 中债中短期票据到期收益率(AAA):3年
+    category: credit
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    ifind: { tool: THS_EDB, field_code: L001619554, verified: true, latest_obs: "2026-09-10", latest_value: 1.657 }
+    transforms: [level, d5, d20]
+    signal: { direction: higher_is_tighter }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: MKT_CREDIT_SPREAD_3Y
+    name_cn: AAA 3Y 信用利差
+    category: credit
+    dimension: liquidity
+    frequency: daily
+    unit: pct
+    derived: { formula: "MKT_AAA_3Y - MKT_CGB_3Y" }
+    transforms: [level, d5, d20, percentile_3y]
+    signal: { direction: higher_is_tighter, note: 走阔 = 风险溢价上升 }
+    chart: { type: line, default_window: 3y }
+    importance: high
+
+  - id: MKT_USDCNY
+    name_cn: 中间价:美元兑人民币
+    category: fx
+    dimension: external
+    frequency: daily
+    unit: cny
+    ifind: { tool: THS_EDB, field_code: M002842089, verified: true, latest_obs: "2026-09-10", latest_value: 6.7766 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y]
+    signal: { direction: contextual, note: 上行 = 人民币贬值 }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: MKT_USDCNH
+    name_cn: 即期汇率(16:30):美元兑人民币
+    category: fx
+    dimension: external
+    frequency: daily
+    unit: cny
+    ifind: { tool: THS_EDB, field_code: M004370159, verified: true, latest_obs: "2026-09-10", latest_value: 6.7062 }
+    transforms: [level, d1, d5, d20]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: MKT_HS300
+    name_cn: 沪深300指数
+    category: risk
+    dimension: liquidity
+    frequency: daily
+    unit: index
+    ifind: { tool: THS_EDB, field_code: M002845714, verified: true }
+    variants: { alt_tool: THS_HQ, alt_code: 000300.SH }
+    transforms: [level, d1, d5, d20, ma20, percentile_3y]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: MKT_CSI1000
+    name_cn: 中证1000指数
+    category: risk
+    dimension: liquidity
+    frequency: daily
+    unit: index
+    ifind: { tool: THS_HQ, field_code: 000852.SH, verified: true }
+    transforms: [level, d1, d5, d20]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: MKT_CYB
+    name_cn: 创业板指
+    category: risk
+    dimension: liquidity
+    frequency: daily
+    unit: index
+    ifind: { tool: THS_HQ, field_code: 399006.SZ, verified: true }
+    transforms: [level, d1, d5, d20]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: MKT_SSE
+    name_cn: 上证指数
+    category: risk
+    dimension: liquidity
+    frequency: daily
+    unit: index
+    ifind: { tool: THS_HQ, field_code: 000001.SH, verified: true }
+    transforms: [level, d1, d5, d20]
+    signal: { direction: higher_is_stronger }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+# ============================================================
+# 待补：检索未命中（FIELD_LOOKUP_REQUIRED）
+# ============================================================
+pending_lookup:
+  - { id: CN_FAI,      name_cn: 固定资产投资(不含农户)完成额:累计同比, dimension: growth,    ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED } }
+  - { id: CN_MFG_INV,  name_cn: 制造业投资:累计同比,                dimension: growth,    ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED } }
+  - { id: CN_INFRA_INV,name_cn: 基础设施建设投资:累计同比,            dimension: growth,    ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED } }
+  - { id: CN_NEW_LOAN, name_cn: 新增人民币贷款:当月值,                dimension: liquidity, ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED } }
+  - { id: CN_CORE_CPI, name_cn: 核心CPI:当月同比,                    dimension: inflation, ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED }, substitute: CN_CPI_NONFOOD }
+  - { id: HF_CEMENT,   name_cn: 水泥价格指数,                       dimension: property,  ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED } }
+  - { id: HF_FREIGHT,  name_cn: 公路货运量:当月值,                    dimension: growth,    ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED } }
+  - { id: HF_POWER,    name_cn: 发电量:当月值,                       dimension: growth,    ifind: { tool: THS_EDB, field_code: FIELD_LOOKUP_REQUIRED, verified: false, status: FIELD_LOOKUP_REQUIRED } }
+  - { id: HF_AUTO_PROD,name_cn: 乘用车产量(分品牌),                   dimension: consumption, ifind: { tool: THS_EDB, field_code: M004891022, verified: true, note: 区段起始，按品牌逐个取 }, substitute_for: HF_AUTO }
+
+# ============================================================
+# 已判定不可用
+# ============================================================
+unavailable:
+  - { id: HF_BLAST_FURNACE, name_cn: 高炉开工率,   status: NO_FIELD, note: Wind 类第三方高频，iFinD EDB 未覆盖 }
+  - { id: HF_TIRE,          name_cn: 全钢胎开工率, status: NO_FIELD, note: 同上 }
+  - { id: HF_30CITY_HOME,   name_cn: 30大中城市商品房成交面积, status: NO_FIELD, note: 第三方高频数据 }
+  - { id: HF_LAND,          name_cn: 100大中城市成交土地占地面积, status: NO_FIELD, note: 第三方高频数据 }
+  - { id: HF_BOXOFFICE,     name_cn: 电影票房,     status: NO_FIELD, note: 第三方数据 }
+  - { id: HF_METRO,         name_cn: 城市地铁客运量, status: NO_FIELD, note: 第三方数据 }
+  - { id: HF_SCFI,          name_cn: 上海出口集装箱运价指数, status: NO_FIELD }
+  - { id: HF_CCFI,          name_cn: 中国出口集装箱运价指数, status: NO_FIELD }
+  - { id: MKT_HSCEI,        name_cn: 恒生国企指数, status: PERMISSION_LIMITED, note: HSCEI.HK 返回 -4210 }
+  - { id: FORECAST_CONSENSUS, name_cn: 盈利预测一致预期, status: PERMISSION_LIMITED, note: 手册明示 ths_west_* / ths_pred_* 均 -209，勿猜 } 

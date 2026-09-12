@@ -1,0 +1,23 @@
+# 依赖与构建产物
+node_modules/
+.pnpm-store/
+
+# 运行期产物区（观测全量数据、快照留档、结构化汇报）
+work/
+
+# 生成物：由 scripts/ 从快照重新生成，且内含授权行情数据，不入库
+public/macro-snapshot.json
+public/macro-daily-report.md
+public/macro-workbench.html
+
+# 密钥与本地临时文件
+.env
+.env.*
+!.env.example
+macro_key.tmp
+*_key.tmp
+
+# 杂项
+*.log
+.DS_Store
+Thumbs.db

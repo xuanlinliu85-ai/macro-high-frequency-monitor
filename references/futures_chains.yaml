@@ -1,0 +1,1057 @@
+# 期货产业链监控 · 配置层
+#
+# 归属：宏观高频监测 Skill 的第二个配置文件。
+# 分工：indicator_registry.yaml 管宏观指标（参与六维评分）；本文件管期货全品种（展示与产业链分析，不参与六维评分）。
+#
+# 依据 Spec §6 / §17：所有 field_code 均由 scripts/macro-probe-futures.mjs 实测取得，无一处猜测。
+generated_at: "2026-09-10"
+window: { begin: "2025-07-10", end: "2026-09-10" }
+
+# 交易所后缀实测更正（手册未记载或有误）
+exchange_notes:
+  - { exchange: 郑州商品交易所, manual_says: .ZCE, actual: .CZC, note: 手册写错，实测 FG00.ZCE 全部 -4210 }
+  - { exchange: 广州期货交易所, manual_says: 未记载, actual: .GFE, note: 实测 GFEX/GF/GZ/GFA 均 -4210，仅 .GFE 通过 }
+
+# THS_HQ 期货专用字段（经 lookup_field_reference 确认）
+hq_fields:
+  base: [open, high, low, close, volume, amount]
+  futures_specific: [openInterest, positionChange, settlement, preSettlement, change_settlement, chg_settlement]
+  default_request: "close;high;low;open;volume;amount;changeRatio;openInterest"
+  note: 持仓量字段名为 openInterest；position/settle/hold 等猜测名会被静默忽略，不报错但也不返回值
+
+# ============================================================
+# 产业链分组与上下游分层
+# ============================================================
+futures_chains:
+  - id: ferrous
+    name_cn: "黑色·煤焦钢"
+    desc: "地产与基建的实物需求温度计。铁矿+双焦是成本端，钢材是产成品端，螺纹与地产施工同步性最高。"
+    tiers:
+      - { name_cn: "上游原料", members: [FUT_I, FUT_JM, FUT_J, FUT_ZC] }
+      - { name_cn: "中游合金", members: [FUT_SF, FUT_SM] }
+      - { name_cn: "下游钢材", members: [FUT_RB, FUT_HC, FUT_SS] }
+  - id: nonferrous
+    name_cn: "有色金属"
+    desc: "全球定价、金融属性最强的一类。铜是宏观需求的领先指标，铝受能耗与电解成本约束。"
+    tiers:
+      - { name_cn: "上游原料", members: [FUT_AO] }
+      - { name_cn: "基本金属", members: [FUT_CU, FUT_AL, FUT_ZN, FUT_PB, FUT_NI, FUT_SN, FUT_BC] }
+  - id: energy
+    name_cn: "能源"
+    desc: "原油是化工与运输成本的源头。燃料油/沥青/低硫燃料油是原油的直接裂解产物。"
+    tiers:
+      - { name_cn: "上游原油", members: [FUT_SC] }
+      - { name_cn: "下游油品", members: [FUT_FU, FUT_LU, FUT_BU, FUT_PG] }
+  - id: chemical
+    name_cn: "化工"
+    desc: "三条主链：聚酯（PX→PTA→短纤/瓶片）、烯烃（甲醇/乙二醇→PP/塑料/PVC）、氯碱建材（纯碱→玻璃、烧碱→PVC）。链内价差反映加工利润的分配。"
+    tiers:
+      - { name_cn: "上游原料", members: [FUT_PX, FUT_MA, FUT_EG, FUT_SA, FUT_SH, FUT_EB, FUT_RU, FUT_NR, FUT_BR, FUT_SP] }
+      - { name_cn: "下游成品", members: [FUT_TA, FUT_PF, FUT_PR, FUT_PP, FUT_L, FUT_V, FUT_FG, FUT_UR] }
+  - id: precious
+    name_cn: "贵金属"
+    desc: "实际利率与避险的镜像。金是货币属性，银兼具工业属性，金银比是风险偏好的辅助读数。"
+    tiers:
+      - { name_cn: "品种", members: [FUT_AU, FUT_AG] }
+  - id: ags
+    name_cn: "农产品"
+    desc: "天气与养殖周期驱动。油脂油料看南美/东南亚供给，玉米与豆粕决定养殖成本，生猪是通胀的末端读数。"
+    tiers:
+      - { name_cn: "上游原料", members: [FUT_A, FUT_C, FUT_P, FUT_LG] }
+      - { name_cn: "下游成品", members: [FUT_M, FUT_Y, FUT_OI, FUT_RM, FUT_CS, FUT_JD, FUT_LH, FUT_SR, FUT_CF, FUT_AP, FUT_PK] }
+  - id: newenergy
+    name_cn: "新能源·航运"
+    desc: "广期所新能源金属反映产能周期与需求预期；集运欧线是外需与运力的直接读数。"
+    tiers:
+      - { name_cn: "新能源金属", members: [FUT_SI, FUT_LC, FUT_PS] }
+      - { name_cn: "航运", members: [FUT_EC] }
+
+# ============================================================
+# 品种明细（全部经实测验证）
+# ============================================================
+layer_futures:
+
+  - id: FUT_I
+    name_cn: "铁矿石"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: I00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 732.5 }
+    linked_macro_id: HF_IRON_ORE
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_JM
+    name_cn: "焦煤"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: JM00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 1631 }
+    linked_macro_id: HF_COKING_COAL
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_J
+    name_cn: "焦炭"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: J00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 2086.5 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_ZC
+    name_cn: "动力煤"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: ZC00.CZC, verified: false, status: DISCONTINUED, last_trade: "", note: "全部为 0 或空" }
+    linked_macro_id: HF_THERMAL_COAL
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SF
+    name_cn: "硅铁"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "中游合金"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SF00.CZC, verified: true, history_days: 245, latest_obs: "2026-09-10", latest_value: 6418 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SM
+    name_cn: "锰硅"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "中游合金"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SM00.CZC, verified: true, history_days: 261, latest_obs: "2026-09-10", latest_value: 5796 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_RB
+    name_cn: "螺纹钢"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "下游钢材"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: RB00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 3020 }
+    linked_macro_id: HF_REBAR
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_HC
+    name_cn: "热轧卷板"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "下游钢材"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: HC00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 3295 }
+    linked_macro_id: HF_HRC
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SS
+    name_cn: "不锈钢"
+    chain: ferrous
+    chain_cn: "黑色·煤焦钢"
+    chain_tier: "下游钢材"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SS00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 13770 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_AO
+    name_cn: "氧化铝"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: AO00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 2688 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_CU
+    name_cn: "沪铜"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "基本金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: CU00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 112840 }
+    linked_macro_id: HF_COPPER
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_AL
+    name_cn: "沪铝"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "基本金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: AL00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 24495 }
+    linked_macro_id: HF_ALUMINUM
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_ZN
+    name_cn: "沪锌"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "基本金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: ZN00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 27465 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_PB
+    name_cn: "沪铅"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "基本金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PB00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 16155 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_NI
+    name_cn: "沪镍"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "基本金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: NI00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 128050 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SN
+    name_cn: "沪锡"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "基本金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SN00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 425800 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_BC
+    name_cn: "国际铜"
+    chain: nonferrous
+    chain_cn: "有色金属"
+    chain_tier: "基本金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: BC00.INE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 99200 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SC
+    name_cn: "原油"
+    chain: energy
+    chain_cn: "能源"
+    chain_tier: "上游原油"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_barrel
+    ifind: { tool: THS_HQ, field_code: SC00.INE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 769 }
+    linked_macro_id: HF_BRENT
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_FU
+    name_cn: "燃料油"
+    chain: energy
+    chain_cn: "能源"
+    chain_tier: "下游油品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: FU00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 4347 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_LU
+    name_cn: "低硫燃料油"
+    chain: energy
+    chain_cn: "能源"
+    chain_tier: "下游油品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: LU00.INE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 5334 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_BU
+    name_cn: "沥青"
+    chain: energy
+    chain_cn: "能源"
+    chain_tier: "下游油品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: BU00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 5520 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_PG
+    name_cn: "液化石油气"
+    chain: energy
+    chain_cn: "能源"
+    chain_tier: "下游油品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PG00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 6763 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_PX
+    name_cn: "对二甲苯"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PX00.CZC, verified: true, history_days: 203, latest_obs: "2026-09-10", latest_value: 8990 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_MA
+    name_cn: "甲醇"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: MA00.CZC, verified: true, history_days: 240, latest_obs: "2026-09-10", latest_value: 3872 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_EG
+    name_cn: "乙二醇"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: EG00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 6310 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SA
+    name_cn: "纯碱"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SA00.CZC, verified: true, history_days: 277, latest_obs: "2026-09-10", latest_value: 970 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_SH
+    name_cn: "烧碱"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SH00.CZC, verified: true, history_days: 194, latest_obs: "2026-09-01", latest_value: 1800 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_EB
+    name_cn: "苯乙烯"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: EB00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 10360 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_RU
+    name_cn: "天然橡胶"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: RU00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 18560 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_NR
+    name_cn: "20号胶"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: NR00.INE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 16050 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_BR
+    name_cn: "丁二烯橡胶"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: BR00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 15645 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SP
+    name_cn: "纸浆"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SP00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 4768 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_TA
+    name_cn: "PTA"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: TA00.CZC, verified: true, history_days: 286, latest_obs: "2026-09-10", latest_value: 6852 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_PF
+    name_cn: "短纤"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PF00.CZC, verified: true, history_days: 215, latest_obs: "2026-09-02", latest_value: 8150 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_PR
+    name_cn: "瓶片"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PR00.CZC, verified: true, history_days: 211, latest_obs: "2026-09-08", latest_value: 8158 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_PP
+    name_cn: "聚丙烯"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PP00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 9808 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_L
+    name_cn: "塑料"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: L00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 9027 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_V
+    name_cn: "PVC"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: V00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 4950 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_FG
+    name_cn: "玻璃"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: FG00.CZC, verified: true, history_days: 267, latest_obs: "2026-09-10", latest_value: 885 }
+    linked_macro_id: HF_GLASS
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_UR
+    name_cn: "尿素"
+    chain: chemical
+    chain_cn: "化工"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: UR00.CZC, verified: true, history_days: 283, latest_obs: "2026-09-10", latest_value: 1718 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_AU
+    name_cn: "沪金"
+    chain: precious
+    chain_cn: "贵金属"
+    chain_tier: "品种"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_gram
+    ifind: { tool: THS_HQ, field_code: AU00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 952.06 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_AG
+    name_cn: "沪银"
+    chain: precious
+    chain_cn: "贵金属"
+    chain_tier: "品种"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_kg
+    ifind: { tool: THS_HQ, field_code: AG00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 16374 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_A
+    name_cn: "豆一"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: A00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 5113 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_C
+    name_cn: "玉米"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: C00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 2265 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_P
+    name_cn: "棕榈油"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: P00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 9778 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_LG
+    name_cn: "原木"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "上游原料"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_m3
+    ifind: { tool: THS_HQ, field_code: LG00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 828.5 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_M
+    name_cn: "豆粕"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: M00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 3365 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_Y
+    name_cn: "豆油"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: Y00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 9279 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_OI
+    name_cn: "菜籽油"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: OI00.CZC, verified: true, history_days: 251, latest_obs: "2026-09-10", latest_value: 10366 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_RM
+    name_cn: "菜籽粕"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: RM00.CZC, verified: true, history_days: 261, latest_obs: "2026-09-09", latest_value: 2393 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_CS
+    name_cn: "玉米淀粉"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: CS00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 2510 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_JD
+    name_cn: "鸡蛋"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_500kg
+    ifind: { tool: THS_HQ, field_code: JD00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 4152 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_LH
+    name_cn: "生猪"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: LH00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 10800 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_SR
+    name_cn: "白糖"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SR00.CZC, verified: true, history_days: 281, latest_obs: "2026-09-10", latest_value: 5217 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_CF
+    name_cn: "棉花"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: CF00.CZC, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 16075 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_AP
+    name_cn: "苹果"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: AP00.CZC, verified: true, history_days: 261, latest_obs: "2026-09-10", latest_value: 7604 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_PK
+    name_cn: "花生"
+    chain: ags
+    chain_cn: "农产品"
+    chain_tier: "下游成品"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PK00.CZC, verified: true, history_days: 259, latest_obs: "2026-09-10", latest_value: 7852 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_SI
+    name_cn: "工业硅"
+    chain: newenergy
+    chain_cn: "新能源·航运"
+    chain_tier: "新能源金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: SI00.GFE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 8725 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_LC
+    name_cn: "碳酸锂"
+    chain: newenergy
+    chain_cn: "新能源·航运"
+    chain_tier: "新能源金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: LC00.GFE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 140520 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high
+
+  - id: FUT_PS
+    name_cn: "多晶硅"
+    chain: newenergy
+    chain_cn: "新能源·航运"
+    chain_tier: "新能源金属"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: cny_per_ton
+    ifind: { tool: THS_HQ, field_code: PS00.GFE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 37380 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: medium
+
+  - id: FUT_EC
+    name_cn: "集运欧线"
+    chain: newenergy
+    chain_cn: "新能源·航运"
+    chain_tier: "航运"
+    category: futures
+    dimension: futures
+    scoring: false
+    frequency: daily
+    unit: point
+    ifind: { tool: THS_HQ, field_code: EC00.INE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 2489.5 }
+    transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
+    signal: { direction: contextual }
+    chart: { type: line, default_window: 1y }
+    importance: high

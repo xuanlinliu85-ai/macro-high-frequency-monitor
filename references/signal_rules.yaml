@@ -1,0 +1,173 @@
+# 宏观高频监测 · 信号规则
+# 依据 Spec §18 / §20 / §37 / §39。
+# 铁律：数值判定由代码执行，LLM 只解释已算好的 signal。禁止让模型算 zscore/percentile/change。
+version: "1.0"
+
+# ---------- 标准化阈值 ----------
+signal_rules:
+  zscore:
+    strong_positive: 1.0
+    positive: 0.5
+    neutral_low: -0.5
+    negative: -1.0
+  percentile:
+    extreme_low: 0.05
+    low: 0.20
+    high: 0.80
+    extreme_high: 0.95
+  change:
+    five_day_extreme: 0.95      # 5D 变化处于历史 95% 分位
+    twenty_day_extreme: 0.95
+
+# ---------- 方向语义 ----------
+# 每个指标在 registry 里自带 direction，此处定义语义与打分映射。
+#
+# ⚠️ polarity 定义：**数值上升**对「宏观扩张 / 风险偏好」是正向(+1) 还是负向(-1)。
+#    这是六维打分的唯一方向口径，新增 direction 标签时必须同时在此登记，
+#    否则 macro-snapshot.mjs 会把该指标降级为 contextual 并排除出评分。
+direction_semantics:
+  higher_is_stronger: { polarity: 1,  meaning: 越高越景气（增长/外需类），数值上升为正向 }
+  lower_is_stronger:  { polarity: -1, meaning: 越低越强，数值上升为负向 }
+  higher_is_tighter:  { polarity: -1, meaning: 越高越紧（利率/通胀类），数值上升为负向 }
+  lower_is_tighter:   { polarity: 1,  meaning: 越低越紧，数值上升为正向 }
+  higher_is_looser:   { polarity: 1,  meaning: 越高越宽松（货币/信用总量类，如 M2、社融），数值上升为正向 }
+  lower_is_looser:    { polarity: -1, meaning: 越低越宽松（资金利率类），数值上升为负向 }
+  contextual:         { polarity: 0,  meaning: 方向依情境，不参与自动打分，仅报数值 }
+
+# ---------- 六维权重（DRAFT · 未回测） ----------
+# ⚠️ Spec §20：以下为结构示例。生产权重必须经
+#   ① 字段可用性确认 ② 历史覆盖长度检查 ③ 高相关指标处理 ④ 回测 后才可冻结。
+#   当前标记 draft，mean_reversion 前不得用于下注决策。
+weight_profile:
+  status: draft
+  normalizer: zscore_1y
+  aggregation: weighted_mean
+  score_range: [0, 100]
+  score_center: 50
+  dimensions:
+    growth:
+      CN_PMI: 0.20
+      CN_PMI_PROD: 0.12
+      CN_PMI_ORDER: 0.12
+      CN_IP: 0.20
+      HF_COPPER: 0.11
+      HF_COPPER_SPOT: 0.11
+      HF_REBAR: 0.14
+    consumption:
+      CN_RETAIL: 0.45
+      CN_RETAIL_CATERING: 0.25
+      HF_AUTO_PROD: 0.30
+    property:
+      CN_RE_INV: 0.20
+      CN_RE_START: 0.18
+      CN_RE_COMPLETE_YOY: 0.14
+      CN_RE_SALES_YOY: 0.22
+      HF_GLASS: 0.13
+      HF_REBAR: 0.13
+    inflation:
+      CN_CPI: 0.20
+      CN_CPI_FOOD: 0.10
+      CN_CPI_NONFOOD: 0.14
+      CN_PPI: 0.22
+      CN_PMI_PRICE: 0.10
+      HF_PORK: 0.12
+      HF_BRENT: 0.12
+    liquidity:
+      MKT_DR007: 0.22
+      MKT_R007: 0.10
+      MKT_CGB_10Y: 0.18
+      MKT_CURVE_10Y1Y: 0.12
+      CN_M2: 0.14
+      CN_TSF: 0.14
+      MKT_CREDIT_SPREAD_3Y: 0.10
+    external:
+      CN_EXPORT: 0.30
+      CN_IMPORT: 0.14
+      CN_PMI_EXPORT: 0.16
+      HF_BALTIC: 0.14
+      MKT_USDCNY: 0.26
+
+# ---------- 异常触发（Spec §37） ----------
+# 满足任意一条即标记 RESEARCH_CANDIDATE
+anomaly_triggers:
+  - id: ZSCORE_EXTREME
+    condition: "abs(zscore_1y) >= 2"
+  - id: PERCENTILE_LOW
+    condition: "percentile_3y <= 0.05"
+  - id: PERCENTILE_HIGH
+    condition: "percentile_3y >= 0.95"
+  - id: FIVE_DAY_MOVE_EXTREME
+    condition: "abs(d5) >= percentile_history_95"
+  - id: THREE_SAME_DIRECTION
+    condition: "count(dimension_signals == same_direction) >= 3"
+  - id: CROSS_ASSET_DIVERGENCE
+    condition: "see divergence_rules below"
+
+# ---------- 背离检测（Spec §39，本模块最高价值功能之一） ----------
+divergence_rules:
+  - id: MACRO_MARKET_DIVERGENCE
+    name_cn: 宏观高频改善 vs 金融市场不确认
+    fundamental_side:  [CN_PMI, CN_PMI_ORDER, HF_COPPER, CN_RE_SALES_AREA, HF_REBAR]
+    market_side:       [MKT_CGB_10Y, MKT_HS300, MKT_USDCNY]
+    logic: >-
+      基本面组多数上行（zscore > +0.5）且市场组多数下行（zscore < -0.5），
+      或反向组合，则触发。
+    question: 为什么经济高频在改善，但金融市场并不确认？
+    severity: high
+
+  - id: PROPERTY_CREDIT_DIVERGENCE
+    name_cn: 地产销售 vs 地产信用
+    fundamental_side:  [CN_RE_SALES_YOY, CN_RE_START]
+    market_side:       [MKT_AAA_3Y, MKT_CREDIT_SPREAD_3Y]
+    logic: >-
+      销售回升但信用利差走阔，或销售走弱但利差收窄。
+    question: 地产是否出现信用周期反转？
+    severity: high
+
+  - id: LIQUIDITY_GROWTH_DIVERGENCE
+    name_cn: 资金面宽松 vs 增长预期
+    fundamental_side:  [MKT_DR007, MKT_R007]
+    market_side:       [MKT_CGB_10Y, CN_PMI_ORDER]
+    logic: >-
+      资金利率显著下行（宽松）但长端利率上行且订单走弱。
+    question: 宽松为何未能传导至增长预期？
+    severity: medium
+
+  - id: EXTERNAL_INTERNAL_DIVERGENCE
+    name_cn: 外需 vs 内需
+    fundamental_side:  [CN_EXPORT, CN_PMI_EXPORT, HF_BALTIC]
+    market_side:       [CN_RETAIL, CN_IP]
+    logic: >-
+      外需组与内需组方向显著相反。
+    question: 外需拉动能否对冲内需疲弱？
+    severity: medium
+
+# ---------- 新鲜度判定（Spec §13） ----------
+freshness:
+  daily:
+    fresh_within_days: 1
+    stale_after_trading_days: 3
+  weekly:
+    fresh_within_days: 8
+    stale_after_days: 21
+  monthly:
+    fresh_within_days: 45
+    stale_after_days: 75
+  quarterly:
+    fresh_within_days: 130
+    stale_after_days: 200
+  states: [FRESH, EXPECTED, STALE, MISSING, ERROR]
+  rule: >-
+    月频指标在其下一个发布窗口到来前，一律视为 EXPECTED，不得判为 STALE。
+    例：CPI 最新观测 2026-08，频率 monthly → EXPECTED（因为 9 月 CPI 尚未发布）。
+
+# ---------- 市场归因权重（DeerFlow 介入门槛，Spec §38） ----------
+escalation:
+  default_path: "Data Pipeline → Dashboard"
+  research_path: "Data Pipeline → RESEARCH_CANDIDATE → DeerFlow → 研究解释"
+  trigger_conditions:
+    - anomaly_triggers_hit >= 1
+    - divergence_rules_hit >= 1
+  suppress:
+    - 常规日常更新不调用 LLM
+    - 单指标小幅波动不调用 LLM

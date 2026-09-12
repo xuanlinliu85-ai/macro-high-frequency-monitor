@@ -1,0 +1,20 @@
+{
+  "name": "macro-high-frequency-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "中国宏观高频监测：69 项宏观指标 + 61 个期货品种，纯代码算六维评分/异常/背离/当日显著偏离，产出规则化日报与离线工作台",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "collect": "node scripts/macro-collect.mjs",
+    "snapshot": "node scripts/macro-snapshot.mjs",
+    "report": "node scripts/macro-report.mjs",
+    "workbench": "node scripts/macro-workbench.mjs",
+    "run": "node scripts/macro-collect.mjs && node scripts/macro-snapshot.mjs && node scripts/macro-report.mjs && node scripts/macro-workbench.mjs",
+    "run:offline": "node scripts/macro-snapshot.mjs && node scripts/macro-report.mjs && node scripts/macro-workbench.mjs",
+    "verify": "node scripts/verify.mjs",
+    "install-skill": "node scripts/macro-install-skill.mjs",
+    "check-skill": "node scripts/macro-install-skill.mjs --check"
+  }
+}
