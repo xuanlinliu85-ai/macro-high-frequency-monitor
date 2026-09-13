@@ -132,7 +132,7 @@ gate("13", "divergence schema 可执行且无 eval", () => {
 });
 gate("14", "文档与 package 一致", () => {
   const pkg = JSON.parse(read("package.json"));
-  const expected = ["collect", "snapshot", "report", "workbench", "run", "run:offline", "verify", "check-skill", "install-skill"];
+  const expected = ["collect", "snapshot", "report", "workbench", "handoff", "check-handoff", "parity", "publish-handoff", "run", "run:offline", "verify", "check-skill", "install-skill", "check-installed"];
   for (const command of expected) assert(pkg.scripts[command], `缺 npm script ${command}`);
   const docs = [read("README.md"), read("MANIFEST.md"), read("SKILL.md")].join("\n");
   for (const stale of ["app/monitor/macro", "contracts/", "db/schema", "drizzle/", "macro:test", "macro:install-skill"]) assert(!docs.includes(stale), `文档残留 ${stale}`);
@@ -163,12 +163,19 @@ gate("17", "安装包完整性", () => {
   assert(/"ci",\s*"--omit=dev"/.test(installer), "installer 未使用 npm ci --omit=dev");
   assert(/runtimeImportSmoke\(staging\)/.test(installer) && /runtimeImportSmoke\(target\)/.test(installer), "staging/正式安装缺 runtime import smoke");
   assert(!/\.filter\([^\n]*existsSync/.test(installer), "install plan 先过滤缺失文件");
-  return "required roots · package lock · npm ci · runtime import smoke";
+  for (const file of ["scripts/run-daily.ps1", "scripts/install-windows-task.ps1", "scripts/uninstall-windows-task.ps1", "scripts/macro-ai-handoff.mjs", "scripts/macro-check-handoff.mjs", "scripts/macro-parity-check.mjs"]) assert(existsSync(resolve(root, file)), `自动运行文件缺失 ${file}`);
+  const runner = read("scripts/run-daily.ps1");
+  for (const command of ["collect", "snapshot", "report", "workbench", "handoff", "check-handoff"]) assert(runner.includes(`\"${command}\"`), `runner 缺步骤 ${command}`);
+  assert(/ExpectedCommit/.test(runner) && /sourceDirty/.test(runner), "runner 缺 canonical source gate");
+  assert(/LEGACY_INSECURE_UPSTREAM/.test(runner) && /AllowLegacyInsecureUpstream/.test(runner), "runner 缺 legacy 二次授权");
+  return "required roots · lockfile · runtime smoke · canonical Windows runner";
 });
 gate("18", "源码与动态数据隔离", () => {
   const trackedLike = ["SKILL.md", "MANIFEST.md", "README.md", "package.json", ...walk("references"), ...walk("scripts"), ...walk("templates"), ...walk("docs"), ...walk("public/vendor")];
   assert(!trackedLike.some(file => /(^|\/)work\//.test(file)), "源码进入 work/");
   assert(!trackedLike.some(file => /macro-(?:snapshot|daily-report|workbench)\.(?:json|md|html)$/.test(file)), "动态产物进入默认安装源");
+  const ignore = read(".gitignore");
+  assert(/^work\/$/m.test(ignore) && /^dist\/$/m.test(ignore), "runner log 或 AI handoff 未隔离出源码");
   return `${trackedLike.length} distributable source files`;
 });
 

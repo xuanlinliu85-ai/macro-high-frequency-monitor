@@ -39,3 +39,13 @@
 ## 本次升级边界
 
 继续使用现有 `collect → snapshot → report → workbench` 链路、同一份 `MACRO_SNAPSHOT`、同一个模板、同一个 ECharts 和同一个安装器。升级直接修改现有文件，不引入并行实现。
+
+## Windows Auto Runner 审计（2026-09-13）
+
+- canonical repo：现有独立仓库；基线 `main` 为 `e4ffa942cdf54734953e70557906004d39d387f2`，工作树干净。
+- package 2.0.2 已提供 `collect`、`snapshot`、`report`、`workbench`、verify 与安全安装闭环。
+- 仓库此前没有 Windows unattended runner、Task Scheduler 安装器、AI handoff contract、parity checker 或 ai-runtime publisher。
+- `.gitignore` 已隔离 `work/` 与三类 public runtime artifact；本次将 `dist/` 纳入相同运行期隔离。
+- installer 递归包含 `scripts/` 与 `docs/`，新增薄编排文件会进入 Skill source manifest，无需建立第二套安装系统。
+- iFinD local provider 继续动态 import 外部 capability；runner 只显式设置既有 provider 环境并保留 `LEGACY_INSECURE_UPSTREAM` 分类。
+- 实施分支：`codex/windows-auto-runner`。Task Scheduler 注册将在 runner 手工验收和分支合并后执行，确保注册任务指向 canonical commit。

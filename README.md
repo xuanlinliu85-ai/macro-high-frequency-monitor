@@ -24,11 +24,22 @@ npm run collect
 npm run snapshot
 npm run report
 npm run workbench
+npm run handoff
+npm run check-handoff
+npm run parity -- --left <snapshot-a> --right <snapshot-b>
 npm run run
 npm run run:offline
 npm run verify
 npm run check-skill
 ```
+
+## Windows 自动运行与 AI handoff
+
+Windows runner 只编排现有 `collect → snapshot → report → workbench` 主链，并追加 `handoff → check-handoff`。它要求完整 `ExpectedCommit`、干净的 tracked source、可定位的 Node/npm，以及对 `LEGACY_INSECURE_UPSTREAM` 的显式授权；日志写入 `work/logs/`并执行凭据脱敏。
+
+`npm run handoff` 从 `MACRO_SNAPSHOT 1.1.0` 生成 `dist/ai-handoff-latest.json`，保留 headline、六维状态、异常、背离、聚合、新鲜度与期货当前状态，并移除历史序列、observations 与 spread points。`npm run check-handoff` 校验 contract、source SHA/commit/clean、六维、产业链 edges 真源、raw series 与凭据隔离。
+
+Task Scheduler 注册、手工 runner 验证、parity 与可选 `ai-runtime` 发布命令见 `docs/WINDOWS_AUTOMATION.md`。发布器只接受预先存在且位于指定 `ai-runtime` 分支的 worktree，发布失败不改变本地主链产物。
 
 采集模式通过 `MACRO_MODE=daily|release|full` 设置。iFinD provider 默认 fail closed：`IFIND_PROVIDER` 必须显式设置为 `local` 或 `https-mcp`，系统不会隐式选择连接路径。
 
@@ -70,4 +81,4 @@ docs/
 public/vendor/
 ```
 
-升级前审计见 `docs/CURRENT_STATE_AUDIT.md`，数据契约见 `docs/DATA_CONTRACT.md`，架构不变量见 `docs/ARCHITECTURE.md`。
+升级前与 Windows runner 审计见 `docs/CURRENT_STATE_AUDIT.md`，数据契约见 `docs/DATA_CONTRACT.md`，架构不变量见 `docs/ARCHITECTURE.md`，自动运行说明见 `docs/WINDOWS_AUTOMATION.md`。

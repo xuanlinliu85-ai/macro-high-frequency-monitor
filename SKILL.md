@@ -31,6 +31,9 @@ npm run collect
 npm run snapshot
 npm run report
 npm run workbench
+npm run handoff
+npm run check-handoff
+npm run parity -- --left <snapshot-a> --right <snapshot-b>
 npm run run
 npm run run:offline
 npm run verify
@@ -73,6 +76,15 @@ npm run check-installed
 - `public/macro-daily-report.md`：规则渲染的完整日报。
 - `public/macro-workbench.html`：自包含、离线可开的 V2 Macro Cockpit。
 - `work/macro/report.json`：日报结构化区块。
+- `dist/ai-handoff-latest.json`：由 snapshot 派生的精简 AI 交接契约，不含 observations、历史序列、spread points 或凭据。
+
+## Windows 自动运行
+
+`scripts/run-daily.ps1` 是现有主链的薄编排层。运行时必须提供完整 `ExpectedCommit`，tracked source 保持干净，并显式提供 `IFIND_LOCAL_HOME` 与 `-AllowLegacyInsecureUpstream`。runner 依次调用 package scripts，任何步骤失败即停止，日志写入 `work/logs/`。
+
+Task Scheduler 使用 `scripts/install-windows-task.ps1` 注册工作日 15:20 任务。先在目标 commit 手工运行 runner，再注册任务。卸载使用 `scripts/uninstall-windows-task.ps1`。完整参数、安全边界、parity 与可选发布流程见 `docs/WINDOWS_AUTOMATION.md`。
+
+AI 分析直接消费已通过 `npm run check-handoff` 的 handoff 或 canonical snapshot；信号、评分、异常与背离继续以 `macro-snapshot.mjs` 的输出为准。
 
 ## 安装
 
