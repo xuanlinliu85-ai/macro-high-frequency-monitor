@@ -63,6 +63,7 @@ npm run check-installed
 - daily / release / full 使用增量合并。
 - 源码和配置位于 git 跟踪目录；`work/` 保存运行产物。
 - API 凭据来自环境变量，安装包排除 `.env`、授权历史与动态数据。
+- iFinD 连接同时要求 `IFIND_API_KEY` 与显式 `IFIND_MCP_BASE_URL`。HTTPS endpoint 直接使用；可信内网/VPN 的 HTTP endpoint 由 `IFIND_MCP_ALLOW_INSECURE_HTTP=1` 显式授权。API key 通过 `Authorization` header 传输。
 
 ## 输出
 
@@ -73,4 +74,4 @@ npm run check-installed
 
 ## 安装
 
-安装器在 Skill discovery root 外完成 staging 验证和 SHA manifest，随后备份现有正式版本并以 rename 切换。`--check-installed` 只读比较安装清单 SHA-256。
+安装器在 Skill discovery root 外复制 source 与 `package-lock.json`，执行 `npm ci --omit=dev` 和 `scripts/ifind-mcp-client.mjs` runtime import smoke，再完成 verify 与 SHA manifest。staging 全部通过后备份现有正式版本并以 rename 切换；依赖安装失败时正式版本保持原状。正式安装后重复 import smoke。`--check-installed` 只读比较 lockfile 与全部 source SHA-256，并复核 runtime import；`node_modules` 由 lockfile 重建，不纳入 SHA manifest。

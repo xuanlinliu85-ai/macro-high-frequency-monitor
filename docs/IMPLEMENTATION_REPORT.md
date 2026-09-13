@@ -11,11 +11,11 @@ V2 在原独立仓库上完成治理、频率与可视化升级。Current State 
 - 六维加入 score axis 与语义标签；综合分明确为宏观支持度 / 扩张友好度观察指标。
 - report 成为 render-only 层；结论级 delta、聚合、异常、偏离和背离由 snapshot 输出。
 - 工作台升级为浅色 Macro Cockpit，保留完整 drill-down 与 canvas 恢复体系。
-- verifier 升级为 18 项 gate。
+- verifier 升级为 20 项 gate。
 - 安装器加入包外 staging、旧版备份、SHA manifest、rename 切换、回滚与 `--check-installed`。
 
 ## 版本
 
-- package：2.0.0
+- package：2.0.1
 - snapshot：`MACRO_SNAPSHOT` 1.1.0
 - report：`MACRO_DAILY_REPORT` 1.1.0

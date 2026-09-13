@@ -94,9 +94,15 @@ export function buildFuturesAnalysis({ config, varieties, seriesById }) {
       points: points.slice(-520).map(point => [point.d, point.v]) };
   }
 
+  const graphNodes = varieties.map(item => ({ id: item.id, name_cn: item.name_cn, chain: item.chain }));
+  const graphEdges = (config.futuresChains || []).flatMap(chain => (chain.edges || []).map(edge => ({
+    source: edge.source, target: edge.target, relation: edge.relation || null, chain: chain.id,
+  })));
+
   return { contract: "MACRO_FUTURES", chainCount: chains.length, varietyCount: varieties.length,
     liveVarietyCount: active.length, chains, varieties, heatmap,
     movers: { window: "d5", up: ranked.slice(0, limit).map(pick), down: ranked.slice(-limit).reverse().map(pick) },
+    graph: { nodes: graphNodes, edges: graphEdges },
     rawSpreads: (config.futuresSpreads || []).map(definition => ({ definition, series: rawSpreadSeries(definition, seriesById) })),
     trends };
 }

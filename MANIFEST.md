@@ -31,8 +31,8 @@ iFinD
 | `scripts/macro-futures.mjs` | 已算品种状态的链级聚合与 raw spread series |
 | `scripts/macro-report.mjs` | render-only 日报 |
 | `templates/macro/workbench.template.html` | 唯一 Macro Cockpit 模板 |
-| `scripts/verify.mjs` | 18 项静态与契约 gate |
-| `scripts/macro-install-skill.mjs` | staging、备份、原子切换与 SHA 校验 |
+| `scripts/verify.mjs` | 20 项静态与契约 gate |
+| `scripts/macro-install-skill.mjs` | staging npm ci、runtime import smoke、备份、原子切换与 source SHA 校验 |
 
 ## 命令
 
@@ -53,11 +53,11 @@ npm run check-installed
 
 ## 分发清单
 
-默认安装递归包含 `references/`、`scripts/`、`templates/`、`docs/`、`public/vendor/`，并包含 `SKILL.md`、`MANIFEST.md`、`README.md`、`package.json`。动态产物由 `--with-data` 显式选择。
+默认安装递归包含 `references/`、`scripts/`、`templates/`、`docs/`、`public/vendor/`，并包含 `SKILL.md`、`MANIFEST.md`、`README.md`、`package.json`、`package-lock.json`。动态产物由 `--with-data` 显式选择。
 
 ## 状态
 
-- package：2.0.0
+- package：2.0.1
 - snapshot contract：`MACRO_SNAPSHOT` 1.1.0
 - 六维权重：DRAFT
 - 工作台：浅色 V2 Macro Cockpit，单一 ECharts，自包含离线文件

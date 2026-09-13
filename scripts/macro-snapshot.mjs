@@ -109,7 +109,22 @@ for (const item of config.derived) {
   derivedSeries.set(item.id, series);
 }
 
-function statusFor(latestDate, frequency) {
+function addDays(date, days) {
+  const value = new Date(`${date}T00:00:00Z`);
+  value.setUTCDate(value.getUTCDate() + days);
+  return value.toISOString().slice(0, 10);
+}
+function nextPeriodEnd(latestDate, frequency) {
+  const value = new Date(`${latestDate}T00:00:00Z`);
+  if (frequency === "weekly") return addDays(latestDate, 7);
+  if (frequency === "monthly") return new Date(Date.UTC(value.getUTCFullYear(), value.getUTCMonth() + 2, 0)).toISOString().slice(0, 10);
+  if (frequency === "quarterly") {
+    const nextQuarterEndMonth = Math.floor(value.getUTCMonth() / 3) * 3 + 5;
+    return new Date(Date.UTC(value.getUTCFullYear(), nextQuarterEndMonth + 1, 0)).toISOString().slice(0, 10);
+  }
+  return addDays(latestDate, 1);
+}
+function statusFor(latestDate, frequency, release) {
   if (!latestDate) return { status: "MISSING", ageDays: null };
   const ageDays = dayDiff(latestDate, TODAY);
   const rule = config.freshness[frequency];
@@ -120,6 +135,15 @@ function statusFor(latestDate, frequency) {
     : requiredNumber(rule.discontinued_after_calendar_days, `freshness.${frequency}.discontinued_after_calendar_days`);
   if (discontinued !== null && ageDays > discontinued) return { status: "DISCONTINUED", ageDays };
   if (ageDays <= fresh) return { status: "FRESH", ageDays };
+  if (release) {
+    const startLag = requiredNumber(release.window_start_calendar_days_after_period_end, "indicator.release.window_start_calendar_days_after_period_end");
+    const endLag = requiredNumber(release.window_end_calendar_days_after_period_end, "indicator.release.window_end_calendar_days_after_period_end");
+    if (startLag < 0 || endLag < startLag) throw new Error("indicator.release 发布窗口无效");
+    const periodEnd = nextPeriodEnd(latestDate, frequency);
+    const windowStart = addDays(periodEnd, startLag);
+    const windowEnd = addDays(periodEnd, endLag);
+    return { status: TODAY <= windowEnd ? "EXPECTED" : "STALE", ageDays, releaseWindow: { start: windowStart, end: windowEnd } };
+  }
   if (ageDays <= stale) return { status: "EXPECTED", ageDays };
   return { status: "STALE", ageDays };
 }
@@ -168,7 +192,7 @@ function changeView(meta, stats) {
 const states = config.indicators.map(meta => {
   const source = derivedSeries.has(meta.id) ? derivedSeries.get(meta.id) : seriesOf(meta.id);
   const stats = computeStats(source, meta.frequency || "monthly");
-  const freshness = statusFor(stats.latest?.date, meta.frequency || "monthly");
+  const freshness = statusFor(stats.latest?.date, meta.frequency || "monthly", meta.release);
   const direction = directionOf(meta);
   const dirZ = stats.z1y === null ? null : round(polarity[direction] * stats.z1y);
   const scorable = !["MISSING", "DISCONTINUED"].includes(freshness.status) && polarity[direction] !== 0 && dirZ !== null;
@@ -221,7 +245,7 @@ for (const state of states) {
   if (Number.isFinite(state.stats.z1y) && Math.abs(state.stats.z1y) >= anomalyZ) triggers.push({ id: "ZSCORE_EXTREME", value: Math.abs(state.stats.z1y) });
   if (Number.isFinite(state.stats.pct3y) && state.stats.pct3y <= anomalyLow) triggers.push({ id: "PERCENTILE_LOW", value: state.stats.pct3y });
   if (Number.isFinite(state.stats.pct3y) && state.stats.pct3y >= anomalyHigh) triggers.push({ id: "PERCENTILE_HIGH", value: state.stats.pct3y });
-  if (Number.isFinite(state.stats.moveExtreme) && state.stats.moveExtreme >= anomalyMove) triggers.push({ id: "FIVE_DAY_MOVE_EXTREME", value: state.stats.moveExtreme });
+  if (state.frequency === "daily" && Number.isFinite(state.stats.moveExtreme) && state.stats.moveExtreme >= anomalyMove) triggers.push({ id: "FIVE_DAY_MOVE_EXTREME", value: state.stats.moveExtreme });
   if (triggers.length && !["MISSING", "DISCONTINUED"].includes(state.status)) anomalies.push({ id: state.id, name_cn: state.name_cn,
     dimension: state.dimension, frequency: state.frequency, unit: state.unit, status: state.status, latest: state.stats.latest,
     z1y: state.stats.z1y, dirZ: state.dirZ, pct3y: state.stats.pct3y, changes: state.stats.changes, triggers,

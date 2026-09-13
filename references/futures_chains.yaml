@@ -77,41 +77,71 @@ futures_chains:
       - { name_cn: "上游原料", members: [FUT_I, FUT_JM, FUT_J, FUT_ZC] }
       - { name_cn: "中游合金", members: [FUT_SF, FUT_SM] }
       - { name_cn: "下游钢材", members: [FUT_RB, FUT_HC, FUT_SS] }
+    edges:
+      - { source: FUT_JM, target: FUT_J, relation: coking }
+      - { source: FUT_I, target: FUT_RB, relation: steelmaking }
+      - { source: FUT_I, target: FUT_HC, relation: steelmaking }
+      - { source: FUT_J, target: FUT_RB, relation: steelmaking }
+      - { source: FUT_J, target: FUT_HC, relation: steelmaking }
+      - { source: FUT_SF, target: FUT_RB, relation: alloy_input }
+      - { source: FUT_SM, target: FUT_RB, relation: alloy_input }
   - id: nonferrous
     name_cn: "有色金属"
     desc: "全球定价、金融属性最强的一类。铜是宏观需求的领先指标，铝受能耗与电解成本约束。"
     tiers:
       - { name_cn: "上游原料", members: [FUT_AO] }
       - { name_cn: "基本金属", members: [FUT_CU, FUT_AL, FUT_ZN, FUT_PB, FUT_NI, FUT_SN, FUT_BC] }
+    edges:
+      - { source: FUT_AO, target: FUT_AL, relation: smelting_input }
   - id: energy
     name_cn: "能源"
     desc: "原油是化工与运输成本的源头。燃料油/沥青/低硫燃料油是原油的直接裂解产物。"
     tiers:
       - { name_cn: "上游原油", members: [FUT_SC] }
       - { name_cn: "下游油品", members: [FUT_FU, FUT_LU, FUT_BU, FUT_PG] }
+    edges:
+      - { source: FUT_SC, target: FUT_FU, relation: refining }
+      - { source: FUT_SC, target: FUT_LU, relation: refining }
+      - { source: FUT_SC, target: FUT_BU, relation: refining }
   - id: chemical
     name_cn: "化工"
     desc: "三条主链：聚酯（PX→PTA→短纤/瓶片）、烯烃（甲醇/乙二醇→PP/塑料/PVC）、氯碱建材（纯碱→玻璃、烧碱→PVC）。链内价差反映加工利润的分配。"
     tiers:
       - { name_cn: "上游原料", members: [FUT_PX, FUT_MA, FUT_EG, FUT_SA, FUT_SH, FUT_EB, FUT_RU, FUT_NR, FUT_BR, FUT_SP] }
       - { name_cn: "下游成品", members: [FUT_TA, FUT_PF, FUT_PR, FUT_PP, FUT_L, FUT_V, FUT_FG, FUT_UR] }
+    edges:
+      - { source: FUT_PX, target: FUT_TA, relation: feedstock }
+      - { source: FUT_TA, target: FUT_PF, relation: polyester }
+      - { source: FUT_TA, target: FUT_PR, relation: polyester }
+      - { source: FUT_EG, target: FUT_PF, relation: polyester }
+      - { source: FUT_EG, target: FUT_PR, relation: polyester }
+      - { source: FUT_MA, target: FUT_PP, relation: methanol_to_olefins }
+      - { source: FUT_MA, target: FUT_L, relation: methanol_to_olefins }
+      - { source: FUT_SA, target: FUT_FG, relation: feedstock }
+      - { source: FUT_SH, target: FUT_V, relation: chlor_alkali_coproduct }
   - id: precious
     name_cn: "贵金属"
     desc: "实际利率与避险的镜像。金是货币属性，银兼具工业属性，金银比是风险偏好的辅助读数。"
     tiers:
       - { name_cn: "品种", members: [FUT_AU, FUT_AG] }
+    edges: []
   - id: ags
     name_cn: "农产品"
     desc: "天气与养殖周期驱动。油脂油料看南美/东南亚供给，玉米与豆粕决定养殖成本，生猪是通胀的末端读数。"
     tiers:
       - { name_cn: "上游原料", members: [FUT_A, FUT_C, FUT_P, FUT_LG] }
       - { name_cn: "下游成品", members: [FUT_M, FUT_Y, FUT_OI, FUT_RM, FUT_CS, FUT_JD, FUT_LH, FUT_SR, FUT_CF, FUT_AP, FUT_PK] }
+    edges:
+      - { source: FUT_A, target: FUT_M, relation: crushing }
+      - { source: FUT_A, target: FUT_Y, relation: crushing }
+      - { source: FUT_C, target: FUT_CS, relation: processing }
   - id: newenergy
     name_cn: "新能源·航运"
     desc: "广期所新能源金属反映产能周期与需求预期；集运欧线是外需与运力的直接读数。"
     tiers:
       - { name_cn: "新能源金属", members: [FUT_SI, FUT_LC, FUT_PS] }
       - { name_cn: "航运", members: [FUT_EC] }
+    edges: []
 
 # ============================================================
 # 品种明细（全部经实测验证）

@@ -155,7 +155,7 @@ anomaly_triggers:
   - id: PERCENTILE_HIGH
     condition: "percentile_3y >= 0.95"
   - id: FIVE_DAY_MOVE_EXTREME
-    condition: "abs(d5) >= percentile_history_95"
+    condition: "frequency == daily and abs(d5) >= percentile_history_95"
   - id: THREE_SAME_DIRECTION
     condition: "count(dimension_signals == same_direction) >= 3"
   - id: CROSS_ASSET_DIVERGENCE
@@ -224,8 +224,8 @@ freshness:
     stale_after_calendar_days: 200
   states: [FRESH, EXPECTED, STALE, DISCONTINUED, MISSING, ERROR]
   rule: >-
-    月频指标在其下一个发布窗口到来前，一律视为 EXPECTED，不得判为 STALE。
-    例：CPI 最新观测 2026-08，频率 monthly → EXPECTED（因为 9 月 CPI 尚未发布）。
+    指标存在 release metadata 时，优先按下一观测期的发布窗口判定 EXPECTED / STALE。
+    指标缺少 release metadata 时，使用对应 frequency 的 calendar-day default。
 
 # ---------- 市场归因权重（DeerFlow 介入门槛，Spec §38） ----------
 escalation:

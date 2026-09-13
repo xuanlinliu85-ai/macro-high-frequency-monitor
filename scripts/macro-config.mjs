@@ -36,7 +36,7 @@ function locateSkillDir() {
     "找不到宏观配置真源。期望在以下任一位置的 references/indicator_registry.yaml：\n" +
     candidates.map(d => `  - ${d}`).join("\n") +
     "\n独立仓库与安装包内应为 references/indicator_registry.yaml；" +
-    "若已安装到 Codex，重跑 `npm run macro:install-skill` 即可。"
+    "若已安装到 Codex，重跑 `npm run install-skill` 即可。"
   );
 }
 

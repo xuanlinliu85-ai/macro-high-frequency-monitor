@@ -14,7 +14,7 @@ const checkInstalled = flag("check-installed");
 const withData = flag("with-data");
 const codexRoot = join(homedir(), ".codex");
 const target = resolve(value("target") || join(codexRoot, "skills", "macro-high-frequency-monitor"));
-const requiredFiles = ["SKILL.md", "MANIFEST.md", "README.md", "package.json"];
+const requiredFiles = ["SKILL.md", "MANIFEST.md", "README.md", "package.json", "package-lock.json"];
 const requiredRoots = ["references", "scripts", "templates", "docs", "public/vendor"];
 const optionalRoots = ["examples"];
 const dataFiles = ["public/macro-snapshot.json", "public/macro-daily-report.md"];
@@ -44,6 +44,22 @@ function copyPlan(plan, destination) {
     mkdirSync(dirname(output), { recursive: true });
     copyFileSync(resolve(root, rel), output);
   }
+}
+function npmCli() {
+  const cli = String(process.env.npm_execpath || "").trim();
+  if (cli && /npm-cli\.js$/i.test(cli) && existsSync(cli)) return { command: process.execPath, prefix: [cli] };
+  return { command: process.platform === "win32" ? "npm.cmd" : "npm", prefix: [] };
+}
+function installProductionDependencies(destination) {
+  const npm = npmCli();
+  execFileSync(npm.command, [...npm.prefix, "ci", "--omit=dev", "--ignore-scripts", "--no-audit", "--no-fund"], {
+    cwd: destination, stdio: "inherit",
+  });
+}
+function runtimeImportSmoke(destination) {
+  execFileSync(process.execPath, ["--input-type=module", "--eval", "await import('./scripts/ifind-mcp-client.mjs')"], {
+    cwd: destination, stdio: "inherit",
+  });
 }
 function gitInfo() {
   try {
@@ -83,6 +99,9 @@ if (checkInstalled) {
   const expected = manifest(currentPlan);
   installed.files = expected.files;
   const failures = compareInstalled(target, installed);
+  if (!failures.length) {
+    try { runtimeImportSmoke(target); } catch { failures.push("runtime import scripts/ifind-mcp-client.mjs"); }
+  }
   console.log(`installed target: ${target}`);
   console.log(failures.length ? failures.join("\n") : `SHA-256 一致：${installed.files.length} files`);
   if (failures.length) process.exitCode = 1;
@@ -106,6 +125,8 @@ if (checkInstalled) {
     const installed = manifest(plan);
     writeFileSync(join(staging, "INSTALLED.json"), JSON.stringify(installed, null, 2) + "\n", "utf8");
     try {
+      installProductionDependencies(staging);
+      runtimeImportSmoke(staging);
       execFileSync(process.execPath, [join(staging, "scripts", "verify.mjs")], { cwd: staging, stdio: "inherit" });
       execFileSync(process.execPath, [join(staging, "scripts", "macro-install-skill.mjs"), "--check"], { cwd: staging, stdio: "inherit" });
       const stagedFailures = compareInstalled(staging, installed);
@@ -121,6 +142,7 @@ if (checkInstalled) {
       renameSync(staging, target);
       const failures = compareInstalled(target, installed);
       if (failures.length) throw new Error(`安装后 SHA failure: ${failures.join(", ")}`);
+      runtimeImportSmoke(target);
       console.log(`staging: ${staging}`);
       console.log(`backup: ${backedUp ? backup : "none"}`);
       console.log(`installed: ${target}`);

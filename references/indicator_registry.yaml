@@ -7,12 +7,16 @@ source_of_truth: ifind
 
 # 六维归属（Spec §19）
 dimensions:
-  growth:      { name_cn: 增长, score_axis: expansion_support, high_label: 增长偏强, neutral_label: 增长中性, low_label: 增长偏弱, weight_source: [CN_PMI, CN_PMI_PROD, CN_IP, CN_PMI_PRICE] }
-  consumption: { name_cn: 消费, score_axis: demand_support, high_label: 消费偏强, neutral_label: 消费中性, low_label: 消费偏弱, weight_source: [CN_RETAIL, CN_RETAIL_CATERING, HF_AUTO_PROD] }
-  property:    { name_cn: 地产, score_axis: property_support, high_label: 地产改善, neutral_label: 地产中性, low_label: 地产承压, weight_source: [CN_RE_INV, CN_RE_START, CN_RE_COMPLETE_YOY, CN_RE_SALES_YOY, HF_GLASS, HF_REBAR] }
-  inflation:   { name_cn: 通胀, score_axis: inflation_friendliness, high_label: 价格环境友好, neutral_label: 价格环境中性, low_label: 价格压力偏强, weight_source: [CN_CPI, CN_CPI_FOOD, CN_CPI_NONFOOD, CN_PPI, HF_PORK, HF_BRENT] }
-  liquidity:   { name_cn: 流动性, score_axis: liquidity_support, high_label: 偏宽松, neutral_label: 中性, low_label: 偏紧, weight_source: [MKT_DR007, MKT_R007, MKT_CGB_10Y, CN_M2, CN_TSF] }
-  external:    { name_cn: 外需, score_axis: external_support, high_label: 外需偏强, neutral_label: 外需中性, low_label: 外需偏弱, weight_source: [CN_EXPORT, CN_IMPORT, CN_PMI_EXPORT, HF_BALTIC, CN_USDCNY] }
+  growth:      { name_cn: 增长, score_axis: expansion_support, high_label: 增长偏强, neutral_label: 增长中性, low_label: 增长偏弱 }
+  consumption: { name_cn: 消费, score_axis: demand_support, high_label: 消费偏强, neutral_label: 消费中性, low_label: 消费偏弱 }
+  property:    { name_cn: 地产, score_axis: property_support, high_label: 地产改善, neutral_label: 地产中性, low_label: 地产承压 }
+  inflation:   { name_cn: 通胀, score_axis: inflation_friendliness, high_label: 价格环境友好, neutral_label: 价格环境中性, low_label: 价格压力偏强 }
+  liquidity:   { name_cn: 流动性, score_axis: liquidity_support, high_label: 偏宽松, neutral_label: 中性, low_label: 偏紧 }
+  external:    { name_cn: 外需, score_axis: external_support, high_label: 外需偏强, neutral_label: 外需中性, low_label: 外需偏弱 }
+
+# 指标可选 release 元数据结构：
+# release: { window_start_calendar_days_after_period_end: N, window_end_calendar_days_after_period_end: M }
+# 仅在有可靠发布日历证据时填写；缺失时由 signal_rules.yaml 的 frequency default 判定。
 
 # ============================================================
 # L1 官方确认层（EDB，月/季频）
@@ -25,7 +29,7 @@ layer_official:
     frequency: quarterly
     unit: pct
     ifind: { tool: THS_EDB, field_code: M002834227, verified: true, latest_obs: "2026-06-30", latest_value: 4.3 }
-    transforms: [level, qoq, yoy]
+    transforms: [level]
     signal: { direction: higher_is_stronger }
     chart: { type: bar, default_window: 5y }
     importance: high

@@ -1,6 +1,6 @@
 {
   "name": "macro-high-frequency-monitor",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "description": "中国宏观高频监测：69 项宏观指标 + 61 个期货品种，纯代码算六维评分/异常/背离/当日显著偏离，产出规则化日报与离线工作台",
   "engines": {
