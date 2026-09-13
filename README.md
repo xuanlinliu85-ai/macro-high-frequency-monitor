@@ -30,7 +30,9 @@ npm run verify
 npm run check-skill
 ```
 
-采集模式通过 `MACRO_MODE=daily|release|full` 设置。iFinD 连接要求同时提供 `IFIND_API_KEY` 与显式的 `IFIND_MCP_BASE_URL`。HTTPS endpoint 直接使用；HTTP endpoint 仅适用于可信内网/VPN，并要求显式设置 `IFIND_MCP_ALLOW_INSECURE_HTTP=1`。API key 通过 `Authorization` header 传输，endpoint 中保持无凭据状态。
+采集模式通过 `MACRO_MODE=daily|release|full` 设置。生产默认使用 `IFIND_PROVIDER=local`，并通过 `IFIND_LOCAL_HOME` 指向已安装、已验证的本地 iFinD 能力根目录；Macro Monitor 动态 import 该目录下的 `scripts/ifind-mcp-client.mjs`，仅复用其 `listTools()`、`callTool()`、`close()` 接口，不复制或重写 THS 调用实现。
+
+当前本地模块的 upstream 是公网 HTTP，并通过 query credential 鉴权，安全分类为 `LEGACY_INSECURE_UPSTREAM`。该 provider 用于恢复既有生产兼容性，运行环境应采用可信网络隔离。官方 HTTPS MCP 完成验证后，可显式设置 `IFIND_PROVIDER=https-mcp`，同时提供 `IFIND_API_KEY` 与 `IFIND_MCP_BASE_URL`；API key 通过 `Authorization` header 传输，endpoint 中保持无凭据状态。可信内网/VPN 的 HTTP endpoint 还要求 `IFIND_MCP_ALLOW_INSECURE_HTTP=1`。
 
 ## Macro Cockpit
 

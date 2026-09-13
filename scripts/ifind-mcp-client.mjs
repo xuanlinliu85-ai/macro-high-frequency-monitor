@@ -1,5 +1,6 @@
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
+import { connectLocalIfind } from "./ifind-local-provider.mjs";
 
 function withTimeout(promise, timeoutMs, label) {
   let timer;
@@ -41,7 +42,7 @@ export function parseIfindResult(result) {
   try { return JSON.parse(text); } catch { return text; }
 }
 
-export async function connectIfind({ timeoutMs = 15_000 } = {}) {
+async function connectHttpsMcp({ timeoutMs = 15_000 } = {}) {
   const connection = configuredConnection();
   if (!connection) throw new Error("缺少 IFIND_API_KEY");
   const client = new Client({ name: "macro-high-frequency-monitor", version: "2.0.1" }, { capabilities: {} });
@@ -58,4 +59,11 @@ export async function connectIfind({ timeoutMs = 15_000 } = {}) {
     },
     async close() { await transport.close().catch(() => {}); },
   };
+}
+
+export async function connectIfind(options = {}) {
+  const provider = String(process.env.IFIND_PROVIDER || "local").trim().toLowerCase();
+  if (provider === "local") return connectLocalIfind(options);
+  if (provider === "https-mcp") return connectHttpsMcp(options);
+  throw new Error(`不支持的 IFIND_PROVIDER: ${provider}`);
 }
