@@ -1,6 +1,6 @@
 // 宏观高频监测 · 配置层加载器
 //
-// 单一真源：.agents/skills/macro-high-frequency-monitor/references/*.yaml（随仓库分发，受 git 跟踪）
+// 单一真源：包内 references/*.yaml（随仓库分发，受 git 跟踪）
 // 该 YAML 同时被 Codex 等 agent 技能消费，因此脚本不复制配置，只读取。
 //
 // 本文件自带一个「最小 YAML 子集解析器」——只覆盖本仓库配置实际使用的构造，
@@ -22,7 +22,7 @@ const hasRegistry = dir => existsSync(join(dir, "references", "indicator_registr
  * 也不依赖 DeerFlow —— 按治理约定 DeerFlow 已 deferred，运行时不得依赖它。
  *   1) MACRO_SKILL_DIR 环境变量（部署时可覆盖）
  *   2) 脚本上一级 —— 技能包被整体安装到 ~/.codex/skills/<name>/ 后的形态
- *   3) 仓库内 .agents/skills/macro-high-frequency-monitor —— 仓库源码形态
+ *   3) 兼容旧单体仓库的 .agents/skills/macro-high-frequency-monitor
  */
 function locateSkillDir() {
   const repoSkill = resolve(configHere, "../.agents/skills/macro-high-frequency-monitor");
@@ -35,8 +35,8 @@ function locateSkillDir() {
   throw new Error(
     "找不到宏观配置真源。期望在以下任一位置的 references/indicator_registry.yaml：\n" +
     candidates.map(d => `  - ${d}`).join("\n") +
-    "\n仓库内应为 .agents/skills/macro-high-frequency-monitor/references/indicator_registry.yaml；" +
-    "若已安装到 Codex，重跑 `npm run macro:install-skill` 即可。"
+    "\n独立仓库与安装包内应为 references/indicator_registry.yaml；" +
+    "若已安装到 Codex，重跑 `npm run install-skill` 即可。"
   );
 }
 
@@ -305,9 +305,18 @@ export function loadMacroConfig() {
     paths: { registryPath, rulesPath, futuresPath },
     dimensions: registry.dimensions || {},
     futuresChains: futures.futures_chains || [],
+    futuresSpreads: futures.spreads || [],
     hqFuturesFields: futures.hq_fields || {},
     weightProfile: rules.weight_profile || {},
     signalRules: rules.signal_rules || {},
+    standardization: rules.standardization || {},
+    scoreMapping: rules.score_mapping || {},
+    dimensionSignal: rules.dimension_signal || {},
+    deviation: rules.deviation || {},
+    anomaly: rules.anomaly || {},
+    futuresSignal: rules.futures_signal || {},
+    display: rules.display || {},
+    divergenceDefaults: rules.divergence_defaults || {},
     directionSemantics: rules.direction_semantics || {},
     anomalyTriggers: rules.anomaly_triggers || [],
     divergenceRules: rules.divergence_rules || [],

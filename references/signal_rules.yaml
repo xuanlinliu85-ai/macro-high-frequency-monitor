@@ -1,7 +1,65 @@
 # 宏观高频监测 · 信号规则
 # 依据 Spec §18 / §20 / §37 / §39。
 # 铁律：数值判定由代码执行，LLM 只解释已算好的 signal。禁止让模型算 zscore/percentile/change。
-version: "1.0"
+version: "2.0"
+
+# 所有生产判定值的唯一真源。脚本只解释这些声明，不保存第二份默认阈值。
+standardization:
+  windows:
+    daily:     { z1y: 250, p3y: 750, p5y: 1250 }
+    weekly:    { z1y: 52,  p3y: 156, p5y: 260 }
+    monthly:   { z1y: 12,  p3y: 36,  p5y: 60 }
+    quarterly: { z1y: 4,   p3y: 12,  p5y: 20 }
+  min_samples: { zscore: 4, percentile: 4, change_extreme: 20 }
+
+score_mapping:
+  center: 50
+  z_scale: 20
+  minimum: 0
+  maximum: 100
+  bands:
+    - { min: 62, label: 明显扩张 }
+    - { min: 55, label: 温和扩张 }
+    - { min: 45, label: 中性震荡 }
+    - { min: 38, label: 温和收缩 }
+    - { min: 0,  label: 明显收缩 }
+
+dimension_signal:
+  positive_z: 0.5
+  negative_z: -0.5
+
+deviation:
+  notable_change_extreme: 0.90
+  strong_change_extreme: 0.97
+  position_z_extreme: 2.0
+  position_percentile_high: 0.99
+  position_percentile_low: 0.01
+  oi_change_extreme: 0.30
+  display_limit_per_side: 6
+
+anomaly:
+  z_extreme: 2.0
+  percentile_low: 0.05
+  percentile_high: 0.95
+  move_extreme: 0.95
+  same_direction_count: 3
+  high_severity_triggers: [ZSCORE_EXTREME, PERCENTILE_LOW, PERCENTILE_HIGH]
+
+futures_signal:
+  tradable_max_calendar_days: 7
+  tier_min_members: 2
+  tier_gap_medium: 0.05
+  tier_gap_high: 0.10
+
+display:
+  movers_limit: 10
+  anomaly_limit: 10
+  futures_movers_limit: 12
+
+divergence_defaults:
+  positive_z: 0.5
+  negative_z: -0.5
+  minimum_usable_members: 2
 
 # ---------- 标准化阈值 ----------
 signal_rules:
@@ -97,7 +155,7 @@ anomaly_triggers:
   - id: PERCENTILE_HIGH
     condition: "percentile_3y >= 0.95"
   - id: FIVE_DAY_MOVE_EXTREME
-    condition: "abs(d5) >= percentile_history_95"
+    condition: "frequency == daily and abs(d5) >= percentile_history_95"
   - id: THREE_SAME_DIRECTION
     condition: "count(dimension_signals == same_direction) >= 3"
   - id: CROSS_ASSET_DIVERGENCE
@@ -107,59 +165,67 @@ anomaly_triggers:
 divergence_rules:
   - id: MACRO_MARKET_DIVERGENCE
     name_cn: 宏观高频改善 vs 金融市场不确认
-    fundamental_side:  [CN_PMI, CN_PMI_ORDER, HF_COPPER, CN_RE_SALES_AREA, HF_REBAR]
-    market_side:       [MKT_CGB_10Y, MKT_HS300, MKT_USDCNY]
-    logic: >-
-      基本面组多数上行（zscore > +0.5）且市场组多数下行（zscore < -0.5），
-      或反向组合，则触发。
+    evaluator: opposite_majority
+    value_field: dirZ
+    minimum_usable_members: 2
+    side_a: { label: 宏观高频, members: [CN_PMI, CN_PMI_ORDER, HF_COPPER, CN_RE_SALES_AREA, HF_REBAR] }
+    side_b: { label: 市场确认, members: [MKT_CGB_10Y, MKT_HS300, MKT_USDCNY] }
+    logic_cn: 两侧方向校正后的多数信号相反时触发。
     question: 为什么经济高频在改善，但金融市场并不确认？
     severity: high
 
   - id: PROPERTY_CREDIT_DIVERGENCE
     name_cn: 地产销售 vs 地产信用
-    fundamental_side:  [CN_RE_SALES_YOY, CN_RE_START]
-    market_side:       [MKT_AAA_3Y, MKT_CREDIT_SPREAD_3Y]
-    logic: >-
-      销售回升但信用利差走阔，或销售走弱但利差收窄。
+    evaluator: opposite_mean
+    value_field: dirZ
+    minimum_usable_members: 2
+    side_a: { label: 地产销售, members: [CN_RE_SALES_YOY, CN_RE_START] }
+    side_b: { label: 信用确认, members: [MKT_AAA_3Y, MKT_CREDIT_SPREAD_3Y] }
+    logic_cn: 地产销售与信用支持度均值方向相反时触发。
     question: 地产是否出现信用周期反转？
     severity: high
 
   - id: LIQUIDITY_GROWTH_DIVERGENCE
     name_cn: 资金面宽松 vs 增长预期
-    fundamental_side:  [MKT_DR007, MKT_R007]
-    market_side:       [MKT_CGB_10Y, CN_PMI_ORDER]
-    logic: >-
-      资金利率显著下行（宽松）但长端利率上行且订单走弱。
+    evaluator: opposite_majority
+    value_field: dirZ
+    minimum_usable_members: 2
+    side_a: { label: 流动性支持, members: [MKT_DR007, MKT_R007] }
+    side_b: { label: 增长确认, members: [MKT_CGB_10Y, CN_PMI_ORDER] }
+    logic_cn: 流动性支持与增长确认的多数信号相反时触发。
     question: 宽松为何未能传导至增长预期？
     severity: medium
 
   - id: EXTERNAL_INTERNAL_DIVERGENCE
     name_cn: 外需 vs 内需
-    fundamental_side:  [CN_EXPORT, CN_PMI_EXPORT, HF_BALTIC]
-    market_side:       [CN_RETAIL, CN_IP]
-    logic: >-
-      外需组与内需组方向显著相反。
+    evaluator: opposite_mean
+    value_field: dirZ
+    minimum_usable_members: 2
+    side_a: { label: 外需, members: [CN_EXPORT, CN_PMI_EXPORT, HF_BALTIC] }
+    side_b: { label: 内需, members: [CN_RETAIL, CN_IP] }
+    logic_cn: 外需与内需的方向校正均值相反时触发。
     question: 外需拉动能否对冲内需疲弱？
     severity: medium
 
 # ---------- 新鲜度判定（Spec §13） ----------
 freshness:
   daily:
-    fresh_within_days: 1
-    stale_after_trading_days: 3
+    fresh_within_calendar_days: 1
+    stale_after_calendar_days: 4
+    discontinued_after_calendar_days: 60
   weekly:
-    fresh_within_days: 8
-    stale_after_days: 21
+    fresh_within_calendar_days: 8
+    stale_after_calendar_days: 21
   monthly:
-    fresh_within_days: 45
-    stale_after_days: 75
+    fresh_within_calendar_days: 45
+    stale_after_calendar_days: 75
   quarterly:
-    fresh_within_days: 130
-    stale_after_days: 200
-  states: [FRESH, EXPECTED, STALE, MISSING, ERROR]
+    fresh_within_calendar_days: 130
+    stale_after_calendar_days: 200
+  states: [FRESH, EXPECTED, STALE, DISCONTINUED, MISSING, ERROR]
   rule: >-
-    月频指标在其下一个发布窗口到来前，一律视为 EXPECTED，不得判为 STALE。
-    例：CPI 最新观测 2026-08，频率 monthly → EXPECTED（因为 9 月 CPI 尚未发布）。
+    指标存在 release metadata 时，优先按下一观测期的发布窗口判定 EXPECTED / STALE。
+    指标缺少 release metadata 时，使用对应 frequency 的 calendar-day default。
 
 # ---------- 市场归因权重（DeerFlow 介入门槛，Spec §38） ----------
 escalation:
