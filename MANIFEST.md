@@ -61,7 +61,7 @@ npm run check-installed
 
 ## 分发清单
 
-默认安装递归包含 `references/`、`scripts/`、`templates/`、`docs/`、`public/vendor/`，并包含 `SKILL.md`、`MANIFEST.md`、`README.md`、`package.json`、`package-lock.json`。动态产物由 `--with-data` 显式选择。
+默认安装递归包含 `references/`、`scripts/`、`templates/`、`docs/`、`public/vendor/`，并包含 `.gitignore`、`SKILL.md`、`MANIFEST.md`、`README.md`、`package.json`、`package-lock.json`。动态产物由 `--with-data` 显式选择。
 
 ## 状态
 

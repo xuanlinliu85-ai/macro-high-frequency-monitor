@@ -62,7 +62,7 @@ npm run install-skill
 npm run check-installed
 ```
 
-安装器先在 `~/.codex/.skill-staging/` 执行 `npm ci --omit=dev`，再完成 runtime import smoke、配置、verify 与 source SHA 检查；全部通过后将现有版本移动到 `~/.codex/skill-backups/`，并切换到 `~/.codex/skills/macro-high-frequency-monitor`。依赖安装失败时 staging 保留供排查，正式 Skill 保持原版本。`--check-installed` 校验 `package-lock.json` 与全部 source SHA，并运行同一 import smoke；`node_modules` 由 lockfile 重建，不进入 SHA manifest。
+安装器把 `.gitignore`、源码与 lockfile 纳入 source manifest，先在 `~/.codex/.skill-staging/` 执行 `npm ci --omit=dev`，再完成 runtime import smoke、配置、verify 与 source SHA 检查；全部通过后将现有版本移动到 `~/.codex/skill-backups/`，并切换到 `~/.codex/skills/macro-high-frequency-monitor`。依赖安装失败时 staging 保留供排查，正式 Skill 保持原版本。`--check-installed` 校验 `package-lock.json` 与全部 source SHA，并运行同一 import smoke；`node_modules` 由 lockfile 重建，不进入 SHA manifest。
 
 `--with-data` 仅附带允许分发的最新 snapshot 与 Markdown 日报，用于离线阅读。完整离线 pipeline 使用 `work/macro/observations.json`。
 

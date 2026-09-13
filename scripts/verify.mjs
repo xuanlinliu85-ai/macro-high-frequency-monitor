@@ -160,6 +160,7 @@ gate("17", "安装包完整性", () => {
   const installer = read("scripts/macro-install-skill.mjs");
   for (const rootName of ["references", "scripts", "templates", "docs", "public/vendor"]) assert(installer.includes(`"${rootName}"`) || installer.includes(`'${rootName}'`), `installer 未递归包含 ${rootName}`);
   assert(/package\.json/.test(installer) && /package-lock\.json/.test(installer), "installer 缺 package manifest/lockfile");
+  assert(/\.gitignore/.test(installer), "installer 缺运行产物隔离规则");
   assert(/"ci",\s*"--omit=dev"/.test(installer), "installer 未使用 npm ci --omit=dev");
   assert(/runtimeImportSmoke\(staging\)/.test(installer) && /runtimeImportSmoke\(target\)/.test(installer), "staging/正式安装缺 runtime import smoke");
   assert(!/\.filter\([^\n]*existsSync/.test(installer), "install plan 先过滤缺失文件");

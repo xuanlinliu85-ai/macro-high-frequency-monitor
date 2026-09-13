@@ -88,4 +88,4 @@ AI 分析直接消费已通过 `npm run check-handoff` 的 handoff 或 canonical
 
 ## 安装
 
-安装器在 Skill discovery root 外复制 source 与 `package-lock.json`，执行 `npm ci --omit=dev` 和 `scripts/ifind-mcp-client.mjs` runtime import smoke，再完成 verify 与 SHA manifest。staging 全部通过后备份现有正式版本并以 rename 切换；依赖安装失败时正式版本保持原状。正式安装后重复 import smoke。`--check-installed` 只读比较 lockfile 与全部 source SHA-256，并复核 runtime import；`node_modules` 由 lockfile 重建，不纳入 SHA manifest。
+安装器在 Skill discovery root 外复制 `.gitignore`、source 与 `package-lock.json`，执行 `npm ci --omit=dev` 和 `scripts/ifind-mcp-client.mjs` runtime import smoke，再完成 verify 与 SHA manifest。staging 全部通过后备份现有正式版本并以 rename 切换；依赖安装失败时正式版本保持原状。正式安装后重复 import smoke。`--check-installed` 只读比较 lockfile 与全部 source SHA-256，并复核 runtime import；`node_modules` 由 lockfile 重建，不纳入 SHA manifest。
