@@ -16,6 +16,6 @@ V2 在原独立仓库上完成治理、频率与可视化升级。Current State 
 
 ## 版本
 
-- package：2.0.1
+- package：2.0.2
 - snapshot：`MACRO_SNAPSHOT` 1.1.0
 - report：`MACRO_DAILY_REPORT` 1.1.0

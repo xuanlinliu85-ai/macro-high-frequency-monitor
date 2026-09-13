@@ -45,7 +45,7 @@ export function parseIfindResult(result) {
 async function connectHttpsMcp({ timeoutMs = 15_000 } = {}) {
   const connection = configuredConnection();
   if (!connection) throw new Error("缺少 IFIND_API_KEY");
-  const client = new Client({ name: "macro-high-frequency-monitor", version: "2.0.1" }, { capabilities: {} });
+  const client = new Client({ name: "macro-high-frequency-monitor", version: "2.0.2" }, { capabilities: {} });
   const transport = new SSEClientTransport(connection.url, {
     eventSourceInit: { fetch: connection.authenticatedFetch },
     requestInit: { headers: { Authorization: connection.authorization } },
@@ -62,8 +62,14 @@ async function connectHttpsMcp({ timeoutMs = 15_000 } = {}) {
 }
 
 export async function connectIfind(options = {}) {
-  const provider = String(process.env.IFIND_PROVIDER || "local").trim().toLowerCase();
-  if (provider === "local") return connectLocalIfind(options);
+  const provider = String(process.env.IFIND_PROVIDER || "").trim().toLowerCase();
+  if (!provider) throw new Error("缺少 IFIND_PROVIDER；必须显式配置可选 provider：local 或 https-mcp");
+  if (provider === "local") {
+    if (process.env.IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM !== "1") {
+      throw new Error("IFIND_PROVIDER=local 拒绝连接：当前 local adapter 的已知 upstream 为 LEGACY_INSECURE_UPSTREAM（公网 HTTP + query credential）；显式接受兼容风险需设置 IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM=1");
+    }
+    return connectLocalIfind(options);
+  }
   if (provider === "https-mcp") return connectHttpsMcp(options);
   throw new Error(`不支持的 IFIND_PROVIDER: ${provider}`);
 }

@@ -152,7 +152,9 @@ gate("15", "单前端 / 单图表库", () => {
 gate("16", "Macro Cockpit 关键区", () => {
   const tpl = read("templates/macro/workbench.template.html");
   for (const id of ["topBar", "dimensionCards", "extremeScatter", "divergenceGrid", "crossAsset", "fundamentals", "supplyChain", "drillDown"]) assert(new RegExp(`id=["']${id}["']`).test(tpl), `缺 cockpit 区 ${id}`);
-  return "top / six dimensions / scatter / divergence / cross-asset / chain / drill-down";
+  assert(!/function\s+top\s*\(/.test(tpl), "workbench 使用了浏览器保留的全局 top 标识符");
+  assert(/function\s+renderTop\s*\(/.test(tpl) && /renderTop\(\);dimensionCards\(\)/.test(tpl), "顶部渲染入口缺失或未调用");
+  return "top / six dimensions / scatter / divergence / cross-asset / chain / drill-down · safe renderTop";
 });
 gate("17", "安装包完整性", () => {
   const installer = read("scripts/macro-install-skill.mjs");
@@ -176,10 +178,14 @@ gate("19", "iFinD endpoint 与凭据传输", () => {
   assert(!/DEFAULT_BASE_URL|219\.141\.246\.230|searchParams\.set\([^\n]*api_key/i.test(client), "客户端仍含公网 HTTP 默认值或 query api_key");
   assert(/IFIND_MCP_BASE_URL/.test(client) && /Authorization/.test(client), "客户端缺显式 endpoint 或 Authorization header");
   assert(/IFIND_MCP_ALLOW_INSECURE_HTTP/.test(client), "可信内网/VPN HTTP 缺显式授权开关");
-  assert(/IFIND_PROVIDER\s*\|\|\s*["']local["']/.test(client) && /https-mcp/.test(client), "provider 路由未以 local 为默认或缺少 https-mcp");
+  assert(!/IFIND_PROVIDER\s*\|\|\s*["'](?:local|https-mcp)["']/.test(client), "IFIND_PROVIDER 仍存在隐式默认值");
+  assert(/缺少 IFIND_PROVIDER/.test(client) && /local 或 https-mcp/.test(client), "IFIND_PROVIDER 未执行显式配置 gate");
+  assert(/IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM/.test(client) && /LEGACY_INSECURE_UPSTREAM/.test(client), "local provider 缺少 legacy upstream 二次授权 gate");
+  assert(/provider === ["']https-mcp["']/.test(client), "https-mcp provider 路径缺失");
   assert(/IFIND_LOCAL_HOME/.test(local) && /scripts["'],\s*["']ifind-mcp-client\.mjs/.test(local), "local provider 未从可移植根目录定位既有 client");
   assert(!/@modelcontextprotocol|THS_EDB|THS_HQ|THS_RQ|219\.141\.246\.230|api_key/i.test(local), "local provider 复制了 MCP/THS/credential 实现");
-  return "local import adapter · optional HTTPS MCP · no copied THS implementation";
+  assert(!/219\.141\.246\.230|searchParams\.set\([^\n]*api_key/i.test(`${client}\n${local}`), "provider 源码出现旧公网 IP 或 query api_key 实现");
+  return "fail closed · explicit legacy authorization · optional HTTPS MCP · thin local adapter";
 });
 
 gate("20", "release-aware freshness", () => {

@@ -63,7 +63,8 @@ npm run check-installed
 - daily / release / full 使用增量合并。
 - 源码和配置位于 git 跟踪目录；`work/` 保存运行产物。
 - API 凭据来自环境变量，安装包排除 `.env`、授权历史与动态数据。
-- iFinD 生产默认使用 `IFIND_PROVIDER=local`，由 `IFIND_LOCAL_HOME` 定位既有本地能力根目录，并动态 import `scripts/ifind-mcp-client.mjs`。Macro Monitor 只调用其 `listTools()`、`callTool()`、`close()`，既有 THS 实现保持单一真源。当前本地模块属于 `LEGACY_INSECURE_UPSTREAM`（公网 HTTP + query credential），用于既有生产兼容性并要求可信网络隔离。
+- iFinD provider 默认 fail closed；必须显式选择 `IFIND_PROVIDER=local` 或 `IFIND_PROVIDER=https-mcp`。
+- 兼容既有生产链路必须同时配置 `IFIND_PROVIDER=local`、`IFIND_LOCAL_HOME=<external capability root>`、`IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM=1`。Macro Monitor 动态 import capability root 下的 `scripts/ifind-mcp-client.mjs`，只调用其 `listTools()`、`callTool()`、`close()`，既有 THS 实现保持单一真源。当前本地模块属于 `LEGACY_INSECURE_UPSTREAM`（公网 HTTP + query credential）；授权变量只表示用户接受当前兼容风险，不改变底层 transport，也不构成安全连接。
 - 官方 HTTPS MCP 验证完成后可显式使用 `IFIND_PROVIDER=https-mcp`，同时配置 `IFIND_API_KEY` 与 `IFIND_MCP_BASE_URL`。HTTPS endpoint 直接使用；可信内网/VPN 的 HTTP endpoint 由 `IFIND_MCP_ALLOW_INSECURE_HTTP=1` 显式授权。API key 通过 `Authorization` header 传输。
 
 ## 输出

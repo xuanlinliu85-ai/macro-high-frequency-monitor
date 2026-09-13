@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.2 — 2026-09-13
+
+- iFinD provider 改为显式选择，未配置时 fail closed。
+- local provider 增加 `IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM=1` 二次授权门，持续标记 `LEGACY_INSECURE_UPSTREAM`。
+- 保持外部本地 client 动态 import 的薄 adapter，并保留显式 `https-mcp` provider。
+- workbench 顶部渲染入口改用 `renderTop()`，消除浏览器全局 `top` 标识符冲突。
+
 ## 2.0.1 — 2026-09-13
 
 - 用 `package-lock.json`、staging `npm ci --omit=dev`、安装前后 runtime import smoke 完成 Node 依赖闭环。

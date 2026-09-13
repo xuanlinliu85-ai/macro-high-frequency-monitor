@@ -57,7 +57,7 @@ npm run check-installed
 
 ## 状态
 
-- package：2.0.1
+- package：2.0.2
 - snapshot contract：`MACRO_SNAPSHOT` 1.1.0
 - 六维权重：DRAFT
 - 工作台：浅色 V2 Macro Cockpit，单一 ECharts，自包含离线文件
