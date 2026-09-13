@@ -28,8 +28,15 @@ function Write-RunLog([string] $Message) {
 }
 function Invoke-Logged([string] $Step, [string] $File, [string[]] $Arguments) {
     Write-RunLog "START $Step"
-    & $File @Arguments 2>&1 | ForEach-Object { Write-RunLog ([string] $_) }
-    if ($LASTEXITCODE -ne 0) { throw "$Step failed with exit code $LASTEXITCODE" }
+    $previousPreference = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    try {
+        & $File @Arguments 2>&1 | ForEach-Object { Write-RunLog ([string] $_) }
+        $nativeExitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $previousPreference
+    }
+    if ($nativeExitCode -ne 0) { throw "$Step failed with exit code $nativeExitCode" }
     Write-RunLog "PASS $Step"
 }
 try {
@@ -51,6 +58,7 @@ try {
     $env:IFIND_PROVIDER = "local"
     $env:IFIND_LOCAL_HOME = $IfindLocalHome
     $env:IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM = "1"
+    $env:IFIND_ALLOW_INSECURE_HTTP = "1"
     $env:MACRO_MODE = "daily"
     Write-RunLog "RUN sourceCommit=$actualCommit provider=local classification=LEGACY_INSECURE_UPSTREAM"
     foreach ($script in @("collect", "snapshot", "report", "workbench", "handoff", "check-handoff")) { Invoke-Logged "npm run $script" $npmFile ($npmPrefix + @("run", $script)) }

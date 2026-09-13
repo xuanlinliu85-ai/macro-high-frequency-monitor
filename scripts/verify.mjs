@@ -169,6 +169,7 @@ gate("17", "安装包完整性", () => {
   for (const command of ["collect", "snapshot", "report", "workbench", "handoff", "check-handoff"]) assert(runner.includes(`\"${command}\"`), `runner 缺步骤 ${command}`);
   assert(/ExpectedCommit/.test(runner) && /sourceDirty/.test(runner), "runner 缺 canonical source gate");
   assert(/LEGACY_INSECURE_UPSTREAM/.test(runner) && /AllowLegacyInsecureUpstream/.test(runner), "runner 缺 legacy 二次授权");
+  assert(/IFIND_ALLOW_INSECURE_HTTP/.test(runner), "runner 未把显式 legacy 授权传递给外部 capability policy");
   return "required roots · lockfile · runtime smoke · canonical Windows runner";
 });
 gate("18", "源码与动态数据隔离", () => {
