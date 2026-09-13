@@ -19,7 +19,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\run-daily.ps1 `
   -AllowLegacyInsecureUpstream
 ```
 
-Node/npm 不在 Task Scheduler 的 PATH 时，分别传入 `-NodeCommand` 和 `-NpmCommand`。`NpmCommand` 支持 `npm.cmd` 或明确的 `npm-cli.js` 路径。路径只保存在本机任务定义，不进入 Git。
+分别通过 `-NodeCommand` 和 `-NpmCommand` 固定 runtime。`NpmCommand` 支持 `npm.cmd` 或明确的 `npm-cli.js` 路径；runner 将 Node 目录加入当前任务进程 PATH，使 package scripts 使用同一个 Node。路径只保存在本机任务定义，不进入 Git，也不修改 User/Machine 环境变量。
 
 runner 明确使用 `IFIND_PROVIDER=local`，要求 external capability root 下存在 `scripts/ifind-mcp-client.mjs`，并要求二次授权。该显式授权同时传递为外部 capability 的 `IFIND_ALLOW_INSECURE_HTTP=1` 进程变量，使两层安全策略表达同一项用户授权；变量不写入系统环境。该路径的安全分类始终是 `LEGACY_INSECURE_UPSTREAM`。
 

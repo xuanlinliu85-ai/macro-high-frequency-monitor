@@ -52,9 +52,12 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "Unable to read source status" }
     if ($dirty) { throw "Tracked sourceDirty=true" }
     if ($NpmCommand.EndsWith(".js", [System.StringComparison]::OrdinalIgnoreCase)) {
-        $npmFile = (Get-Command $NodeCommand -ErrorAction Stop).Source
+        $NodeCommand = (Get-Command $NodeCommand -ErrorAction Stop).Source
+        $npmFile = $NodeCommand
         $npmPrefix = @((Resolve-Path -LiteralPath $NpmCommand).Path)
-    } else { $npmFile = (Get-Command $NpmCommand -ErrorAction Stop).Source; $npmPrefix = @() }
+    } else { $npmFile = (Get-Command $NpmCommand -ErrorAction Stop).Source; $npmPrefix = @(); $NodeCommand = (Get-Command $NodeCommand -ErrorAction Stop).Source }
+    $nodeDirectory = Split-Path -Parent $NodeCommand
+    $env:PATH = "$nodeDirectory;$env:PATH"
     $env:IFIND_PROVIDER = "local"
     $env:IFIND_LOCAL_HOME = $IfindLocalHome
     $env:IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM = "1"
