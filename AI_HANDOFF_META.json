@@ -1,0 +1,20 @@
+{
+  "contract": "AI_HANDOFF_META",
+  "version": "1.0.0",
+  "generatedAt": "2026-09-14T12:22:57.713Z",
+  "asOf": "2026-09-14",
+  "sourceSnapshotContract": "MACRO_SNAPSHOT",
+  "sourceSnapshotVersion": "1.1.0",
+  "sourceCodeCommit": "49d30a8a5bf3a65b2d0dc36f624c1619d31dc104",
+  "sourceDirty": false,
+  "files": [
+    {
+      "name": "ai-handoff-latest.json",
+      "sha256": "d910199137365834cff66c2eaae9f37d834f33ca09d39f53aee20af6c1888a18"
+    },
+    {
+      "name": "macro-daily-report.md",
+      "sha256": "5df7a36ad1fbe6674196799c290266293edd4776a2a02bbec99209a68ef194d7"
+    }
+  ]
+}
