@@ -15,6 +15,22 @@ collect → observations.json → snapshot → MACRO_SNAPSHOT 1.1.0 → report �
 - `macro-report.mjs` 是 render-only 层。
 - `workbench.template.html` 是唯一前端，图表库为 ECharts。
 
+### 日期语义
+
+- `runDate` 是采集请求窗口结束日，用于 freshness、运行日志与采集窗口。
+- `tradingDataAsOf` 是本轮有效日频数据的众数日期，也是兼容字段 `asOf`、日报标题、期货截止日与历史文件名的日期真源。
+- `generatedAt` 是产物实际生成的 UTC timestamp。
+- 日期解析只使用本轮已刷新、质量为 `OK` 的日频数据；众数覆盖率达到 `references/signal_rules.yaml` 的 `date_coherence.minimum_coverage` 才生成产物，低覆盖输出 `DATE_COHERENCE_FAILED` 并停止发布。
+
+周末与节假日运行会覆盖最近交易日对应的历史快照，不创建周末或节假日交易快照。
+
+### 原油价格身份
+
+- `HF_CRUDE` 显示为“INE原油主力连续（宏观评分口径）”，保留连续序列以维持既有六维评分历史。
+- `FUT_SC` 显示为“INE原油实际主力合约（产业链口径）”，使用现有真实主力解析与换月等比复权，并链接 `HF_CRUDE`。
+- 国内原油的默认市场展示使用 `FUT_SC`；宏观评分继续使用 `HF_CRUDE`。两种 view 明确保留各自身份，迁移到单一 canonical series 前先输出评分影响对比。
+- `HF_BRENT` 显示为“Brent连续（iFinD）”，口径为 iFinD/ICE continuous。Reuters front-month settlement 只能作为独立 external verification source 并排展示。
+
 ## 运行
 
 要求 Node 22+。仓库依赖由 `package-lock.json` 锁定，首次运行先执行 `npm ci`。
@@ -24,11 +40,22 @@ npm run collect
 npm run snapshot
 npm run report
 npm run workbench
+npm run handoff
+npm run check-handoff
+npm run parity -- --left <snapshot-a> --right <snapshot-b>
 npm run run
 npm run run:offline
 npm run verify
 npm run check-skill
 ```
+
+## Windows 自动运行与 AI handoff
+
+Windows runner 只编排现有 `collect → snapshot → report → workbench` 主链，并追加 `handoff → check-handoff`。它要求完整 `ExpectedCommit`、干净的 tracked source、可定位的 Node/npm，以及对 `LEGACY_INSECURE_UPSTREAM` 的显式授权；日志写入 `work/logs/`并执行凭据脱敏。
+
+`npm run handoff` 从 `MACRO_SNAPSHOT 1.1.0` 生成 `dist/ai-handoff-latest.json`，保留 headline、六维状态、异常、背离、聚合、新鲜度与期货当前状态，并移除历史序列、observations 与 spread points。`npm run check-handoff` 校验 contract、source SHA/commit/clean、六维、产业链 edges 真源、raw series 与凭据隔离。
+
+Task Scheduler 注册、手工 runner 验证、parity 与可选 `ai-runtime` 发布命令见 `docs/WINDOWS_AUTOMATION.md`。发布器只接受预先存在且位于指定 `ai-runtime` 分支的 worktree，发布失败不改变本地主链产物。
 
 采集模式通过 `MACRO_MODE=daily|release|full` 设置。iFinD provider 默认 fail closed：`IFIND_PROVIDER` 必须显式设置为 `local` 或 `https-mcp`，系统不会隐式选择连接路径。
 
@@ -51,7 +78,7 @@ npm run install-skill
 npm run check-installed
 ```
 
-安装器先在 `~/.codex/.skill-staging/` 执行 `npm ci --omit=dev`，再完成 runtime import smoke、配置、verify 与 source SHA 检查；全部通过后将现有版本移动到 `~/.codex/skill-backups/`，并切换到 `~/.codex/skills/macro-high-frequency-monitor`。依赖安装失败时 staging 保留供排查，正式 Skill 保持原版本。`--check-installed` 校验 `package-lock.json` 与全部 source SHA，并运行同一 import smoke；`node_modules` 由 lockfile 重建，不进入 SHA manifest。
+安装器把 `.gitignore`、源码与 lockfile 纳入 source manifest，先在 `~/.codex/.skill-staging/` 执行 `npm ci --omit=dev`，再完成 runtime import smoke、配置、verify 与 source SHA 检查；全部通过后将现有版本移动到 `~/.codex/skill-backups/`，并切换到 `~/.codex/skills/macro-high-frequency-monitor`。依赖安装失败时 staging 保留供排查，正式 Skill 保持原版本。`--check-installed` 校验 `package-lock.json` 与全部 source SHA，并运行同一 import smoke；`node_modules` 由 lockfile 重建，不进入 SHA manifest。
 
 `--with-data` 仅附带允许分发的最新 snapshot 与 Markdown 日报，用于离线阅读。完整离线 pipeline 使用 `work/macro/observations.json`。
 
@@ -70,4 +97,4 @@ docs/
 public/vendor/
 ```
 
-升级前审计见 `docs/CURRENT_STATE_AUDIT.md`，数据契约见 `docs/DATA_CONTRACT.md`，架构不变量见 `docs/ARCHITECTURE.md`。
+升级前与 Windows runner 审计见 `docs/CURRENT_STATE_AUDIT.md`，数据契约见 `docs/DATA_CONTRACT.md`，架构不变量见 `docs/ARCHITECTURE.md`，自动运行说明见 `docs/WINDOWS_AUTOMATION.md`。

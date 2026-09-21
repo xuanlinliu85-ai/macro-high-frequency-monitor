@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, extname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadMacroConfig, SKILL_DIR } from "./macro-config.mjs";
+import { resolveTradingDataAsOf } from "./macro-date-semantics.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = path => readFileSync(resolve(root, path), "utf8");
 const config = loadMacroConfig();
@@ -132,7 +133,7 @@ gate("13", "divergence schema 可执行且无 eval", () => {
 });
 gate("14", "文档与 package 一致", () => {
   const pkg = JSON.parse(read("package.json"));
-  const expected = ["collect", "snapshot", "report", "workbench", "run", "run:offline", "verify", "check-skill", "install-skill"];
+  const expected = ["collect", "snapshot", "report", "workbench", "handoff", "check-handoff", "parity", "publish-handoff", "run", "run:offline", "verify", "check-skill", "install-skill", "check-installed"];
   for (const command of expected) assert(pkg.scripts[command], `缺 npm script ${command}`);
   const docs = [read("README.md"), read("MANIFEST.md"), read("SKILL.md")].join("\n");
   for (const stale of ["app/monitor/macro", "contracts/", "db/schema", "drizzle/", "macro:test", "macro:install-skill"]) assert(!docs.includes(stale), `文档残留 ${stale}`);
@@ -160,15 +161,25 @@ gate("17", "安装包完整性", () => {
   const installer = read("scripts/macro-install-skill.mjs");
   for (const rootName of ["references", "scripts", "templates", "docs", "public/vendor"]) assert(installer.includes(`"${rootName}"`) || installer.includes(`'${rootName}'`), `installer 未递归包含 ${rootName}`);
   assert(/package\.json/.test(installer) && /package-lock\.json/.test(installer), "installer 缺 package manifest/lockfile");
+  assert(/\.gitignore/.test(installer), "installer 缺运行产物隔离规则");
   assert(/"ci",\s*"--omit=dev"/.test(installer), "installer 未使用 npm ci --omit=dev");
   assert(/runtimeImportSmoke\(staging\)/.test(installer) && /runtimeImportSmoke\(target\)/.test(installer), "staging/正式安装缺 runtime import smoke");
   assert(!/\.filter\([^\n]*existsSync/.test(installer), "install plan 先过滤缺失文件");
-  return "required roots · package lock · npm ci · runtime import smoke";
+  for (const file of ["scripts/run-daily.ps1", "scripts/install-windows-task.ps1", "scripts/uninstall-windows-task.ps1", "scripts/macro-ai-handoff.mjs", "scripts/macro-check-handoff.mjs", "scripts/macro-parity-check.mjs"]) assert(existsSync(resolve(root, file)), `自动运行文件缺失 ${file}`);
+  const runner = read("scripts/run-daily.ps1");
+  for (const command of ["collect", "snapshot", "report", "workbench", "handoff", "check-handoff"]) assert(runner.includes(`\"${command}\"`), `runner 缺步骤 ${command}`);
+  assert(/ExpectedCommit/.test(runner) && /sourceDirty/.test(runner), "runner 缺 canonical source gate");
+  assert(/LEGACY_INSECURE_UPSTREAM/.test(runner) && /AllowLegacyInsecureUpstream/.test(runner), "runner 缺 legacy 二次授权");
+  assert(/IFIND_ALLOW_INSECURE_HTTP/.test(runner), "runner 未把显式 legacy 授权传递给外部 capability policy");
+  assert(/nodeDirectory[\s\S]*env:PATH/.test(runner), "runner 未固定 Task Scheduler 子进程 Node PATH");
+  return "required roots · lockfile · runtime smoke · canonical Windows runner";
 });
 gate("18", "源码与动态数据隔离", () => {
   const trackedLike = ["SKILL.md", "MANIFEST.md", "README.md", "package.json", ...walk("references"), ...walk("scripts"), ...walk("templates"), ...walk("docs"), ...walk("public/vendor")];
   assert(!trackedLike.some(file => /(^|\/)work\//.test(file)), "源码进入 work/");
   assert(!trackedLike.some(file => /macro-(?:snapshot|daily-report|workbench)\.(?:json|md|html)$/.test(file)), "动态产物进入默认安装源");
+  const ignore = read(".gitignore");
+  assert(/^work\/$/m.test(ignore) && /^dist\/$/m.test(ignore), "runner log 或 AI handoff 未隔离出源码");
   return `${trackedLike.length} distributable source files`;
 });
 
@@ -193,6 +204,67 @@ gate("20", "release-aware freshness", () => {
   assert(/window_start_calendar_days_after_period_end/.test(registry), "registry 未声明 indicator release metadata 结构");
   assert(/statusFor\([^\n]*meta\.release/.test(snap) && /releaseWindow/.test(snap), "snapshot 未优先执行 indicator release window");
   return "indicator release window first · frequency calendar-day fallback";
+});
+
+gate("21", "交易数据日与运行日分离", () => {
+  const fixture = Array.from({ length: 35 }, (_, index) => ({ id: `D${index}`, refreshedThisRun: true,
+    quality: "OK", status: "FRESH", latest: { d: "2026-09-18" } }));
+  const resolved = resolveTradingDataAsOf(fixture, config.dateCoherence.minimum_coverage);
+  assert(resolved.date === "2026-09-18" && resolved.total === 35 && resolved.coverage === 1, "周末 fixture 未解析为 2026-09-18 / 35/35");
+  const snap = read("scripts/macro-snapshot.mjs"), report = read("scripts/macro-report.mjs"), handoff = read("scripts/macro-automation-lib.mjs");
+  assert(/const RUN_DATE = observations\.window\.end/.test(snap), "snapshot 缺 runDate 真源");
+  assert(/asOf: TRADING_DATA_AS_OF/.test(snap) && /`\$\{TRADING_DATA_AS_OF\}\.json`/.test(snap), "snapshot asOf 或历史文件名未使用交易数据日");
+  assert(/tradingDataAsOf \|\| S\.asOf/.test(report) && /`\$\{S\.asOf\}\.md`/.test(report), "report 未使用交易数据日");
+  assert(/tradingDataAsOf: snapshot\.tradingDataAsOf \|\| snapshot\.asOf/.test(handoff), "handoff 未传递交易数据日");
+  return "weekend fixture 2026-09-20 → trading data 2026-09-18 · 35/35";
+});
+
+gate("22", "日期一致性 fail closed", () => {
+  const fixture = [
+    ...Array.from({ length: 18 }, (_, index) => ({ id: `A${index}`, refreshedThisRun: true, quality: "OK", status: "FRESH", latest: { d: "2026-09-18" } })),
+    ...Array.from({ length: 17 }, (_, index) => ({ id: `B${index}`, refreshedThisRun: true, quality: "OK", status: "FRESH", latest: { d: "2026-09-17" } })),
+  ];
+  let rejected = false;
+  try { resolveTradingDataAsOf(fixture, config.dateCoherence.minimum_coverage); } catch (error) { rejected = /DATE_COHERENCE_FAILED/.test(error.message); }
+  assert(rejected, "18/17 分裂日期 fixture 未被拒绝");
+  assert(/date coherence/.test(read("scripts/macro-check-handoff.mjs")), "handoff/publish 缺日期一致性 gate");
+  return `minimum coverage ${config.dateCoherence.minimum_coverage} · split fixture rejected`;
+});
+
+gate("23", "国内原油映射与身份", () => {
+  const macro = config.indicators.find(item => item.id === "HF_CRUDE");
+  const future = config.futuresIndicators.find(item => item.id === "FUT_SC");
+  assert(future?.linked_macro_id === "HF_CRUDE", `FUT_SC linked_macro_id=${future?.linked_macro_id}`);
+  assert(macro?.series_role === "macro_continuous" && future?.series_role === "resolved_main_contract", "国内原油 series_role 不完整");
+  assert(macro?.name_cn !== future?.name_cn && /连续/.test(macro?.name_cn) && /实际主力合约/.test(future?.name_cn), "国内原油展示名未明确区分口径");
+  for (const item of [macro, future]) assert(item?.instrument_identity?.exchange === "INE" && item?.instrument_identity?.root_symbol === "SC", `${item?.id} instrument_identity 缺失`);
+  return `${macro.name_cn} ↔ ${future.name_cn} · linked HF_CRUDE`;
+});
+
+gate("24", "共享字段双身份显式治理", () => {
+  const groups = new Map();
+  for (const item of [...config.indicators, ...config.futuresIndicators]) {
+    if (!item.ifind?.tool || !item.ifind?.field_code) continue;
+    const key = `${item.ifind.tool}|${item.ifind.field_code}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(item);
+  }
+  const shared = [...groups.entries()].filter(([, members]) => members.length > 1 && members.some(item => item.layer === "futures") && members.some(item => item.layer !== "futures"));
+  for (const [key, members] of shared) {
+    assert(members.every(item => item.series_role), `${key} 缺 series_role: ${members.filter(item => !item.series_role).map(item => item.id).join(", ")}`);
+    assert(new Set(members.map(item => item.name_cn)).size === members.length, `${key} 存在同名身份`);
+  }
+  assert(/sharedSourceIdentities/.test(read("scripts/macro-snapshot.mjs")), "snapshot validation report 未列出共享字段身份");
+  return `${shared.length} shared HQ fields · roles/names explicit`;
+});
+
+gate("25", "Brent 连续合约口径", () => {
+  const brent = config.indicators.find(item => item.id === "HF_BRENT");
+  const identity = brent?.market_identity || {};
+  for (const key of ["vendor", "exchange", "price_basis", "field_code"]) assert(identity[key], `HF_BRENT market_identity.${key} 缺失`);
+  assert(identity.price_basis === "continuous" && /连续/.test(brent.name_cn) && /iFinD/i.test(brent.name_cn), "HF_BRENT 展示名或连续口径错误");
+  assert(identity.field_code === brent.ifind.field_code, "HF_BRENT metadata field_code 漂移");
+  return `${brent.name_cn} · ${identity.exchange}/${identity.price_basis}`;
 });
 
 console.log("Macro Cockpit V2 · Verification");

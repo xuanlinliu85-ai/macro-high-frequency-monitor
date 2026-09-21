@@ -159,6 +159,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: I00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 732.5 }
+    series_role: resolved_main_contract
     linked_macro_id: HF_IRON_ORE
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
@@ -176,6 +177,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: JM00.DCE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 1631 }
+    series_role: resolved_main_contract
     linked_macro_id: HF_COKING_COAL
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
@@ -209,6 +211,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: ZC00.CZC, verified: false, status: DISCONTINUED, last_trade: "", note: "全部为 0 或空" }
+    series_role: resolved_main_contract
     linked_macro_id: HF_THERMAL_COAL
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
@@ -258,6 +261,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: RB00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 3020 }
+    series_role: resolved_main_contract
     linked_macro_id: HF_REBAR
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
@@ -275,6 +279,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: HC00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 3295 }
+    series_role: resolved_main_contract
     linked_macro_id: HF_HRC
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
@@ -324,6 +329,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: CU00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 112840 }
+    series_role: resolved_main_contract
     linked_macro_id: HF_COPPER
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
@@ -341,6 +347,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: AL00.SHF, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 24495 }
+    series_role: resolved_main_contract
     linked_macro_id: HF_ALUMINUM
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
@@ -428,7 +435,7 @@ layer_futures:
     importance: medium
 
   - id: FUT_SC
-    name_cn: "原油"
+    name_cn: "INE原油实际主力合约（产业链口径）"
     chain: energy
     chain_cn: "能源"
     chain_tier: "上游原油"
@@ -438,7 +445,9 @@ layer_futures:
     frequency: daily
     unit: cny_per_barrel
     ifind: { tool: THS_HQ, field_code: SC00.INE, verified: true, history_days: 287, latest_obs: "2026-09-10", latest_value: 769 }
-    linked_macro_id: HF_BRENT
+    series_role: resolved_main_contract
+    instrument_identity: { exchange: INE, root_symbol: SC, currency: CNY, unit: cny_per_barrel }
+    linked_macro_id: HF_CRUDE
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }
     chart: { type: line, default_window: 1y }
@@ -775,6 +784,7 @@ layer_futures:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: FG00.CZC, verified: true, history_days: 267, latest_obs: "2026-09-10", latest_value: 885 }
+    series_role: resolved_main_contract
     linked_macro_id: HF_GLASS
     transforms: [level, d1, d5, d20, ma20, zscore_1y, percentile_1y]
     signal: { direction: contextual }

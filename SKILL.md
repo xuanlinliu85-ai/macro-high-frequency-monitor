@@ -31,6 +31,9 @@ npm run collect
 npm run snapshot
 npm run report
 npm run workbench
+npm run handoff
+npm run check-handoff
+npm run parity -- --left <snapshot-a> --right <snapshot-b>
 npm run run
 npm run run:offline
 npm run verify
@@ -55,6 +58,14 @@ npm run check-installed
 - 综合分表示“宏观支持度 / 扩张友好度的规则化观察指标”。六维权重保持 DRAFT。
 - 事实层引用数值与标签；判断层说明传导、验证、反证问题与数据缺口。
 
+## 日期与市场身份纪律
+
+- `runDate` 代表采集请求窗口结束日，用于 freshness 与运行审计。
+- `tradingDataAsOf` 代表有效日频数据的众数日期，并作为兼容字段 `asOf`、日报、历史快照和 handoff 的日期真源。
+- `generatedAt` 代表实际生成 UTC timestamp。日期众数覆盖率必须达到配置真源中的发布门槛，低覆盖直接停止产物生成与发布。
+- `HF_CRUDE` 是 INE 原油连续序列的宏观评分 view；`FUT_SC` 是真实主力解析与换月复权后的产业链 view。默认国内原油市场展示使用 `FUT_SC`，两者显示完整口径。
+- `HF_BRENT` 是 iFinD/ICE continuous series，显示名为“Brent连续（iFinD）”。Reuters front-month settlement 保持独立 external verification identity。
+
 ## 数据与安全
 
 - `macro-collect.mjs` 保存 EDB 观测期 `time` 与发布时间 `rtime`。
@@ -69,11 +80,20 @@ npm run check-installed
 
 ## 输出
 
-- `public/macro-snapshot.json`：`MACRO_SNAPSHOT` 1.1.0。
+- `public/macro-snapshot.json`：`MACRO_SNAPSHOT` 1.1.0；`asOf` 与 `tradingDataAsOf` 表示交易数据日，`runDate` 表示采集窗口结束日，`generatedAt` 表示生成时刻。
 - `public/macro-daily-report.md`：规则渲染的完整日报。
 - `public/macro-workbench.html`：自包含、离线可开的 V2 Macro Cockpit。
 - `work/macro/report.json`：日报结构化区块。
+- `dist/ai-handoff-latest.json`：由 snapshot 派生的精简 AI 交接契约，不含 observations、历史序列、spread points 或凭据。
+
+## Windows 自动运行
+
+`scripts/run-daily.ps1` 是现有主链的薄编排层。运行时必须提供完整 `ExpectedCommit`，tracked source 保持干净，并显式提供 `IFIND_LOCAL_HOME` 与 `-AllowLegacyInsecureUpstream`。runner 依次调用 package scripts，任何步骤失败即停止，日志写入 `work/logs/`。
+
+Task Scheduler 使用 `scripts/install-windows-task.ps1` 注册工作日 15:20 任务。先在目标 commit 手工运行 runner，再注册任务。卸载使用 `scripts/uninstall-windows-task.ps1`。完整参数、安全边界、parity 与可选发布流程见 `docs/WINDOWS_AUTOMATION.md`。
+
+AI 分析直接消费已通过 `npm run check-handoff` 的 handoff 或 canonical snapshot；信号、评分、异常与背离继续以 `macro-snapshot.mjs` 的输出为准。
 
 ## 安装
 
-安装器在 Skill discovery root 外复制 source 与 `package-lock.json`，执行 `npm ci --omit=dev` 和 `scripts/ifind-mcp-client.mjs` runtime import smoke，再完成 verify 与 SHA manifest。staging 全部通过后备份现有正式版本并以 rename 切换；依赖安装失败时正式版本保持原状。正式安装后重复 import smoke。`--check-installed` 只读比较 lockfile 与全部 source SHA-256，并复核 runtime import；`node_modules` 由 lockfile 重建，不纳入 SHA manifest。
+安装器在 Skill discovery root 外复制 `.gitignore`、source 与 `package-lock.json`，执行 `npm ci --omit=dev` 和 `scripts/ifind-mcp-client.mjs` runtime import smoke，再完成 verify 与 SHA manifest。staging 全部通过后备份现有正式版本并以 rename 切换；依赖安装失败时正式版本保持原状。正式安装后重复 import smoke。`--check-installed` 只读比较 lockfile 与全部 source SHA-256，并复核 runtime import；`node_modules` 由 lockfile 重建，不纳入 SHA manifest。

@@ -9,6 +9,7 @@ work/
 public/macro-snapshot.json
 public/macro-daily-report.md
 public/macro-workbench.html
+dist/
 
 # 密钥与本地临时文件
 .env

@@ -30,8 +30,14 @@ iFinD
 | `scripts/macro-snapshot.mjs` | 统计、评分、异常、偏离、背离与结论级聚合 |
 | `scripts/macro-futures.mjs` | 已算品种状态的链级聚合与 raw spread series |
 | `scripts/macro-report.mjs` | render-only 日报 |
+| `scripts/run-daily.ps1` | Windows fail-fast 编排、source gate 与脱敏日志 |
+| `scripts/macro-ai-handoff.mjs` | 从 canonical snapshot 生成精简 AI handoff |
+| `scripts/macro-check-handoff.mjs` | handoff contract、lineage、序列与 secret gate |
+| `scripts/macro-parity-check.mjs` | 两份 snapshot 的 byte/semantic parity |
+| `scripts/install-windows-task.ps1` | 工作日 15:20 Task Scheduler 注册 |
 | `templates/macro/workbench.template.html` | 唯一 Macro Cockpit 模板 |
-| `scripts/verify.mjs` | 20 项静态与契约 gate |
+| `scripts/macro-date-semantics.mjs` | 交易数据日众数解析与覆盖率 fail-closed gate |
+| `scripts/verify.mjs` | 25 项静态、fixture 与契约 gate |
 | `scripts/macro-install-skill.mjs` | staging npm ci、runtime import smoke、备份、原子切换与 source SHA 校验 |
 
 ## 命令
@@ -43,6 +49,9 @@ npm run collect
 npm run snapshot
 npm run report
 npm run workbench
+npm run handoff
+npm run check-handoff
+npm run parity -- --left <snapshot-a> --right <snapshot-b>
 npm run run
 npm run run:offline
 npm run verify
@@ -53,7 +62,7 @@ npm run check-installed
 
 ## 分发清单
 
-默认安装递归包含 `references/`、`scripts/`、`templates/`、`docs/`、`public/vendor/`，并包含 `SKILL.md`、`MANIFEST.md`、`README.md`、`package.json`、`package-lock.json`。动态产物由 `--with-data` 显式选择。
+默认安装递归包含 `references/`、`scripts/`、`templates/`、`docs/`、`public/vendor/`，并包含 `.gitignore`、`SKILL.md`、`MANIFEST.md`、`README.md`、`package.json`、`package-lock.json`。动态产物由 `--with-data` 显式选择。
 
 ## 状态
 

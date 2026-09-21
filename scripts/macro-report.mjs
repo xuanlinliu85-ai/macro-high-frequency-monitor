@@ -97,6 +97,7 @@ sections.push({ id: "futures-varieties", title: "期货品种明细", tag: `${S.
   table(["品种", "链条", "最新", "1D", "5D", "20D", "z(1Y)", "1年分位", "状态"], (S.futures?.varieties || []).map(item => [
     item.name_cn, item.chain_cn, item.value, percent(item.d1), percent(item.d5), percent(item.d20), signed(item.z1y), percentile(item.pct1y), item.status,
   ])),
+  note("国内原油默认展示 INE 实际主力合约（产业链口径）；宏观评分另使用 INE 主力连续口径，二者独立展示。"),
 ] });
 sections.push({ id: "spreads", title: "主力价差", tag: "YAML definitions", blocks: [
   table(["价差", "最新", "1D", "5D", "20D", "z(1Y)", "1年分位", "标签"], (S.futures?.spreads || []).map(item => [
@@ -119,7 +120,9 @@ sections.push({ id: "all-indicators", title: "全指标总表", tag: `${S.indica
   ])),
 ] });
 sections.push({ id: "quality", title: "数据质量与 Lineage", tag: "Audit", blocks: [
-  table(["项", "值"], [["契约", `${S.contract} ${S.version}`], ["数据截止", S.asOf], ["采集时间", S.source?.collectedAt],
+  table(["项", "值"], [["契约", `${S.contract} ${S.version}`], ["交易数据截止", S.tradingDataAsOf || S.asOf],
+    ["运行日期", S.runDate], ["采集窗口结束", S.sourceWindowEnd],
+    ["日期一致性", `${Math.round(Number(S.dateQuality?.coverage || 0) * 100)}% (${S.dateQuality?.refreshedDailyCount || 0})`], ["采集时间", S.source?.collectedAt],
     ["配置版本", S.source?.registry?.version], ["可评分", `${S.headline.indicatorScorable}/${S.headline.indicatorTotal}`],
     ["权重状态", S.scoringModel?.weightProfileStatus]]),
   UL((S.dataQuality?.degraded || []).map(item => `${item.name_cn}：${item.status}（${item.ageDays ?? "—"} calendar days）`)),
@@ -146,16 +149,18 @@ function blocksToMarkdown(blocks) {
 
 const generatedAt = new Date().toISOString();
 const title = "宏观高频 × 期货产业链 · 每日汇报";
-const markdown = [`# ${title}`, "", `**${S.asOf}｜宏观支持度 ${S.headline.composite}（${S.headline.label}）**`, "",
-  `> 生成时间 ${generatedAt}｜所有判断来自 \`public/macro-snapshot.json\`。`, "",
+const markdown = [`# ${title}`, "", `**${S.tradingDataAsOf || S.asOf} 交易数据｜宏观支持度 ${S.headline.composite}（${S.headline.label}）**`, "",
+  `> Snapshot 生成：${S.generatedAt}｜报告生成：${generatedAt}｜运行日：${S.runDate}｜所有判断来自 \`public/macro-snapshot.json\`。`, "",
   ...numbered.flatMap(section => [`## ${section.title}`, "", blocksToMarkdown(section.blocks)])].join("\n");
 const publicPath = resolve(root, "public/macro-daily-report.md");
 const reportDir = resolve(root, "work/macro/reports");
 mkdirSync(reportDir, { recursive: true });
 writeFileSync(publicPath, markdown, "utf8");
 writeFileSync(resolve(reportDir, `${S.asOf}.md`), markdown, "utf8");
-const report = { contract: "MACRO_DAILY_REPORT", version: "1.1.0", asOf: S.asOf, generatedAt, title,
-  subtitle: `${S.asOf}｜宏观支持度 ${S.headline.composite}（${S.headline.label}）`, tone: S.headline.label,
+const report = { contract: "MACRO_DAILY_REPORT", version: "1.1.0", asOf: S.asOf,
+  tradingDataAsOf: S.tradingDataAsOf || S.asOf, runDate: S.runDate, sourceWindowEnd: S.sourceWindowEnd,
+  snapshotGeneratedAt: S.generatedAt, dateQuality: S.dateQuality, generatedAt, title,
+  subtitle: `${S.tradingDataAsOf || S.asOf} 交易数据｜宏观支持度 ${S.headline.composite}（${S.headline.label}）`, tone: S.headline.label,
   composite: S.headline.composite, summaryLine: S.brief?.lines?.[0] || "", sections: numbered };
 writeFileSync(resolve(root, "work/macro/report.json"), JSON.stringify(report, null, 2), "utf8");
 console.log(`${title} · ${numbered.length} sections · render-only`);
