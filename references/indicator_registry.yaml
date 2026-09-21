@@ -534,12 +534,13 @@ layer_highfreq:
     note: 全球制造业景气代理
 
   - id: HF_BRENT
-    name_cn: 期货收盘价(连续):布伦特原油:ICE
+    name_cn: Brent连续（iFinD）
     category: inflation
     dimension: inflation
     frequency: daily
     unit: usd_per_barrel
     ifind: { tool: THS_EDB, field_code: S004111384, verified: true, latest_obs: "2026-09-09", latest_value: 101.75 }
+    market_identity: { vendor: iFinD, exchange: ICE, instrument: "Brent Crude", price_basis: continuous, settlement_basis: provider_defined, field_code: S004111384 }
     transforms: [level, d1, d5, d20, zscore_1y]
     signal: { direction: higher_is_tighter }
     chart: { type: line, default_window: 1y }
@@ -564,6 +565,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: RB00.SHF, verified: true }
+    series_role: macro_continuous
     transforms: [level, d1, d5, d20, ma20, zscore_1y]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -577,6 +579,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: HC00.SHF, verified: true }
+    series_role: macro_continuous
     transforms: [level, d5, d20, zscore_1y]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -589,6 +592,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: CU00.SHF, verified: true }
+    series_role: macro_continuous
     transforms: [level, d5, d20, zscore_1y]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -601,6 +605,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: AL00.SHF, verified: true }
+    series_role: macro_continuous
     transforms: [level, d5, d20]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -613,6 +618,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: I00.DCE, verified: true }
+    series_role: macro_continuous
     transforms: [level, d5, d20, zscore_1y]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -625,6 +631,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: JM00.DCE, verified: true }
+    series_role: macro_continuous
     transforms: [level, d5, d20]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -637,6 +644,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: ZC00.CZC, verified: true }
+    series_role: macro_continuous
     transforms: [level, d5, d20]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -650,6 +658,7 @@ layer_highfreq:
     frequency: daily
     unit: cny_per_ton
     ifind: { tool: THS_HQ, field_code: FG00.CZC, verified: true }
+    series_role: macro_continuous
     transforms: [level, d5, d20, zscore_1y]
     signal: { direction: higher_is_stronger }
     chart: { type: line, default_window: 1y }
@@ -657,12 +666,14 @@ layer_highfreq:
     note: 地产竣工端代理；郑商所后缀为 .CZC
 
   - id: HF_CRUDE
-    name_cn: 原油主力
+    name_cn: INE原油主力连续（宏观评分口径）
     category: inflation
     dimension: inflation
     frequency: daily
     unit: cny_per_barrel
     ifind: { tool: THS_HQ, field_code: SC00.INE, verified: true }
+    series_role: macro_continuous
+    instrument_identity: { exchange: INE, root_symbol: SC, currency: CNY, unit: cny_per_barrel }
     transforms: [level, d5, d20, zscore_1y]
     signal: { direction: higher_is_tighter }
     chart: { type: line, default_window: 1y }

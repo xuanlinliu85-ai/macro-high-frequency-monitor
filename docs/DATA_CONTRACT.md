@@ -6,10 +6,24 @@ V2 保持契约名 `MACRO_SNAPSHOT`，以兼容新增字段完成迁移。
 
 ```text
 contract / version / generatedAt / asOf / window / source
+tradingDataAsOf / runDate / sourceWindowEnd / dateQuality
 scoringModel / headline / dimensions / movers
 anomalies / deviations / divergences / indicators / categories
 aggregates / trends / futures / yieldCurve / regime / dataQuality
 ```
+
+日期字段具有固定语义：
+
+- `asOf` 与 `tradingDataAsOf` 是本轮已刷新且质量为 `OK` 的日频观测日期众数。
+- `runDate` 与 `sourceWindowEnd` 记录采集请求窗口结束日，freshness 相对该日期计算。
+- `generatedAt` 记录实际生成 UTC timestamp。
+- `dateQuality` 记录众数覆盖率、配置门槛、有效日频数量与日期分布；覆盖率不足时 snapshot 与发布流程 fail closed。
+
+## 市场价格身份
+
+`HF_CRUDE` 是 INE 原油连续序列的宏观评分 view，`FUT_SC` 是真实主力合约解析与换月等比复权后的产业链 view。二者共享 INE/SC instrument identity，并通过不同 `seriesRole` 与显示名明确区分。当前保留双 view 以保持评分历史连续，迁移为单一 canonical series 前需要独立影响评估。
+
+`HF_BRENT` 是 iFinD 提供的 ICE Brent continuous series。Reuters front-month settlement 属于独立 external verification source identity，不覆盖或拼接该序列。
 
 ## frequency-native `changeView`
 

@@ -36,7 +36,8 @@ iFinD
 | `scripts/macro-parity-check.mjs` | 两份 snapshot 的 byte/semantic parity |
 | `scripts/install-windows-task.ps1` | 工作日 15:20 Task Scheduler 注册 |
 | `templates/macro/workbench.template.html` | 唯一 Macro Cockpit 模板 |
-| `scripts/verify.mjs` | 20 项静态与契约 gate |
+| `scripts/macro-date-semantics.mjs` | 交易数据日众数解析与覆盖率 fail-closed gate |
+| `scripts/verify.mjs` | 25 项静态、fixture 与契约 gate |
 | `scripts/macro-install-skill.mjs` | staging npm ci、runtime import smoke、备份、原子切换与 source SHA 校验 |
 
 ## 命令

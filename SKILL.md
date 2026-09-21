@@ -58,6 +58,14 @@ npm run check-installed
 - 综合分表示“宏观支持度 / 扩张友好度的规则化观察指标”。六维权重保持 DRAFT。
 - 事实层引用数值与标签；判断层说明传导、验证、反证问题与数据缺口。
 
+## 日期与市场身份纪律
+
+- `runDate` 代表采集请求窗口结束日，用于 freshness 与运行审计。
+- `tradingDataAsOf` 代表有效日频数据的众数日期，并作为兼容字段 `asOf`、日报、历史快照和 handoff 的日期真源。
+- `generatedAt` 代表实际生成 UTC timestamp。日期众数覆盖率必须达到配置真源中的发布门槛，低覆盖直接停止产物生成与发布。
+- `HF_CRUDE` 是 INE 原油连续序列的宏观评分 view；`FUT_SC` 是真实主力解析与换月复权后的产业链 view。默认国内原油市场展示使用 `FUT_SC`，两者显示完整口径。
+- `HF_BRENT` 是 iFinD/ICE continuous series，显示名为“Brent连续（iFinD）”。Reuters front-month settlement 保持独立 external verification identity。
+
 ## 数据与安全
 
 - `macro-collect.mjs` 保存 EDB 观测期 `time` 与发布时间 `rtime`。
@@ -72,7 +80,7 @@ npm run check-installed
 
 ## 输出
 
-- `public/macro-snapshot.json`：`MACRO_SNAPSHOT` 1.1.0。
+- `public/macro-snapshot.json`：`MACRO_SNAPSHOT` 1.1.0；`asOf` 与 `tradingDataAsOf` 表示交易数据日，`runDate` 表示采集窗口结束日，`generatedAt` 表示生成时刻。
 - `public/macro-daily-report.md`：规则渲染的完整日报。
 - `public/macro-workbench.html`：自包含、离线可开的 V2 Macro Cockpit。
 - `work/macro/report.json`：日报结构化区块。

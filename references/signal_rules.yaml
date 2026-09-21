@@ -227,6 +227,10 @@ freshness:
     指标存在 release metadata 时，优先按下一观测期的发布窗口判定 EXPECTED / STALE。
     指标缺少 release metadata 时，使用对应 frequency 的 calendar-day default。
 
+# ---------- 日报交易数据日期一致性 ----------
+date_coherence:
+  minimum_coverage: 0.80
+
 # ---------- 市场归因权重（DeerFlow 介入门槛，Spec §38） ----------
 escalation:
   default_path: "Data Pipeline → Dashboard"

@@ -41,6 +41,8 @@ export function handoffPayload(snapshot, info = gitInfo()) {
   const futures = snapshot.futures || {};
   return {
     contract: "AI_MACRO_HANDOFF", version: "1.0.0", generatedAt: new Date().toISOString(), asOf: snapshot.asOf,
+    tradingDataAsOf: snapshot.tradingDataAsOf || snapshot.asOf, runDate: snapshot.runDate,
+    sourceWindowEnd: snapshot.sourceWindowEnd, dateQuality: stripRawSeries(snapshot.dateQuality),
     source: { contract: snapshot.contract, version: snapshot.version, generatedAt: snapshot.generatedAt, sha256: null, sourceCommit: info.sourceCommit, sourceDirty: info.sourceDirty },
     headline: stripRawSeries(snapshot.headline), dimensions: stripRawSeries(snapshot.dimensions), deviations: stripRawSeries(snapshot.deviations),
     anomalies: stripRawSeries(snapshot.anomalies), divergences: stripRawSeries(snapshot.divergences), aggregates: stripRawSeries(snapshot.aggregates),
@@ -48,6 +50,7 @@ export function handoffPayload(snapshot, info = gitInfo()) {
     futures: stripRawSeries({ contract: futures.contract, chainCount: futures.chainCount, varietyCount: futures.varietyCount,
       liveVarietyCount: futures.liveVarietyCount, chains: futures.chains, varieties: futures.varieties, heatmap: futures.heatmap,
       movers: futures.movers, graph: futures.graph, asOf: futures.asOf, spreads: futures.spreads, signals: futures.signals }),
+    dataQuality: stripRawSeries({ sharedSourceIdentities: snapshot.dataQuality?.sharedSourceIdentities || [] }),
     meta: { indicatorCount: snapshot.indicators?.length || 0, futuresVarietyCount: futures.varieties?.length || 0,
       graphEdgeCount: futures.graph?.edges?.length || 0 },
   };
@@ -55,6 +58,7 @@ export function handoffPayload(snapshot, info = gitInfo()) {
 export function semanticProjection(snapshot) {
   const futures = snapshot.futures || {};
   return stripRawSeries({ contract: snapshot.contract, version: snapshot.version, asOf: snapshot.asOf,
+    tradingDataAsOf: snapshot.tradingDataAsOf, runDate: snapshot.runDate, sourceWindowEnd: snapshot.sourceWindowEnd, dateQuality: snapshot.dateQuality,
     headline: snapshot.headline, dimensions: snapshot.dimensions, deviations: snapshot.deviations, anomalies: snapshot.anomalies,
     divergences: snapshot.divergences, aggregates: snapshot.aggregates,
     futures: { contract: futures.contract, chainCount: futures.chainCount, varietyCount: futures.varietyCount,

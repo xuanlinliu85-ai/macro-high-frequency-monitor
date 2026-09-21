@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, extname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadMacroConfig, SKILL_DIR } from "./macro-config.mjs";
+import { resolveTradingDataAsOf } from "./macro-date-semantics.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = path => readFileSync(resolve(root, path), "utf8");
 const config = loadMacroConfig();
@@ -203,6 +204,67 @@ gate("20", "release-aware freshness", () => {
   assert(/window_start_calendar_days_after_period_end/.test(registry), "registry 未声明 indicator release metadata 结构");
   assert(/statusFor\([^\n]*meta\.release/.test(snap) && /releaseWindow/.test(snap), "snapshot 未优先执行 indicator release window");
   return "indicator release window first · frequency calendar-day fallback";
+});
+
+gate("21", "交易数据日与运行日分离", () => {
+  const fixture = Array.from({ length: 35 }, (_, index) => ({ id: `D${index}`, refreshedThisRun: true,
+    quality: "OK", status: "FRESH", latest: { d: "2026-09-18" } }));
+  const resolved = resolveTradingDataAsOf(fixture, config.dateCoherence.minimum_coverage);
+  assert(resolved.date === "2026-09-18" && resolved.total === 35 && resolved.coverage === 1, "周末 fixture 未解析为 2026-09-18 / 35/35");
+  const snap = read("scripts/macro-snapshot.mjs"), report = read("scripts/macro-report.mjs"), handoff = read("scripts/macro-automation-lib.mjs");
+  assert(/const RUN_DATE = observations\.window\.end/.test(snap), "snapshot 缺 runDate 真源");
+  assert(/asOf: TRADING_DATA_AS_OF/.test(snap) && /`\$\{TRADING_DATA_AS_OF\}\.json`/.test(snap), "snapshot asOf 或历史文件名未使用交易数据日");
+  assert(/tradingDataAsOf \|\| S\.asOf/.test(report) && /`\$\{S\.asOf\}\.md`/.test(report), "report 未使用交易数据日");
+  assert(/tradingDataAsOf: snapshot\.tradingDataAsOf \|\| snapshot\.asOf/.test(handoff), "handoff 未传递交易数据日");
+  return "weekend fixture 2026-09-20 → trading data 2026-09-18 · 35/35";
+});
+
+gate("22", "日期一致性 fail closed", () => {
+  const fixture = [
+    ...Array.from({ length: 18 }, (_, index) => ({ id: `A${index}`, refreshedThisRun: true, quality: "OK", status: "FRESH", latest: { d: "2026-09-18" } })),
+    ...Array.from({ length: 17 }, (_, index) => ({ id: `B${index}`, refreshedThisRun: true, quality: "OK", status: "FRESH", latest: { d: "2026-09-17" } })),
+  ];
+  let rejected = false;
+  try { resolveTradingDataAsOf(fixture, config.dateCoherence.minimum_coverage); } catch (error) { rejected = /DATE_COHERENCE_FAILED/.test(error.message); }
+  assert(rejected, "18/17 分裂日期 fixture 未被拒绝");
+  assert(/date coherence/.test(read("scripts/macro-check-handoff.mjs")), "handoff/publish 缺日期一致性 gate");
+  return `minimum coverage ${config.dateCoherence.minimum_coverage} · split fixture rejected`;
+});
+
+gate("23", "国内原油映射与身份", () => {
+  const macro = config.indicators.find(item => item.id === "HF_CRUDE");
+  const future = config.futuresIndicators.find(item => item.id === "FUT_SC");
+  assert(future?.linked_macro_id === "HF_CRUDE", `FUT_SC linked_macro_id=${future?.linked_macro_id}`);
+  assert(macro?.series_role === "macro_continuous" && future?.series_role === "resolved_main_contract", "国内原油 series_role 不完整");
+  assert(macro?.name_cn !== future?.name_cn && /连续/.test(macro?.name_cn) && /实际主力合约/.test(future?.name_cn), "国内原油展示名未明确区分口径");
+  for (const item of [macro, future]) assert(item?.instrument_identity?.exchange === "INE" && item?.instrument_identity?.root_symbol === "SC", `${item?.id} instrument_identity 缺失`);
+  return `${macro.name_cn} ↔ ${future.name_cn} · linked HF_CRUDE`;
+});
+
+gate("24", "共享字段双身份显式治理", () => {
+  const groups = new Map();
+  for (const item of [...config.indicators, ...config.futuresIndicators]) {
+    if (!item.ifind?.tool || !item.ifind?.field_code) continue;
+    const key = `${item.ifind.tool}|${item.ifind.field_code}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(item);
+  }
+  const shared = [...groups.entries()].filter(([, members]) => members.length > 1 && members.some(item => item.layer === "futures") && members.some(item => item.layer !== "futures"));
+  for (const [key, members] of shared) {
+    assert(members.every(item => item.series_role), `${key} 缺 series_role: ${members.filter(item => !item.series_role).map(item => item.id).join(", ")}`);
+    assert(new Set(members.map(item => item.name_cn)).size === members.length, `${key} 存在同名身份`);
+  }
+  assert(/sharedSourceIdentities/.test(read("scripts/macro-snapshot.mjs")), "snapshot validation report 未列出共享字段身份");
+  return `${shared.length} shared HQ fields · roles/names explicit`;
+});
+
+gate("25", "Brent 连续合约口径", () => {
+  const brent = config.indicators.find(item => item.id === "HF_BRENT");
+  const identity = brent?.market_identity || {};
+  for (const key of ["vendor", "exchange", "price_basis", "field_code"]) assert(identity[key], `HF_BRENT market_identity.${key} 缺失`);
+  assert(identity.price_basis === "continuous" && /连续/.test(brent.name_cn) && /iFinD/i.test(brent.name_cn), "HF_BRENT 展示名或连续口径错误");
+  assert(identity.field_code === brent.ifind.field_code, "HF_BRENT metadata field_code 漂移");
+  return `${brent.name_cn} · ${identity.exchange}/${identity.price_basis}`;
 });
 
 console.log("Macro Cockpit V2 · Verification");

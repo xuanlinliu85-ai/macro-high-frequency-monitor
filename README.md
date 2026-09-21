@@ -15,6 +15,22 @@ collect → observations.json → snapshot → MACRO_SNAPSHOT 1.1.0 → report �
 - `macro-report.mjs` 是 render-only 层。
 - `workbench.template.html` 是唯一前端，图表库为 ECharts。
 
+### 日期语义
+
+- `runDate` 是采集请求窗口结束日，用于 freshness、运行日志与采集窗口。
+- `tradingDataAsOf` 是本轮有效日频数据的众数日期，也是兼容字段 `asOf`、日报标题、期货截止日与历史文件名的日期真源。
+- `generatedAt` 是产物实际生成的 UTC timestamp。
+- 日期解析只使用本轮已刷新、质量为 `OK` 的日频数据；众数覆盖率达到 `references/signal_rules.yaml` 的 `date_coherence.minimum_coverage` 才生成产物，低覆盖输出 `DATE_COHERENCE_FAILED` 并停止发布。
+
+周末与节假日运行会覆盖最近交易日对应的历史快照，不创建周末或节假日交易快照。
+
+### 原油价格身份
+
+- `HF_CRUDE` 显示为“INE原油主力连续（宏观评分口径）”，保留连续序列以维持既有六维评分历史。
+- `FUT_SC` 显示为“INE原油实际主力合约（产业链口径）”，使用现有真实主力解析与换月等比复权，并链接 `HF_CRUDE`。
+- 国内原油的默认市场展示使用 `FUT_SC`；宏观评分继续使用 `HF_CRUDE`。两种 view 明确保留各自身份，迁移到单一 canonical series 前先输出评分影响对比。
+- `HF_BRENT` 显示为“Brent连续（iFinD）”，口径为 iFinD/ICE continuous。Reuters front-month settlement 只能作为独立 external verification source 并排展示。
+
 ## 运行
 
 要求 Node 22+。仓库依赖由 `package-lock.json` 锁定，首次运行先执行 `npm ci`。

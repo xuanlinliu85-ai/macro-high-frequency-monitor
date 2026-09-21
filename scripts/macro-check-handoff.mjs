@@ -21,6 +21,11 @@ check("version", handoff.version === "1.0.0", `${handoff.version}`);
 check("snapshot contract", handoff.source?.contract === "MACRO_SNAPSHOT", `${handoff.source?.contract}`);
 check("snapshot version", handoff.source?.version === "1.1.0", `${handoff.source?.version}`);
 check("asOf", Boolean(handoff.asOf) && handoff.asOf === snapshot.asOf, `${handoff.asOf}`);
+check("trading data date", handoff.tradingDataAsOf === snapshot.tradingDataAsOf && handoff.asOf === handoff.tradingDataAsOf, `${handoff.tradingDataAsOf}`);
+check("run date", Boolean(handoff.runDate) && handoff.runDate === snapshot.runDate, `${handoff.runDate}`);
+check("date coherence", Number.isFinite(handoff.dateQuality?.coverage)
+  && handoff.dateQuality.coverage >= handoff.dateQuality.minimumCoverage
+  && handoff.dateQuality.refreshedDailyCount > 0, `${handoff.dateQuality?.coverage}`);
 check("generatedAt", Boolean(handoff.generatedAt), `${handoff.generatedAt}`);
 check("snapshot sha256", handoff.source?.sha256 === sha256File(snapshotPath), "source file digest");
 check("source commit", handoff.source?.sourceCommit === current.sourceCommit, current.sourceCommit);

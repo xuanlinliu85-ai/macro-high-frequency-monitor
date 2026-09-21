@@ -321,6 +321,7 @@ export function loadMacroConfig() {
     anomalyTriggers: rules.anomaly_triggers || [],
     divergenceRules: rules.divergence_rules || [],
     freshness: rules.freshness || {},
+    dateCoherence: rules.date_coherence || {},
   };
 }
 

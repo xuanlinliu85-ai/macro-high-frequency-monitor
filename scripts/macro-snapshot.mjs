@@ -6,6 +6,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadMacroConfig } from "./macro-config.mjs";
+import { resolveTradingDataAsOf } from "./macro-date-semantics.mjs";
 import { buildFuturesAnalysis } from "./macro-futures.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -15,7 +16,7 @@ const snapshotDir = resolve(workDir, "snapshots");
 mkdirSync(snapshotDir, { recursive: true });
 const config = loadMacroConfig();
 const observations = JSON.parse(readFileSync(resolve(workDir, "observations.json"), "utf8"));
-const TODAY = observations.window.end;
+const RUN_DATE = observations.window.end;
 
 const requiredNumber = (value, path) => {
   const number = Number(value);
@@ -126,7 +127,7 @@ function nextPeriodEnd(latestDate, frequency) {
 }
 function statusFor(latestDate, frequency, release) {
   if (!latestDate) return { status: "MISSING", ageDays: null };
-  const ageDays = dayDiff(latestDate, TODAY);
+  const ageDays = dayDiff(latestDate, RUN_DATE);
   const rule = config.freshness[frequency];
   if (!rule) throw new Error(`freshness.${frequency} 未配置`);
   const fresh = requiredNumber(rule.fresh_within_calendar_days, `freshness.${frequency}.fresh_within_calendar_days`);
@@ -142,7 +143,7 @@ function statusFor(latestDate, frequency, release) {
     const periodEnd = nextPeriodEnd(latestDate, frequency);
     const windowStart = addDays(periodEnd, startLag);
     const windowEnd = addDays(periodEnd, endLag);
-    return { status: TODAY <= windowEnd ? "EXPECTED" : "STALE", ageDays, releaseWindow: { start: windowStart, end: windowEnd } };
+    return { status: RUN_DATE <= windowEnd ? "EXPECTED" : "STALE", ageDays, releaseWindow: { start: windowStart, end: windowEnd } };
   }
   if (ageDays <= stale) return { status: "EXPECTED", ageDays };
   return { status: "STALE", ageDays };
@@ -202,6 +203,33 @@ const states = config.indicators.map(meta => {
     changeView: changeView(meta, stats) };
 });
 const byId = new Map(states.map(state => [state.id, state]));
+
+const dailyDateCandidates = config.indicators.filter(meta => meta.frequency === "daily").map(meta => {
+  const state = byId.get(meta.id);
+  const raw = observations.indicators?.[meta.id];
+  if (raw) return { id: meta.id, refreshedThisRun: raw.refreshedThisRun, quality: raw.quality, latest: raw.latest, status: state?.status };
+  const dependencies = String(meta.derived?.formula || "").match(/[A-Z][A-Z0-9_]+/g) || [];
+  const sources = dependencies.map(id => observations.indicators?.[id]).filter(Boolean);
+  return { id: meta.id, refreshedThisRun: sources.length > 0 && sources.every(item => item.refreshedThisRun === true),
+    quality: sources.length > 0 && sources.every(item => item.quality === "OK") ? "OK" : "MISSING",
+    latest: state?.stats.latest ? { d: state.stats.latest.date } : null, status: state?.status };
+});
+const minimumDateCoverage = requiredNumber(config.dateCoherence.minimum_coverage, "date_coherence.minimum_coverage");
+const dateResolution = resolveTradingDataAsOf(dailyDateCandidates, minimumDateCoverage);
+const TRADING_DATA_AS_OF = dateResolution.date;
+
+const sourceGroups = new Map();
+for (const meta of [...config.indicators, ...config.futuresIndicators]) {
+  if (!meta.ifind?.tool || !meta.ifind?.field_code) continue;
+  const key = `${meta.ifind.tool}|${meta.ifind.field_code}`;
+  if (!sourceGroups.has(key)) sourceGroups.set(key, []);
+  sourceGroups.get(key).push(meta);
+}
+const sharedSourceIdentities = [...sourceGroups.entries()].filter(([, members]) => members.length > 1).map(([sourceField, members]) => ({
+  sourceField,
+  members: members.map(meta => ({ id: meta.id, name_cn: meta.name_cn, layer: meta.layer, seriesRole: meta.series_role || null,
+    collectionPolicy: meta.layer === "futures" ? "resolved_main_contract_roll_adjusted" : "provider_continuous" })),
+}));
 
 const scoreCfg = config.scoreMapping;
 const scoreCenter = requiredNumber(scoreCfg.center, "score_mapping.center");
@@ -285,6 +313,9 @@ const indicatorRows = states.map(state => {
   const deviation = classifyDeviation({ chg1Extreme: s.chg1Extreme, z1y: s.z1y, pct1y: s.pct1y });
   return { id: state.id, name_cn: state.name_cn, layer: state.layer, dimension: state.dimension,
     category: state.category, frequency: state.frequency, unit: state.unit, importance: state.importance,
+    seriesRole: config.indicators.find(item => item.id === state.id)?.series_role || null,
+    instrumentIdentity: config.indicators.find(item => item.id === state.id)?.instrument_identity || null,
+    marketIdentity: config.indicators.find(item => item.id === state.id)?.market_identity || null,
     direction: state.direction, polarity: state.polarity, status: state.status, ageDays: state.ageDays,
     scorable: state.scorable, latest: s.latest, changes: s.changes, pctChg1: s.pctChanges.chg1,
     pctChg5: s.pctChanges.chg5, pctChg20: s.pctChanges.chg20, pctChg12: s.pctChanges.chg12,
@@ -302,6 +333,7 @@ const futuresVarieties = config.futuresIndicators.map(meta => {
   const base = { id: meta.id, name_cn: meta.name_cn, chain: meta.chain || null, chain_cn: meta.chain_cn || null,
     chain_tier: meta.chain_tier || null, code: observations.indicators[meta.id]?.mainContract?.toCode || meta.ifind?.field_code || null,
     requestedCode: meta.ifind?.field_code || null, unit: meta.unit || null, importance: meta.importance || null,
+    seriesRole: meta.series_role || null, instrumentIdentity: meta.instrument_identity || null,
     ...freshness, lastDate: stats.latest?.date || null, value: stats.latest?.value ?? null,
     d1: stats.pctChanges.chg1, d5: stats.pctChanges.chg5, d20: stats.pctChanges.chg20, d60: round(pctChange(raw.map(p => p.v), 60), 6),
     z1y: stats.z1y, pct1y: stats.pct1y, pct3y: stats.pct3y, chg1Extreme: stats.chg1Extreme,
@@ -312,7 +344,7 @@ const futuresVarieties = config.futuresIndicators.map(meta => {
 });
 
 const futures = buildFuturesAnalysis({ config, varieties: futuresVarieties, seriesById: futuresSeries });
-futures.asOf = TODAY;
+futures.asOf = TRADING_DATA_AS_OF;
 futures.spreads = futures.rawSpreads.map(({ definition, series }) => {
   if (series.length < minExtreme) return { id: definition.id, name_cn: definition.name_cn, desc: definition.desc,
     unit: definition.unit, available: false, reason: `共同交易日不足（${series.length}）`, points: [] };
@@ -373,7 +405,7 @@ const divergences = (config.divergenceRules || []).map(rule => {
     hit, sideA, sideB, interpretation: `${sideA.label} ${sideA.direction} / ${sideB.label} ${sideB.direction}` };
 });
 
-const historyFiles = readdirSync(snapshotDir).filter(file => /^\d{4}-\d{2}-\d{2}\.json$/.test(file) && file < `${TODAY}.json`).sort();
+const historyFiles = readdirSync(snapshotDir).filter(file => /^\d{4}-\d{2}-\d{2}\.json$/.test(file) && file < `${TRADING_DATA_AS_OF}.json`).sort();
 const previous = historyFiles.length ? JSON.parse(readFileSync(resolve(snapshotDir, historyFiles.at(-1)), "utf8")) : null;
 const previousDimensions = new Map((previous?.dimensions || []).map(item => [item.key, item]));
 for (const dimension of dimensions) {
@@ -382,7 +414,7 @@ for (const dimension of dimensions) {
   dimension.history = historyFiles.slice(-29).map(file => {
     const row = JSON.parse(readFileSync(resolve(snapshotDir, file), "utf8"));
     return [row.asOf, row.dimensions?.find(item => item.key === dimension.key)?.score ?? null];
-  }).concat([[TODAY, dimension.score]]);
+  }).concat([[TRADING_DATA_AS_OF, dimension.score]]);
 }
 const compositeDelta = Number.isFinite(previous?.composite) && Number.isFinite(composite) ? round(composite - previous.composite, 1) : null;
 
@@ -441,7 +473,10 @@ const brief = { tone: headline.label, lines: [
   "六维权重为 DRAFT；综合分是宏观支持度 / 扩张友好度的规则化观察指标。",
 ] };
 
-const snapshot = { contract: "MACRO_SNAPSHOT", version: "1.1.0", generatedAt: new Date().toISOString(), asOf: TODAY,
+const snapshot = { contract: "MACRO_SNAPSHOT", version: "1.1.0", generatedAt: new Date().toISOString(), asOf: TRADING_DATA_AS_OF,
+  tradingDataAsOf: TRADING_DATA_AS_OF, runDate: RUN_DATE, sourceWindowEnd: observations.window.end,
+  dateQuality: { coverage: round(dateResolution.coverage, 6), minimumCoverage: minimumDateCoverage,
+    refreshedDailyCount: dateResolution.total, byDate: dateResolution.byDate },
   window: observations.window, source: { data: "iFinD MCP (THS_EDB / THS_HQ)", registry: observations.registry, collectedAt: observations.collectedAt },
   scoringModel: { polarity, formula: "YAML score_mapping applied to weighted mean dirZ", dimensionAggregation: "weighted_mean",
     weightProfileStatus: config.weightProfile.status, standardization: config.standardization,
@@ -453,13 +488,14 @@ const snapshot = { contract: "MACRO_SNAPSHOT", version: "1.1.0", generatedAt: ne
     inflation: dimensions.find(item => item.key === "inflation")?.zMean ?? null },
   dataQuality: { degraded: states.filter(item => !["FRESH", "EXPECTED"].includes(item.status)).map(item => ({ id: item.id,
     name_cn: item.name_cn, status: item.status, ageDays: item.ageDays, latest: item.stats.latest })),
-    derivedOk: [...derivedSeries.keys()], derivedFailed: [] } };
+    derivedOk: [...derivedSeries.keys()], derivedFailed: [], sharedSourceIdentities } };
 
 writeFileSync(resolve(root, "public/macro-snapshot.json"), JSON.stringify(snapshot, null, 2), "utf8");
-writeFileSync(resolve(snapshotDir, `${TODAY}.json`), JSON.stringify({ asOf: TODAY, generatedAt: snapshot.generatedAt,
+writeFileSync(resolve(snapshotDir, `${TRADING_DATA_AS_OF}.json`), JSON.stringify({ asOf: TRADING_DATA_AS_OF,
+  tradingDataAsOf: TRADING_DATA_AS_OF, runDate: RUN_DATE, dateQuality: snapshot.dateQuality, generatedAt: snapshot.generatedAt,
   composite, dimensions: dimensions.map(item => ({ key: item.key, score: item.score, zMean: item.zMean })),
   anomalyCount: anomalies.length, divergenceHits: headline.divergenceHits }, null, 2), "utf8");
-console.log(`MACRO_SNAPSHOT ${snapshot.version} · ${TODAY}`);
+console.log(`MACRO_SNAPSHOT ${snapshot.version} · 交易数据 ${TRADING_DATA_AS_OF} · 运行日 ${RUN_DATE}`);
 console.log(`综合宏观支持度 ${composite}（${headline.label}）· Δ ${compositeDelta ?? "—"}`);
 console.log(`显著偏离 ${headline.notableDeviationCount} · 异常 ${headline.anomalyCount} · 背离 ${headline.divergenceHits}/${divergences.length}`);
 console.log(`期货 ${futures.liveVarietyCount}/${futures.varietyCount} · 价差 ${futures.spreads.filter(item => item.available).length}/${futures.spreads.length}`);
