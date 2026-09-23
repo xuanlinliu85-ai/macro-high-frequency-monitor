@@ -1,5 +1,6 @@
 /** Validate the compact AI handoff contract and canonical snapshot lineage. */
-import { resolve } from "node:path";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 import { gitInfo, parseArgs, readJson, ROOT, sha256File, stableJson } from "./macro-automation-lib.mjs";
 const args = parseArgs();
 const handoffPath = resolve(ROOT, String(args.input || "dist/ai-handoff-latest.json"));
@@ -40,5 +41,14 @@ check("raw series excluded", forbiddenKeys.length === 0, forbiddenKeys.slice(0, 
 check("secret scan", secretValues.length === 0, secretValues.slice(0, 3).join(", ") || "none");
 check("credential keys excluded", credentialKeys.length === 0, credentialKeys.slice(0, 3).join(", ") || "none");
 for (const item of checks) console.log(`${item.pass ? "PASS" : "FAIL"} ${item.name}: ${item.detail}`);
-console.log(`结果：${checks.filter(item => item.pass).length}/${checks.length} 通过`);
-if (checks.some(item => !item.pass)) process.exitCode = 1;
+const passed = checks.filter(item => item.pass).length;
+const result = { contract: "MACRO_HANDOFF_VALIDATION", version: "1.0.0", generatedAt: new Date().toISOString(),
+  status: passed === checks.length ? "PASS" : "FAIL", passed, total: checks.length,
+  sourceCommit: current.sourceCommit, snapshotSha256: sha256File(snapshotPath), handoffSha256: sha256File(handoffPath), checks };
+if (args.output) {
+  const output = resolve(ROOT, String(args.output));
+  mkdirSync(dirname(output), { recursive: true });
+  writeFileSync(output, `${JSON.stringify(result, null, 2)}\n`, "utf8");
+}
+console.log(`结果：${passed}/${checks.length} 通过`);
+if (result.status !== "PASS") process.exitCode = 1;

@@ -1,12 +1,14 @@
-/** Macro Cockpit V2 gates — read-only. */
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+/** Macro Cockpit V2 gates — read-only by default; --output writes a validation receipt. */
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, extname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadMacroConfig, SKILL_DIR } from "./macro-config.mjs";
 import { resolveTradingDataAsOf } from "./macro-date-semantics.mjs";
+import { gitInfo, parseArgs, sha256File } from "./macro-automation-lib.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = path => readFileSync(resolve(root, path), "utf8");
 const config = loadMacroConfig();
+const args = parseArgs();
 const results = [];
 const assert = (value, message) => { if (!value) throw new Error(message); };
 const gate = (id, name, run) => { try { results.push({ id, name, ok: true, detail: run() || "通过" }); } catch (error) { results.push({ id, name, ok: false, detail: error.message }); } };
@@ -267,9 +269,36 @@ gate("25", "Brent 连续合约口径", () => {
   return `${brent.name_cn} · ${identity.exchange}/${identity.price_basis}`;
 });
 
+gate("26", "生产单链发布闭环", () => {
+  const runner = read("scripts/run-daily.ps1"), publisher = read("scripts/macro-publish-handoff.mjs"), installer = read("scripts/install-windows-task.ps1");
+  const ordered = ["collect", "snapshot", "report", "workbench", "handoff", "check-handoff", "verify"];
+  let cursor = -1;
+  for (const command of ordered) { const next = runner.indexOf(`\"${command}\"`, cursor + 1); assert(next > cursor, `runner 步骤顺序缺失 ${command}`); cursor = next; }
+  for (const name of ["AI_HANDOFF_META.json", "ai-handoff-latest.json", "macro-daily-report.md", "macro-snapshot.json", "macro-workbench.html"]) assert(publisher.includes(name), `publisher 缺 ${name}`);
+  assert(/history["'],\s*snapshot\.tradingDataAsOf/.test(publisher), "publisher 缺 tradingDataAsOf history");
+  for (const field of ["tradingDataAsOf", "runDate", "dateQuality", "sourceCommit", "sourceDirty", "snapshotSha256", "handoffSha256", "reportSha256", "validationStatus", "remotePublishCommit"]) assert(publisher.includes(field), `AI_HANDOFF_META 缺 ${field}`);
+  assert(/\[30, 60, 120, 240, 480\]/.test(publisher), "GitHub push 退避序列缺失");
+  assert(/retry-pending-only/.test(runner) && /PENDING_PUBLISH_EXISTS/.test(publisher), "runner 缺 pending-first 保护");
+  assert(/Production runner requires main/.test(runner), "runner 未固定 main");
+  assert(/PublishHandoff/.test(installer) && /AiRuntimeDir/.test(installer), "Task Scheduler 未固定 ai-runtime 发布");
+  return "main-only runner · 5 artifacts + history · validation receipts · pending-first · push backoff";
+});
+
 console.log("Macro Cockpit V2 · Verification");
 console.log("=".repeat(92));
 for (const result of results) console.log(`${result.ok ? "PASS" : "FAIL"} ${result.id} ${result.name}\n     ${result.detail}`);
 console.log("=".repeat(92));
-console.log(`结果：${results.filter(item => item.ok).length}/${results.length} 通过`);
-if (results.some(item => !item.ok)) process.exitCode = 1;
+const passed = results.filter(item => item.ok).length;
+console.log(`结果：${passed}/${results.length} 通过`);
+const verifyResult = { contract: "MACRO_VERIFY_RESULT", version: "1.0.0", generatedAt: new Date().toISOString(),
+  status: passed === results.length ? "PASS" : "FAIL", passed, total: results.length,
+  snapshotSha256: snapshot ? sha256File(resolve(root, "public/macro-snapshot.json")) : null, checks: results };
+if (args.output) {
+  const info = gitInfo();
+  verifyResult.sourceCommit = info.sourceCommit;
+  verifyResult.sourceDirty = info.sourceDirty;
+  const output = resolve(root, String(args.output));
+  mkdirSync(dirname(output), { recursive: true });
+  writeFileSync(output, `${JSON.stringify(verifyResult, null, 2)}\n`, "utf8");
+}
+if (verifyResult.status !== "PASS") process.exitCode = 1;

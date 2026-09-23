@@ -88,9 +88,11 @@ npm run check-installed
 
 ## Windows 自动运行
 
-`scripts/run-daily.ps1` 是现有主链的薄编排层。运行时必须提供完整 `ExpectedCommit`，tracked source 保持干净，并显式提供 `IFIND_LOCAL_HOME` 与 `-AllowLegacyInsecureUpstream`。runner 依次调用 package scripts，任何步骤失败即停止，日志写入 `work/logs/`。
+`scripts/run-daily.ps1` 是生产环境唯一编排层，固定从 `main` 执行 `collect → snapshot → report → workbench → handoff → check-handoff → verify → publish`。运行时必须提供完整 `ExpectedCommit`，tracked source 保持干净，并显式提供 `IFIND_LOCAL_HOME`、`AI_RUNTIME_DIR` 与 `-AllowLegacyInsecureUpstream`。任一步失败都会停止发布，日志写入 `work/logs/`。
 
-Task Scheduler 使用 `scripts/install-windows-task.ps1` 注册工作日 15:20 任务。先在目标 commit 手工运行 runner，再注册任务。卸载使用 `scripts/uninstall-windows-task.ps1`。完整参数、安全边界、parity 与可选发布流程见 `docs/WINDOWS_AUTOMATION.md`。
+runner 启动时优先续推 `ai-runtime` 的本地待发布提交，成功后再进入当天任务。正式发布包含根目录五个 latest 文件和 `history/<tradingDataAsOf>/` 同日归档。`AI_HANDOFF_META.json` 是 ChatGPT 唯一读取入口；确定性数值保持来自 canonical snapshot，日报、handoff 与发布层只做结构化传递。
+
+Task Scheduler 使用 `scripts/install-windows-task.ps1` 注册工作日 15:20 任务，并固定 `main`、`ai-runtime` 与 `PublishHandoff`。先在目标 commit 手工运行 runner，再注册任务。卸载使用 `scripts/uninstall-windows-task.ps1`。完整参数、安全边界、parity 与发布流程见 `docs/WINDOWS_AUTOMATION.md`。
 
 AI 分析直接消费已通过 `npm run check-handoff` 的 handoff 或 canonical snapshot；信号、评分、异常与背离继续以 `macro-snapshot.mjs` 的输出为准。
 

@@ -14,6 +14,9 @@ iFinD
   → public/macro-daily-report.md + work/macro/report.json
   → scripts/macro-workbench.mjs
   → public/macro-workbench.html
+  → dist/ai-handoff-latest.json
+  → check-handoff + verify receipts
+  → ai-runtime latest + history/<tradingDataAsOf>/
 ```
 
 ## 源码地图
@@ -33,11 +36,12 @@ iFinD
 | `scripts/run-daily.ps1` | Windows fail-fast 编排、source gate 与脱敏日志 |
 | `scripts/macro-ai-handoff.mjs` | 从 canonical snapshot 生成精简 AI handoff |
 | `scripts/macro-check-handoff.mjs` | handoff contract、lineage、序列与 secret gate |
+| `scripts/macro-publish-handoff.mjs` | 五文件 ai-runtime 发布、历史归档、pending 续推与 GitHub 退避重试 |
 | `scripts/macro-parity-check.mjs` | 两份 snapshot 的 byte/semantic parity |
 | `scripts/install-windows-task.ps1` | 工作日 15:20 Task Scheduler 注册 |
 | `templates/macro/workbench.template.html` | 唯一 Macro Cockpit 模板 |
 | `scripts/macro-date-semantics.mjs` | 交易数据日众数解析与覆盖率 fail-closed gate |
-| `scripts/verify.mjs` | 25 项静态、fixture 与契约 gate |
+| `scripts/verify.mjs` | 26 项静态、fixture、契约与生产发布 gate |
 | `scripts/macro-install-skill.mjs` | staging npm ci、runtime import smoke、备份、原子切换与 source SHA 校验 |
 
 ## 命令

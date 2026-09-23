@@ -7,7 +7,7 @@ V2 把 69 项宏观指标与 61 个期货品种统一收口到 snapshot 统计�
 ## 架构
 
 ```text
-collect → observations.json → snapshot → MACRO_SNAPSHOT 1.1.0 → report → workbench
+collect → snapshot → report → workbench → handoff → check-handoff → verify → publish
 ```
 
 - YAML 是指标语义、阈值、evaluator 和 spread 系数真源。
@@ -51,11 +51,23 @@ npm run check-skill
 
 ## Windows 自动运行与 AI handoff
 
-Windows runner 只编排现有 `collect → snapshot → report → workbench` 主链，并追加 `handoff → check-handoff`。它要求完整 `ExpectedCommit`、干净的 tracked source、可定位的 Node/npm，以及对 `LEGACY_INSECURE_UPSTREAM` 的显式授权；日志写入 `work/logs/`并执行凭据脱敏。
+Windows runner 编排唯一生产链 `collect → snapshot → report → workbench → handoff → check-handoff → verify → publish`。它要求完整 `ExpectedCommit`、干净的 tracked source、可定位的 Node/npm，以及对 `LEGACY_INSECURE_UPSTREAM` 的显式授权；日志写入 `work/logs/`并执行凭据脱敏。
 
 `npm run handoff` 从 `MACRO_SNAPSHOT 1.1.0` 生成 `dist/ai-handoff-latest.json`，保留 headline、六维状态、异常、背离、聚合、新鲜度与期货当前状态，并移除历史序列、observations 与 spread points。`npm run check-handoff` 校验 contract、source SHA/commit/clean、六维、产业链 edges 真源、raw series 与凭据隔离。
 
-Task Scheduler 注册、手工 runner 验证、parity 与可选 `ai-runtime` 发布命令见 `docs/WINDOWS_AUTOMATION.md`。发布器只接受预先存在且位于指定 `ai-runtime` 分支的 worktree，发布失败不改变本地主链产物。
+Task Scheduler 注册、手工 runner 验证、parity 与 `ai-runtime` 发布命令见 `docs/WINDOWS_AUTOMATION.md`。发布器只接受预先存在且位于指定 `ai-runtime` 分支的 worktree，发布失败时保留本地主链产物和待发布提交。
+
+生产模式固定使用 `main` 源码和现有 `scripts/run-daily.ps1`。runner 启动后优先续推 `ai-runtime` 中的本地待发布提交；完整生成链通过 handoff validation 与 verify validation 两份机器凭证后，发布器写入五个固定文件：
+
+```text
+AI_HANDOFF_META.json
+ai-handoff-latest.json
+macro-daily-report.md
+macro-snapshot.json
+macro-workbench.html
+```
+
+同一组文件同步归档到 `history/<tradingDataAsOf>/`。`AI_HANDOFF_META.json` 是 ChatGPT 的唯一入口，包含日期语义、dateQuality、源码 lineage、四项产物 SHA-256、验证状态和 artifact publish commit。GitHub push 首次失败后按 30 / 60 / 120 / 240 / 480 秒退避重试；重试耗尽时，本地提交完整保留供下一次 runner 优先续推。
 
 采集模式通过 `MACRO_MODE=daily|release|full` 设置。iFinD provider 默认 fail closed：`IFIND_PROVIDER` 必须显式设置为 `local` 或 `https-mcp`，系统不会隐式选择连接路径。
 
