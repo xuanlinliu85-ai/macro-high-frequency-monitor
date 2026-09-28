@@ -1,7 +1,7 @@
 {
   "contract": "AI_HANDOFF_META",
   "version": "2.0.0",
-  "generatedAt": "2026-09-28T12:20:46.671Z",
+  "generatedAt": "2026-09-28T12:21:36.035Z",
   "tradingDataAsOf": "2026-09-28",
   "runDate": "2026-09-28",
   "dateQuality": {
@@ -16,44 +16,44 @@
   },
   "sourceCommit": "91c931d6f31988f6f32dbd1f2f7a6023f077a4e1",
   "sourceDirty": false,
-  "snapshotSha256": "292095f3c513d8c0f120f00d57418a0a7e3be2f075ff159433966f19ede696d3",
-  "handoffSha256": "b2a9d4f39664ab78cf9b042af1527208bebf9910448ca69ed829fc1b36a9a602",
-  "reportSha256": "2ce813a46fcb92385863e9a52d9e45e27130a29ea4bcd8a4f1e7cab006792c98",
-  "workbenchSha256": "8db996ac5836b8b2101b1acc88a4735fc2f55182fb10bcf572ed52197a4bd2f9",
+  "snapshotSha256": "8ae9b88c026e637afb59520f902ec364e31635b2f1decb89258767d45ac46877",
+  "handoffSha256": "ee49f78918422b178c84a6d84830e175ee6d79b4a825d82d1921e7fce2f171c3",
+  "reportSha256": "0fc14a4783cd1480537b88af28da244b0858b3a8ca53c80315a196b036e178bf",
+  "workbenchSha256": "2b3c827c4c7cecc1a5291868d528ef4a76cd57df03f48698ebff2e1756a0bad1",
   "validationStatus": "PASS",
   "validation": {
     "handoff": {
       "status": "PASS",
       "passed": 21,
       "total": 21,
-      "generatedAt": "2026-09-28T12:20:44.536Z"
+      "generatedAt": "2026-09-28T12:21:33.391Z"
     },
     "verify": {
       "status": "PASS",
       "passed": 26,
       "total": 26,
-      "generatedAt": "2026-09-28T12:20:45.155Z"
+      "generatedAt": "2026-09-28T12:21:34.174Z"
     }
   },
   "remoteBranch": "ai-runtime",
-  "remotePublishCommit": "9df3e88543e4eff7858868306a9be4c9ba1d0cf6",
+  "remotePublishCommit": "97373ab1f9156df41a2876b8bb0454a6b8be0d0e",
   "historyPath": "history/2026-09-28",
   "files": [
     {
       "name": "ai-handoff-latest.json",
-      "sha256": "b2a9d4f39664ab78cf9b042af1527208bebf9910448ca69ed829fc1b36a9a602"
+      "sha256": "ee49f78918422b178c84a6d84830e175ee6d79b4a825d82d1921e7fce2f171c3"
     },
     {
       "name": "macro-daily-report.md",
-      "sha256": "2ce813a46fcb92385863e9a52d9e45e27130a29ea4bcd8a4f1e7cab006792c98"
+      "sha256": "0fc14a4783cd1480537b88af28da244b0858b3a8ca53c80315a196b036e178bf"
     },
     {
       "name": "macro-snapshot.json",
-      "sha256": "292095f3c513d8c0f120f00d57418a0a7e3be2f075ff159433966f19ede696d3"
+      "sha256": "8ae9b88c026e637afb59520f902ec364e31635b2f1decb89258767d45ac46877"
     },
     {
       "name": "macro-workbench.html",
-      "sha256": "8db996ac5836b8b2101b1acc88a4735fc2f55182fb10bcf572ed52197a4bd2f9"
+      "sha256": "2b3c827c4c7cecc1a5291868d528ef4a76cd57df03f48698ebff2e1756a0bad1"
     }
   ]
 }
