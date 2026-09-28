@@ -1,7 +1,7 @@
 {
   "contract": "AI_MACRO_HANDOFF",
   "version": "1.0.0",
-  "generatedAt": "2026-09-28T12:20:44.040Z",
+  "generatedAt": "2026-09-28T12:21:32.773Z",
   "asOf": "2026-09-28",
   "tradingDataAsOf": "2026-09-28",
   "runDate": "2026-09-28",
@@ -19,8 +19,8 @@
   "source": {
     "contract": "MACRO_SNAPSHOT",
     "version": "1.1.0",
-    "generatedAt": "2026-09-28T12:20:41.223Z",
-    "sha256": "292095f3c513d8c0f120f00d57418a0a7e3be2f075ff159433966f19ede696d3",
+    "generatedAt": "2026-09-28T12:21:31.406Z",
+    "sha256": "8ae9b88c026e637afb59520f902ec364e31635b2f1decb89258767d45ac46877",
     "sourceCommit": "91c931d6f31988f6f32dbd1f2f7a6023f077a4e1",
     "sourceDirty": false
   },
@@ -453,9 +453,9 @@
         "mainContract": {
           "fromCode": "EC00.INE",
           "toCode": "EC2611.INE",
-          "rollRatio": 1.1184962406015038,
-          "overlapDays": 88,
-          "fromCache": false
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
         },
         "tags": [
           "刷一年新高",
@@ -2854,9 +2854,9 @@
         "mainContract": {
           "fromCode": "CU00.SHF",
           "toCode": "CU2611.SHF",
-          "rollRatio": 0.999135861737878,
-          "overlapDays": 211,
-          "fromCache": false
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
         },
         "tags": [
           "持仓放大"
@@ -4901,9 +4901,9 @@
         "mainContract": {
           "fromCode": "EC00.INE",
           "toCode": "EC2611.INE",
-          "rollRatio": 1.1184962406015038,
-          "overlapDays": 88,
-          "fromCache": false
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
         },
         "tags": [
           "刷一年新高",
@@ -5367,9 +5367,9 @@
               "mainContract": {
                 "fromCode": "CU00.SHF",
                 "toCode": "CU2611.SHF",
-                "rollRatio": 0.999135861737878,
-                "overlapDays": 211,
-                "fromCache": false
+                "rollRatio": 1,
+                "overlapDays": 0,
+                "fromCache": true
               },
               "tags": [
                 "持仓放大"
@@ -7509,9 +7509,9 @@
               "mainContract": {
                 "fromCode": "EC00.INE",
                 "toCode": "EC2611.INE",
-                "rollRatio": 1.1184962406015038,
-                "overlapDays": 88,
-                "fromCache": false
+                "rollRatio": 1,
+                "overlapDays": 0,
+                "fromCache": true
               },
               "tags": [
                 "刷一年新高",
