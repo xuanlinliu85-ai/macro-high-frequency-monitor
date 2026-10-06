@@ -1,25 +1,25 @@
 {
   "contract": "MACRO_SNAPSHOT",
   "version": "1.1.0",
-  "generatedAt": "2026-10-05T13:43:48.393Z",
+  "generatedAt": "2026-10-06T15:37:36.609Z",
   "asOf": "2026-09-30",
   "tradingDataAsOf": "2026-09-30",
-  "runDate": "2026-10-05",
-  "sourceWindowEnd": "2026-10-05",
+  "runDate": "2026-10-06",
+  "sourceWindowEnd": "2026-10-06",
   "dateQuality": {
     "coverage": 0.828571,
     "minimumCoverage": 0.8,
     "refreshedDailyCount": 35,
     "byDate": {
       "2026-09-30": 29,
-      "2026-10-05": 4,
-      "2026-10-02": 1,
+      "2026-10-06": 4,
+      "2026-10-05": 1,
       "2026-09-29": 1
     }
   },
   "window": {
-    "begin": "2020-10-05",
-    "end": "2026-10-05"
+    "begin": "2020-10-06",
+    "end": "2026-10-06"
   },
   "source": {
     "data": "iFinD MCP (THS_EDB / THS_HQ)",
@@ -28,7 +28,7 @@
       "version": "2.0",
       "verifiedAt": "2026-09-10"
     },
-    "collectedAt": "2026-10-05T13:43:18.389Z"
+    "collectedAt": "2026-10-06T15:37:02.643Z"
   },
   "scoringModel": {
     "polarity": {
@@ -84,8 +84,8 @@
     "notableDeviationCount": 24,
     "divergenceHits": 1,
     "freshness": {
-      "FRESH": 22,
-      "EXPECTED": 19,
+      "FRESH": 23,
+      "EXPECTED": 18,
       "STALE": 30,
       "DISCONTINUED": 1
     },
@@ -447,8 +447,8 @@
       "neutralLabel": "价格环境中性",
       "lowLabel": "价格压力偏强",
       "semanticLabel": "价格压力偏强",
-      "score": 37.7,
-      "zMean": -0.613,
+      "score": 38.3,
+      "zMean": -0.5837,
       "coverage": {
         "used": 5,
         "configured": 7,
@@ -483,22 +483,22 @@
           "id": "HF_PORK",
           "name_cn": "平均批发价:猪肉",
           "weight": 0.12,
-          "z": 0.0724,
-          "dirZ": -0.0724,
+          "z": 0.0478,
+          "dirZ": -0.0478,
           "status": "FRESH"
         },
         {
           "id": "HF_BRENT",
           "name_cn": "Brent连续（iFinD）",
           "weight": 0.12,
-          "z": 1.118,
-          "dirZ": -1.118,
-          "status": "EXPECTED"
+          "z": 0.972,
+          "dirZ": -0.972,
+          "status": "FRESH"
         }
       ],
       "upCount": 0,
       "downCount": 2,
-      "delta": 1.4,
+      "delta": 2,
       "history": [
         [
           "2026-09-10",
@@ -550,7 +550,7 @@
         ],
         [
           "2026-09-30",
-          37.7
+          38.3
         ]
       ]
     },
@@ -693,8 +693,8 @@
       "neutralLabel": "外需中性",
       "lowLabel": "外需偏弱",
       "semanticLabel": "外需偏强",
-      "score": 68.1,
-      "zMean": 0.9046,
+      "score": 67.6,
+      "zMean": 0.8782,
       "coverage": {
         "used": 4,
         "configured": 5,
@@ -729,14 +729,14 @@
           "id": "HF_BALTIC",
           "name_cn": "波罗的海运费指数:干散货(BDI)",
           "weight": 0.14,
-          "z": 1.1133,
-          "dirZ": 1.1133,
+          "z": 0.9736,
+          "dirZ": 0.9736,
           "status": "FRESH"
         }
       ],
       "upCount": 4,
       "downCount": 0,
-      "delta": -0.9,
+      "delta": -1.4,
       "history": [
         [
           "2026-09-10",
@@ -788,7 +788,7 @@
         ],
         [
           "2026-09-30",
-          68.1
+          67.6
         ]
       ]
     }
@@ -1018,7 +1018,7 @@
         ],
         [
           "2026-09-30",
-          37.7
+          38.3
         ]
       ]
     },
@@ -1132,7 +1132,7 @@
         ],
         [
           "2026-09-30",
-          68.1
+          67.6
         ]
       ]
     }
@@ -1154,7 +1154,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1221,7 +1221,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1290,7 +1290,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1364,7 +1364,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1431,7 +1431,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1498,7 +1498,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1572,7 +1572,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1639,7 +1639,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1692,73 +1692,6 @@
         "deviationLevel": "normal"
       },
       {
-        "id": "HF_BALTIC",
-        "name_cn": "波罗的海运费指数:干散货(BDI)",
-        "layer": "highfreq",
-        "dimension": "external",
-        "category": "external",
-        "frequency": "daily",
-        "unit": "index",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "marketIdentity": null,
-        "direction": "higher_is_stronger",
-        "polarity": 1,
-        "status": "FRESH",
-        "ageDays": 0,
-        "scorable": true,
-        "latest": {
-          "date": "2026-10-05",
-          "value": 3070
-        },
-        "changes": {
-          "chg1": -78,
-          "chg4": -108,
-          "chg5": -198,
-          "chg12": -266,
-          "chg13": -257,
-          "chg20": -505
-        },
-        "pctChg1": -0.024778,
-        "pctChg5": -0.060588,
-        "pctChg20": -0.141259,
-        "pctChg12": -0.079736,
-        "z1y": 1.1133,
-        "dirZ": 1.1133,
-        "pct1y": 0.842,
-        "pct3y": 0.9433,
-        "ma20": 3357.35,
-        "moveExtreme": 0.7027,
-        "chg1Extreme": 0.832,
-        "changeView": {
-          "frequency": "daily",
-          "items": [
-            {
-              "key": "d5",
-              "label": "5D",
-              "value": -198,
-              "pctValue": -0.060588,
-              "status": "available"
-            },
-            {
-              "key": "d20",
-              "label": "20D",
-              "value": -505,
-              "pctValue": -0.141259,
-              "status": "available"
-            }
-          ],
-          "legacy": {
-            "deprecated": true,
-            "field": "changes"
-          }
-        },
-        "tags": [],
-        "isNotable": false,
-        "deviationLevel": "normal"
-      },
-      {
         "id": "CN_PMI_EXPORT",
         "name_cn": "制造业PMI:新出口订单",
         "layer": "official",
@@ -1773,7 +1706,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "FRESH",
-        "ageDays": 35,
+        "ageDays": 36,
         "scorable": true,
         "latest": {
           "date": "2026-08-31",
@@ -1816,6 +1749,73 @@
         "tags": [],
         "isNotable": false,
         "deviationLevel": "normal"
+      },
+      {
+        "id": "MKT_R007",
+        "name_cn": "R007",
+        "layer": "market",
+        "dimension": "liquidity",
+        "category": "liquidity",
+        "frequency": "daily",
+        "unit": "pct",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "marketIdentity": null,
+        "direction": "lower_is_looser",
+        "polarity": -1,
+        "status": "STALE",
+        "ageDays": 6,
+        "scorable": true,
+        "latest": {
+          "date": "2026-09-30",
+          "value": 1.3795
+        },
+        "changes": {
+          "chg1": -0.0361,
+          "chg4": -0.0508,
+          "chg5": -0.0435,
+          "chg12": -0.042,
+          "chg13": -0.0398,
+          "chg20": -0.0308
+        },
+        "pctChg1": -0.025502,
+        "pctChg5": -0.030569,
+        "pctChg20": -0.021839,
+        "pctChg12": -0.029546,
+        "z1y": -1.0061,
+        "dirZ": 1.0061,
+        "pct1y": 0.078,
+        "pct3y": 0.026,
+        "ma20": 1.423,
+        "moveExtreme": 0.4053,
+        "chg1Extreme": 0.6327,
+        "changeView": {
+          "frequency": "daily",
+          "items": [
+            {
+              "key": "d5",
+              "label": "5D",
+              "value": -0.0435,
+              "pctValue": -0.030569,
+              "status": "available"
+            },
+            {
+              "key": "d20",
+              "label": "20D",
+              "value": -0.0308,
+              "pctValue": -0.021839,
+              "status": "available"
+            }
+          ],
+          "legacy": {
+            "deprecated": true,
+            "field": "changes"
+          }
+        },
+        "tags": [],
+        "isNotable": false,
+        "deviationLevel": "normal"
       }
     ],
     "weaker": [
@@ -1837,43 +1837,43 @@
         "ageDays": 0,
         "scorable": true,
         "latest": {
-          "date": "2026-10-05",
-          "value": 72.06
+          "date": "2026-10-06",
+          "value": 73.7
         },
         "changes": {
-          "chg1": -0.52,
-          "chg4": -1.42,
-          "chg5": -1.2,
-          "chg12": 0.46,
-          "chg13": 0.51,
-          "chg20": 0.69
+          "chg1": 1.64,
+          "chg4": 1.43,
+          "chg5": 0.22,
+          "chg12": 1.32,
+          "chg13": 2.1,
+          "chg20": 2.75
         },
-        "pctChg1": -0.007165,
-        "pctChg5": -0.01638,
-        "pctChg20": 0.009668,
-        "pctChg12": 0.006425,
-        "z1y": 2.6772,
-        "dirZ": -2.6772,
-        "pct1y": 0.962,
-        "pct3y": 0.9873,
-        "ma20": 72.077,
-        "moveExtreme": 0.974,
-        "chg1Extreme": 0.8653,
+        "pctChg1": 0.022759,
+        "pctChg5": 0.002994,
+        "pctChg20": 0.03876,
+        "pctChg12": 0.018237,
+        "z1y": 3.5029,
+        "dirZ": -3.5029,
+        "pct1y": 0.998,
+        "pct3y": 0.9993,
+        "ma20": 72.2145,
+        "moveExtreme": 0.4447,
+        "chg1Extreme": 0.998,
         "changeView": {
           "frequency": "daily",
           "items": [
             {
               "key": "d5",
               "label": "5D",
-              "value": -1.2,
-              "pctValue": -0.01638,
+              "value": 0.22,
+              "pctValue": 0.002994,
               "status": "available"
             },
             {
               "key": "d20",
               "label": "20D",
-              "value": 0.69,
-              "pctValue": 0.009668,
+              "value": 2.75,
+              "pctValue": 0.03876,
               "status": "available"
             }
           ],
@@ -1883,10 +1883,11 @@
           }
         },
         "tags": [
-          "位置极端"
+          "刷一年新高",
+          "变化+位置双极端"
         ],
         "isNotable": true,
-        "deviationLevel": "notable"
+        "deviationLevel": "extreme"
       },
       {
         "id": "MKT_HS300",
@@ -1903,7 +1904,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1980,7 +1981,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -2049,7 +2050,7 @@
         "direction": "higher_is_looser",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 66,
+        "ageDays": 67,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2114,7 +2115,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 66,
+        "ageDays": 67,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2179,7 +2180,7 @@
         "direction": "higher_is_looser",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 66,
+        "ageDays": 67,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2244,7 +2245,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -2318,7 +2319,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 66,
+        "ageDays": 67,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2383,7 +2384,7 @@
         "direction": "higher_is_looser",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 66,
+        "ageDays": 67,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2442,7 +2443,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -2655,32 +2656,28 @@
       "unit": "cny_per_kg",
       "status": "FRESH",
       "latest": {
-        "date": "2026-10-05",
-        "value": 72.06
+        "date": "2026-10-06",
+        "value": 73.7
       },
-      "z1y": 2.6772,
-      "dirZ": -2.6772,
-      "pct3y": 0.9873,
+      "z1y": 3.5029,
+      "dirZ": -3.5029,
+      "pct3y": 0.9993,
       "changes": {
-        "chg1": -0.52,
-        "chg4": -1.42,
-        "chg5": -1.2,
-        "chg12": 0.46,
-        "chg13": 0.51,
-        "chg20": 0.69
+        "chg1": 1.64,
+        "chg4": 1.43,
+        "chg5": 0.22,
+        "chg12": 1.32,
+        "chg13": 2.1,
+        "chg20": 2.75
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 2.6772
+          "value": 3.5029
         },
         {
           "id": "PERCENTILE_HIGH",
-          "value": 0.9873
-        },
-        {
-          "id": "FIVE_DAY_MOVE_EXTREME",
-          "value": 0.974
+          "value": 0.9993
         }
       ],
       "severity": "high"
@@ -3078,8 +3075,78 @@
   ],
   "deviations": {
     "total": 24,
-    "extreme": 3,
+    "extreme": 4,
     "up": [
+      {
+        "id": "HF_BEEF",
+        "name_cn": "平均批发价:牛肉",
+        "layer": "highfreq",
+        "dimension": "inflation",
+        "category": "inflation",
+        "frequency": "daily",
+        "unit": "cny_per_kg",
+        "importance": "low",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "marketIdentity": null,
+        "direction": "higher_is_tighter",
+        "polarity": -1,
+        "status": "FRESH",
+        "ageDays": 0,
+        "scorable": true,
+        "latest": {
+          "date": "2026-10-06",
+          "value": 73.7
+        },
+        "changes": {
+          "chg1": 1.64,
+          "chg4": 1.43,
+          "chg5": 0.22,
+          "chg12": 1.32,
+          "chg13": 2.1,
+          "chg20": 2.75
+        },
+        "pctChg1": 0.022759,
+        "pctChg5": 0.002994,
+        "pctChg20": 0.03876,
+        "pctChg12": 0.018237,
+        "z1y": 3.5029,
+        "dirZ": -3.5029,
+        "pct1y": 0.998,
+        "pct3y": 0.9993,
+        "ma20": 72.2145,
+        "moveExtreme": 0.4447,
+        "chg1Extreme": 0.998,
+        "changeView": {
+          "frequency": "daily",
+          "items": [
+            {
+              "key": "d5",
+              "label": "5D",
+              "value": 0.22,
+              "pctValue": 0.002994,
+              "status": "available"
+            },
+            {
+              "key": "d20",
+              "label": "20D",
+              "value": 2.75,
+              "pctValue": 0.03876,
+              "status": "available"
+            }
+          ],
+          "legacy": {
+            "deprecated": true,
+            "field": "changes"
+          }
+        },
+        "tags": [
+          "刷一年新高",
+          "变化+位置双极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "extreme"
+      },
       {
         "id": "FUT_NR",
         "name_cn": "20号胶",
@@ -3093,7 +3160,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 17500,
         "d1": 0.061249,
@@ -3137,7 +3204,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 20095,
         "d1": 0.057075,
@@ -3180,7 +3247,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2723,
         "d1": 0.025226,
@@ -3222,7 +3289,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 16000,
         "d1": 0.034929,
@@ -3265,7 +3332,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 10230,
         "d1": 0.017202,
@@ -3293,48 +3360,6 @@
         ],
         "isNotable": true,
         "deviationLevel": "notable"
-      },
-      {
-        "id": "FUT_V",
-        "name_cn": "PVC",
-        "chain": "chemical",
-        "chain_cn": "化工",
-        "chain_tier": "下游成品",
-        "code": "V2701.DCE",
-        "requestedCode": "V00.DCE",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "status": "STALE",
-        "ageDays": 5,
-        "lastDate": "2026-09-30",
-        "value": 4999,
-        "d1": 0.031998,
-        "d5": 0.050872,
-        "d20": 0.022709,
-        "d60": 0.091723,
-        "z1y": -0.0894,
-        "pct1y": 0.4708,
-        "pct3y": 0.4708,
-        "chg1Extreme": 0.9147,
-        "ma20": 4907.55,
-        "historyDays": 171,
-        "oi": 1042564,
-        "oiChg5": -0.069863,
-        "oiChg20": -0.033954,
-        "mainContract": {
-          "fromCode": "V00.DCE",
-          "toCode": "V2701.DCE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
-        },
-        "tags": [
-          "变化显著"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
       }
     ],
     "down": [
@@ -3351,7 +3376,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5013,
         "d1": -0.044415,
@@ -3394,7 +3419,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 6854,
         "d1": -0.014097,
@@ -3425,75 +3450,6 @@
         "deviationLevel": "notable"
       },
       {
-        "id": "HF_BEEF",
-        "name_cn": "平均批发价:牛肉",
-        "layer": "highfreq",
-        "dimension": "inflation",
-        "category": "inflation",
-        "frequency": "daily",
-        "unit": "cny_per_kg",
-        "importance": "low",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "marketIdentity": null,
-        "direction": "higher_is_tighter",
-        "polarity": -1,
-        "status": "FRESH",
-        "ageDays": 0,
-        "scorable": true,
-        "latest": {
-          "date": "2026-10-05",
-          "value": 72.06
-        },
-        "changes": {
-          "chg1": -0.52,
-          "chg4": -1.42,
-          "chg5": -1.2,
-          "chg12": 0.46,
-          "chg13": 0.51,
-          "chg20": 0.69
-        },
-        "pctChg1": -0.007165,
-        "pctChg5": -0.01638,
-        "pctChg20": 0.009668,
-        "pctChg12": 0.006425,
-        "z1y": 2.6772,
-        "dirZ": -2.6772,
-        "pct1y": 0.962,
-        "pct3y": 0.9873,
-        "ma20": 72.077,
-        "moveExtreme": 0.974,
-        "chg1Extreme": 0.8653,
-        "changeView": {
-          "frequency": "daily",
-          "items": [
-            {
-              "key": "d5",
-              "label": "5D",
-              "value": -1.2,
-              "pctValue": -0.01638,
-              "status": "available"
-            },
-            {
-              "key": "d20",
-              "label": "20D",
-              "value": 0.69,
-              "pctValue": 0.009668,
-              "status": "available"
-            }
-          ],
-          "legacy": {
-            "deprecated": true,
-            "field": "changes"
-          }
-        },
-        "tags": [
-          "位置极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
-      },
-      {
         "id": "MKT_USDCNY",
         "name_cn": "中间价:美元兑人民币",
         "layer": "market",
@@ -3508,7 +3464,7 @@
         "direction": "contextual",
         "polarity": 0,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "scorable": false,
         "latest": {
           "date": "2026-09-30",
@@ -3582,7 +3538,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 13700,
         "d1": -0.007965,
@@ -3624,7 +3580,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2794,
         "d1": -0.017926,
@@ -3649,6 +3605,48 @@
         },
         "tags": [
           "位置极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
+        "id": "FUT_BC",
+        "name_cn": "国际铜",
+        "chain": "nonferrous",
+        "chain_cn": "有色金属",
+        "chain_tier": "基本金属",
+        "code": "BC2611.INE",
+        "requestedCode": "BC00.INE",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "status": "STALE",
+        "ageDays": 6,
+        "lastDate": "2026-09-30",
+        "value": 97950,
+        "d1": -0.002139,
+        "d5": -0.011106,
+        "d20": 0.007094,
+        "d60": 0.071898,
+        "z1y": 1.3865,
+        "pct1y": 0.9597,
+        "pct3y": 0.9597,
+        "chg1Extreme": 0.5894,
+        "ma20": 97485,
+        "historyDays": 236,
+        "oi": 13616,
+        "oiChg5": 0.603014,
+        "oiChg20": 3.211568,
+        "mainContract": {
+          "fromCode": "BC00.INE",
+          "toCode": "BC2611.INE",
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
+        },
+        "tags": [
+          "持仓放大"
         ],
         "isNotable": true,
         "deviationLevel": "notable"
@@ -3859,13 +3857,13 @@
           {
             "id": "HF_BALTIC",
             "name_cn": "波罗的海运费指数:干散货(BDI)",
-            "value": 1.1133
+            "value": 0.9736
           }
         ],
         "usable": 3,
         "positive": 3,
         "negative": 0,
-        "mean": 0.9839,
+        "mean": 0.9373,
         "direction": "positive"
       },
       "sideB": {
@@ -3907,7 +3905,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 97,
+      "ageDays": 98,
       "scorable": true,
       "latest": {
         "date": "2026-06-30",
@@ -3966,7 +3964,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4031,7 +4029,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4096,7 +4094,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 97,
+      "ageDays": 98,
       "scorable": true,
       "latest": {
         "date": "2026-06-30",
@@ -4155,7 +4153,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4220,7 +4218,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4285,7 +4283,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4344,7 +4342,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4409,7 +4407,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4468,7 +4466,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4527,7 +4525,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4586,7 +4584,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": false,
       "latest": {
         "date": "2026-08-31",
@@ -4645,7 +4643,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4704,7 +4702,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4763,7 +4761,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4822,7 +4820,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": false,
       "latest": {
         "date": "2026-08-31",
@@ -4887,7 +4885,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": false,
       "latest": {
         "date": "2026-08-31",
@@ -4946,7 +4944,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5011,7 +5009,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5076,7 +5074,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5141,7 +5139,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5206,7 +5204,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5271,7 +5269,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5336,7 +5334,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5395,7 +5393,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5454,7 +5452,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5519,7 +5517,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5584,7 +5582,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 35,
+      "ageDays": 36,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5643,7 +5641,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5708,7 +5706,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5767,7 +5765,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5832,7 +5830,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5891,7 +5889,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5956,7 +5954,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -6021,7 +6019,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -6086,7 +6084,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 66,
+      "ageDays": 67,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -6148,50 +6146,50 @@
       "ageDays": 0,
       "scorable": true,
       "latest": {
-        "date": "2026-10-05",
-        "value": 15.93
+        "date": "2026-10-06",
+        "value": 15.89
       },
       "changes": {
-        "chg1": 0.02,
-        "chg4": -0.15,
-        "chg5": -0.49,
-        "chg12": -0.49,
-        "chg13": -0.51,
-        "chg20": -0.47
+        "chg1": -0.04,
+        "chg4": -0.32,
+        "chg5": -0.19,
+        "chg12": -0.45,
+        "chg13": -0.53,
+        "chg20": -0.48
       },
-      "pctChg1": 0.001257,
-      "pctChg5": -0.029842,
-      "pctChg20": -0.028659,
-      "pctChg12": -0.029842,
-      "z1y": 0.0724,
-      "dirZ": -0.0724,
-      "pct1y": 0.558,
-      "pct3y": 0.186,
-      "ma20": 16.263,
-      "moveExtreme": 0.904,
-      "chg1Extreme": 0.1113,
+      "pctChg1": -0.002511,
+      "pctChg5": -0.011816,
+      "pctChg20": -0.029322,
+      "pctChg12": -0.02754,
+      "z1y": 0.0478,
+      "dirZ": -0.0478,
+      "pct1y": 0.534,
+      "pct3y": 0.178,
+      "ma20": 16.239,
+      "moveExtreme": 0.532,
+      "chg1Extreme": 0.2027,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d1",
             "label": "1D",
-            "value": 0.02,
-            "pctValue": 0.001257,
+            "value": -0.04,
+            "pctValue": -0.002511,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.49,
-            "pctValue": -0.029842,
+            "value": -0.19,
+            "pctValue": -0.011816,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -0.47,
-            "pctValue": -0.028659,
+            "value": -0.48,
+            "pctValue": -0.029322,
             "status": "available"
           }
         ],
@@ -6222,43 +6220,43 @@
       "ageDays": 0,
       "scorable": true,
       "latest": {
-        "date": "2026-10-05",
-        "value": 72.06
+        "date": "2026-10-06",
+        "value": 73.7
       },
       "changes": {
-        "chg1": -0.52,
-        "chg4": -1.42,
-        "chg5": -1.2,
-        "chg12": 0.46,
-        "chg13": 0.51,
-        "chg20": 0.69
+        "chg1": 1.64,
+        "chg4": 1.43,
+        "chg5": 0.22,
+        "chg12": 1.32,
+        "chg13": 2.1,
+        "chg20": 2.75
       },
-      "pctChg1": -0.007165,
-      "pctChg5": -0.01638,
-      "pctChg20": 0.009668,
-      "pctChg12": 0.006425,
-      "z1y": 2.6772,
-      "dirZ": -2.6772,
-      "pct1y": 0.962,
-      "pct3y": 0.9873,
-      "ma20": 72.077,
-      "moveExtreme": 0.974,
-      "chg1Extreme": 0.8653,
+      "pctChg1": 0.022759,
+      "pctChg5": 0.002994,
+      "pctChg20": 0.03876,
+      "pctChg12": 0.018237,
+      "z1y": 3.5029,
+      "dirZ": -3.5029,
+      "pct1y": 0.998,
+      "pct3y": 0.9993,
+      "ma20": 72.2145,
+      "moveExtreme": 0.4447,
+      "chg1Extreme": 0.998,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d5",
             "label": "5D",
-            "value": -1.2,
-            "pctValue": -0.01638,
+            "value": 0.22,
+            "pctValue": 0.002994,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 0.69,
-            "pctValue": 0.009668,
+            "value": 2.75,
+            "pctValue": 0.03876,
             "status": "available"
           }
         ],
@@ -6268,10 +6266,11 @@
         }
       },
       "tags": [
-        "位置极端"
+        "刷一年新高",
+        "变化+位置双极端"
       ],
       "isNotable": true,
-      "deviationLevel": "notable"
+      "deviationLevel": "extreme"
     },
     {
       "id": "HF_EGG",
@@ -6291,43 +6290,43 @@
       "ageDays": 0,
       "scorable": true,
       "latest": {
-        "date": "2026-10-05",
-        "value": 10.3
+        "date": "2026-10-06",
+        "value": 10.27
       },
       "changes": {
-        "chg1": 0.03,
-        "chg4": -0.16,
-        "chg5": -0.22,
-        "chg12": -0.81,
-        "chg13": -0.83,
+        "chg1": -0.03,
+        "chg4": -0.13,
+        "chg5": -0.19,
+        "chg12": -0.74,
+        "chg13": -0.84,
         "chg20": -0.82
       },
-      "pctChg1": 0.002921,
-      "pctChg5": -0.020913,
-      "pctChg20": -0.073741,
-      "pctChg12": -0.072907,
-      "z1y": 0.781,
-      "dirZ": -0.781,
-      "pct1y": 0.726,
-      "pct3y": 0.8413,
-      "ma20": 10.836,
-      "moveExtreme": 0.7127,
-      "chg1Extreme": 0.3253,
+      "pctChg1": -0.002913,
+      "pctChg5": -0.018164,
+      "pctChg20": -0.07394,
+      "pctChg12": -0.067212,
+      "z1y": 0.7505,
+      "dirZ": -0.7505,
+      "pct1y": 0.712,
+      "pct3y": 0.8313,
+      "ma20": 10.795,
+      "moveExtreme": 0.6607,
+      "chg1Extreme": 0.326,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.22,
-            "pctValue": -0.020913,
+            "value": -0.19,
+            "pctValue": -0.018164,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
             "value": -0.82,
-            "pctValue": -0.073741,
+            "pctValue": -0.07394,
             "status": "available"
           }
         ],
@@ -6355,7 +6354,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6422,7 +6421,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6489,7 +6488,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6569,54 +6568,54 @@
       },
       "direction": "higher_is_tighter",
       "polarity": -1,
-      "status": "EXPECTED",
-      "ageDays": 3,
+      "status": "FRESH",
+      "ageDays": 1,
       "scorable": true,
       "latest": {
-        "date": "2026-10-02",
-        "value": 102.61
+        "date": "2026-10-05",
+        "value": 100.22
       },
       "changes": {
-        "chg1": -0.39,
-        "chg4": -3.46,
-        "chg5": -1.77,
-        "chg12": -2.99,
-        "chg13": -5.87,
-        "chg20": 6.76
+        "chg1": -2.39,
+        "chg4": -2.7,
+        "chg5": -5.85,
+        "chg12": -3.84,
+        "chg13": -5.38,
+        "chg20": 2.91
       },
-      "pctChg1": -0.003786,
-      "pctChg5": -0.016957,
-      "pctChg20": 0.070527,
-      "pctChg12": -0.028314,
-      "z1y": 1.118,
-      "dirZ": -1.118,
-      "pct1y": 0.814,
-      "pct3y": 0.938,
-      "ma20": 103.278,
-      "moveExtreme": 0.4307,
-      "chg1Extreme": 0.2473,
+      "pctChg1": -0.023292,
+      "pctChg5": -0.055152,
+      "pctChg20": 0.029904,
+      "pctChg12": -0.036902,
+      "z1y": 0.972,
+      "dirZ": -0.972,
+      "pct1y": 0.778,
+      "pct3y": 0.926,
+      "ma20": 103.4235,
+      "moveExtreme": 0.854,
+      "chg1Extreme": 0.8467,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d1",
             "label": "1D",
-            "value": -0.39,
-            "pctValue": -0.003786,
+            "value": -2.39,
+            "pctValue": -0.023292,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -1.77,
-            "pctValue": -0.016957,
+            "value": -5.85,
+            "pctValue": -0.055152,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 6.76,
-            "pctValue": 0.070527,
+            "value": 2.91,
+            "pctValue": 0.029904,
             "status": "available"
           }
         ],
@@ -6647,43 +6646,43 @@
       "ageDays": 0,
       "scorable": true,
       "latest": {
-        "date": "2026-10-05",
-        "value": 3070
+        "date": "2026-10-06",
+        "value": 3002
       },
       "changes": {
-        "chg1": -78,
-        "chg4": -108,
-        "chg5": -198,
-        "chg12": -266,
-        "chg13": -257,
-        "chg20": -505
+        "chg1": -68,
+        "chg4": -111,
+        "chg5": -176,
+        "chg12": -368,
+        "chg13": -334,
+        "chg20": -582
       },
-      "pctChg1": -0.024778,
-      "pctChg5": -0.060588,
-      "pctChg20": -0.141259,
-      "pctChg12": -0.079736,
-      "z1y": 1.1133,
-      "dirZ": 1.1133,
-      "pct1y": 0.842,
-      "pct3y": 0.9433,
-      "ma20": 3357.35,
-      "moveExtreme": 0.7027,
-      "chg1Extreme": 0.832,
+      "pctChg1": -0.02215,
+      "pctChg5": -0.055381,
+      "pctChg20": -0.162388,
+      "pctChg12": -0.109199,
+      "z1y": 0.9736,
+      "dirZ": 0.9736,
+      "pct1y": 0.802,
+      "pct3y": 0.93,
+      "ma20": 3328.25,
+      "moveExtreme": 0.6407,
+      "chg1Extreme": 0.7953,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d5",
             "label": "5D",
-            "value": -198,
-            "pctValue": -0.060588,
+            "value": -176,
+            "pctValue": -0.055381,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -505,
-            "pctValue": -0.141259,
+            "value": -582,
+            "pctValue": -0.162388,
             "status": "available"
           }
         ],
@@ -6711,7 +6710,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6785,7 +6784,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6852,7 +6851,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6919,7 +6918,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6986,7 +6985,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7055,7 +7054,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7124,7 +7123,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "DISCONTINUED",
-      "ageDays": 1375,
+      "ageDays": 1376,
       "scorable": false,
       "latest": {
         "date": "2022-12-30",
@@ -7193,7 +7192,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7265,7 +7264,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7332,7 +7331,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7406,7 +7405,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-29",
@@ -7480,7 +7479,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7547,7 +7546,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7614,7 +7613,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7681,7 +7680,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7748,7 +7747,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7815,7 +7814,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7889,7 +7888,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7956,7 +7955,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8023,7 +8022,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": false,
       "latest": {
         "date": "2026-09-30",
@@ -8090,7 +8089,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8157,7 +8156,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8224,7 +8223,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": false,
       "latest": {
         "date": "2026-09-30",
@@ -8300,7 +8299,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": false,
       "latest": {
         "date": "2026-09-30",
@@ -8374,7 +8373,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8451,7 +8450,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8525,7 +8524,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8599,7 +8598,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 5,
+      "ageDays": 6,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8779,7 +8778,7 @@
         "count": 6,
         "usable": 6,
         "medianDirZ": 0.8892,
-        "median20DPct": -0.141259
+        "median20DPct": -0.162388
       },
       "inflation": {
         "count": 13,
@@ -19712,12 +19711,12 @@
       "unit": "cny_per_kg",
       "importance": "high",
       "frequency": "daily",
-      "z1y": 0.0724,
-      "dirZ": -0.0724,
-      "pct1y": 0.558,
+      "z1y": 0.0478,
+      "dirZ": -0.0478,
+      "pct1y": 0.534,
       "latest": {
-        "date": "2026-10-05",
-        "value": 15.93
+        "date": "2026-10-06",
+        "value": 15.89
       },
       "changeView": {
         "frequency": "daily",
@@ -19725,22 +19724,22 @@
           {
             "key": "d1",
             "label": "1D",
-            "value": 0.02,
-            "pctValue": 0.001257,
+            "value": -0.04,
+            "pctValue": -0.002511,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.49,
-            "pctValue": -0.029842,
+            "value": -0.19,
+            "pctValue": -0.011816,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -0.47,
-            "pctValue": -0.028659,
+            "value": -0.48,
+            "pctValue": -0.029322,
             "status": "available"
           }
         ],
@@ -19750,10 +19749,6 @@
         }
       },
       "points": [
-        [
-          "2025-05-04",
-          20.51
-        ],
         [
           "2025-05-05",
           20.67
@@ -21829,6 +21824,10 @@
         [
           "2026-10-05",
           15.93
+        ],
+        [
+          "2026-10-06",
+          15.89
         ]
       ]
     },
@@ -21840,12 +21839,12 @@
       "unit": "cny_per_kg",
       "importance": "low",
       "frequency": "daily",
-      "z1y": 2.6772,
-      "dirZ": -2.6772,
-      "pct1y": 0.962,
+      "z1y": 3.5029,
+      "dirZ": -3.5029,
+      "pct1y": 0.998,
       "latest": {
-        "date": "2026-10-05",
-        "value": 72.06
+        "date": "2026-10-06",
+        "value": 73.7
       },
       "changeView": {
         "frequency": "daily",
@@ -21853,15 +21852,15 @@
           {
             "key": "d5",
             "label": "5D",
-            "value": -1.2,
-            "pctValue": -0.01638,
+            "value": 0.22,
+            "pctValue": 0.002994,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 0.69,
-            "pctValue": 0.009668,
+            "value": 2.75,
+            "pctValue": 0.03876,
             "status": "available"
           }
         ],
@@ -21871,10 +21870,6 @@
         }
       },
       "points": [
-        [
-          "2025-05-04",
-          63.5
-        ],
         [
           "2025-05-05",
           62.84
@@ -23950,6 +23945,10 @@
         [
           "2026-10-05",
           72.06
+        ],
+        [
+          "2026-10-06",
+          73.7
         ]
       ]
     },
@@ -23961,12 +23960,12 @@
       "unit": "cny_per_kg",
       "importance": "low",
       "frequency": "daily",
-      "z1y": 0.781,
-      "dirZ": -0.781,
-      "pct1y": 0.726,
+      "z1y": 0.7505,
+      "dirZ": -0.7505,
+      "pct1y": 0.712,
       "latest": {
-        "date": "2026-10-05",
-        "value": 10.3
+        "date": "2026-10-06",
+        "value": 10.27
       },
       "changeView": {
         "frequency": "daily",
@@ -23974,15 +23973,15 @@
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.22,
-            "pctValue": -0.020913,
+            "value": -0.19,
+            "pctValue": -0.018164,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
             "value": -0.82,
-            "pctValue": -0.073741,
+            "pctValue": -0.07394,
             "status": "available"
           }
         ],
@@ -23992,10 +23991,6 @@
         }
       },
       "points": [
-        [
-          "2025-05-04",
-          8.12
-        ],
         [
           "2025-05-05",
           7.96
@@ -26071,6 +26066,10 @@
         [
           "2026-10-05",
           10.3
+        ],
+        [
+          "2026-10-06",
+          10.27
         ]
       ]
     },
@@ -26082,12 +26081,12 @@
       "unit": "usd_per_barrel",
       "importance": "high",
       "frequency": "daily",
-      "z1y": 1.118,
-      "dirZ": -1.118,
-      "pct1y": 0.814,
+      "z1y": 0.972,
+      "dirZ": -0.972,
+      "pct1y": 0.778,
       "latest": {
-        "date": "2026-10-02",
-        "value": 102.61
+        "date": "2026-10-05",
+        "value": 100.22
       },
       "changeView": {
         "frequency": "daily",
@@ -26095,22 +26094,22 @@
           {
             "key": "d1",
             "label": "1D",
-            "value": -0.39,
-            "pctValue": -0.003786,
+            "value": -2.39,
+            "pctValue": -0.023292,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -1.77,
-            "pctValue": -0.016957,
+            "value": -5.85,
+            "pctValue": -0.055152,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 6.76,
-            "pctValue": 0.070527,
+            "value": 2.91,
+            "pctValue": 0.029904,
             "status": "available"
           }
         ],
@@ -26120,10 +26119,6 @@
         }
       },
       "points": [
-        [
-          "2024-09-27",
-          72.45
-        ],
         [
           "2024-09-30",
           71.76
@@ -28199,6 +28194,10 @@
         [
           "2026-10-02",
           102.61
+        ],
+        [
+          "2026-10-05",
+          100.22
         ]
       ]
     },
@@ -28210,12 +28209,12 @@
       "unit": "index",
       "importance": "medium",
       "frequency": "daily",
-      "z1y": 1.1133,
-      "dirZ": 1.1133,
-      "pct1y": 0.842,
+      "z1y": 0.9736,
+      "dirZ": 0.9736,
+      "pct1y": 0.802,
       "latest": {
-        "date": "2026-10-05",
-        "value": 3070
+        "date": "2026-10-06",
+        "value": 3002
       },
       "changeView": {
         "frequency": "daily",
@@ -28223,15 +28222,15 @@
           {
             "key": "d5",
             "label": "5D",
-            "value": -198,
-            "pctValue": -0.060588,
+            "value": -176,
+            "pctValue": -0.055381,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -505,
-            "pctValue": -0.141259,
+            "value": -582,
+            "pctValue": -0.162388,
             "status": "available"
           }
         ],
@@ -28241,10 +28240,6 @@
         }
       },
       "points": [
-        [
-          "2024-09-06",
-          1941
-        ],
         [
           "2024-09-09",
           1958
@@ -30320,6 +30315,10 @@
         [
           "2026-10-05",
           3070
+        ],
+        [
+          "2026-10-06",
+          3002
         ]
       ]
     }
@@ -30747,7 +30746,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 702.5,
         "d1": 0.005007,
@@ -30787,7 +30786,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 1449,
         "d1": 0.000691,
@@ -30827,7 +30826,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 1958.5,
         "d1": 0.008237,
@@ -30898,7 +30897,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5936,
         "d1": 0.008495,
@@ -30938,7 +30937,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5796,
         "d1": 0.000691,
@@ -30978,7 +30977,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 3112,
         "d1": 0.002254,
@@ -31018,7 +31017,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 3274,
         "d1": -0.000611,
@@ -31058,7 +31057,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 13700,
         "d1": -0.007965,
@@ -31100,7 +31099,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2723,
         "d1": 0.025226,
@@ -31142,7 +31141,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 109680,
         "d1": 0.001004,
@@ -31182,7 +31181,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 23830,
         "d1": -0.00791,
@@ -31222,7 +31221,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 26435,
         "d1": -0.005268,
@@ -31262,7 +31261,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 16180,
         "d1": -0.005837,
@@ -31302,7 +31301,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 122040,
         "d1": -0.008127,
@@ -31342,7 +31341,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 409600,
         "d1": -0.000927,
@@ -31382,7 +31381,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 97950,
         "d1": -0.002139,
@@ -31429,7 +31428,7 @@
           "unit": "cny_per_barrel"
         },
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 711,
         "d1": -0.001264,
@@ -31471,7 +31470,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 4434,
         "d1": -0.000901,
@@ -31513,7 +31512,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5162,
         "d1": -0.030064,
@@ -31553,7 +31552,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5013,
         "d1": -0.044415,
@@ -31596,7 +31595,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 6713,
         "d1": 0.004639,
@@ -31638,7 +31637,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 8904,
         "d1": -0.006693,
@@ -31678,7 +31677,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2972,
         "d1": 0.006434,
@@ -31718,7 +31717,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5284,
         "d1": 0.008205,
@@ -31758,7 +31757,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 1006,
         "d1": -0.005929,
@@ -31798,7 +31797,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 1860,
         "d1": -0.003749,
@@ -31840,7 +31839,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 9892,
         "d1": -0.002521,
@@ -31880,7 +31879,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 20095,
         "d1": 0.057075,
@@ -31923,7 +31922,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 17500,
         "d1": 0.061249,
@@ -31967,7 +31966,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 16000,
         "d1": 0.034929,
@@ -32010,7 +32009,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 4912,
         "d1": -0.009677,
@@ -32050,7 +32049,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 6300,
         "d1": -0.007874,
@@ -32090,7 +32089,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 7910,
         "d1": -0.001767,
@@ -32130,7 +32129,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 7644,
         "d1": -0.00365,
@@ -32170,7 +32169,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 8631,
         "d1": -0.005187,
@@ -32210,7 +32209,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 8197,
         "d1": -0.010383,
@@ -32250,7 +32249,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 4999,
         "d1": 0.031998,
@@ -32292,7 +32291,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 896,
         "d1": 0.005612,
@@ -32332,7 +32331,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 1768,
         "d1": 0.011442,
@@ -32372,7 +32371,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 910.58,
         "d1": 0.013129,
@@ -32412,7 +32411,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 14980,
         "d1": 0.00889,
@@ -32452,7 +32451,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5253,
         "d1": 0.009416,
@@ -32494,7 +32493,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2187,
         "d1": 0,
@@ -32534,7 +32533,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 9581,
         "d1": 0.001673,
@@ -32574,7 +32573,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 827.5,
         "d1": 0.001816,
@@ -32616,7 +32615,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 3372,
         "d1": 0.00387,
@@ -32656,7 +32655,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 8972,
         "d1": 0.01093,
@@ -32696,7 +32695,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 10230,
         "d1": 0.017202,
@@ -32738,7 +32737,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2333,
         "d1": 0.010832,
@@ -32778,7 +32777,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2434,
         "d1": -0.000411,
@@ -32820,7 +32819,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 3697,
         "d1": 0.009833,
@@ -32860,7 +32859,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 11365,
         "d1": 0.003975,
@@ -32902,7 +32901,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 5354,
         "d1": 0.00488,
@@ -32942,7 +32941,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 15615,
         "d1": -0.010456,
@@ -32982,7 +32981,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 6854,
         "d1": -0.014097,
@@ -33025,7 +33024,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 8162,
         "d1": 0.008401,
@@ -33067,7 +33066,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 8565,
         "d1": 0.004103,
@@ -33107,7 +33106,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 118420,
         "d1": -0.003031,
@@ -33150,7 +33149,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 36585,
         "d1": 0.009241,
@@ -33190,7 +33189,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "lastDate": "2026-09-30",
         "value": 2794,
         "d1": -0.017926,
@@ -33242,7 +33241,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 702.5,
               "d1": 0.005007,
@@ -33283,7 +33282,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 1449,
               "d1": 0.000691,
@@ -33324,7 +33323,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 1958.5,
               "d1": 0.008237,
@@ -33397,7 +33396,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 5936,
               "d1": 0.008495,
@@ -33438,7 +33437,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 5796,
               "d1": 0.000691,
@@ -33479,7 +33478,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 3112,
               "d1": 0.002254,
@@ -33520,7 +33519,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 3274,
               "d1": -0.000611,
@@ -33561,7 +33560,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 13700,
               "d1": -0.007965,
@@ -33613,7 +33612,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 2723,
               "d1": 0.025226,
@@ -33656,7 +33655,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 109680,
               "d1": 0.001004,
@@ -33697,7 +33696,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 23830,
               "d1": -0.00791,
@@ -33738,7 +33737,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 26435,
               "d1": -0.005268,
@@ -33779,7 +33778,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 16180,
               "d1": -0.005837,
@@ -33820,7 +33819,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 122040,
               "d1": -0.008127,
@@ -33861,7 +33860,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 409600,
               "d1": -0.000927,
@@ -33902,7 +33901,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 97950,
               "d1": -0.002139,
@@ -33959,7 +33958,7 @@
                 "unit": "cny_per_barrel"
               },
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 711,
               "d1": -0.001264,
@@ -34002,7 +34001,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 4434,
               "d1": -0.000901,
@@ -34045,7 +34044,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 5162,
               "d1": -0.030064,
@@ -34086,7 +34085,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 5013,
               "d1": -0.044415,
@@ -34130,7 +34129,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 6713,
               "d1": 0.004639,
@@ -34182,7 +34181,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 8904,
               "d1": -0.006693,
@@ -34223,7 +34222,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 2972,
               "d1": 0.006434,
@@ -34264,7 +34263,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 5284,
               "d1": 0.008205,
@@ -34305,7 +34304,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 1006,
               "d1": -0.005929,
@@ -34346,7 +34345,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 1860,
               "d1": -0.003749,
@@ -34389,7 +34388,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 9892,
               "d1": -0.002521,
@@ -34430,7 +34429,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 20095,
               "d1": 0.057075,
@@ -34474,7 +34473,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 17500,
               "d1": 0.061249,
@@ -34519,7 +34518,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 16000,
               "d1": 0.034929,
@@ -34563,7 +34562,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 4912,
               "d1": -0.009677,
@@ -34604,7 +34603,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 6300,
               "d1": -0.007874,
@@ -34645,7 +34644,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 7910,
               "d1": -0.001767,
@@ -34686,7 +34685,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 7644,
               "d1": -0.00365,
@@ -34727,7 +34726,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 8631,
               "d1": -0.005187,
@@ -34768,7 +34767,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 8197,
               "d1": -0.010383,
@@ -34809,7 +34808,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 4999,
               "d1": 0.031998,
@@ -34852,7 +34851,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 896,
               "d1": 0.005612,
@@ -34893,7 +34892,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 1768,
               "d1": 0.011442,
@@ -34943,7 +34942,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 910.58,
               "d1": 0.013129,
@@ -34984,7 +34983,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 14980,
               "d1": 0.00889,
@@ -35034,7 +35033,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 5253,
               "d1": 0.009416,
@@ -35077,7 +35076,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 2187,
               "d1": 0,
@@ -35118,7 +35117,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 9581,
               "d1": 0.001673,
@@ -35159,7 +35158,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 827.5,
               "d1": 0.001816,
@@ -35202,7 +35201,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 3372,
               "d1": 0.00387,
@@ -35243,7 +35242,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 8972,
               "d1": 0.01093,
@@ -35284,7 +35283,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 10230,
               "d1": 0.017202,
@@ -35327,7 +35326,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 2333,
               "d1": 0.010832,
@@ -35368,7 +35367,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 2434,
               "d1": -0.000411,
@@ -35411,7 +35410,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 3697,
               "d1": 0.009833,
@@ -35452,7 +35451,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 11365,
               "d1": 0.003975,
@@ -35495,7 +35494,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 5354,
               "d1": 0.00488,
@@ -35536,7 +35535,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 15615,
               "d1": -0.010456,
@@ -35577,7 +35576,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 6854,
               "d1": -0.014097,
@@ -35621,7 +35620,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 8162,
               "d1": 0.008401,
@@ -35673,7 +35672,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 8565,
               "d1": 0.004103,
@@ -35714,7 +35713,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 118420,
               "d1": -0.003031,
@@ -35758,7 +35757,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 36585,
               "d1": 0.009241,
@@ -35799,7 +35798,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 5,
+              "ageDays": 6,
               "lastDate": "2026-09-30",
               "value": 2794,
               "d1": -0.017926,
@@ -88448,7 +88447,7 @@
   },
   "regime": {
     "growth": 0.1313,
-    "inflation": -0.613
+    "inflation": -0.5837
   },
   "dataQuality": {
     "degraded": [
@@ -88456,7 +88455,7 @@
         "id": "HF_VEG",
         "name_cn": "平均批发价:28种重点监测蔬菜",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 4.37
@@ -88466,7 +88465,7 @@
         "id": "HF_FRUIT",
         "name_cn": "平均批发价:6种重点监测水果",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 6.73
@@ -88476,7 +88475,7 @@
         "id": "HF_COPPER_SPOT",
         "name_cn": "现货价:铜",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 111413.33
@@ -88486,7 +88485,7 @@
         "id": "HF_REBAR",
         "name_cn": "螺纹钢主力",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 3034
@@ -88496,7 +88495,7 @@
         "id": "HF_HRC",
         "name_cn": "热轧卷板主力",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 3216
@@ -88506,7 +88505,7 @@
         "id": "HF_COPPER",
         "name_cn": "沪铜主力",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 110590
@@ -88516,7 +88515,7 @@
         "id": "HF_ALUMINUM",
         "name_cn": "沪铝主力",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 23920
@@ -88526,7 +88525,7 @@
         "id": "HF_IRON_ORE",
         "name_cn": "铁矿石主力",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 701.5
@@ -88536,7 +88535,7 @@
         "id": "HF_COKING_COAL",
         "name_cn": "焦煤主力",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1490
@@ -88546,7 +88545,7 @@
         "id": "HF_THERMAL_COAL",
         "name_cn": "动力煤主力",
         "status": "DISCONTINUED",
-        "ageDays": 1375,
+        "ageDays": 1376,
         "latest": {
           "date": "2022-12-30",
           "value": 921
@@ -88556,7 +88555,7 @@
         "id": "HF_GLASS",
         "name_cn": "玻璃主力",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 915
@@ -88566,7 +88565,7 @@
         "id": "HF_CRUDE",
         "name_cn": "INE原油主力连续（宏观评分口径）",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 690
@@ -88576,7 +88575,7 @@
         "id": "MKT_DR001",
         "name_cn": "DR001",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.3611
@@ -88586,7 +88585,7 @@
         "id": "MKT_DR007",
         "name_cn": "DR007",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-29",
           "value": 1.3862
@@ -88596,7 +88595,7 @@
         "id": "MKT_R001",
         "name_cn": "R001",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.3804
@@ -88606,7 +88605,7 @@
         "id": "MKT_R007",
         "name_cn": "R007",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.3795
@@ -88616,7 +88615,7 @@
         "id": "MKT_SHIBOR_1W",
         "name_cn": "Shibor:1周",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.371
@@ -88626,7 +88625,7 @@
         "id": "MKT_CGB_1Y",
         "name_cn": "中债国债到期收益率:1年",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.2197
@@ -88636,7 +88635,7 @@
         "id": "MKT_CGB_3Y",
         "name_cn": "中债国债到期收益率:3年",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.2818
@@ -88646,7 +88645,7 @@
         "id": "MKT_CGB_10Y",
         "name_cn": "中债国债到期收益率:10年",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.6822
@@ -88656,7 +88655,7 @@
         "id": "MKT_CGB_30Y",
         "name_cn": "中债国债到期收益率:30年",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 2.1
@@ -88666,7 +88665,7 @@
         "id": "MKT_CURVE_10Y1Y",
         "name_cn": "10Y-1Y 期限利差",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 0.4625
@@ -88676,7 +88675,7 @@
         "id": "MKT_CURVE_30Y10Y",
         "name_cn": "30Y-10Y 期限利差",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 0.4178
@@ -88686,7 +88685,7 @@
         "id": "MKT_AAA_3Y",
         "name_cn": "中债中短期票据到期收益率(AAA):3年",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 1.632
@@ -88696,7 +88695,7 @@
         "id": "MKT_CREDIT_SPREAD_3Y",
         "name_cn": "AAA 3Y 信用利差",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 0.3502
@@ -88706,7 +88705,7 @@
         "id": "MKT_USDCNY",
         "name_cn": "中间价:美元兑人民币",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 6.7351
@@ -88716,7 +88715,7 @@
         "id": "MKT_USDCNH",
         "name_cn": "即期汇率(16:30):美元兑人民币",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 6.7053
@@ -88726,7 +88725,7 @@
         "id": "MKT_HS300",
         "name_cn": "沪深300指数",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 4357.6155
@@ -88736,7 +88735,7 @@
         "id": "MKT_CSI1000",
         "name_cn": "中证1000指数",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 7298.8208
@@ -88746,7 +88745,7 @@
         "id": "MKT_CYB",
         "name_cn": "创业板指",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 3135.2767
@@ -88756,7 +88755,7 @@
         "id": "MKT_SSE",
         "name_cn": "上证指数",
         "status": "STALE",
-        "ageDays": 5,
+        "ageDays": 6,
         "latest": {
           "date": "2026-09-30",
           "value": 3842.1946

@@ -2,7 +2,7 @@
 
 **2026-09-30 交易数据｜宏观支持度 47.3（中性震荡）**
 
-> Snapshot 生成：2026-10-05T13:43:48.393Z｜报告生成：2026-10-05T13:43:48.709Z｜运行日：2026-10-05｜所有判断来自 `public/macro-snapshot.json`。
+> Snapshot 生成：2026-10-06T15:37:36.609Z｜报告生成：2026-10-06T15:37:36.961Z｜运行日：2026-10-06｜所有判断来自 `public/macro-snapshot.json`。
 
 ## 一、摘要
 
@@ -17,18 +17,18 @@
 
 ## 二、今日显著偏离
 
-结论：今日 24 项显著偏离，其中极端 3 项。成员与标签均由 snapshot 判定。
+结论：今日 24 项显著偏离，其中极端 4 项。成员与标签均由 snapshot 判定。
 
 上涨侧
 
 | 项目 | 频率 | 最新 | 1D | 变化极端度 | z(1Y) | 标签 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 平均批发价:牛肉 | daily | 73.7 cny_per_kg | +2.3% | 100% | +3.50 | 刷一年新高、变化+位置双极端 |
 | 20号胶 | daily | — | +6.1% | 100% | +2.53 | 刷一年新高、变化+位置双极端、持仓放大 |
 | 天然橡胶 | daily | — | +5.7% | 100% | +2.86 | 刷一年新高、变化+位置双极端 |
 | 氧化铝 | daily | — | +2.5% | 97% | -1.30 | 变化显著 |
 | 丁二烯橡胶 | daily | — | +3.5% | 92% | +1.60 | 变化显著、持仓放大 |
 | 菜籽油 | daily | — | +1.7% | 92% | +1.39 | 变化显著 |
-| PVC | daily | — | +3.2% | 91% | -0.09 | 变化显著 |
 
 下跌侧
 
@@ -36,10 +36,10 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | 沥青 | daily | — | -4.4% | 94% | +2.10 | 变化+位置双极端、持仓放大 |
 | 苹果 | daily | — | -1.4% | 89% | -2.11 | 刷一年新低、位置极端 |
-| 平均批发价:牛肉 | daily | 72.06 cny_per_kg | -0.7% | 87% | +2.68 | 位置极端 |
 | 中间价:美元兑人民币 | daily | 6.7351 cny | -0.1% | 83% | -1.50 | 刷一年新低 |
 | 不锈钢 | daily | — | -0.8% | 69% | -0.60 | 持仓放大 |
 | 集运欧线 | daily | — | -1.8% | 62% | +2.77 | 位置极端 |
+| 国际铜 | daily | — | -0.2% | 59% | +1.39 | 持仓放大 |
 
 月频 / 季频发布观察（观测期与今日不同）
 
@@ -56,9 +56,9 @@
 | 增长 | 52.6 | 增长中性 | +0.2 | expansion_support | 7/7 |
 | 消费 | 36.4 | 消费偏弱 | 0.0 | demand_support | 2/3 |
 | 地产 | 36.6 | 地产承压 | +0.3 | property_support | 6/6 |
-| 通胀 | 37.7 | 价格压力偏强 | +1.4 | inflation_friendliness | 5/7 |
+| 通胀 | 38.3 | 价格压力偏强 | +2.0 | inflation_friendliness | 5/7 |
 | 流动性 | 52.4 | 中性 | -0.2 | liquidity_support | 7/7 |
-| 外需 | 68.1 | 外需偏强 | -0.9 | external_support | 4/5 |
+| 外需 | 67.6 | 外需偏强 | -1.4 | external_support | 4/5 |
 
 > 宏观支持度 / 扩张友好度的规则化观察指标；六维权重为 DRAFT，综合分用于观察。
 
@@ -132,12 +132,12 @@
 | CPI:非食品:当月同比 | monthly | 1.2 pct | YoY +1.20｜3M flat | +0.18 | 58% | FRESH |
 | CPI:环比 | monthly | 0.4 pct | MoM +0.40｜3M up | +0.74 | 88% | FRESH |
 | PPI:当月同比 | monthly | 3.8 pct | YoY +3.80｜3M flat | +1.15 | 79% | FRESH |
-| 平均批发价:猪肉 | daily | 15.93 cny_per_kg | 1D +0.02｜5D -0.49｜20D -0.47 | +0.07 | 56% | FRESH |
-| 平均批发价:牛肉 | daily | 72.06 cny_per_kg | 5D -1.20｜20D +0.69 | +2.68 | 96% | FRESH |
-| 平均批发价:鸡蛋 | daily | 10.3 cny_per_kg | 5D -0.22｜20D -0.82 | +0.78 | 73% | FRESH |
+| 平均批发价:猪肉 | daily | 15.89 cny_per_kg | 1D -0.04｜5D -0.19｜20D -0.48 | +0.05 | 53% | FRESH |
+| 平均批发价:牛肉 | daily | 73.7 cny_per_kg | 5D +0.22｜20D +2.75 | +3.50 | 100% | FRESH |
+| 平均批发价:鸡蛋 | daily | 10.27 cny_per_kg | 5D -0.19｜20D -0.82 | +0.75 | 71% | FRESH |
 | 平均批发价:28种重点监测蔬菜 | daily | 4.37 cny_per_kg | 5D -0.18｜20D -0.28 | -0.89 | 27% | STALE |
 | 平均批发价:6种重点监测水果 | daily | 6.73 cny_per_kg | 5D +0.10｜20D +0.05 | -1.50 | 10% | STALE |
-| Brent连续（iFinD） | daily | 102.61 usd_per_barrel | 1D -0.39｜5D -1.77｜20D +6.76 | +1.12 | 81% | EXPECTED |
+| Brent连续（iFinD） | daily | 100.22 usd_per_barrel | 1D -2.39｜5D -5.85｜20D +2.91 | +0.97 | 78% | FRESH |
 | INE原油主力连续（宏观评分口径） | daily | 690 cny_per_barrel | 5D -82.80｜20D +52.20 | +1.19 | 86% | STALE |
 
 ## 九、地产
@@ -167,7 +167,7 @@
 | 出口总值(美元计价):当月同比 | monthly | 25 pct | YoY +25.00｜3M down | +0.83 | 79% | FRESH |
 | 进口总值(美元计价):当月同比 | monthly | 28.2 pct | YoY +28.20｜3M down | +0.74 | 79% | FRESH |
 | 进出口总值(美元计价):当月同比 | monthly | 26.3 pct | YoY +26.30 | +0.95 | 79% | FRESH |
-| 波罗的海运费指数:干散货(BDI) | daily | 3070 index | 5D -198.00｜20D -505.00 | +1.11 | 84% | FRESH |
+| 波罗的海运费指数:干散货(BDI) | daily | 3002 index | 5D -176.00｜20D -582.00 | +0.97 | 80% | FRESH |
 
 ## 十一、结构化背离
 
@@ -187,7 +187,7 @@
 | high | 社会消费品零售总额:累计同比 | 消费 | -1.34 | 1% | PERCENTILE_LOW |
 | high | 社会融资规模存量:期末同比 | 流动性 | -1.50 | 3% | PERCENTILE_LOW |
 | high | 房地产开发投资:累计同比 | 地产 | -1.70 | 1% | PERCENTILE_LOW |
-| high | 平均批发价:牛肉 | 通胀 | +2.68 | 99% | ZSCORE_EXTREME、PERCENTILE_HIGH、FIVE_DAY_MOVE_EXTREME |
+| high | 平均批发价:牛肉 | 通胀 | +3.50 | 100% | ZSCORE_EXTREME、PERCENTILE_HIGH |
 | high | 现货价:铜 | 增长 | +1.44 | 99% | PERCENTILE_HIGH |
 | high | 沪铜主力 | 增长 | +1.36 | 99% | PERCENTILE_HIGH |
 | high | 铁矿石主力 | 增长 | -2.12 | 2% | ZSCORE_EXTREME、PERCENTILE_LOW |
@@ -341,14 +341,14 @@
 | 商品房销售面积:累计值 | property | 地产 | monthly | 45020.81 sqm_10k | YoY -0.02｜3M up | -0.15 | -0.15 | EXPECTED |
 | 商品房销售额:累计同比 | property | 地产 | monthly | -13.1 pct | YoY -13.10｜3M up | -0.22 | -0.22 | EXPECTED |
 | 商品房销售面积:住宅:累计值 | property | 地产 | monthly | 37425 sqm_10k | YoY -0.02 | -0.15 | -0.15 | EXPECTED |
-| 平均批发价:猪肉 | inflation | 通胀 | daily | 15.93 cny_per_kg | 1D +0.02｜5D -0.49｜20D -0.47 | +0.07 | -0.07 | FRESH |
-| 平均批发价:牛肉 | inflation | 通胀 | daily | 72.06 cny_per_kg | 5D -1.20｜20D +0.69 | +2.68 | -2.68 | FRESH |
-| 平均批发价:鸡蛋 | inflation | 通胀 | daily | 10.3 cny_per_kg | 5D -0.22｜20D -0.82 | +0.78 | -0.78 | FRESH |
+| 平均批发价:猪肉 | inflation | 通胀 | daily | 15.89 cny_per_kg | 1D -0.04｜5D -0.19｜20D -0.48 | +0.05 | -0.05 | FRESH |
+| 平均批发价:牛肉 | inflation | 通胀 | daily | 73.7 cny_per_kg | 5D +0.22｜20D +2.75 | +3.50 | -3.50 | FRESH |
+| 平均批发价:鸡蛋 | inflation | 通胀 | daily | 10.27 cny_per_kg | 5D -0.19｜20D -0.82 | +0.75 | -0.75 | FRESH |
 | 平均批发价:28种重点监测蔬菜 | inflation | 通胀 | daily | 4.37 cny_per_kg | 5D -0.18｜20D -0.28 | -0.89 | +0.89 | STALE |
 | 平均批发价:6种重点监测水果 | inflation | 通胀 | daily | 6.73 cny_per_kg | 5D +0.10｜20D +0.05 | -1.50 | +1.50 | STALE |
 | 现货价:铜 | growth | 增长 | daily | 111413.33 cny_per_ton | 1D +381.66｜5D -1340.00｜20D +940.00 | +1.44 | +1.44 | STALE |
-| Brent连续（iFinD） | inflation | 通胀 | daily | 102.61 usd_per_barrel | 1D -0.39｜5D -1.77｜20D +6.76 | +1.12 | -1.12 | EXPECTED |
-| 波罗的海运费指数:干散货(BDI) | external | 外需 | daily | 3070 index | 5D -198.00｜20D -505.00 | +1.11 | +1.11 | FRESH |
+| Brent连续（iFinD） | inflation | 通胀 | daily | 100.22 usd_per_barrel | 1D -2.39｜5D -5.85｜20D +2.91 | +0.97 | -0.97 | FRESH |
+| 波罗的海运费指数:干散货(BDI) | external | 外需 | daily | 3002 index | 5D -176.00｜20D -582.00 | +0.97 | +0.97 | FRESH |
 | 螺纹钢主力 | property | 地产 | daily | 3034 cny_per_ton | 1D +3.00｜5D -25.00｜20D -46.00 | -0.30 | -0.30 | STALE |
 | 热轧卷板主力 | growth | 增长 | daily | 3216 cny_per_ton | 5D -81.00｜20D -108.00 | -1.22 | -1.22 | STALE |
 | 沪铜主力 | growth | 增长 | daily | 110590 cny_per_ton | 5D -730.00｜20D +940.00 | +1.36 | +1.36 | STALE |
@@ -384,44 +384,44 @@
 | --- | --- |
 | 契约 | MACRO_SNAPSHOT 1.1.0 |
 | 交易数据截止 | 2026-09-30 |
-| 运行日期 | 2026-10-05 |
-| 采集窗口结束 | 2026-10-05 |
+| 运行日期 | 2026-10-06 |
+| 采集窗口结束 | 2026-10-06 |
 | 日期一致性 | 83% (35) |
-| 采集时间 | 2026-10-05T13:43:18.389Z |
+| 采集时间 | 2026-10-06T15:37:02.643Z |
 | 配置版本 | 2.0 |
 | 可评分 | 65/72 |
 | 权重状态 | draft |
 
-- 平均批发价:28种重点监测蔬菜：STALE（5 calendar days）
-- 平均批发价:6种重点监测水果：STALE（5 calendar days）
-- 现货价:铜：STALE（5 calendar days）
-- 螺纹钢主力：STALE（5 calendar days）
-- 热轧卷板主力：STALE（5 calendar days）
-- 沪铜主力：STALE（5 calendar days）
-- 沪铝主力：STALE（5 calendar days）
-- 铁矿石主力：STALE（5 calendar days）
-- 焦煤主力：STALE（5 calendar days）
-- 动力煤主力：DISCONTINUED（1375 calendar days）
-- 玻璃主力：STALE（5 calendar days）
-- INE原油主力连续（宏观评分口径）：STALE（5 calendar days）
-- DR001：STALE（5 calendar days）
-- DR007：STALE（6 calendar days）
-- R001：STALE（5 calendar days）
-- R007：STALE（5 calendar days）
-- Shibor:1周：STALE（5 calendar days）
-- 中债国债到期收益率:1年：STALE（5 calendar days）
-- 中债国债到期收益率:3年：STALE（5 calendar days）
-- 中债国债到期收益率:10年：STALE（5 calendar days）
-- 中债国债到期收益率:30年：STALE（5 calendar days）
-- 10Y-1Y 期限利差：STALE（5 calendar days）
-- 30Y-10Y 期限利差：STALE（5 calendar days）
-- 中债中短期票据到期收益率(AAA):3年：STALE（5 calendar days）
-- AAA 3Y 信用利差：STALE（5 calendar days）
-- 中间价:美元兑人民币：STALE（5 calendar days）
-- 即期汇率(16:30):美元兑人民币：STALE（5 calendar days）
-- 沪深300指数：STALE（5 calendar days）
-- 中证1000指数：STALE（5 calendar days）
-- 创业板指：STALE（5 calendar days）
-- 上证指数：STALE（5 calendar days）
+- 平均批发价:28种重点监测蔬菜：STALE（6 calendar days）
+- 平均批发价:6种重点监测水果：STALE（6 calendar days）
+- 现货价:铜：STALE（6 calendar days）
+- 螺纹钢主力：STALE（6 calendar days）
+- 热轧卷板主力：STALE（6 calendar days）
+- 沪铜主力：STALE（6 calendar days）
+- 沪铝主力：STALE（6 calendar days）
+- 铁矿石主力：STALE（6 calendar days）
+- 焦煤主力：STALE（6 calendar days）
+- 动力煤主力：DISCONTINUED（1376 calendar days）
+- 玻璃主力：STALE（6 calendar days）
+- INE原油主力连续（宏观评分口径）：STALE（6 calendar days）
+- DR001：STALE（6 calendar days）
+- DR007：STALE（7 calendar days）
+- R001：STALE（6 calendar days）
+- R007：STALE（6 calendar days）
+- Shibor:1周：STALE（6 calendar days）
+- 中债国债到期收益率:1年：STALE（6 calendar days）
+- 中债国债到期收益率:3年：STALE（6 calendar days）
+- 中债国债到期收益率:10年：STALE（6 calendar days）
+- 中债国债到期收益率:30年：STALE（6 calendar days）
+- 10Y-1Y 期限利差：STALE（6 calendar days）
+- 30Y-10Y 期限利差：STALE（6 calendar days）
+- 中债中短期票据到期收益率(AAA):3年：STALE（6 calendar days）
+- AAA 3Y 信用利差：STALE（6 calendar days）
+- 中间价:美元兑人民币：STALE（6 calendar days）
+- 即期汇率(16:30):美元兑人民币：STALE（6 calendar days）
+- 沪深300指数：STALE（6 calendar days）
+- 中证1000指数：STALE（6 calendar days）
+- 创业板指：STALE（6 calendar days）
+- 上证指数：STALE（6 calendar days）
 
 > 报告由 scripts/macro-report.mjs 渲染；统计、标签、聚合与结论级 delta 均来自 snapshot。
