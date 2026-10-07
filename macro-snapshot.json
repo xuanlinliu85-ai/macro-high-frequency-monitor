@@ -1,25 +1,25 @@
 {
   "contract": "MACRO_SNAPSHOT",
   "version": "1.1.0",
-  "generatedAt": "2026-10-06T15:37:36.609Z",
+  "generatedAt": "2026-10-07T07:23:26.698Z",
   "asOf": "2026-09-30",
   "tradingDataAsOf": "2026-09-30",
-  "runDate": "2026-10-06",
-  "sourceWindowEnd": "2026-10-06",
+  "runDate": "2026-10-07",
+  "sourceWindowEnd": "2026-10-07",
   "dateQuality": {
     "coverage": 0.828571,
     "minimumCoverage": 0.8,
     "refreshedDailyCount": 35,
     "byDate": {
       "2026-09-30": 29,
-      "2026-10-06": 4,
-      "2026-10-05": 1,
+      "2026-10-07": 3,
+      "2026-10-06": 2,
       "2026-09-29": 1
     }
   },
   "window": {
-    "begin": "2020-10-06",
-    "end": "2026-10-06"
+    "begin": "2020-10-07",
+    "end": "2026-10-07"
   },
   "source": {
     "data": "iFinD MCP (THS_EDB / THS_HQ)",
@@ -28,7 +28,7 @@
       "version": "2.0",
       "verifiedAt": "2026-09-10"
     },
-    "collectedAt": "2026-10-06T15:37:02.643Z"
+    "collectedAt": "2026-10-07T07:20:16.376Z"
   },
   "scoringModel": {
     "polarity": {
@@ -76,12 +76,12 @@
     "disclaimer": "六维权重为 DRAFT，综合分用于观察。"
   },
   "headline": {
-    "composite": 47.3,
+    "composite": 47.4,
     "label": "中性震荡",
-    "compositeDelta": 0.1,
+    "compositeDelta": 0.2,
     "anomalyCount": 21,
     "highSeverityCount": 15,
-    "notableDeviationCount": 24,
+    "notableDeviationCount": 25,
     "divergenceHits": 1,
     "freshness": {
       "FRESH": 23,
@@ -447,8 +447,8 @@
       "neutralLabel": "价格环境中性",
       "lowLabel": "价格压力偏强",
       "semanticLabel": "价格压力偏强",
-      "score": 38.3,
-      "zMean": -0.5837,
+      "score": 38.5,
+      "zMean": -0.5761,
       "coverage": {
         "used": 5,
         "configured": 7,
@@ -483,22 +483,22 @@
           "id": "HF_PORK",
           "name_cn": "平均批发价:猪肉",
           "weight": 0.12,
-          "z": 0.0478,
-          "dirZ": -0.0478,
+          "z": -0.0387,
+          "dirZ": 0.0387,
           "status": "FRESH"
         },
         {
           "id": "HF_BRENT",
           "name_cn": "Brent连续（iFinD）",
           "weight": 0.12,
-          "z": 0.972,
-          "dirZ": -0.972,
+          "z": 1.0139,
+          "dirZ": -1.0139,
           "status": "FRESH"
         }
       ],
       "upCount": 0,
       "downCount": 2,
-      "delta": 2,
+      "delta": 2.2,
       "history": [
         [
           "2026-09-10",
@@ -550,7 +550,7 @@
         ],
         [
           "2026-09-30",
-          38.3
+          38.5
         ]
       ]
     },
@@ -1018,7 +1018,7 @@
         ],
         [
           "2026-09-30",
-          38.3
+          38.5
         ]
       ]
     },
@@ -1154,7 +1154,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1221,7 +1221,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1290,7 +1290,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1364,7 +1364,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1431,7 +1431,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1498,7 +1498,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1572,7 +1572,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1639,7 +1639,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1706,7 +1706,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "FRESH",
-        "ageDays": 36,
+        "ageDays": 37,
         "scorable": true,
         "latest": {
           "date": "2026-08-31",
@@ -1765,7 +1765,7 @@
         "direction": "lower_is_looser",
         "polarity": -1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1837,43 +1837,43 @@
         "ageDays": 0,
         "scorable": true,
         "latest": {
-          "date": "2026-10-06",
-          "value": 73.7
+          "date": "2026-10-07",
+          "value": 73.49
         },
         "changes": {
-          "chg1": 1.64,
-          "chg4": 1.43,
-          "chg5": 0.22,
-          "chg12": 1.32,
-          "chg13": 2.1,
-          "chg20": 2.75
+          "chg1": -0.21,
+          "chg4": 1.06,
+          "chg5": 1.22,
+          "chg12": 0.13,
+          "chg13": 1.11,
+          "chg20": 2.47
         },
-        "pctChg1": 0.022759,
-        "pctChg5": 0.002994,
-        "pctChg20": 0.03876,
-        "pctChg12": 0.018237,
-        "z1y": 3.5029,
-        "dirZ": -3.5029,
-        "pct1y": 0.998,
-        "pct3y": 0.9993,
-        "ma20": 72.2145,
-        "moveExtreme": 0.4447,
-        "chg1Extreme": 0.998,
+        "pctChg1": -0.002849,
+        "pctChg5": 0.016881,
+        "pctChg20": 0.034779,
+        "pctChg12": 0.001772,
+        "z1y": 3.2994,
+        "dirZ": -3.2994,
+        "pct1y": 0.994,
+        "pct3y": 0.998,
+        "ma20": 72.338,
+        "moveExtreme": 0.9753,
+        "chg1Extreme": 0.536,
         "changeView": {
           "frequency": "daily",
           "items": [
             {
               "key": "d5",
               "label": "5D",
-              "value": 0.22,
-              "pctValue": 0.002994,
+              "value": 1.22,
+              "pctValue": 0.016881,
               "status": "available"
             },
             {
               "key": "d20",
               "label": "20D",
-              "value": 2.75,
-              "pctValue": 0.03876,
+              "value": 2.47,
+              "pctValue": 0.034779,
               "status": "available"
             }
           ],
@@ -1884,10 +1884,10 @@
         },
         "tags": [
           "刷一年新高",
-          "变化+位置双极端"
+          "位置极端"
         ],
         "isNotable": true,
-        "deviationLevel": "extreme"
+        "deviationLevel": "notable"
       },
       {
         "id": "MKT_HS300",
@@ -1904,7 +1904,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -1981,7 +1981,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -2050,7 +2050,7 @@
         "direction": "higher_is_looser",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 67,
+        "ageDays": 68,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2115,7 +2115,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 67,
+        "ageDays": 68,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2180,7 +2180,7 @@
         "direction": "higher_is_looser",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 67,
+        "ageDays": 68,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2245,7 +2245,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -2319,7 +2319,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 67,
+        "ageDays": 68,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2384,7 +2384,7 @@
         "direction": "higher_is_looser",
         "polarity": 1,
         "status": "EXPECTED",
-        "ageDays": 67,
+        "ageDays": 68,
         "scorable": true,
         "latest": {
           "date": "2026-07-31",
@@ -2443,7 +2443,7 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": true,
         "latest": {
           "date": "2026-09-30",
@@ -2656,28 +2656,32 @@
       "unit": "cny_per_kg",
       "status": "FRESH",
       "latest": {
-        "date": "2026-10-06",
-        "value": 73.7
+        "date": "2026-10-07",
+        "value": 73.49
       },
-      "z1y": 3.5029,
-      "dirZ": -3.5029,
-      "pct3y": 0.9993,
+      "z1y": 3.2994,
+      "dirZ": -3.2994,
+      "pct3y": 0.998,
       "changes": {
-        "chg1": 1.64,
-        "chg4": 1.43,
-        "chg5": 0.22,
-        "chg12": 1.32,
-        "chg13": 2.1,
-        "chg20": 2.75
+        "chg1": -0.21,
+        "chg4": 1.06,
+        "chg5": 1.22,
+        "chg12": 0.13,
+        "chg13": 1.11,
+        "chg20": 2.47
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 3.5029
+          "value": 3.2994
         },
         {
           "id": "PERCENTILE_HIGH",
-          "value": 0.9993
+          "value": 0.998
+        },
+        {
+          "id": "FIVE_DAY_MOVE_EXTREME",
+          "value": 0.9753
         }
       ],
       "severity": "high"
@@ -3074,123 +3078,9 @@
     }
   ],
   "deviations": {
-    "total": 24,
-    "extreme": 4,
+    "total": 25,
+    "extreme": 3,
     "up": [
-      {
-        "id": "HF_BEEF",
-        "name_cn": "平均批发价:牛肉",
-        "layer": "highfreq",
-        "dimension": "inflation",
-        "category": "inflation",
-        "frequency": "daily",
-        "unit": "cny_per_kg",
-        "importance": "low",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "marketIdentity": null,
-        "direction": "higher_is_tighter",
-        "polarity": -1,
-        "status": "FRESH",
-        "ageDays": 0,
-        "scorable": true,
-        "latest": {
-          "date": "2026-10-06",
-          "value": 73.7
-        },
-        "changes": {
-          "chg1": 1.64,
-          "chg4": 1.43,
-          "chg5": 0.22,
-          "chg12": 1.32,
-          "chg13": 2.1,
-          "chg20": 2.75
-        },
-        "pctChg1": 0.022759,
-        "pctChg5": 0.002994,
-        "pctChg20": 0.03876,
-        "pctChg12": 0.018237,
-        "z1y": 3.5029,
-        "dirZ": -3.5029,
-        "pct1y": 0.998,
-        "pct3y": 0.9993,
-        "ma20": 72.2145,
-        "moveExtreme": 0.4447,
-        "chg1Extreme": 0.998,
-        "changeView": {
-          "frequency": "daily",
-          "items": [
-            {
-              "key": "d5",
-              "label": "5D",
-              "value": 0.22,
-              "pctValue": 0.002994,
-              "status": "available"
-            },
-            {
-              "key": "d20",
-              "label": "20D",
-              "value": 2.75,
-              "pctValue": 0.03876,
-              "status": "available"
-            }
-          ],
-          "legacy": {
-            "deprecated": true,
-            "field": "changes"
-          }
-        },
-        "tags": [
-          "刷一年新高",
-          "变化+位置双极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
-      {
-        "id": "FUT_NR",
-        "name_cn": "20号胶",
-        "chain": "chemical",
-        "chain_cn": "化工",
-        "chain_tier": "上游原料",
-        "code": "NR2611.INE",
-        "requestedCode": "NR00.INE",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "status": "STALE",
-        "ageDays": 6,
-        "lastDate": "2026-09-30",
-        "value": 17500,
-        "d1": 0.061249,
-        "d5": 0.079248,
-        "d20": 0.099246,
-        "d60": 0.169786,
-        "z1y": 2.5341,
-        "pct1y": 0.9977,
-        "pct3y": 0.9977,
-        "chg1Extreme": 0.9976,
-        "ma20": 16361.5,
-        "historyDays": 213,
-        "oi": 36920,
-        "oiChg5": -0.37309,
-        "oiChg20": -0.477727,
-        "mainContract": {
-          "fromCode": "NR00.INE",
-          "toCode": "NR2611.INE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
-        },
-        "tags": [
-          "刷一年新高",
-          "变化+位置双极端",
-          "持仓放大"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
       {
         "id": "FUT_RU",
         "name_cn": "天然橡胶",
@@ -3204,7 +3094,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 20095,
         "d1": 0.057075,
@@ -3225,11 +3115,55 @@
           "toCode": "RU2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新高",
           "变化+位置双极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "extreme"
+      },
+      {
+        "id": "FUT_NR",
+        "name_cn": "20号胶",
+        "chain": "chemical",
+        "chain_cn": "化工",
+        "chain_tier": "上游原料",
+        "code": "NR2612.INE",
+        "requestedCode": "NR00.INE",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "status": "STALE",
+        "ageDays": 7,
+        "lastDate": "2026-09-30",
+        "value": 17390,
+        "d1": 0.05972,
+        "d5": 0.077447,
+        "d20": 0.096469,
+        "d60": 0.160881,
+        "z1y": 2.4328,
+        "pct1y": 0.9977,
+        "pct3y": 0.9977,
+        "chg1Extreme": 0.9929,
+        "ma20": 16273.25,
+        "historyDays": 213,
+        "oi": 80028,
+        "oiChg5": 0.589623,
+        "oiChg20": 0.888878,
+        "mainContract": {
+          "fromCode": "NR00.INE",
+          "toCode": "NR2612.INE",
+          "rollRatio": 1.000733137829912,
+          "overlapDays": 193,
+          "fromCache": false
+        },
+        "tags": [
+          "刷一年新高",
+          "变化+位置双极端",
+          "持仓放大"
         ],
         "isNotable": true,
         "deviationLevel": "extreme"
@@ -3247,7 +3181,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2723,
         "d1": 0.025226,
@@ -3268,7 +3202,7 @@
           "toCode": "AO2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -3289,7 +3223,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 16000,
         "d1": 0.034929,
@@ -3332,7 +3266,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 10230,
         "d1": 0.017202,
@@ -3353,7 +3287,49 @@
           "toCode": "OI701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
+        },
+        "tags": [
+          "变化显著"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
+        "id": "FUT_V",
+        "name_cn": "PVC",
+        "chain": "chemical",
+        "chain_cn": "化工",
+        "chain_tier": "下游成品",
+        "code": "V2701.DCE",
+        "requestedCode": "V00.DCE",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "status": "STALE",
+        "ageDays": 7,
+        "lastDate": "2026-09-30",
+        "value": 4999,
+        "d1": 0.031998,
+        "d5": 0.050872,
+        "d20": 0.022709,
+        "d60": 0.091723,
+        "z1y": -0.0894,
+        "pct1y": 0.4708,
+        "pct3y": 0.4708,
+        "chg1Extreme": 0.9147,
+        "ma20": 4907.55,
+        "historyDays": 171,
+        "oi": 1042564,
+        "oiChg5": -0.069863,
+        "oiChg20": -0.033954,
+        "mainContract": {
+          "fromCode": "V00.DCE",
+          "toCode": "V2701.DCE",
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -3376,7 +3352,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5013,
         "d1": -0.044415,
@@ -3407,6 +3383,75 @@
         "deviationLevel": "extreme"
       },
       {
+        "id": "HF_EGG",
+        "name_cn": "平均批发价:鸡蛋",
+        "layer": "highfreq",
+        "dimension": "inflation",
+        "category": "inflation",
+        "frequency": "daily",
+        "unit": "cny_per_kg",
+        "importance": "low",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "marketIdentity": null,
+        "direction": "higher_is_tighter",
+        "polarity": -1,
+        "status": "FRESH",
+        "ageDays": 0,
+        "scorable": true,
+        "latest": {
+          "date": "2026-10-07",
+          "value": 10.1
+        },
+        "changes": {
+          "chg1": -0.17,
+          "chg4": -0.25,
+          "chg5": -0.3,
+          "chg12": -0.89,
+          "chg13": -0.91,
+          "chg20": -1.1
+        },
+        "pctChg1": -0.016553,
+        "pctChg5": -0.028846,
+        "pctChg20": -0.098214,
+        "pctChg12": -0.080983,
+        "z1y": 0.6055,
+        "dirZ": -0.6055,
+        "pct1y": 0.664,
+        "pct3y": 0.7567,
+        "ma20": 10.74,
+        "moveExtreme": 0.8613,
+        "chg1Extreme": 0.9113,
+        "changeView": {
+          "frequency": "daily",
+          "items": [
+            {
+              "key": "d5",
+              "label": "5D",
+              "value": -0.3,
+              "pctValue": -0.028846,
+              "status": "available"
+            },
+            {
+              "key": "d20",
+              "label": "20D",
+              "value": -1.1,
+              "pctValue": -0.098214,
+              "status": "available"
+            }
+          ],
+          "legacy": {
+            "deprecated": true,
+            "field": "changes"
+          }
+        },
+        "tags": [
+          "变化显著"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
         "id": "FUT_AP",
         "name_cn": "苹果",
         "chain": "ags",
@@ -3419,7 +3464,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6854,
         "d1": -0.014097,
@@ -3440,7 +3485,7 @@
           "toCode": "AP701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低",
@@ -3464,7 +3509,7 @@
         "direction": "contextual",
         "polarity": 0,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": false,
         "latest": {
           "date": "2026-09-30",
@@ -3538,7 +3583,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 13700,
         "d1": -0.007965,
@@ -3559,7 +3604,7 @@
           "toCode": "SS2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -3580,7 +3625,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2794,
         "d1": -0.017926,
@@ -3601,52 +3646,10 @@
           "toCode": "EC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
-      },
-      {
-        "id": "FUT_BC",
-        "name_cn": "国际铜",
-        "chain": "nonferrous",
-        "chain_cn": "有色金属",
-        "chain_tier": "基本金属",
-        "code": "BC2611.INE",
-        "requestedCode": "BC00.INE",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "status": "STALE",
-        "ageDays": 6,
-        "lastDate": "2026-09-30",
-        "value": 97950,
-        "d1": -0.002139,
-        "d5": -0.011106,
-        "d20": 0.007094,
-        "d60": 0.071898,
-        "z1y": 1.3865,
-        "pct1y": 0.9597,
-        "pct3y": 0.9597,
-        "chg1Extreme": 0.5894,
-        "ma20": 97485,
-        "historyDays": 236,
-        "oi": 13616,
-        "oiChg5": 0.603014,
-        "oiChg20": 3.211568,
-        "mainContract": {
-          "fromCode": "BC00.INE",
-          "toCode": "BC2611.INE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
-        },
-        "tags": [
-          "持仓放大"
         ],
         "isNotable": true,
         "deviationLevel": "notable"
@@ -3905,7 +3908,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 98,
+      "ageDays": 99,
       "scorable": true,
       "latest": {
         "date": "2026-06-30",
@@ -3964,7 +3967,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4029,7 +4032,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4094,7 +4097,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 98,
+      "ageDays": 99,
       "scorable": true,
       "latest": {
         "date": "2026-06-30",
@@ -4153,7 +4156,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4218,7 +4221,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4283,7 +4286,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -4342,7 +4345,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4407,7 +4410,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4466,7 +4469,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4525,7 +4528,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4584,7 +4587,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": false,
       "latest": {
         "date": "2026-08-31",
@@ -4643,7 +4646,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4702,7 +4705,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4761,7 +4764,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -4820,7 +4823,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": false,
       "latest": {
         "date": "2026-08-31",
@@ -4885,7 +4888,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": false,
       "latest": {
         "date": "2026-08-31",
@@ -4944,7 +4947,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5009,7 +5012,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5074,7 +5077,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5139,7 +5142,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5204,7 +5207,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5269,7 +5272,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5334,7 +5337,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5393,7 +5396,7 @@
       "direction": "higher_is_looser",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5452,7 +5455,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5517,7 +5520,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5582,7 +5585,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 36,
+      "ageDays": 37,
       "scorable": true,
       "latest": {
         "date": "2026-08-31",
@@ -5641,7 +5644,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5706,7 +5709,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5765,7 +5768,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5830,7 +5833,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5889,7 +5892,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -5954,7 +5957,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -6019,7 +6022,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -6084,7 +6087,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "EXPECTED",
-      "ageDays": 67,
+      "ageDays": 68,
       "scorable": true,
       "latest": {
         "date": "2026-07-31",
@@ -6146,50 +6149,50 @@
       "ageDays": 0,
       "scorable": true,
       "latest": {
-        "date": "2026-10-06",
-        "value": 15.89
+        "date": "2026-10-07",
+        "value": 15.78
       },
       "changes": {
-        "chg1": -0.04,
-        "chg4": -0.32,
-        "chg5": -0.19,
-        "chg12": -0.45,
-        "chg13": -0.53,
-        "chg20": -0.48
+        "chg1": -0.11,
+        "chg4": -0.42,
+        "chg5": -0.43,
+        "chg12": -0.33,
+        "chg13": -0.56,
+        "chg20": -0.68
       },
-      "pctChg1": -0.002511,
-      "pctChg5": -0.011816,
-      "pctChg20": -0.029322,
-      "pctChg12": -0.02754,
-      "z1y": 0.0478,
-      "dirZ": -0.0478,
-      "pct1y": 0.534,
-      "pct3y": 0.178,
-      "ma20": 16.239,
-      "moveExtreme": 0.532,
-      "chg1Extreme": 0.2027,
+      "pctChg1": -0.006923,
+      "pctChg5": -0.026527,
+      "pctChg20": -0.041312,
+      "pctChg12": -0.020484,
+      "z1y": -0.0387,
+      "dirZ": 0.0387,
+      "pct1y": 0.486,
+      "pct3y": 0.162,
+      "ma20": 16.205,
+      "moveExtreme": 0.8687,
+      "chg1Extreme": 0.486,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d1",
             "label": "1D",
-            "value": -0.04,
-            "pctValue": -0.002511,
+            "value": -0.11,
+            "pctValue": -0.006923,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.19,
-            "pctValue": -0.011816,
+            "value": -0.43,
+            "pctValue": -0.026527,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -0.48,
-            "pctValue": -0.029322,
+            "value": -0.68,
+            "pctValue": -0.041312,
             "status": "available"
           }
         ],
@@ -6220,43 +6223,43 @@
       "ageDays": 0,
       "scorable": true,
       "latest": {
-        "date": "2026-10-06",
-        "value": 73.7
+        "date": "2026-10-07",
+        "value": 73.49
       },
       "changes": {
-        "chg1": 1.64,
-        "chg4": 1.43,
-        "chg5": 0.22,
-        "chg12": 1.32,
-        "chg13": 2.1,
-        "chg20": 2.75
+        "chg1": -0.21,
+        "chg4": 1.06,
+        "chg5": 1.22,
+        "chg12": 0.13,
+        "chg13": 1.11,
+        "chg20": 2.47
       },
-      "pctChg1": 0.022759,
-      "pctChg5": 0.002994,
-      "pctChg20": 0.03876,
-      "pctChg12": 0.018237,
-      "z1y": 3.5029,
-      "dirZ": -3.5029,
-      "pct1y": 0.998,
-      "pct3y": 0.9993,
-      "ma20": 72.2145,
-      "moveExtreme": 0.4447,
-      "chg1Extreme": 0.998,
+      "pctChg1": -0.002849,
+      "pctChg5": 0.016881,
+      "pctChg20": 0.034779,
+      "pctChg12": 0.001772,
+      "z1y": 3.2994,
+      "dirZ": -3.2994,
+      "pct1y": 0.994,
+      "pct3y": 0.998,
+      "ma20": 72.338,
+      "moveExtreme": 0.9753,
+      "chg1Extreme": 0.536,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d5",
             "label": "5D",
-            "value": 0.22,
-            "pctValue": 0.002994,
+            "value": 1.22,
+            "pctValue": 0.016881,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 2.75,
-            "pctValue": 0.03876,
+            "value": 2.47,
+            "pctValue": 0.034779,
             "status": "available"
           }
         ],
@@ -6267,10 +6270,10 @@
       },
       "tags": [
         "刷一年新高",
-        "变化+位置双极端"
+        "位置极端"
       ],
       "isNotable": true,
-      "deviationLevel": "extreme"
+      "deviationLevel": "notable"
     },
     {
       "id": "HF_EGG",
@@ -6290,43 +6293,43 @@
       "ageDays": 0,
       "scorable": true,
       "latest": {
-        "date": "2026-10-06",
-        "value": 10.27
+        "date": "2026-10-07",
+        "value": 10.1
       },
       "changes": {
-        "chg1": -0.03,
-        "chg4": -0.13,
-        "chg5": -0.19,
-        "chg12": -0.74,
-        "chg13": -0.84,
-        "chg20": -0.82
+        "chg1": -0.17,
+        "chg4": -0.25,
+        "chg5": -0.3,
+        "chg12": -0.89,
+        "chg13": -0.91,
+        "chg20": -1.1
       },
-      "pctChg1": -0.002913,
-      "pctChg5": -0.018164,
-      "pctChg20": -0.07394,
-      "pctChg12": -0.067212,
-      "z1y": 0.7505,
-      "dirZ": -0.7505,
-      "pct1y": 0.712,
-      "pct3y": 0.8313,
-      "ma20": 10.795,
-      "moveExtreme": 0.6607,
-      "chg1Extreme": 0.326,
+      "pctChg1": -0.016553,
+      "pctChg5": -0.028846,
+      "pctChg20": -0.098214,
+      "pctChg12": -0.080983,
+      "z1y": 0.6055,
+      "dirZ": -0.6055,
+      "pct1y": 0.664,
+      "pct3y": 0.7567,
+      "ma20": 10.74,
+      "moveExtreme": 0.8613,
+      "chg1Extreme": 0.9113,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.19,
-            "pctValue": -0.018164,
+            "value": -0.3,
+            "pctValue": -0.028846,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -0.82,
-            "pctValue": -0.07394,
+            "value": -1.1,
+            "pctValue": -0.098214,
             "status": "available"
           }
         ],
@@ -6335,9 +6338,11 @@
           "field": "changes"
         }
       },
-      "tags": [],
-      "isNotable": false,
-      "deviationLevel": "normal"
+      "tags": [
+        "变化显著"
+      ],
+      "isNotable": true,
+      "deviationLevel": "notable"
     },
     {
       "id": "HF_VEG",
@@ -6354,7 +6359,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6421,7 +6426,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6488,7 +6493,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6572,50 +6577,50 @@
       "ageDays": 1,
       "scorable": true,
       "latest": {
-        "date": "2026-10-05",
-        "value": 100.22
+        "date": "2026-10-06",
+        "value": 101.08
       },
       "changes": {
-        "chg1": -2.39,
-        "chg4": -2.7,
-        "chg5": -5.85,
-        "chg12": -3.84,
-        "chg13": -5.38,
-        "chg20": 2.91
+        "chg1": 0.86,
+        "chg4": 3.2,
+        "chg5": -1.84,
+        "chg12": -2.29,
+        "chg13": -2.98,
+        "chg20": 1.69
       },
-      "pctChg1": -0.023292,
-      "pctChg5": -0.055152,
-      "pctChg20": 0.029904,
-      "pctChg12": -0.036902,
-      "z1y": 0.972,
-      "dirZ": -0.972,
-      "pct1y": 0.778,
-      "pct3y": 0.926,
-      "ma20": 103.4235,
-      "moveExtreme": 0.854,
-      "chg1Extreme": 0.8467,
+      "pctChg1": 0.008581,
+      "pctChg5": -0.017878,
+      "pctChg20": 0.017004,
+      "pctChg12": -0.022153,
+      "z1y": 1.0139,
+      "dirZ": -1.0139,
+      "pct1y": 0.794,
+      "pct3y": 0.9313,
+      "ma20": 103.508,
+      "moveExtreme": 0.4507,
+      "chg1Extreme": 0.48,
       "changeView": {
         "frequency": "daily",
         "items": [
           {
             "key": "d1",
             "label": "1D",
-            "value": -2.39,
-            "pctValue": -0.023292,
+            "value": 0.86,
+            "pctValue": 0.008581,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -5.85,
-            "pctValue": -0.055152,
+            "value": -1.84,
+            "pctValue": -0.017878,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 2.91,
-            "pctValue": 0.029904,
+            "value": 1.69,
+            "pctValue": 0.017004,
             "status": "available"
           }
         ],
@@ -6643,7 +6648,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 0,
+      "ageDays": 1,
       "scorable": true,
       "latest": {
         "date": "2026-10-06",
@@ -6710,7 +6715,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6784,7 +6789,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6851,7 +6856,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6918,7 +6923,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -6985,7 +6990,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7054,7 +7059,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7123,7 +7128,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "DISCONTINUED",
-      "ageDays": 1376,
+      "ageDays": 1377,
       "scorable": false,
       "latest": {
         "date": "2022-12-30",
@@ -7192,7 +7197,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7264,7 +7269,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7331,7 +7336,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7405,7 +7410,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 7,
+      "ageDays": 8,
       "scorable": true,
       "latest": {
         "date": "2026-09-29",
@@ -7479,7 +7484,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7546,7 +7551,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7613,7 +7618,7 @@
       "direction": "lower_is_looser",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7680,7 +7685,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7747,7 +7752,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7814,7 +7819,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7888,7 +7893,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -7955,7 +7960,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8022,7 +8027,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": false,
       "latest": {
         "date": "2026-09-30",
@@ -8089,7 +8094,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8156,7 +8161,7 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8223,7 +8228,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": false,
       "latest": {
         "date": "2026-09-30",
@@ -8299,7 +8304,7 @@
       "direction": "contextual",
       "polarity": 0,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": false,
       "latest": {
         "date": "2026-09-30",
@@ -8373,7 +8378,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8450,7 +8455,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8524,7 +8529,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -8598,7 +8603,7 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "STALE",
-      "ageDays": 6,
+      "ageDays": 7,
       "scorable": true,
       "latest": {
         "date": "2026-09-30",
@@ -19711,12 +19716,12 @@
       "unit": "cny_per_kg",
       "importance": "high",
       "frequency": "daily",
-      "z1y": 0.0478,
-      "dirZ": -0.0478,
-      "pct1y": 0.534,
+      "z1y": -0.0387,
+      "dirZ": 0.0387,
+      "pct1y": 0.486,
       "latest": {
-        "date": "2026-10-06",
-        "value": 15.89
+        "date": "2026-10-07",
+        "value": 15.78
       },
       "changeView": {
         "frequency": "daily",
@@ -19724,22 +19729,22 @@
           {
             "key": "d1",
             "label": "1D",
-            "value": -0.04,
-            "pctValue": -0.002511,
+            "value": -0.11,
+            "pctValue": -0.006923,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.19,
-            "pctValue": -0.011816,
+            "value": -0.43,
+            "pctValue": -0.026527,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -0.48,
-            "pctValue": -0.029322,
+            "value": -0.68,
+            "pctValue": -0.041312,
             "status": "available"
           }
         ],
@@ -19749,10 +19754,6 @@
         }
       },
       "points": [
-        [
-          "2025-05-05",
-          20.67
-        ],
         [
           "2025-05-06",
           20.96
@@ -21828,6 +21829,10 @@
         [
           "2026-10-06",
           15.89
+        ],
+        [
+          "2026-10-07",
+          15.78
         ]
       ]
     },
@@ -21839,12 +21844,12 @@
       "unit": "cny_per_kg",
       "importance": "low",
       "frequency": "daily",
-      "z1y": 3.5029,
-      "dirZ": -3.5029,
-      "pct1y": 0.998,
+      "z1y": 3.2994,
+      "dirZ": -3.2994,
+      "pct1y": 0.994,
       "latest": {
-        "date": "2026-10-06",
-        "value": 73.7
+        "date": "2026-10-07",
+        "value": 73.49
       },
       "changeView": {
         "frequency": "daily",
@@ -21852,15 +21857,15 @@
           {
             "key": "d5",
             "label": "5D",
-            "value": 0.22,
-            "pctValue": 0.002994,
+            "value": 1.22,
+            "pctValue": 0.016881,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 2.75,
-            "pctValue": 0.03876,
+            "value": 2.47,
+            "pctValue": 0.034779,
             "status": "available"
           }
         ],
@@ -21870,10 +21875,6 @@
         }
       },
       "points": [
-        [
-          "2025-05-05",
-          62.84
-        ],
         [
           "2025-05-06",
           62.98
@@ -23949,6 +23950,10 @@
         [
           "2026-10-06",
           73.7
+        ],
+        [
+          "2026-10-07",
+          73.49
         ]
       ]
     },
@@ -23960,12 +23965,12 @@
       "unit": "cny_per_kg",
       "importance": "low",
       "frequency": "daily",
-      "z1y": 0.7505,
-      "dirZ": -0.7505,
-      "pct1y": 0.712,
+      "z1y": 0.6055,
+      "dirZ": -0.6055,
+      "pct1y": 0.664,
       "latest": {
-        "date": "2026-10-06",
-        "value": 10.27
+        "date": "2026-10-07",
+        "value": 10.1
       },
       "changeView": {
         "frequency": "daily",
@@ -23973,15 +23978,15 @@
           {
             "key": "d5",
             "label": "5D",
-            "value": -0.19,
-            "pctValue": -0.018164,
+            "value": -0.3,
+            "pctValue": -0.028846,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": -0.82,
-            "pctValue": -0.07394,
+            "value": -1.1,
+            "pctValue": -0.098214,
             "status": "available"
           }
         ],
@@ -23991,10 +23996,6 @@
         }
       },
       "points": [
-        [
-          "2025-05-05",
-          7.96
-        ],
         [
           "2025-05-06",
           7.99
@@ -26070,6 +26071,10 @@
         [
           "2026-10-06",
           10.27
+        ],
+        [
+          "2026-10-07",
+          10.1
         ]
       ]
     },
@@ -26081,12 +26086,12 @@
       "unit": "usd_per_barrel",
       "importance": "high",
       "frequency": "daily",
-      "z1y": 0.972,
-      "dirZ": -0.972,
-      "pct1y": 0.778,
+      "z1y": 1.0139,
+      "dirZ": -1.0139,
+      "pct1y": 0.794,
       "latest": {
-        "date": "2026-10-05",
-        "value": 100.22
+        "date": "2026-10-06",
+        "value": 101.08
       },
       "changeView": {
         "frequency": "daily",
@@ -26094,22 +26099,22 @@
           {
             "key": "d1",
             "label": "1D",
-            "value": -2.39,
-            "pctValue": -0.023292,
+            "value": 0.86,
+            "pctValue": 0.008581,
             "status": "available"
           },
           {
             "key": "d5",
             "label": "5D",
-            "value": -5.85,
-            "pctValue": -0.055152,
+            "value": -1.84,
+            "pctValue": -0.017878,
             "status": "available"
           },
           {
             "key": "d20",
             "label": "20D",
-            "value": 2.91,
-            "pctValue": 0.029904,
+            "value": 1.69,
+            "pctValue": 0.017004,
             "status": "available"
           }
         ],
@@ -26119,10 +26124,6 @@
         }
       },
       "points": [
-        [
-          "2024-09-30",
-          71.76
-        ],
         [
           "2024-10-01",
           74.47
@@ -28198,6 +28199,10 @@
         [
           "2026-10-05",
           100.22
+        ],
+        [
+          "2026-10-06",
+          101.08
         ]
       ]
     },
@@ -30567,7 +30572,7 @@
           "z1y": 1.1514,
           "pct1y": 0.8565,
           "breadth": 0.611,
-          "oiChg5": -0.07318
+          "oiChg5": -0.07011
         },
         "leaders": [
           "FUT_MA",
@@ -30746,7 +30751,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 702.5,
         "d1": 0.005007,
@@ -30767,7 +30772,7 @@
           "toCode": "I2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -30786,7 +30791,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1449,
         "d1": 0.000691,
@@ -30807,7 +30812,7 @@
           "toCode": "JM2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -30826,7 +30831,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1958.5,
         "d1": 0.008237,
@@ -30847,7 +30852,7 @@
           "toCode": "J2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -30897,7 +30902,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5936,
         "d1": 0.008495,
@@ -30918,7 +30923,7 @@
           "toCode": "SF701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -30937,7 +30942,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5796,
         "d1": 0.000691,
@@ -30958,7 +30963,7 @@
           "toCode": "SM701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -30977,7 +30982,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3112,
         "d1": 0.002254,
@@ -30998,7 +31003,7 @@
           "toCode": "RB2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31017,7 +31022,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3274,
         "d1": -0.000611,
@@ -31038,7 +31043,7 @@
           "toCode": "HC2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31057,7 +31062,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 13700,
         "d1": -0.007965,
@@ -31078,7 +31083,7 @@
           "toCode": "SS2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -31099,7 +31104,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2723,
         "d1": 0.025226,
@@ -31120,7 +31125,7 @@
           "toCode": "AO2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -31141,7 +31146,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 109680,
         "d1": 0.001004,
@@ -31162,7 +31167,7 @@
           "toCode": "CU2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31181,7 +31186,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 23830,
         "d1": -0.00791,
@@ -31202,7 +31207,7 @@
           "toCode": "AL2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31221,7 +31226,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 26435,
         "d1": -0.005268,
@@ -31242,7 +31247,7 @@
           "toCode": "ZN2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31261,7 +31266,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 16180,
         "d1": -0.005837,
@@ -31282,7 +31287,7 @@
           "toCode": "PB2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31301,7 +31306,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 122040,
         "d1": -0.008127,
@@ -31322,7 +31327,7 @@
           "toCode": "NI2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31341,7 +31346,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 409600,
         "d1": -0.000927,
@@ -31362,7 +31367,7 @@
           "toCode": "SN2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31381,7 +31386,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 97950,
         "d1": -0.002139,
@@ -31402,7 +31407,7 @@
           "toCode": "BC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -31428,7 +31433,7 @@
           "unit": "cny_per_barrel"
         },
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 711,
         "d1": -0.001264,
@@ -31449,7 +31454,7 @@
           "toCode": "SC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -31470,7 +31475,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 4434,
         "d1": -0.000901,
@@ -31491,7 +31496,7 @@
           "toCode": "FU2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -31512,7 +31517,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5162,
         "d1": -0.030064,
@@ -31533,7 +31538,7 @@
           "toCode": "LU2612.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31552,7 +31557,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5013,
         "d1": -0.044415,
@@ -31595,7 +31600,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6713,
         "d1": 0.004639,
@@ -31616,7 +31621,7 @@
           "toCode": "PG2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -31637,7 +31642,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8904,
         "d1": -0.006693,
@@ -31658,7 +31663,7 @@
           "toCode": "PX701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31677,7 +31682,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2972,
         "d1": 0.006434,
@@ -31698,7 +31703,7 @@
           "toCode": "MA701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31717,7 +31722,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5284,
         "d1": 0.008205,
@@ -31738,7 +31743,7 @@
           "toCode": "EG2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31757,7 +31762,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1006,
         "d1": -0.005929,
@@ -31778,7 +31783,7 @@
           "toCode": "SA701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31797,7 +31802,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1860,
         "d1": -0.003749,
@@ -31818,7 +31823,7 @@
           "toCode": "SH701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低"
@@ -31839,7 +31844,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 9892,
         "d1": -0.002521,
@@ -31860,7 +31865,7 @@
           "toCode": "EB2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -31879,7 +31884,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 20095,
         "d1": 0.057075,
@@ -31900,7 +31905,7 @@
           "toCode": "RU2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新高",
@@ -31915,35 +31920,35 @@
         "chain": "chemical",
         "chain_cn": "化工",
         "chain_tier": "上游原料",
-        "code": "NR2611.INE",
+        "code": "NR2612.INE",
         "requestedCode": "NR00.INE",
         "unit": "cny_per_ton",
         "importance": "medium",
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
-        "value": 17500,
-        "d1": 0.061249,
-        "d5": 0.079248,
-        "d20": 0.099246,
-        "d60": 0.169786,
-        "z1y": 2.5341,
+        "value": 17390,
+        "d1": 0.05972,
+        "d5": 0.077447,
+        "d20": 0.096469,
+        "d60": 0.160881,
+        "z1y": 2.4328,
         "pct1y": 0.9977,
         "pct3y": 0.9977,
-        "chg1Extreme": 0.9976,
-        "ma20": 16361.5,
+        "chg1Extreme": 0.9929,
+        "ma20": 16273.25,
         "historyDays": 213,
-        "oi": 36920,
-        "oiChg5": -0.37309,
-        "oiChg20": -0.477727,
+        "oi": 80028,
+        "oiChg5": 0.589623,
+        "oiChg20": 0.888878,
         "mainContract": {
           "fromCode": "NR00.INE",
-          "toCode": "NR2611.INE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
+          "toCode": "NR2612.INE",
+          "rollRatio": 1.000733137829912,
+          "overlapDays": 193,
+          "fromCache": false
         },
         "tags": [
           "刷一年新高",
@@ -31966,7 +31971,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 16000,
         "d1": 0.034929,
@@ -32009,7 +32014,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 4912,
         "d1": -0.009677,
@@ -32030,7 +32035,7 @@
           "toCode": "SP2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32049,7 +32054,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6300,
         "d1": -0.007874,
@@ -32070,7 +32075,7 @@
           "toCode": "TA701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32089,7 +32094,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 7910,
         "d1": -0.001767,
@@ -32110,7 +32115,7 @@
           "toCode": "PF701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32129,7 +32134,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 7644,
         "d1": -0.00365,
@@ -32150,7 +32155,7 @@
           "toCode": "PR701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32169,7 +32174,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8631,
         "d1": -0.005187,
@@ -32190,7 +32195,7 @@
           "toCode": "PP2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32209,7 +32214,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8197,
         "d1": -0.010383,
@@ -32230,7 +32235,7 @@
           "toCode": "L2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32249,7 +32254,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 4999,
         "d1": 0.031998,
@@ -32270,7 +32275,7 @@
           "toCode": "V2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -32291,7 +32296,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 896,
         "d1": 0.005612,
@@ -32312,7 +32317,7 @@
           "toCode": "FG701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32331,7 +32336,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1768,
         "d1": 0.011442,
@@ -32352,7 +32357,7 @@
           "toCode": "UR701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32371,7 +32376,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 910.58,
         "d1": 0.013129,
@@ -32392,7 +32397,7 @@
           "toCode": "AU2612.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32411,7 +32416,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 14980,
         "d1": 0.00889,
@@ -32432,7 +32437,7 @@
           "toCode": "AG2612.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32451,7 +32456,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5253,
         "d1": 0.009416,
@@ -32472,7 +32477,7 @@
           "toCode": "A2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新高"
@@ -32493,7 +32498,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2187,
         "d1": 0,
@@ -32514,7 +32519,7 @@
           "toCode": "C2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32533,7 +32538,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 9581,
         "d1": 0.001673,
@@ -32554,7 +32559,7 @@
           "toCode": "P2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32573,7 +32578,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 827.5,
         "d1": 0.001816,
@@ -32594,7 +32599,7 @@
           "toCode": "LG2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -32615,7 +32620,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3372,
         "d1": 0.00387,
@@ -32636,7 +32641,7 @@
           "toCode": "M2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32655,7 +32660,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8972,
         "d1": 0.01093,
@@ -32676,7 +32681,7 @@
           "toCode": "Y2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32695,7 +32700,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 10230,
         "d1": 0.017202,
@@ -32716,7 +32721,7 @@
           "toCode": "OI701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -32737,7 +32742,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2333,
         "d1": 0.010832,
@@ -32758,7 +32763,7 @@
           "toCode": "RM701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32777,7 +32782,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2434,
         "d1": -0.000411,
@@ -32798,7 +32803,7 @@
           "toCode": "CS2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -32819,7 +32824,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3697,
         "d1": 0.009833,
@@ -32840,7 +32845,7 @@
           "toCode": "JD2612.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32859,7 +32864,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 11365,
         "d1": 0.003975,
@@ -32880,7 +32885,7 @@
           "toCode": "LH2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -32901,7 +32906,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5354,
         "d1": 0.00488,
@@ -32922,7 +32927,7 @@
           "toCode": "SR701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32941,7 +32946,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 15615,
         "d1": -0.010456,
@@ -32962,7 +32967,7 @@
           "toCode": "CF701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -32981,7 +32986,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6854,
         "d1": -0.014097,
@@ -33002,7 +33007,7 @@
           "toCode": "AP701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低",
@@ -33024,7 +33029,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8162,
         "d1": 0.008401,
@@ -33045,7 +33050,7 @@
           "toCode": "PK701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -33066,7 +33071,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8565,
         "d1": 0.004103,
@@ -33087,7 +33092,7 @@
           "toCode": "SI2611.GFE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -33106,7 +33111,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 118420,
         "d1": -0.003031,
@@ -33127,7 +33132,7 @@
           "toCode": "LC2701.GFE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低",
@@ -33149,7 +33154,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 36585,
         "d1": 0.009241,
@@ -33170,7 +33175,7 @@
           "toCode": "PS2611.GFE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -33189,7 +33194,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2794,
         "d1": -0.017926,
@@ -33210,7 +33215,7 @@
           "toCode": "EC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -33241,7 +33246,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 702.5,
               "d1": 0.005007,
@@ -33262,7 +33267,7 @@
                 "toCode": "I2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33282,7 +33287,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1449,
               "d1": 0.000691,
@@ -33303,7 +33308,7 @@
                 "toCode": "JM2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33323,7 +33328,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1958.5,
               "d1": 0.008237,
@@ -33344,7 +33349,7 @@
                 "toCode": "J2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33396,7 +33401,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5936,
               "d1": 0.008495,
@@ -33417,7 +33422,7 @@
                 "toCode": "SF701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33437,7 +33442,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5796,
               "d1": 0.000691,
@@ -33458,7 +33463,7 @@
                 "toCode": "SM701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33478,7 +33483,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3112,
               "d1": 0.002254,
@@ -33499,7 +33504,7 @@
                 "toCode": "RB2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33519,7 +33524,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3274,
               "d1": -0.000611,
@@ -33540,7 +33545,7 @@
                 "toCode": "HC2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33560,7 +33565,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 13700,
               "d1": -0.007965,
@@ -33581,7 +33586,7 @@
                 "toCode": "SS2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -33612,7 +33617,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2723,
               "d1": 0.025226,
@@ -33633,7 +33638,7 @@
                 "toCode": "AO2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -33655,7 +33660,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 109680,
               "d1": 0.001004,
@@ -33676,7 +33681,7 @@
                 "toCode": "CU2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33696,7 +33701,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 23830,
               "d1": -0.00791,
@@ -33717,7 +33722,7 @@
                 "toCode": "AL2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33737,7 +33742,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 26435,
               "d1": -0.005268,
@@ -33758,7 +33763,7 @@
                 "toCode": "ZN2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33778,7 +33783,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 16180,
               "d1": -0.005837,
@@ -33799,7 +33804,7 @@
                 "toCode": "PB2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33819,7 +33824,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 122040,
               "d1": -0.008127,
@@ -33840,7 +33845,7 @@
                 "toCode": "NI2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33860,7 +33865,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 409600,
               "d1": -0.000927,
@@ -33881,7 +33886,7 @@
                 "toCode": "SN2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -33901,7 +33906,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 97950,
               "d1": -0.002139,
@@ -33922,7 +33927,7 @@
                 "toCode": "BC2611.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -33958,7 +33963,7 @@
                 "unit": "cny_per_barrel"
               },
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 711,
               "d1": -0.001264,
@@ -33979,7 +33984,7 @@
                 "toCode": "SC2611.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -34001,7 +34006,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 4434,
               "d1": -0.000901,
@@ -34022,7 +34027,7 @@
                 "toCode": "FU2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -34044,7 +34049,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5162,
               "d1": -0.030064,
@@ -34065,7 +34070,7 @@
                 "toCode": "LU2612.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34085,7 +34090,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5013,
               "d1": -0.044415,
@@ -34129,7 +34134,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 6713,
               "d1": 0.004639,
@@ -34150,7 +34155,7 @@
                 "toCode": "PG2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
@@ -34181,7 +34186,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8904,
               "d1": -0.006693,
@@ -34202,7 +34207,7 @@
                 "toCode": "PX701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34222,7 +34227,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2972,
               "d1": 0.006434,
@@ -34243,7 +34248,7 @@
                 "toCode": "MA701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34263,7 +34268,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5284,
               "d1": 0.008205,
@@ -34284,7 +34289,7 @@
                 "toCode": "EG2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34304,7 +34309,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1006,
               "d1": -0.005929,
@@ -34325,7 +34330,7 @@
                 "toCode": "SA701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34345,7 +34350,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1860,
               "d1": -0.003749,
@@ -34366,7 +34371,7 @@
                 "toCode": "SH701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新低"
@@ -34388,7 +34393,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 9892,
               "d1": -0.002521,
@@ -34409,7 +34414,7 @@
                 "toCode": "EB2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34429,7 +34434,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 20095,
               "d1": 0.057075,
@@ -34450,7 +34455,7 @@
                 "toCode": "RU2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新高",
@@ -34466,35 +34471,35 @@
               "chain": "chemical",
               "chain_cn": "化工",
               "chain_tier": "上游原料",
-              "code": "NR2611.INE",
+              "code": "NR2612.INE",
               "requestedCode": "NR00.INE",
               "unit": "cny_per_ton",
               "importance": "medium",
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
-              "value": 17500,
-              "d1": 0.061249,
-              "d5": 0.079248,
-              "d20": 0.099246,
-              "d60": 0.169786,
-              "z1y": 2.5341,
+              "value": 17390,
+              "d1": 0.05972,
+              "d5": 0.077447,
+              "d20": 0.096469,
+              "d60": 0.160881,
+              "z1y": 2.4328,
               "pct1y": 0.9977,
               "pct3y": 0.9977,
-              "chg1Extreme": 0.9976,
-              "ma20": 16361.5,
+              "chg1Extreme": 0.9929,
+              "ma20": 16273.25,
               "historyDays": 213,
-              "oi": 36920,
-              "oiChg5": -0.37309,
-              "oiChg20": -0.477727,
+              "oi": 80028,
+              "oiChg5": 0.589623,
+              "oiChg20": 0.888878,
               "mainContract": {
                 "fromCode": "NR00.INE",
-                "toCode": "NR2611.INE",
-                "rollRatio": 1,
-                "overlapDays": 0,
-                "fromCache": true
+                "toCode": "NR2612.INE",
+                "rollRatio": 1.000733137829912,
+                "overlapDays": 193,
+                "fromCache": false
               },
               "tags": [
                 "刷一年新高",
@@ -34518,7 +34523,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 16000,
               "d1": 0.034929,
@@ -34562,7 +34567,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 4912,
               "d1": -0.009677,
@@ -34583,7 +34588,7 @@
                 "toCode": "SP2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34603,7 +34608,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 6300,
               "d1": -0.007874,
@@ -34624,7 +34629,7 @@
                 "toCode": "TA701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34644,7 +34649,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 7910,
               "d1": -0.001767,
@@ -34665,7 +34670,7 @@
                 "toCode": "PF701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34685,7 +34690,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 7644,
               "d1": -0.00365,
@@ -34706,7 +34711,7 @@
                 "toCode": "PR701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34726,7 +34731,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8631,
               "d1": -0.005187,
@@ -34747,7 +34752,7 @@
                 "toCode": "PP2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34767,7 +34772,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8197,
               "d1": -0.010383,
@@ -34788,7 +34793,7 @@
                 "toCode": "L2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34808,7 +34813,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 4999,
               "d1": 0.031998,
@@ -34829,7 +34834,7 @@
                 "toCode": "V2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -34851,7 +34856,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 896,
               "d1": 0.005612,
@@ -34872,7 +34877,7 @@
                 "toCode": "FG701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34892,7 +34897,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1768,
               "d1": 0.011442,
@@ -34913,7 +34918,7 @@
                 "toCode": "UR701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34942,7 +34947,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 910.58,
               "d1": 0.013129,
@@ -34963,7 +34968,7 @@
                 "toCode": "AU2612.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -34983,7 +34988,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 14980,
               "d1": 0.00889,
@@ -35004,7 +35009,7 @@
                 "toCode": "AG2612.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35033,7 +35038,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5253,
               "d1": 0.009416,
@@ -35054,7 +35059,7 @@
                 "toCode": "A2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新高"
@@ -35076,7 +35081,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2187,
               "d1": 0,
@@ -35097,7 +35102,7 @@
                 "toCode": "C2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35117,7 +35122,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 9581,
               "d1": 0.001673,
@@ -35138,7 +35143,7 @@
                 "toCode": "P2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35158,7 +35163,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 827.5,
               "d1": 0.001816,
@@ -35179,7 +35184,7 @@
                 "toCode": "LG2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -35201,7 +35206,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3372,
               "d1": 0.00387,
@@ -35222,7 +35227,7 @@
                 "toCode": "M2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35242,7 +35247,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8972,
               "d1": 0.01093,
@@ -35263,7 +35268,7 @@
                 "toCode": "Y2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35283,7 +35288,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 10230,
               "d1": 0.017202,
@@ -35304,7 +35309,7 @@
                 "toCode": "OI701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -35326,7 +35331,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2333,
               "d1": 0.010832,
@@ -35347,7 +35352,7 @@
                 "toCode": "RM701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35367,7 +35372,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2434,
               "d1": -0.000411,
@@ -35388,7 +35393,7 @@
                 "toCode": "CS2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
@@ -35410,7 +35415,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3697,
               "d1": 0.009833,
@@ -35431,7 +35436,7 @@
                 "toCode": "JD2612.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35451,7 +35456,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 11365,
               "d1": 0.003975,
@@ -35472,7 +35477,7 @@
                 "toCode": "LH2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
@@ -35494,7 +35499,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5354,
               "d1": 0.00488,
@@ -35515,7 +35520,7 @@
                 "toCode": "SR701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35535,7 +35540,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 15615,
               "d1": -0.010456,
@@ -35556,7 +35561,7 @@
                 "toCode": "CF701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35576,7 +35581,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 6854,
               "d1": -0.014097,
@@ -35597,7 +35602,7 @@
                 "toCode": "AP701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新低",
@@ -35620,7 +35625,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8162,
               "d1": 0.008401,
@@ -35641,7 +35646,7 @@
                 "toCode": "PK701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -35672,7 +35677,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8565,
               "d1": 0.004103,
@@ -35693,7 +35698,7 @@
                 "toCode": "SI2611.GFE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35713,7 +35718,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 118420,
               "d1": -0.003031,
@@ -35734,7 +35739,7 @@
                 "toCode": "LC2701.GFE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新低",
@@ -35757,7 +35762,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 36585,
               "d1": 0.009241,
@@ -35778,7 +35783,7 @@
                 "toCode": "PS2611.GFE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -35798,7 +35803,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2794,
               "d1": -0.017926,
@@ -35819,7 +35824,7 @@
                 "toCode": "EC2611.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
@@ -59407,255 +59412,255 @@
         "points": [
           [
             "2025-11-18",
-            12405
+            12414.094575
           ],
           [
             "2025-11-19",
-            12405
+            12414.094575
           ],
           [
             "2025-11-20",
-            12405
+            12414.094575
           ],
           [
             "2025-11-21",
-            12405
+            12414.094575
           ],
           [
             "2025-11-24",
-            12405
+            12414.094575
           ],
           [
             "2025-11-25",
-            12405
+            12414.094575
           ],
           [
             "2025-11-26",
-            12405
+            12414.094575
           ],
           [
             "2025-11-27",
-            12405
+            12414.094575
           ],
           [
             "2025-11-28",
-            12405
+            12414.094575
           ],
           [
             "2025-12-01",
-            12405
+            12414.094575
           ],
           [
             "2025-12-02",
-            12405
+            12414.094575
           ],
           [
             "2025-12-03",
-            12405
+            12414.094575
           ],
           [
             "2025-12-04",
-            12395
+            12404.087243
           ],
           [
             "2025-12-05",
-            12395
+            12404.087243
           ],
           [
             "2025-12-08",
-            12395
+            12404.087243
           ],
           [
             "2025-12-09",
-            12395
+            12404.087243
           ],
           [
             "2025-12-10",
-            12310
+            12319.024927
           ],
           [
             "2025-12-11",
-            12310
+            12319.024927
           ],
           [
             "2025-12-12",
-            12520
+            12529.178886
           ],
           [
             "2025-12-15",
-            12495
+            12504.160557
           ],
           [
             "2025-12-16",
-            12470
+            12425
           ],
           [
             "2025-12-17",
-            12665
+            12430
           ],
           [
             "2025-12-18",
-            12635
+            12525
           ],
           [
             "2025-12-19",
-            12450
+            12465
           ],
           [
             "2025-12-22",
-            12450
+            12505
           ],
           [
             "2025-12-23",
-            12590
+            12500
           ],
           [
             "2025-12-24",
-            12590
+            12550
           ],
           [
             "2025-12-25",
-            12915
+            12570
           ],
           [
             "2025-12-26",
-            12810
+            12635
           ],
           [
             "2025-12-29",
-            12810
+            12635
           ],
           [
             "2025-12-30",
-            12855
+            12635
           ],
           [
             "2025-12-31",
-            12855
+            12865
           ],
           [
             "2026-01-05",
-            13000
+            12865
           ],
           [
             "2026-01-06",
-            13000
+            12865
           ],
           [
             "2026-01-07",
-            13395
+            13080
           ],
           [
             "2026-01-08",
-            13305
+            13080
           ],
           [
             "2026-01-09",
-            13305
+            13080
           ],
           [
             "2026-01-12",
-            13305
+            12915
           ],
           [
             "2026-01-13",
-            13150
+            13140
           ],
           [
             "2026-01-14",
-            13170
+            13130
           ],
           [
             "2026-01-15",
-            13170
+            13130
           ],
           [
             "2026-01-16",
-            13085
+            13000
           ],
           [
             "2026-01-19",
-            12995
+            13000
           ],
           [
             "2026-01-20",
-            12750
+            12990
           ],
           [
             "2026-01-21",
-            12750
+            12855
           ],
           [
             "2026-01-22",
-            12780
+            13085
           ],
           [
             "2026-01-23",
-            13235
+            13310
           ],
           [
             "2026-01-26",
-            13235
+            13425
           ],
           [
             "2026-01-27",
-            13235
+            13480
           ],
           [
             "2026-01-28",
-            13245
-          ],
-          [
-            "2026-01-29",
-            13490
-          ],
-          [
-            "2026-01-30",
-            13490
-          ],
-          [
-            "2026-02-02",
-            13375
-          ],
-          [
-            "2026-02-03",
-            13375
-          ],
-          [
-            "2026-02-04",
-            13375
-          ],
-          [
-            "2026-02-05",
-            13375
-          ],
-          [
-            "2026-02-06",
-            13330
-          ],
-          [
-            "2026-02-09",
-            13295
-          ],
-          [
-            "2026-02-10",
-            13295
-          ],
-          [
-            "2026-02-11",
             13515
           ],
           [
+            "2026-01-29",
+            13500
+          ],
+          [
+            "2026-01-30",
+            13910
+          ],
+          [
+            "2026-02-02",
+            13315
+          ],
+          [
+            "2026-02-03",
+            13315
+          ],
+          [
+            "2026-02-04",
+            13485
+          ],
+          [
+            "2026-02-05",
+            13485
+          ],
+          [
+            "2026-02-06",
+            13485
+          ],
+          [
+            "2026-02-09",
+            13600
+          ],
+          [
+            "2026-02-10",
+            13550
+          ],
+          [
+            "2026-02-11",
+            13665
+          ],
+          [
             "2026-02-12",
-            13645
+            13665
           ],
           [
             "2026-02-13",
-            13640
+            13650
           ],
           [
             "2026-02-24",
-            13865
+            13935
           ],
           [
             "2026-02-25",
@@ -59663,75 +59668,75 @@
           ],
           [
             "2026-02-26",
-            14095
+            14125
           ],
           [
             "2026-02-27",
-            14015
+            14125
           ],
           [
             "2026-03-02",
-            14180
+            14125
           ],
           [
             "2026-03-03",
-            13980
+            14250
           ],
           [
             "2026-03-04",
-            13710
+            13785
           ],
           [
             "2026-03-05",
-            13800
+            13995
           ],
           [
             "2026-03-06",
-            13830
+            13865
           ],
           [
             "2026-03-09",
-            14230
+            14265
           ],
           [
             "2026-03-10",
-            14115
+            13830
           ],
           [
             "2026-03-11",
-            14115
+            13885
           ],
           [
             "2026-03-12",
-            14115
+            13885
           ],
           [
             "2026-03-13",
-            13905
+            13885
           ],
           [
             "2026-03-16",
-            13905
+            13885
           ],
           [
             "2026-03-17",
-            13905
+            13885
           ],
           [
             "2026-03-18",
-            13565
+            13820
           ],
           [
             "2026-03-19",
-            13540
+            13515
           ],
           [
             "2026-03-20",
-            13260
+            13430
           ],
           [
             "2026-03-23",
-            13460
+            13590
           ],
           [
             "2026-03-24",
@@ -59739,311 +59744,311 @@
           ],
           [
             "2026-03-25",
-            14020
+            13925
           ],
           [
             "2026-03-26",
-            14020
+            14170
           ],
           [
             "2026-03-27",
-            14020
+            14285
           ],
           [
             "2026-03-30",
-            14155
-          ],
-          [
-            "2026-03-31",
-            14135
-          ],
-          [
-            "2026-04-01",
-            14135
-          ],
-          [
-            "2026-04-02",
-            14270
-          ],
-          [
-            "2026-04-03",
             14320
           ],
           [
+            "2026-03-31",
+            14235
+          ],
+          [
+            "2026-04-01",
+            14415
+          ],
+          [
+            "2026-04-02",
+            14385
+          ],
+          [
+            "2026-04-03",
+            14445
+          ],
+          [
             "2026-04-07",
-            14380
+            14445
           ],
           [
             "2026-04-08",
-            14500
-          ],
-          [
-            "2026-04-09",
-            14490
-          ],
-          [
-            "2026-04-10",
-            14280
-          ],
-          [
-            "2026-04-13",
-            14115
-          ],
-          [
-            "2026-04-14",
-            14115
-          ],
-          [
-            "2026-04-15",
-            14115
-          ],
-          [
-            "2026-04-16",
-            14255
-          ],
-          [
-            "2026-04-17",
-            14000
-          ],
-          [
-            "2026-04-20",
-            14335
-          ],
-          [
-            "2026-04-21",
-            14335
-          ],
-          [
-            "2026-04-22",
-            14500
-          ],
-          [
-            "2026-04-23",
-            14680
-          ],
-          [
-            "2026-04-24",
-            14555
-          ],
-          [
-            "2026-04-27",
-            14555
-          ],
-          [
-            "2026-04-28",
-            14745
-          ],
-          [
-            "2026-04-29",
-            14900
-          ],
-          [
-            "2026-04-30",
-            15060
-          ],
-          [
-            "2026-05-06",
-            15430
-          ],
-          [
-            "2026-05-07",
-            15450
-          ],
-          [
-            "2026-05-08",
-            15360
-          ],
-          [
-            "2026-05-11",
-            15385
-          ],
-          [
-            "2026-05-12",
-            15315
-          ],
-          [
-            "2026-05-13",
-            15680
-          ],
-          [
-            "2026-05-14",
-            15365
-          ],
-          [
-            "2026-05-15",
-            15120
-          ],
-          [
-            "2026-05-18",
-            15100
-          ],
-          [
-            "2026-05-19",
-            15245
-          ],
-          [
-            "2026-05-20",
-            15100
-          ],
-          [
-            "2026-05-21",
-            15130
-          ],
-          [
-            "2026-05-22",
-            14970
-          ],
-          [
-            "2026-05-25",
-            15160
-          ],
-          [
-            "2026-05-26",
-            15125
-          ],
-          [
-            "2026-05-27",
-            15190
-          ],
-          [
-            "2026-05-28",
-            15615
-          ],
-          [
-            "2026-05-29",
-            15630
-          ],
-          [
-            "2026-06-01",
-            15785
-          ],
-          [
-            "2026-06-02",
-            16025
-          ],
-          [
-            "2026-06-03",
-            16030
-          ],
-          [
-            "2026-06-04",
-            15750
-          ],
-          [
-            "2026-06-05",
-            15705
-          ],
-          [
-            "2026-06-08",
-            15455
-          ],
-          [
-            "2026-06-09",
-            15445
-          ],
-          [
-            "2026-06-10",
-            15150
-          ],
-          [
-            "2026-06-11",
-            15305
-          ],
-          [
-            "2026-06-12",
-            15375
-          ],
-          [
-            "2026-06-15",
-            15540
-          ],
-          [
-            "2026-06-16",
-            15950
-          ],
-          [
-            "2026-06-17",
-            15715
-          ],
-          [
-            "2026-06-18",
-            15660
-          ],
-          [
-            "2026-06-22",
-            15770
-          ],
-          [
-            "2026-06-23",
-            15570
-          ],
-          [
-            "2026-06-24",
-            15595
-          ],
-          [
-            "2026-06-25",
             14645
           ],
           [
-            "2026-06-26",
-            14525
+            "2026-04-09",
+            14550
           ],
           [
-            "2026-06-29",
-            14635
+            "2026-04-10",
+            14440
           ],
           [
-            "2026-06-30",
-            14705
+            "2026-04-13",
+            14440
           ],
           [
-            "2026-07-01",
-            14615
+            "2026-04-14",
+            14260
           ],
           [
-            "2026-07-02",
+            "2026-04-15",
+            14260
+          ],
+          [
+            "2026-04-16",
+            14260
+          ],
+          [
+            "2026-04-17",
+            14135
+          ],
+          [
+            "2026-04-20",
+            14405
+          ],
+          [
+            "2026-04-21",
+            14445
+          ],
+          [
+            "2026-04-22",
             14540
           ],
           [
+            "2026-04-23",
+            14550
+          ],
+          [
+            "2026-04-24",
+            14645
+          ],
+          [
+            "2026-04-27",
+            14780
+          ],
+          [
+            "2026-04-28",
+            14885
+          ],
+          [
+            "2026-04-29",
+            15210
+          ],
+          [
+            "2026-04-30",
+            15165
+          ],
+          [
+            "2026-05-06",
+            15380
+          ],
+          [
+            "2026-05-07",
+            15550
+          ],
+          [
+            "2026-05-08",
+            15665
+          ],
+          [
+            "2026-05-11",
+            15485
+          ],
+          [
+            "2026-05-12",
+            15490
+          ],
+          [
+            "2026-05-13",
+            15985
+          ],
+          [
+            "2026-05-14",
+            15480
+          ],
+          [
+            "2026-05-15",
+            15230
+          ],
+          [
+            "2026-05-18",
+            15305
+          ],
+          [
+            "2026-05-19",
+            15445
+          ],
+          [
+            "2026-05-20",
+            15180
+          ],
+          [
+            "2026-05-21",
+            15265
+          ],
+          [
+            "2026-05-22",
+            15235
+          ],
+          [
+            "2026-05-25",
+            15240
+          ],
+          [
+            "2026-05-26",
+            15185
+          ],
+          [
+            "2026-05-27",
+            15180
+          ],
+          [
+            "2026-05-28",
+            15555
+          ],
+          [
+            "2026-05-29",
+            15650
+          ],
+          [
+            "2026-06-01",
+            15885
+          ],
+          [
+            "2026-06-02",
+            16110
+          ],
+          [
+            "2026-06-03",
+            16055
+          ],
+          [
+            "2026-06-04",
+            15705
+          ],
+          [
+            "2026-06-05",
+            15745
+          ],
+          [
+            "2026-06-08",
+            15500
+          ],
+          [
+            "2026-06-09",
+            15530
+          ],
+          [
+            "2026-06-10",
+            15175
+          ],
+          [
+            "2026-06-11",
+            15415
+          ],
+          [
+            "2026-06-12",
+            15450
+          ],
+          [
+            "2026-06-15",
+            15635
+          ],
+          [
+            "2026-06-16",
+            16005
+          ],
+          [
+            "2026-06-17",
+            15805
+          ],
+          [
+            "2026-06-18",
+            15655
+          ],
+          [
+            "2026-06-22",
+            15790
+          ],
+          [
+            "2026-06-23",
+            15540
+          ],
+          [
+            "2026-06-24",
+            15660
+          ],
+          [
+            "2026-06-25",
+            14690
+          ],
+          [
+            "2026-06-26",
+            14540
+          ],
+          [
+            "2026-06-29",
+            14660
+          ],
+          [
+            "2026-06-30",
+            14785
+          ],
+          [
+            "2026-07-01",
+            14655
+          ],
+          [
+            "2026-07-02",
+            14550
+          ],
+          [
             "2026-07-03",
-            14685
+            14680
           ],
           [
             "2026-07-06",
-            14840
+            14860
           ],
           [
             "2026-07-07",
-            14960
+            14980
           ],
           [
             "2026-07-08",
-            14905
+            14915
           ],
           [
             "2026-07-09",
-            14900
+            14905
           ],
           [
             "2026-07-10",
-            14845
+            14855
           ],
           [
             "2026-07-13",
-            14845
+            14870
           ],
           [
             "2026-07-14",
-            14995
+            15025
           ],
           [
             "2026-07-15",
-            15080
+            15110
           ],
           [
             "2026-07-16",
-            14815
+            14825
           ],
           [
             "2026-07-17",
@@ -60051,27 +60056,27 @@
           ],
           [
             "2026-07-20",
-            14895
+            14905
           ],
           [
             "2026-07-21",
-            14750
+            14775
           ],
           [
             "2026-07-22",
-            14855
+            14870
           ],
           [
             "2026-07-23",
-            14925
+            14935
           ],
           [
             "2026-07-24",
-            14705
+            14715
           ],
           [
             "2026-07-27",
-            14705
+            14720
           ],
           [
             "2026-07-28",
@@ -60079,183 +60084,183 @@
           ],
           [
             "2026-07-29",
-            14360
+            14375
           ],
           [
             "2026-07-30",
-            14380
-          ],
-          [
-            "2026-07-31",
-            14465
-          ],
-          [
-            "2026-08-03",
             14385
           ],
           [
+            "2026-07-31",
+            14455
+          ],
+          [
+            "2026-08-03",
+            14360
+          ],
+          [
             "2026-08-04",
-            14725
+            14720
           ],
           [
             "2026-08-05",
-            14810
+            14795
           ],
           [
             "2026-08-06",
-            14935
+            14920
           ],
           [
             "2026-08-07",
-            14965
-          ],
-          [
-            "2026-08-10",
-            14990
-          ],
-          [
-            "2026-08-11",
-            15030
-          ],
-          [
-            "2026-08-12",
-            15100
-          ],
-          [
-            "2026-08-13",
-            15070
-          ],
-          [
-            "2026-08-14",
             14960
           ],
           [
+            "2026-08-10",
+            14955
+          ],
+          [
+            "2026-08-11",
+            15015
+          ],
+          [
+            "2026-08-12",
+            15095
+          ],
+          [
+            "2026-08-13",
+            15055
+          ],
+          [
+            "2026-08-14",
+            14950
+          ],
+          [
             "2026-08-17",
-            15180
+            15150
           ],
           [
             "2026-08-18",
-            15195
+            15160
           ],
           [
             "2026-08-19",
-            15375
+            15350
           ],
           [
             "2026-08-20",
-            15650
+            15580
           ],
           [
             "2026-08-21",
-            15690
+            15620
           ],
           [
             "2026-08-24",
-            15850
+            15775
           ],
           [
             "2026-08-25",
-            15765
+            15670
           ],
           [
             "2026-08-26",
-            15730
+            15635
           ],
           [
             "2026-08-27",
-            15900
+            15820
           ],
           [
             "2026-08-28",
-            16075
+            15980
           ],
           [
             "2026-08-31",
-            16105
-          ],
-          [
-            "2026-09-01",
-            15920
-          ],
-          [
-            "2026-09-02",
-            15810
-          ],
-          [
-            "2026-09-03",
-            15780
-          ],
-          [
-            "2026-09-04",
-            15845
-          ],
-          [
-            "2026-09-07",
-            16345
-          ],
-          [
-            "2026-09-08",
-            16750
-          ],
-          [
-            "2026-09-09",
-            16900
-          ],
-          [
-            "2026-09-10",
-            16580
-          ],
-          [
-            "2026-09-11",
-            16430
-          ],
-          [
-            "2026-09-14",
-            16100
-          ],
-          [
-            "2026-09-15",
-            15885
-          ],
-          [
-            "2026-09-16",
             16010
           ],
           [
+            "2026-09-01",
+            15860
+          ],
+          [
+            "2026-09-02",
+            15745
+          ],
+          [
+            "2026-09-03",
+            15725
+          ],
+          [
+            "2026-09-04",
+            15770
+          ],
+          [
+            "2026-09-07",
+            16265
+          ],
+          [
+            "2026-09-08",
+            16670
+          ],
+          [
+            "2026-09-09",
+            16790
+          ],
+          [
+            "2026-09-10",
+            16485
+          ],
+          [
+            "2026-09-11",
+            16340
+          ],
+          [
+            "2026-09-14",
+            15990
+          ],
+          [
+            "2026-09-15",
+            15780
+          ],
+          [
+            "2026-09-16",
+            15925
+          ],
+          [
             "2026-09-17",
-            16030
+            15950
           ],
           [
             "2026-09-18",
-            15880
+            15810
           ],
           [
             "2026-09-21",
-            15985
+            15920
           ],
           [
             "2026-09-22",
-            16215
+            16140
           ],
           [
             "2026-09-23",
-            16725
+            16665
           ],
           [
             "2026-09-24",
-            17100
+            16955
           ],
           [
             "2026-09-28",
-            16870
+            16740
           ],
           [
             "2026-09-29",
-            16490
+            16410
           ],
           [
             "2026-09-30",
-            17500
+            17390
           ]
         ]
       },
@@ -88439,15 +88444,15 @@
   "brief": {
     "tone": "中性震荡",
     "lines": [
-      "综合宏观支持度 47.3（中性震荡），较上一有效快照 +0.1。",
-      "今日显著偏离 24 项，结构化背离触发 1 项，异常 21 项。",
+      "综合宏观支持度 47.4（中性震荡），较上一有效快照 +0.2。",
+      "今日显著偏离 25 项，结构化背离触发 1 项，异常 21 项。",
       "六维中 增长增长中性、消费消费偏弱、地产地产承压、通胀价格压力偏强、流动性中性、外需外需偏强。",
       "六维权重为 DRAFT；综合分是宏观支持度 / 扩张友好度的规则化观察指标。"
     ]
   },
   "regime": {
     "growth": 0.1313,
-    "inflation": -0.5837
+    "inflation": -0.5761
   },
   "dataQuality": {
     "degraded": [
@@ -88455,7 +88460,7 @@
         "id": "HF_VEG",
         "name_cn": "平均批发价:28种重点监测蔬菜",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 4.37
@@ -88465,7 +88470,7 @@
         "id": "HF_FRUIT",
         "name_cn": "平均批发价:6种重点监测水果",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 6.73
@@ -88475,7 +88480,7 @@
         "id": "HF_COPPER_SPOT",
         "name_cn": "现货价:铜",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 111413.33
@@ -88485,7 +88490,7 @@
         "id": "HF_REBAR",
         "name_cn": "螺纹钢主力",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 3034
@@ -88495,7 +88500,7 @@
         "id": "HF_HRC",
         "name_cn": "热轧卷板主力",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 3216
@@ -88505,7 +88510,7 @@
         "id": "HF_COPPER",
         "name_cn": "沪铜主力",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 110590
@@ -88515,7 +88520,7 @@
         "id": "HF_ALUMINUM",
         "name_cn": "沪铝主力",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 23920
@@ -88525,7 +88530,7 @@
         "id": "HF_IRON_ORE",
         "name_cn": "铁矿石主力",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 701.5
@@ -88535,7 +88540,7 @@
         "id": "HF_COKING_COAL",
         "name_cn": "焦煤主力",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1490
@@ -88545,7 +88550,7 @@
         "id": "HF_THERMAL_COAL",
         "name_cn": "动力煤主力",
         "status": "DISCONTINUED",
-        "ageDays": 1376,
+        "ageDays": 1377,
         "latest": {
           "date": "2022-12-30",
           "value": 921
@@ -88555,7 +88560,7 @@
         "id": "HF_GLASS",
         "name_cn": "玻璃主力",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 915
@@ -88565,7 +88570,7 @@
         "id": "HF_CRUDE",
         "name_cn": "INE原油主力连续（宏观评分口径）",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 690
@@ -88575,7 +88580,7 @@
         "id": "MKT_DR001",
         "name_cn": "DR001",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.3611
@@ -88585,7 +88590,7 @@
         "id": "MKT_DR007",
         "name_cn": "DR007",
         "status": "STALE",
-        "ageDays": 7,
+        "ageDays": 8,
         "latest": {
           "date": "2026-09-29",
           "value": 1.3862
@@ -88595,7 +88600,7 @@
         "id": "MKT_R001",
         "name_cn": "R001",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.3804
@@ -88605,7 +88610,7 @@
         "id": "MKT_R007",
         "name_cn": "R007",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.3795
@@ -88615,7 +88620,7 @@
         "id": "MKT_SHIBOR_1W",
         "name_cn": "Shibor:1周",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.371
@@ -88625,7 +88630,7 @@
         "id": "MKT_CGB_1Y",
         "name_cn": "中债国债到期收益率:1年",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.2197
@@ -88635,7 +88640,7 @@
         "id": "MKT_CGB_3Y",
         "name_cn": "中债国债到期收益率:3年",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.2818
@@ -88645,7 +88650,7 @@
         "id": "MKT_CGB_10Y",
         "name_cn": "中债国债到期收益率:10年",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.6822
@@ -88655,7 +88660,7 @@
         "id": "MKT_CGB_30Y",
         "name_cn": "中债国债到期收益率:30年",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 2.1
@@ -88665,7 +88670,7 @@
         "id": "MKT_CURVE_10Y1Y",
         "name_cn": "10Y-1Y 期限利差",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 0.4625
@@ -88675,7 +88680,7 @@
         "id": "MKT_CURVE_30Y10Y",
         "name_cn": "30Y-10Y 期限利差",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 0.4178
@@ -88685,7 +88690,7 @@
         "id": "MKT_AAA_3Y",
         "name_cn": "中债中短期票据到期收益率(AAA):3年",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 1.632
@@ -88695,7 +88700,7 @@
         "id": "MKT_CREDIT_SPREAD_3Y",
         "name_cn": "AAA 3Y 信用利差",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 0.3502
@@ -88705,7 +88710,7 @@
         "id": "MKT_USDCNY",
         "name_cn": "中间价:美元兑人民币",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 6.7351
@@ -88715,7 +88720,7 @@
         "id": "MKT_USDCNH",
         "name_cn": "即期汇率(16:30):美元兑人民币",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 6.7053
@@ -88725,7 +88730,7 @@
         "id": "MKT_HS300",
         "name_cn": "沪深300指数",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 4357.6155
@@ -88735,7 +88740,7 @@
         "id": "MKT_CSI1000",
         "name_cn": "中证1000指数",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 7298.8208
@@ -88745,7 +88750,7 @@
         "id": "MKT_CYB",
         "name_cn": "创业板指",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 3135.2767
@@ -88755,7 +88760,7 @@
         "id": "MKT_SSE",
         "name_cn": "上证指数",
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "latest": {
           "date": "2026-09-30",
           "value": 3842.1946

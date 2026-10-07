@@ -1,37 +1,37 @@
 {
   "contract": "AI_MACRO_HANDOFF",
   "version": "1.0.0",
-  "generatedAt": "2026-10-06T15:37:39.839Z",
+  "generatedAt": "2026-10-07T07:23:29.100Z",
   "asOf": "2026-09-30",
   "tradingDataAsOf": "2026-09-30",
-  "runDate": "2026-10-06",
-  "sourceWindowEnd": "2026-10-06",
+  "runDate": "2026-10-07",
+  "sourceWindowEnd": "2026-10-07",
   "dateQuality": {
     "coverage": 0.828571,
     "minimumCoverage": 0.8,
     "refreshedDailyCount": 35,
     "byDate": {
       "2026-09-30": 29,
-      "2026-10-06": 4,
-      "2026-10-05": 1,
+      "2026-10-07": 3,
+      "2026-10-06": 2,
       "2026-09-29": 1
     }
   },
   "source": {
     "contract": "MACRO_SNAPSHOT",
     "version": "1.1.0",
-    "generatedAt": "2026-10-06T15:37:36.609Z",
-    "sha256": "910d0a6fc4adfd31e4c00c27813992dccb7c3c6b000db17eb5bf2f90a7b16ed8",
+    "generatedAt": "2026-10-07T07:23:26.698Z",
+    "sha256": "98d5654da2da7f3d7b028d885a1ccab2c5cbf2bd7a2e4e40af7bf512e2d84b64",
     "sourceCommit": "91c931d6f31988f6f32dbd1f2f7a6023f077a4e1",
     "sourceDirty": false
   },
   "headline": {
-    "composite": 47.3,
+    "composite": 47.4,
     "label": "中性震荡",
-    "compositeDelta": 0.1,
+    "compositeDelta": 0.2,
     "anomalyCount": 21,
     "highSeverityCount": 15,
-    "notableDeviationCount": 24,
+    "notableDeviationCount": 25,
     "divergenceHits": 1,
     "freshness": {
       "FRESH": 23,
@@ -235,8 +235,8 @@
       "neutralLabel": "价格环境中性",
       "lowLabel": "价格压力偏强",
       "semanticLabel": "价格压力偏强",
-      "score": 38.3,
-      "zMean": -0.5837,
+      "score": 38.5,
+      "zMean": -0.5761,
       "coverage": {
         "used": 5,
         "configured": 7,
@@ -271,22 +271,22 @@
           "id": "HF_PORK",
           "name_cn": "平均批发价:猪肉",
           "weight": 0.12,
-          "z": 0.0478,
-          "dirZ": -0.0478,
+          "z": -0.0387,
+          "dirZ": 0.0387,
           "status": "FRESH"
         },
         {
           "id": "HF_BRENT",
           "name_cn": "Brent连续（iFinD）",
           "weight": 0.12,
-          "z": 0.972,
-          "dirZ": -0.972,
+          "z": 1.0139,
+          "dirZ": -1.0139,
           "status": "FRESH"
         }
       ],
       "upCount": 0,
       "downCount": 2,
-      "delta": 2
+      "delta": 2.2
     },
     {
       "key": "liquidity",
@@ -420,123 +420,9 @@
     }
   ],
   "deviations": {
-    "total": 24,
-    "extreme": 4,
+    "total": 25,
+    "extreme": 3,
     "up": [
-      {
-        "id": "HF_BEEF",
-        "name_cn": "平均批发价:牛肉",
-        "layer": "highfreq",
-        "dimension": "inflation",
-        "category": "inflation",
-        "frequency": "daily",
-        "unit": "cny_per_kg",
-        "importance": "low",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "marketIdentity": null,
-        "direction": "higher_is_tighter",
-        "polarity": -1,
-        "status": "FRESH",
-        "ageDays": 0,
-        "scorable": true,
-        "latest": {
-          "date": "2026-10-06",
-          "value": 73.7
-        },
-        "changes": {
-          "chg1": 1.64,
-          "chg4": 1.43,
-          "chg5": 0.22,
-          "chg12": 1.32,
-          "chg13": 2.1,
-          "chg20": 2.75
-        },
-        "pctChg1": 0.022759,
-        "pctChg5": 0.002994,
-        "pctChg20": 0.03876,
-        "pctChg12": 0.018237,
-        "z1y": 3.5029,
-        "dirZ": -3.5029,
-        "pct1y": 0.998,
-        "pct3y": 0.9993,
-        "ma20": 72.2145,
-        "moveExtreme": 0.4447,
-        "chg1Extreme": 0.998,
-        "changeView": {
-          "frequency": "daily",
-          "items": [
-            {
-              "key": "d5",
-              "label": "5D",
-              "value": 0.22,
-              "pctValue": 0.002994,
-              "status": "available"
-            },
-            {
-              "key": "d20",
-              "label": "20D",
-              "value": 2.75,
-              "pctValue": 0.03876,
-              "status": "available"
-            }
-          ],
-          "legacy": {
-            "deprecated": true,
-            "field": "changes"
-          }
-        },
-        "tags": [
-          "刷一年新高",
-          "变化+位置双极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
-      {
-        "id": "FUT_NR",
-        "name_cn": "20号胶",
-        "chain": "chemical",
-        "chain_cn": "化工",
-        "chain_tier": "上游原料",
-        "code": "NR2611.INE",
-        "requestedCode": "NR00.INE",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "status": "STALE",
-        "ageDays": 6,
-        "lastDate": "2026-09-30",
-        "value": 17500,
-        "d1": 0.061249,
-        "d5": 0.079248,
-        "d20": 0.099246,
-        "d60": 0.169786,
-        "z1y": 2.5341,
-        "pct1y": 0.9977,
-        "pct3y": 0.9977,
-        "chg1Extreme": 0.9976,
-        "ma20": 16361.5,
-        "historyDays": 213,
-        "oi": 36920,
-        "oiChg5": -0.37309,
-        "oiChg20": -0.477727,
-        "mainContract": {
-          "fromCode": "NR00.INE",
-          "toCode": "NR2611.INE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
-        },
-        "tags": [
-          "刷一年新高",
-          "变化+位置双极端",
-          "持仓放大"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
       {
         "id": "FUT_RU",
         "name_cn": "天然橡胶",
@@ -550,7 +436,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 20095,
         "d1": 0.057075,
@@ -571,11 +457,55 @@
           "toCode": "RU2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新高",
           "变化+位置双极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "extreme"
+      },
+      {
+        "id": "FUT_NR",
+        "name_cn": "20号胶",
+        "chain": "chemical",
+        "chain_cn": "化工",
+        "chain_tier": "上游原料",
+        "code": "NR2612.INE",
+        "requestedCode": "NR00.INE",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "status": "STALE",
+        "ageDays": 7,
+        "lastDate": "2026-09-30",
+        "value": 17390,
+        "d1": 0.05972,
+        "d5": 0.077447,
+        "d20": 0.096469,
+        "d60": 0.160881,
+        "z1y": 2.4328,
+        "pct1y": 0.9977,
+        "pct3y": 0.9977,
+        "chg1Extreme": 0.9929,
+        "ma20": 16273.25,
+        "historyDays": 213,
+        "oi": 80028,
+        "oiChg5": 0.589623,
+        "oiChg20": 0.888878,
+        "mainContract": {
+          "fromCode": "NR00.INE",
+          "toCode": "NR2612.INE",
+          "rollRatio": 1.000733137829912,
+          "overlapDays": 193,
+          "fromCache": false
+        },
+        "tags": [
+          "刷一年新高",
+          "变化+位置双极端",
+          "持仓放大"
         ],
         "isNotable": true,
         "deviationLevel": "extreme"
@@ -593,7 +523,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2723,
         "d1": 0.025226,
@@ -614,7 +544,7 @@
           "toCode": "AO2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -635,7 +565,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 16000,
         "d1": 0.034929,
@@ -678,7 +608,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 10230,
         "d1": 0.017202,
@@ -699,7 +629,49 @@
           "toCode": "OI701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
+        },
+        "tags": [
+          "变化显著"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
+        "id": "FUT_V",
+        "name_cn": "PVC",
+        "chain": "chemical",
+        "chain_cn": "化工",
+        "chain_tier": "下游成品",
+        "code": "V2701.DCE",
+        "requestedCode": "V00.DCE",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "status": "STALE",
+        "ageDays": 7,
+        "lastDate": "2026-09-30",
+        "value": 4999,
+        "d1": 0.031998,
+        "d5": 0.050872,
+        "d20": 0.022709,
+        "d60": 0.091723,
+        "z1y": -0.0894,
+        "pct1y": 0.4708,
+        "pct3y": 0.4708,
+        "chg1Extreme": 0.9147,
+        "ma20": 4907.55,
+        "historyDays": 171,
+        "oi": 1042564,
+        "oiChg5": -0.069863,
+        "oiChg20": -0.033954,
+        "mainContract": {
+          "fromCode": "V00.DCE",
+          "toCode": "V2701.DCE",
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -722,7 +694,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5013,
         "d1": -0.044415,
@@ -753,6 +725,75 @@
         "deviationLevel": "extreme"
       },
       {
+        "id": "HF_EGG",
+        "name_cn": "平均批发价:鸡蛋",
+        "layer": "highfreq",
+        "dimension": "inflation",
+        "category": "inflation",
+        "frequency": "daily",
+        "unit": "cny_per_kg",
+        "importance": "low",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "marketIdentity": null,
+        "direction": "higher_is_tighter",
+        "polarity": -1,
+        "status": "FRESH",
+        "ageDays": 0,
+        "scorable": true,
+        "latest": {
+          "date": "2026-10-07",
+          "value": 10.1
+        },
+        "changes": {
+          "chg1": -0.17,
+          "chg4": -0.25,
+          "chg5": -0.3,
+          "chg12": -0.89,
+          "chg13": -0.91,
+          "chg20": -1.1
+        },
+        "pctChg1": -0.016553,
+        "pctChg5": -0.028846,
+        "pctChg20": -0.098214,
+        "pctChg12": -0.080983,
+        "z1y": 0.6055,
+        "dirZ": -0.6055,
+        "pct1y": 0.664,
+        "pct3y": 0.7567,
+        "ma20": 10.74,
+        "moveExtreme": 0.8613,
+        "chg1Extreme": 0.9113,
+        "changeView": {
+          "frequency": "daily",
+          "items": [
+            {
+              "key": "d5",
+              "label": "5D",
+              "value": -0.3,
+              "pctValue": -0.028846,
+              "status": "available"
+            },
+            {
+              "key": "d20",
+              "label": "20D",
+              "value": -1.1,
+              "pctValue": -0.098214,
+              "status": "available"
+            }
+          ],
+          "legacy": {
+            "deprecated": true,
+            "field": "changes"
+          }
+        },
+        "tags": [
+          "变化显著"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
         "id": "FUT_AP",
         "name_cn": "苹果",
         "chain": "ags",
@@ -765,7 +806,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6854,
         "d1": -0.014097,
@@ -786,7 +827,7 @@
           "toCode": "AP701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低",
@@ -810,7 +851,7 @@
         "direction": "contextual",
         "polarity": 0,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "scorable": false,
         "latest": {
           "date": "2026-09-30",
@@ -884,7 +925,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 13700,
         "d1": -0.007965,
@@ -905,7 +946,7 @@
           "toCode": "SS2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -926,7 +967,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2794,
         "d1": -0.017926,
@@ -947,52 +988,10 @@
           "toCode": "EC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
-      },
-      {
-        "id": "FUT_BC",
-        "name_cn": "国际铜",
-        "chain": "nonferrous",
-        "chain_cn": "有色金属",
-        "chain_tier": "基本金属",
-        "code": "BC2611.INE",
-        "requestedCode": "BC00.INE",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "status": "STALE",
-        "ageDays": 6,
-        "lastDate": "2026-09-30",
-        "value": 97950,
-        "d1": -0.002139,
-        "d5": -0.011106,
-        "d20": 0.007094,
-        "d60": 0.071898,
-        "z1y": 1.3865,
-        "pct1y": 0.9597,
-        "pct3y": 0.9597,
-        "chg1Extreme": 0.5894,
-        "ma20": 97485,
-        "historyDays": 236,
-        "oi": 13616,
-        "oiChg5": 0.603014,
-        "oiChg20": 3.211568,
-        "mainContract": {
-          "fromCode": "BC00.INE",
-          "toCode": "BC2611.INE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
-        },
-        "tags": [
-          "持仓放大"
         ],
         "isNotable": true,
         "deviationLevel": "notable"
@@ -1159,28 +1158,32 @@
       "unit": "cny_per_kg",
       "status": "FRESH",
       "latest": {
-        "date": "2026-10-06",
-        "value": 73.7
+        "date": "2026-10-07",
+        "value": 73.49
       },
-      "z1y": 3.5029,
-      "dirZ": -3.5029,
-      "pct3y": 0.9993,
+      "z1y": 3.2994,
+      "dirZ": -3.2994,
+      "pct3y": 0.998,
       "changes": {
-        "chg1": 1.64,
-        "chg4": 1.43,
-        "chg5": 0.22,
-        "chg12": 1.32,
-        "chg13": 2.1,
-        "chg20": 2.75
+        "chg1": -0.21,
+        "chg4": 1.06,
+        "chg5": 1.22,
+        "chg12": 0.13,
+        "chg13": 1.11,
+        "chg20": 2.47
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 3.5029
+          "value": 3.2994
         },
         {
           "id": "PERCENTILE_HIGH",
-          "value": 0.9993
+          "value": 0.998
+        },
+        {
+          "id": "FIVE_DAY_MOVE_EXTREME",
+          "value": 0.9753
         }
       ],
       "severity": "high"
@@ -2131,7 +2134,7 @@
           "z1y": 1.1514,
           "pct1y": 0.8565,
           "breadth": 0.611,
-          "oiChg5": -0.07318
+          "oiChg5": -0.07011
         },
         "leaders": [
           "FUT_MA",
@@ -2310,7 +2313,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 702.5,
         "d1": 0.005007,
@@ -2331,7 +2334,7 @@
           "toCode": "I2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2350,7 +2353,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1449,
         "d1": 0.000691,
@@ -2371,7 +2374,7 @@
           "toCode": "JM2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2390,7 +2393,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1958.5,
         "d1": 0.008237,
@@ -2411,7 +2414,7 @@
           "toCode": "J2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2461,7 +2464,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5936,
         "d1": 0.008495,
@@ -2482,7 +2485,7 @@
           "toCode": "SF701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2501,7 +2504,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5796,
         "d1": 0.000691,
@@ -2522,7 +2525,7 @@
           "toCode": "SM701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2541,7 +2544,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3112,
         "d1": 0.002254,
@@ -2562,7 +2565,7 @@
           "toCode": "RB2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2581,7 +2584,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3274,
         "d1": -0.000611,
@@ -2602,7 +2605,7 @@
           "toCode": "HC2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2621,7 +2624,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 13700,
         "d1": -0.007965,
@@ -2642,7 +2645,7 @@
           "toCode": "SS2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -2663,7 +2666,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2723,
         "d1": 0.025226,
@@ -2684,7 +2687,7 @@
           "toCode": "AO2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -2705,7 +2708,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 109680,
         "d1": 0.001004,
@@ -2726,7 +2729,7 @@
           "toCode": "CU2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2745,7 +2748,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 23830,
         "d1": -0.00791,
@@ -2766,7 +2769,7 @@
           "toCode": "AL2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2785,7 +2788,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 26435,
         "d1": -0.005268,
@@ -2806,7 +2809,7 @@
           "toCode": "ZN2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2825,7 +2828,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 16180,
         "d1": -0.005837,
@@ -2846,7 +2849,7 @@
           "toCode": "PB2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2865,7 +2868,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 122040,
         "d1": -0.008127,
@@ -2886,7 +2889,7 @@
           "toCode": "NI2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2905,7 +2908,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 409600,
         "d1": -0.000927,
@@ -2926,7 +2929,7 @@
           "toCode": "SN2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -2945,7 +2948,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 97950,
         "d1": -0.002139,
@@ -2966,7 +2969,7 @@
           "toCode": "BC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -2992,7 +2995,7 @@
           "unit": "cny_per_barrel"
         },
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 711,
         "d1": -0.001264,
@@ -3013,7 +3016,7 @@
           "toCode": "SC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -3034,7 +3037,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 4434,
         "d1": -0.000901,
@@ -3055,7 +3058,7 @@
           "toCode": "FU2611.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -3076,7 +3079,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5162,
         "d1": -0.030064,
@@ -3097,7 +3100,7 @@
           "toCode": "LU2612.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3116,7 +3119,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5013,
         "d1": -0.044415,
@@ -3159,7 +3162,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6713,
         "d1": 0.004639,
@@ -3180,7 +3183,7 @@
           "toCode": "PG2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -3201,7 +3204,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8904,
         "d1": -0.006693,
@@ -3222,7 +3225,7 @@
           "toCode": "PX701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3241,7 +3244,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2972,
         "d1": 0.006434,
@@ -3262,7 +3265,7 @@
           "toCode": "MA701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3281,7 +3284,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5284,
         "d1": 0.008205,
@@ -3302,7 +3305,7 @@
           "toCode": "EG2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3321,7 +3324,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1006,
         "d1": -0.005929,
@@ -3342,7 +3345,7 @@
           "toCode": "SA701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3361,7 +3364,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1860,
         "d1": -0.003749,
@@ -3382,7 +3385,7 @@
           "toCode": "SH701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低"
@@ -3403,7 +3406,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 9892,
         "d1": -0.002521,
@@ -3424,7 +3427,7 @@
           "toCode": "EB2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3443,7 +3446,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 20095,
         "d1": 0.057075,
@@ -3464,7 +3467,7 @@
           "toCode": "RU2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新高",
@@ -3479,35 +3482,35 @@
         "chain": "chemical",
         "chain_cn": "化工",
         "chain_tier": "上游原料",
-        "code": "NR2611.INE",
+        "code": "NR2612.INE",
         "requestedCode": "NR00.INE",
         "unit": "cny_per_ton",
         "importance": "medium",
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
-        "value": 17500,
-        "d1": 0.061249,
-        "d5": 0.079248,
-        "d20": 0.099246,
-        "d60": 0.169786,
-        "z1y": 2.5341,
+        "value": 17390,
+        "d1": 0.05972,
+        "d5": 0.077447,
+        "d20": 0.096469,
+        "d60": 0.160881,
+        "z1y": 2.4328,
         "pct1y": 0.9977,
         "pct3y": 0.9977,
-        "chg1Extreme": 0.9976,
-        "ma20": 16361.5,
+        "chg1Extreme": 0.9929,
+        "ma20": 16273.25,
         "historyDays": 213,
-        "oi": 36920,
-        "oiChg5": -0.37309,
-        "oiChg20": -0.477727,
+        "oi": 80028,
+        "oiChg5": 0.589623,
+        "oiChg20": 0.888878,
         "mainContract": {
           "fromCode": "NR00.INE",
-          "toCode": "NR2611.INE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
+          "toCode": "NR2612.INE",
+          "rollRatio": 1.000733137829912,
+          "overlapDays": 193,
+          "fromCache": false
         },
         "tags": [
           "刷一年新高",
@@ -3530,7 +3533,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 16000,
         "d1": 0.034929,
@@ -3573,7 +3576,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 4912,
         "d1": -0.009677,
@@ -3594,7 +3597,7 @@
           "toCode": "SP2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3613,7 +3616,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6300,
         "d1": -0.007874,
@@ -3634,7 +3637,7 @@
           "toCode": "TA701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3653,7 +3656,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 7910,
         "d1": -0.001767,
@@ -3674,7 +3677,7 @@
           "toCode": "PF701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3693,7 +3696,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 7644,
         "d1": -0.00365,
@@ -3714,7 +3717,7 @@
           "toCode": "PR701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3733,7 +3736,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8631,
         "d1": -0.005187,
@@ -3754,7 +3757,7 @@
           "toCode": "PP2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3773,7 +3776,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8197,
         "d1": -0.010383,
@@ -3794,7 +3797,7 @@
           "toCode": "L2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3813,7 +3816,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 4999,
         "d1": 0.031998,
@@ -3834,7 +3837,7 @@
           "toCode": "V2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -3855,7 +3858,7 @@
         "seriesRole": "resolved_main_contract",
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 896,
         "d1": 0.005612,
@@ -3876,7 +3879,7 @@
           "toCode": "FG701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3895,7 +3898,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 1768,
         "d1": 0.011442,
@@ -3916,7 +3919,7 @@
           "toCode": "UR701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3935,7 +3938,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 910.58,
         "d1": 0.013129,
@@ -3956,7 +3959,7 @@
           "toCode": "AU2612.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -3975,7 +3978,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 14980,
         "d1": 0.00889,
@@ -3996,7 +3999,7 @@
           "toCode": "AG2612.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4015,7 +4018,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5253,
         "d1": 0.009416,
@@ -4036,7 +4039,7 @@
           "toCode": "A2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新高"
@@ -4057,7 +4060,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2187,
         "d1": 0,
@@ -4078,7 +4081,7 @@
           "toCode": "C2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4097,7 +4100,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 9581,
         "d1": 0.001673,
@@ -4118,7 +4121,7 @@
           "toCode": "P2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4137,7 +4140,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 827.5,
         "d1": 0.001816,
@@ -4158,7 +4161,7 @@
           "toCode": "LG2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "持仓放大"
@@ -4179,7 +4182,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3372,
         "d1": 0.00387,
@@ -4200,7 +4203,7 @@
           "toCode": "M2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4219,7 +4222,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8972,
         "d1": 0.01093,
@@ -4240,7 +4243,7 @@
           "toCode": "Y2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4259,7 +4262,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 10230,
         "d1": 0.017202,
@@ -4280,7 +4283,7 @@
           "toCode": "OI701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -4301,7 +4304,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2333,
         "d1": 0.010832,
@@ -4322,7 +4325,7 @@
           "toCode": "RM701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4341,7 +4344,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2434,
         "d1": -0.000411,
@@ -4362,7 +4365,7 @@
           "toCode": "CS2611.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -4383,7 +4386,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 3697,
         "d1": 0.009833,
@@ -4404,7 +4407,7 @@
           "toCode": "JD2612.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4423,7 +4426,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 11365,
         "d1": 0.003975,
@@ -4444,7 +4447,7 @@
           "toCode": "LH2701.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -4465,7 +4468,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 5354,
         "d1": 0.00488,
@@ -4486,7 +4489,7 @@
           "toCode": "SR701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4505,7 +4508,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 15615,
         "d1": -0.010456,
@@ -4526,7 +4529,7 @@
           "toCode": "CF701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4545,7 +4548,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 6854,
         "d1": -0.014097,
@@ -4566,7 +4569,7 @@
           "toCode": "AP701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低",
@@ -4588,7 +4591,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8162,
         "d1": 0.008401,
@@ -4609,7 +4612,7 @@
           "toCode": "PK701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "变化显著"
@@ -4630,7 +4633,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 8565,
         "d1": 0.004103,
@@ -4651,7 +4654,7 @@
           "toCode": "SI2611.GFE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4670,7 +4673,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 118420,
         "d1": -0.003031,
@@ -4691,7 +4694,7 @@
           "toCode": "LC2701.GFE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "刷一年新低",
@@ -4713,7 +4716,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 36585,
         "d1": 0.009241,
@@ -4734,7 +4737,7 @@
           "toCode": "PS2611.GFE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [],
         "isNotable": false,
@@ -4753,7 +4756,7 @@
         "seriesRole": null,
         "instrumentIdentity": null,
         "status": "STALE",
-        "ageDays": 6,
+        "ageDays": 7,
         "lastDate": "2026-09-30",
         "value": 2794,
         "d1": -0.017926,
@@ -4774,7 +4777,7 @@
           "toCode": "EC2611.INE",
           "rollRatio": 1,
           "overlapDays": 0,
-          "fromCache": true
+          "fromCache": false
         },
         "tags": [
           "位置极端"
@@ -4805,7 +4808,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 702.5,
               "d1": 0.005007,
@@ -4826,7 +4829,7 @@
                 "toCode": "I2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -4846,7 +4849,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1449,
               "d1": 0.000691,
@@ -4867,7 +4870,7 @@
                 "toCode": "JM2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -4887,7 +4890,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1958.5,
               "d1": 0.008237,
@@ -4908,7 +4911,7 @@
                 "toCode": "J2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -4960,7 +4963,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5936,
               "d1": 0.008495,
@@ -4981,7 +4984,7 @@
                 "toCode": "SF701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5001,7 +5004,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5796,
               "d1": 0.000691,
@@ -5022,7 +5025,7 @@
                 "toCode": "SM701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5042,7 +5045,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3112,
               "d1": 0.002254,
@@ -5063,7 +5066,7 @@
                 "toCode": "RB2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5083,7 +5086,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3274,
               "d1": -0.000611,
@@ -5104,7 +5107,7 @@
                 "toCode": "HC2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5124,7 +5127,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 13700,
               "d1": -0.007965,
@@ -5145,7 +5148,7 @@
                 "toCode": "SS2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -5176,7 +5179,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2723,
               "d1": 0.025226,
@@ -5197,7 +5200,7 @@
                 "toCode": "AO2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -5219,7 +5222,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 109680,
               "d1": 0.001004,
@@ -5240,7 +5243,7 @@
                 "toCode": "CU2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5260,7 +5263,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 23830,
               "d1": -0.00791,
@@ -5281,7 +5284,7 @@
                 "toCode": "AL2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5301,7 +5304,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 26435,
               "d1": -0.005268,
@@ -5322,7 +5325,7 @@
                 "toCode": "ZN2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5342,7 +5345,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 16180,
               "d1": -0.005837,
@@ -5363,7 +5366,7 @@
                 "toCode": "PB2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5383,7 +5386,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 122040,
               "d1": -0.008127,
@@ -5404,7 +5407,7 @@
                 "toCode": "NI2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5424,7 +5427,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 409600,
               "d1": -0.000927,
@@ -5445,7 +5448,7 @@
                 "toCode": "SN2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5465,7 +5468,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 97950,
               "d1": -0.002139,
@@ -5486,7 +5489,7 @@
                 "toCode": "BC2611.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -5522,7 +5525,7 @@
                 "unit": "cny_per_barrel"
               },
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 711,
               "d1": -0.001264,
@@ -5543,7 +5546,7 @@
                 "toCode": "SC2611.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -5565,7 +5568,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 4434,
               "d1": -0.000901,
@@ -5586,7 +5589,7 @@
                 "toCode": "FU2611.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -5608,7 +5611,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5162,
               "d1": -0.030064,
@@ -5629,7 +5632,7 @@
                 "toCode": "LU2612.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5649,7 +5652,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5013,
               "d1": -0.044415,
@@ -5693,7 +5696,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 6713,
               "d1": 0.004639,
@@ -5714,7 +5717,7 @@
                 "toCode": "PG2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
@@ -5745,7 +5748,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8904,
               "d1": -0.006693,
@@ -5766,7 +5769,7 @@
                 "toCode": "PX701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5786,7 +5789,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2972,
               "d1": 0.006434,
@@ -5807,7 +5810,7 @@
                 "toCode": "MA701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5827,7 +5830,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5284,
               "d1": 0.008205,
@@ -5848,7 +5851,7 @@
                 "toCode": "EG2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5868,7 +5871,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1006,
               "d1": -0.005929,
@@ -5889,7 +5892,7 @@
                 "toCode": "SA701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5909,7 +5912,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1860,
               "d1": -0.003749,
@@ -5930,7 +5933,7 @@
                 "toCode": "SH701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新低"
@@ -5952,7 +5955,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 9892,
               "d1": -0.002521,
@@ -5973,7 +5976,7 @@
                 "toCode": "EB2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -5993,7 +5996,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 20095,
               "d1": 0.057075,
@@ -6014,7 +6017,7 @@
                 "toCode": "RU2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新高",
@@ -6030,35 +6033,35 @@
               "chain": "chemical",
               "chain_cn": "化工",
               "chain_tier": "上游原料",
-              "code": "NR2611.INE",
+              "code": "NR2612.INE",
               "requestedCode": "NR00.INE",
               "unit": "cny_per_ton",
               "importance": "medium",
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
-              "value": 17500,
-              "d1": 0.061249,
-              "d5": 0.079248,
-              "d20": 0.099246,
-              "d60": 0.169786,
-              "z1y": 2.5341,
+              "value": 17390,
+              "d1": 0.05972,
+              "d5": 0.077447,
+              "d20": 0.096469,
+              "d60": 0.160881,
+              "z1y": 2.4328,
               "pct1y": 0.9977,
               "pct3y": 0.9977,
-              "chg1Extreme": 0.9976,
-              "ma20": 16361.5,
+              "chg1Extreme": 0.9929,
+              "ma20": 16273.25,
               "historyDays": 213,
-              "oi": 36920,
-              "oiChg5": -0.37309,
-              "oiChg20": -0.477727,
+              "oi": 80028,
+              "oiChg5": 0.589623,
+              "oiChg20": 0.888878,
               "mainContract": {
                 "fromCode": "NR00.INE",
-                "toCode": "NR2611.INE",
-                "rollRatio": 1,
-                "overlapDays": 0,
-                "fromCache": true
+                "toCode": "NR2612.INE",
+                "rollRatio": 1.000733137829912,
+                "overlapDays": 193,
+                "fromCache": false
               },
               "tags": [
                 "刷一年新高",
@@ -6082,7 +6085,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 16000,
               "d1": 0.034929,
@@ -6126,7 +6129,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 4912,
               "d1": -0.009677,
@@ -6147,7 +6150,7 @@
                 "toCode": "SP2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6167,7 +6170,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 6300,
               "d1": -0.007874,
@@ -6188,7 +6191,7 @@
                 "toCode": "TA701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6208,7 +6211,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 7910,
               "d1": -0.001767,
@@ -6229,7 +6232,7 @@
                 "toCode": "PF701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6249,7 +6252,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 7644,
               "d1": -0.00365,
@@ -6270,7 +6273,7 @@
                 "toCode": "PR701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6290,7 +6293,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8631,
               "d1": -0.005187,
@@ -6311,7 +6314,7 @@
                 "toCode": "PP2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6331,7 +6334,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8197,
               "d1": -0.010383,
@@ -6352,7 +6355,7 @@
                 "toCode": "L2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6372,7 +6375,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 4999,
               "d1": 0.031998,
@@ -6393,7 +6396,7 @@
                 "toCode": "V2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -6415,7 +6418,7 @@
               "seriesRole": "resolved_main_contract",
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 896,
               "d1": 0.005612,
@@ -6436,7 +6439,7 @@
                 "toCode": "FG701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6456,7 +6459,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 1768,
               "d1": 0.011442,
@@ -6477,7 +6480,7 @@
                 "toCode": "UR701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6506,7 +6509,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 910.58,
               "d1": 0.013129,
@@ -6527,7 +6530,7 @@
                 "toCode": "AU2612.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6547,7 +6550,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 14980,
               "d1": 0.00889,
@@ -6568,7 +6571,7 @@
                 "toCode": "AG2612.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6597,7 +6600,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5253,
               "d1": 0.009416,
@@ -6618,7 +6621,7 @@
                 "toCode": "A2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新高"
@@ -6640,7 +6643,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2187,
               "d1": 0,
@@ -6661,7 +6664,7 @@
                 "toCode": "C2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6681,7 +6684,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 9581,
               "d1": 0.001673,
@@ -6702,7 +6705,7 @@
                 "toCode": "P2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6722,7 +6725,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 827.5,
               "d1": 0.001816,
@@ -6743,7 +6746,7 @@
                 "toCode": "LG2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "持仓放大"
@@ -6765,7 +6768,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3372,
               "d1": 0.00387,
@@ -6786,7 +6789,7 @@
                 "toCode": "M2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6806,7 +6809,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8972,
               "d1": 0.01093,
@@ -6827,7 +6830,7 @@
                 "toCode": "Y2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6847,7 +6850,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 10230,
               "d1": 0.017202,
@@ -6868,7 +6871,7 @@
                 "toCode": "OI701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -6890,7 +6893,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2333,
               "d1": 0.010832,
@@ -6911,7 +6914,7 @@
                 "toCode": "RM701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -6931,7 +6934,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2434,
               "d1": -0.000411,
@@ -6952,7 +6955,7 @@
                 "toCode": "CS2611.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
@@ -6974,7 +6977,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 3697,
               "d1": 0.009833,
@@ -6995,7 +6998,7 @@
                 "toCode": "JD2612.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -7015,7 +7018,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 11365,
               "d1": 0.003975,
@@ -7036,7 +7039,7 @@
                 "toCode": "LH2701.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
@@ -7058,7 +7061,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 5354,
               "d1": 0.00488,
@@ -7079,7 +7082,7 @@
                 "toCode": "SR701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -7099,7 +7102,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 15615,
               "d1": -0.010456,
@@ -7120,7 +7123,7 @@
                 "toCode": "CF701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -7140,7 +7143,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 6854,
               "d1": -0.014097,
@@ -7161,7 +7164,7 @@
                 "toCode": "AP701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新低",
@@ -7184,7 +7187,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8162,
               "d1": 0.008401,
@@ -7205,7 +7208,7 @@
                 "toCode": "PK701.CZC",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "变化显著"
@@ -7236,7 +7239,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 8565,
               "d1": 0.004103,
@@ -7257,7 +7260,7 @@
                 "toCode": "SI2611.GFE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -7277,7 +7280,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 118420,
               "d1": -0.003031,
@@ -7298,7 +7301,7 @@
                 "toCode": "LC2701.GFE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "刷一年新低",
@@ -7321,7 +7324,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 36585,
               "d1": 0.009241,
@@ -7342,7 +7345,7 @@
                 "toCode": "PS2611.GFE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [],
               "isNotable": false,
@@ -7362,7 +7365,7 @@
               "seriesRole": null,
               "instrumentIdentity": null,
               "status": "STALE",
-              "ageDays": 6,
+              "ageDays": 7,
               "lastDate": "2026-09-30",
               "value": 2794,
               "d1": -0.017926,
@@ -7383,7 +7386,7 @@
                 "toCode": "EC2611.INE",
                 "rollRatio": 1,
                 "overlapDays": 0,
-                "fromCache": true
+                "fromCache": false
               },
               "tags": [
                 "位置极端"
