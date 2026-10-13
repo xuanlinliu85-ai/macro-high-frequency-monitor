@@ -1,59 +1,58 @@
 {
   "contract": "AI_HANDOFF_META",
   "version": "2.0.0",
-  "generatedAt": "2026-10-12T12:30:25.590Z",
-  "tradingDataAsOf": "2026-10-12",
-  "runDate": "2026-10-12",
+  "generatedAt": "2026-10-13T15:50:26.295Z",
+  "tradingDataAsOf": "2026-10-13",
+  "runDate": "2026-10-13",
   "dateQuality": {
-    "coverage": 0.914286,
+    "coverage": 0.971429,
     "minimumCoverage": 0.8,
     "refreshedDailyCount": 35,
     "byDate": {
-      "2026-10-12": 32,
-      "2026-10-10": 2,
-      "2026-10-09": 1
+      "2026-10-13": 34,
+      "2026-10-12": 1
     }
   },
   "sourceCommit": "91c931d6f31988f6f32dbd1f2f7a6023f077a4e1",
   "sourceDirty": false,
-  "snapshotSha256": "549a9cc4137ba789ab60e226b52db46f22c1d07aa23037255b93ff045a5ce9cc",
-  "handoffSha256": "d620dc2056452e389af95c679394fb3995126224f61b343e170df7867ff3a4e2",
-  "reportSha256": "dadb59eb148264e10c24880d2ceeea6241370bd4816905e6f55421ea35983464",
-  "workbenchSha256": "f3bb6707557e0aaeac59a186ed0e9a8e32b4016860fb93989688625476d1faf2",
+  "snapshotSha256": "17f577c7ad3c7d1ba0501d93777c8985248fcb5181832965f97531a9e5ad5e1f",
+  "handoffSha256": "1aed60678c047454eae703560b21e133f28f6f1b27898ccf5eb7cdfec92ba69d",
+  "reportSha256": "8f4c0f0e7ef9eb75ba16ca049cbefb04fa50f4b98f2dfbd15620e5a8873cf30c",
+  "workbenchSha256": "3911831f493986e19f8dff3c4be4420309f042f88f5d00af6a64d66a48986b70",
   "validationStatus": "PASS",
   "validation": {
     "handoff": {
       "status": "PASS",
       "passed": 21,
       "total": 21,
-      "generatedAt": "2026-10-12T12:30:23.036Z"
+      "generatedAt": "2026-10-13T15:50:24.183Z"
     },
     "verify": {
       "status": "PASS",
       "passed": 26,
       "total": 26,
-      "generatedAt": "2026-10-12T12:30:23.729Z"
+      "generatedAt": "2026-10-13T15:50:24.778Z"
     }
   },
   "remoteBranch": "ai-runtime",
-  "remotePublishCommit": "e8fcb1b661a22b303965ad25b50a4dd63ee5996c",
-  "historyPath": "history/2026-10-12",
+  "remotePublishCommit": "123084fc963f488ed1315902eaaeec6ffbbdac8a",
+  "historyPath": "history/2026-10-13",
   "files": [
     {
       "name": "ai-handoff-latest.json",
-      "sha256": "d620dc2056452e389af95c679394fb3995126224f61b343e170df7867ff3a4e2"
+      "sha256": "1aed60678c047454eae703560b21e133f28f6f1b27898ccf5eb7cdfec92ba69d"
     },
     {
       "name": "macro-daily-report.md",
-      "sha256": "dadb59eb148264e10c24880d2ceeea6241370bd4816905e6f55421ea35983464"
+      "sha256": "8f4c0f0e7ef9eb75ba16ca049cbefb04fa50f4b98f2dfbd15620e5a8873cf30c"
     },
     {
       "name": "macro-snapshot.json",
-      "sha256": "549a9cc4137ba789ab60e226b52db46f22c1d07aa23037255b93ff045a5ce9cc"
+      "sha256": "17f577c7ad3c7d1ba0501d93777c8985248fcb5181832965f97531a9e5ad5e1f"
     },
     {
       "name": "macro-workbench.html",
-      "sha256": "f3bb6707557e0aaeac59a186ed0e9a8e32b4016860fb93989688625476d1faf2"
+      "sha256": "3911831f493986e19f8dff3c4be4420309f042f88f5d00af6a64d66a48986b70"
     }
   ]
 }
