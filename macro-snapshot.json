@@ -1,7 +1,7 @@
 {
   "contract": "MACRO_SNAPSHOT",
   "version": "1.1.0",
-  "generatedAt": "2026-10-13T15:50:20.921Z",
+  "generatedAt": "2026-10-13T15:51:51.662Z",
   "asOf": "2026-10-13",
   "tradingDataAsOf": "2026-10-13",
   "runDate": "2026-10-13",
@@ -26,7 +26,7 @@
       "version": "2.0",
       "verifiedAt": "2026-09-10"
     },
-    "collectedAt": "2026-10-13T15:49:05.320Z"
+    "collectedAt": "2026-10-13T15:51:19.862Z"
   },
   "scoringModel": {
     "polarity": {

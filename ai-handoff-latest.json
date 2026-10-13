@@ -1,7 +1,7 @@
 {
   "contract": "AI_MACRO_HANDOFF",
   "version": "1.0.0",
-  "generatedAt": "2026-10-13T15:50:23.664Z",
+  "generatedAt": "2026-10-13T15:51:52.964Z",
   "asOf": "2026-10-13",
   "tradingDataAsOf": "2026-10-13",
   "runDate": "2026-10-13",
@@ -18,8 +18,8 @@
   "source": {
     "contract": "MACRO_SNAPSHOT",
     "version": "1.1.0",
-    "generatedAt": "2026-10-13T15:50:20.921Z",
-    "sha256": "17f577c7ad3c7d1ba0501d93777c8985248fcb5181832965f97531a9e5ad5e1f",
+    "generatedAt": "2026-10-13T15:51:51.662Z",
+    "sha256": "76558d4a51f7fa0219178777a3c6d5adfdd3c95fba44695eb419cecb45567cf9",
     "sourceCommit": "91c931d6f31988f6f32dbd1f2f7a6023f077a4e1",
     "sourceDirty": false
   },
