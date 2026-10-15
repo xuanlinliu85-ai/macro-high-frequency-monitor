@@ -200,6 +200,7 @@ const states = config.indicators.map(meta => {
   return { id: meta.id, name_cn: meta.name_cn, layer: meta.layer, dimension: meta.dimension || null,
     category: meta.category || null, frequency: meta.frequency, unit: meta.unit || null, importance: meta.importance || null,
     direction, polarity: polarity[direction], ...freshness, scorable, stats, dirZ, series: source,
+    dataProvenance: observations.indicators?.[meta.id]?.dataProvenance || null,
     changeView: changeView(meta, stats) };
 });
 const byId = new Map(states.map(state => [state.id, state]));
@@ -317,6 +318,7 @@ const indicatorRows = states.map(state => {
     instrumentIdentity: config.indicators.find(item => item.id === state.id)?.instrument_identity || null,
     marketIdentity: config.indicators.find(item => item.id === state.id)?.market_identity || null,
     direction: state.direction, polarity: state.polarity, status: state.status, ageDays: state.ageDays,
+    dataProvenance: state.dataProvenance,
     scorable: state.scorable, latest: s.latest, changes: s.changes, pctChg1: s.pctChanges.chg1,
     pctChg5: s.pctChanges.chg5, pctChg20: s.pctChanges.chg20, pctChg12: s.pctChanges.chg12,
     z1y: s.z1y, dirZ: state.dirZ, pct1y: s.pct1y, pct3y: s.pct3y, ma20: s.ma20,
@@ -334,6 +336,7 @@ const futuresVarieties = config.futuresIndicators.map(meta => {
     chain_tier: meta.chain_tier || null, code: observations.indicators[meta.id]?.mainContract?.toCode || meta.ifind?.field_code || null,
     requestedCode: meta.ifind?.field_code || null, unit: meta.unit || null, importance: meta.importance || null,
     seriesRole: meta.series_role || null, instrumentIdentity: meta.instrument_identity || null,
+    dataProvenance: observations.indicators[meta.id]?.dataProvenance || null,
     ...freshness, lastDate: stats.latest?.date || null, value: stats.latest?.value ?? null,
     d1: stats.pctChanges.chg1, d5: stats.pctChanges.chg5, d20: stats.pctChanges.chg20, d60: round(pctChange(raw.map(p => p.v), 60), 6),
     z1y: stats.z1y, pct1y: stats.pct1y, pct3y: stats.pct3y, chg1Extreme: stats.chg1Extreme,
@@ -477,7 +480,8 @@ const snapshot = { contract: "MACRO_SNAPSHOT", version: "1.1.0", generatedAt: ne
   tradingDataAsOf: TRADING_DATA_AS_OF, runDate: RUN_DATE, sourceWindowEnd: observations.window.end,
   dateQuality: { coverage: round(dateResolution.coverage, 6), minimumCoverage: minimumDateCoverage,
     refreshedDailyCount: dateResolution.total, byDate: dateResolution.byDate },
-  window: observations.window, source: { data: "iFinD MCP (THS_EDB / THS_HQ)", registry: observations.registry, collectedAt: observations.collectedAt },
+  window: observations.window, source: { data: observations.source || "iFinD MCP (THS_EDB / THS_HQ)", registry: observations.registry, collectedAt: observations.collectedAt,
+    carriedDaily: Object.values(observations.indicators || {}).filter(item => item.frequency === "daily" && item.layer !== "futures" && item.refreshedThisRun !== true).map(item => ({ id: item.id, name_cn: item.name_cn, latestDate: item.latest?.d || null, provider: item.dataProvenance?.provider || "iFinD" })) },
   scoringModel: { polarity, formula: "YAML score_mapping applied to weighted mean dirZ", dimensionAggregation: "weighted_mean",
     weightProfileStatus: config.weightProfile.status, standardization: config.standardization,
     compositeDefinition: "宏观支持度 / 扩张友好度的规则化观察指标", disclaimer: "六维权重为 DRAFT，综合分用于观察。" },

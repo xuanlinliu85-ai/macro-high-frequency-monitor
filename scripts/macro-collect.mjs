@@ -16,6 +16,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { connectIfind } from "./ifind-mcp-client.mjs";
+import { withPublicHq } from "./macro-public-hq.mjs";
 import { loadMacroConfig, SKILL_DIR } from "./macro-config.mjs";
 import { ensureFuturesSeries, loadCache as loadMainCache, saveCache as saveMainCache } from "./macro-main-contract.mjs";
 
@@ -257,9 +258,10 @@ async function collectHq(connection, indicators, report) {
         const totalDays = rows.length;
         const valid = rows.filter(r => r.v !== null).length;
         for (const item of items) {
-          series.set(item.id, rows);
+          if (rows.length) series.set(item.id, rows);
           zeroMap.set(item.id, zeroDays);
-          report.push({ label: `HQ ${item.id}`, code: actualCode, requestedCode: code, ok: valid > 0, rows: totalDays, zeroDays, valid });
+          report.push({ label: `HQ ${item.id}`, code: actualCode, requestedCode: code, ok: valid > 0, rows: totalDays, zeroDays, valid,
+            provenance: connection.provenanceFor?.(actualCode) });
         }
         done += 1;
         const ids = items.map(i => i.id).join("+");
@@ -310,13 +312,24 @@ console.log(`待采集   : EDB ${edbIndicators.length} 项 / HQ ${hqIndicators.l
 console.log(`           宏观 ${macroSelected.length} 项（注册表可采集 ${config.collectable.length}）+ 期货 ${futuresSelected.length} 项`);
 
 const startedAt = new Date().toISOString();
-const connection = await connectIfind({ timeoutMs: 180_000 });
+const observationsPath = resolve(workDir, "observations.json");
+const previous = existsSync(observationsPath)
+  ? JSON.parse(readFileSync(observationsPath, "utf8")) : null;
+const publicBackup = process.env.MACRO_HQ_PROVIDER === "sina-tencent";
+if (process.env.MACRO_HQ_PROVIDER && !publicBackup) throw new Error("MACRO_HQ_PROVIDER supports sina-tencent");
+const baseConnection = await connectIfind({ timeoutMs: 180_000 });
+const connection = publicBackup ? withPublicHq(baseConnection, previous || {}) : baseConnection;
 const report = [];
 let edbSeries;
 let hqResult;
 try {
   edbSeries = await collectEdb(connection, edbIndicators, report);
   hqResult = await collectHq(connection, hqIndicators, report);
+  connection.assertHealthy?.();
+  if (publicBackup) {
+    const failures = report.filter(item => !item.ok && !(item.provenance?.status === "CARRIED_IDENTITY" && !item.label.startsWith("HQ FUT_")));
+    if (failures.length) throw new Error(`PUBLIC_BACKUP_COLLECTION_FAILED: ${failures.map(item => item.label).join(", ")}`);
+  }
 } finally {
   await connection.close();
 }
@@ -325,10 +338,6 @@ const hqZeroMap = hqResult.zeroMap;
 const hqRolls = hqResult.rolls;
 
 // 与既有观测合并：daily / release 模式只拉一层，另一层沿用上次结果，避免整体覆盖丢数据。
-const observationsPath = resolve(workDir, "observations.json");
-const previous = existsSync(observationsPath)
-  ? JSON.parse(readFileSync(observationsPath, "utf8"))
-  : null;
 
 function mergeSeries(previousRows, freshRows) {
   const map = new Map();
@@ -421,6 +430,9 @@ for (const meta of rawIndicators) {
     validCount: nonZero.length,
     latest: nonZero.at(-1) || null,
     refreshedThisRun: Boolean(fresh),
+    dataProvenance: fresh ? (connection.provenanceFor?.(hqRolls?.get(meta.id)?.toCode || meta.ifind.field_code)
+      || { provider: "iFinD", collectedAt: startedAt })
+      : { ...(previous?.indicators?.[meta.id]?.dataProvenance || { provider: "iFinD" }), status: "CARRIED", latestDate: nonZero.at(-1)?.d || null },
     series: rows,
   };
 }
@@ -430,7 +442,7 @@ writeFileSync(observationsPath, JSON.stringify({
   collectedAt: startedAt,
   mode: MODE,
   window: { begin: BEGIN, end: END },
-  source: "ifind-mcp",
+  source: publicBackup ? "iFinD EDB + Sina/Tencent public HQ (per-indicator dataProvenance); iFinD continuous series carried" : "ifind-mcp",
   registry: { skillDir: SKILL_DIR, version: config.registry.version, verifiedAt: config.registry.verified_at },
   stats: {
     indicators: Object.keys(indicators).length,

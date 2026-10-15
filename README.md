@@ -71,6 +71,12 @@ macro-workbench.html
 
 采集模式通过 `MACRO_MODE=daily|release|full` 设置。iFinD provider 默认 fail closed：`IFIND_PROVIDER` 必须显式设置为 `local` 或 `https-mcp`，系统不会隐式选择连接路径。
 
+### 新浪 / 腾讯行情备用源
+
+显式设置进程变量 `MACRO_HQ_PROVIDER=sina-tencent` 后，现有 collect 链使用新浪实际月份期货合约日线及持仓、腾讯股票指数日线；EDB 继续复用已有 iFinD 连接。主力解析与换月复权仍由现有模块执行。已有合约切源前校验最近三个重叠收盘价，采集失败阻止后续发布。腾讯成交量单位保留为未映射，缺失字段保持 null。
+
+新浪主力连续与 iFinD XX00 的换月身份不同，宏观连续序列沿用已验证历史及真实日期。每项观测保存 dataProvenance，snapshot.source 说明混合来源。该变量仅作用于当前进程，Windows runner 继续使用同一条生产链。
+
 兼容既有生产链路必须同时显式设置 `IFIND_PROVIDER=local`、`IFIND_LOCAL_HOME=<external capability root>`、`IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM=1`。Macro Monitor 动态 import capability root 下的 `scripts/ifind-mcp-client.mjs`，仅复用其 `listTools()`、`callTool()`、`close()` 接口，不复制或重写 THS 调用实现。当前本地模块的 upstream 是公网 HTTP，并通过 query credential 鉴权，安全分类为 `LEGACY_INSECURE_UPSTREAM`；授权变量只表示用户接受当前兼容风险，不改变底层 transport，也不构成安全连接。
 
 官方 HTTPS MCP 完成验证后，可显式设置 `IFIND_PROVIDER=https-mcp`，同时提供 `IFIND_API_KEY` 与 `IFIND_MCP_BASE_URL`；API key 通过 `Authorization` header 传输，endpoint 中保持无凭据状态。可信内网/VPN 的 HTTP endpoint 还要求 `IFIND_MCP_ALLOW_INSECURE_HTTP=1`。

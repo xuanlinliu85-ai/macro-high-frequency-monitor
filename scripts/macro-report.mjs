@@ -121,11 +121,12 @@ sections.push({ id: "all-indicators", title: "全指标总表", tag: `${S.indica
 ] });
 sections.push({ id: "quality", title: "数据质量与 Lineage", tag: "Audit", blocks: [
   table(["项", "值"], [["契约", `${S.contract} ${S.version}`], ["交易数据截止", S.tradingDataAsOf || S.asOf],
-    ["运行日期", S.runDate], ["采集窗口结束", S.sourceWindowEnd],
+    ["运行日期", S.runDate], ["采集窗口结束", S.sourceWindowEnd], ["数据来源", S.source?.data],
     ["日期一致性", `${Math.round(Number(S.dateQuality?.coverage || 0) * 100)}% (${S.dateQuality?.refreshedDailyCount || 0})`], ["采集时间", S.source?.collectedAt],
     ["配置版本", S.source?.registry?.version], ["可评分", `${S.headline.indicatorScorable}/${S.headline.indicatorTotal}`],
     ["权重状态", S.scoringModel?.weightProfileStatus]]),
   UL((S.dataQuality?.degraded || []).map(item => `${item.name_cn}：${item.status}（${item.ageDays ?? "—"} calendar days）`)),
+  UL((S.source?.carriedDaily || []).map(item => `沿用历史：${item.name_cn}，观测日 ${item.latestDate || "缺失"}，来源 ${item.provider}`)),
   note("报告由 scripts/macro-report.mjs 渲染；统计、标签、聚合与结论级 delta 均来自 snapshot。"),
 ] });
 
