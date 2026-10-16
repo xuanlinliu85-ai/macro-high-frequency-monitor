@@ -6,7 +6,7 @@ param(
     [string] $NpmCommand = $(if ($env:MACRO_NPM_COMMAND) { $env:MACRO_NPM_COMMAND } else { "npm.cmd" }),
     [string] $NodeCommand = $(if ($env:MACRO_NODE_COMMAND) { $env:MACRO_NODE_COMMAND } else { "node.exe" }),
     [string] $AiRuntimeDir = $env:AI_RUNTIME_DIR,
-    [ValidateSet("ifind", "sina-tencent")] [string] $HqProvider = "ifind",
+    [ValidateSet("ifind", "ifind-first", "sina-tencent")] [string] $HqProvider = "ifind-first",
     [switch] $AllowLegacyInsecureUpstream,
     [switch] $PublishHandoff
 )
@@ -86,7 +86,7 @@ try {
     $env:IFIND_ALLOW_LEGACY_INSECURE_UPSTREAM = "1"
     $env:IFIND_ALLOW_INSECURE_HTTP = "1"
     $env:MACRO_MODE = "daily"
-    if ($HqProvider -eq "sina-tencent") { $env:MACRO_HQ_PROVIDER = "sina-tencent" }
+    if ($HqProvider -in @("ifind-first", "sina-tencent")) { $env:MACRO_HQ_PROVIDER = $HqProvider }
     else { Remove-Item Env:MACRO_HQ_PROVIDER -ErrorAction SilentlyContinue }
     if ($PublishHandoff) {
         if (-not $AiRuntimeDir) { throw "AI_RUNTIME_DIR is required for production publish" }

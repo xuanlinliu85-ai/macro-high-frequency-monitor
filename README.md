@@ -73,6 +73,8 @@ macro-workbench.html
 
 ### 新浪 / 腾讯行情备用源
 
+生产 runner 默认 `-HqProvider ifind-first`：每个 HQ 请求首先使用 iFinD，明确失败或返回错误后才调用新浪/腾讯。额度预留错误在本轮内记忆，后续 HQ 请求直接使用备用源。EDB 保持现有 iFinD 链路。每条序列记录实际来源，沿用历史记录真实日期。指数切源比对采用公开源共同的 0.01 点精度。
+
 显式设置进程变量 `MACRO_HQ_PROVIDER=sina-tencent` 后，现有 collect 链使用新浪实际月份期货合约日线及持仓、腾讯股票指数日线；EDB 继续复用已有 iFinD 连接。主力解析与换月复权仍由现有模块执行。已有合约切源前校验最近三个重叠收盘价，采集失败阻止后续发布。腾讯成交量单位保留为未映射，缺失字段保持 null。
 
 新浪主力连续与 iFinD XX00 的换月身份不同，宏观连续序列沿用已验证历史及真实日期。每项观测保存 dataProvenance，snapshot.source 说明混合来源。该变量仅作用于当前进程，Windows runner 继续使用同一条生产链。

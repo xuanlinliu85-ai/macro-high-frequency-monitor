@@ -315,10 +315,10 @@ const startedAt = new Date().toISOString();
 const observationsPath = resolve(workDir, "observations.json");
 const previous = existsSync(observationsPath)
   ? JSON.parse(readFileSync(observationsPath, "utf8")) : null;
-const publicBackup = process.env.MACRO_HQ_PROVIDER === "sina-tencent";
-if (process.env.MACRO_HQ_PROVIDER && !publicBackup) throw new Error("MACRO_HQ_PROVIDER supports sina-tencent");
+const publicBackup = ["sina-tencent", "ifind-first"].includes(process.env.MACRO_HQ_PROVIDER);
+if (process.env.MACRO_HQ_PROVIDER && !publicBackup) throw new Error("MACRO_HQ_PROVIDER supports ifind-first or sina-tencent");
 const baseConnection = await connectIfind({ timeoutMs: 180_000 });
-const connection = publicBackup ? withPublicHq(baseConnection, previous || {}) : baseConnection;
+const connection = publicBackup ? withPublicHq(baseConnection, previous || {}, { preferIfind: process.env.MACRO_HQ_PROVIDER === "ifind-first" }) : baseConnection;
 const report = [];
 let edbSeries;
 let hqResult;
@@ -442,7 +442,7 @@ writeFileSync(observationsPath, JSON.stringify({
   collectedAt: startedAt,
   mode: MODE,
   window: { begin: BEGIN, end: END },
-  source: publicBackup ? "iFinD EDB + Sina/Tencent public HQ (per-indicator dataProvenance); iFinD continuous series carried" : "ifind-mcp",
+  source: publicBackup ? "iFinD EDB; HQ per-indicator dataProvenance (iFinD preferred in ifind-first mode, Sina/Tencent backup); carried series retain their dates" : "ifind-mcp",
   registry: { skillDir: SKILL_DIR, version: config.registry.version, verifiedAt: config.registry.verified_at },
   stats: {
     indicators: Object.keys(indicators).length,

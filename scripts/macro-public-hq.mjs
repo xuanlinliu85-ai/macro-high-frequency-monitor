@@ -36,17 +36,22 @@ export function checkPublicOverlap(rows, previous, code) {
   const overlap = rows.filter(row => row.close > 0 && old.has(row.time)).sort((a, b) => a.time.localeCompare(b.time)).slice(-3);
   if (overlap.length < 3) throw new Error(`PUBLIC_HQ_PARITY: ${code} needs three overlap observations`);
   for (const row of overlap) {
-    if (Math.abs(row.close - old.get(row.time)) > Math.max(0.000001, Math.abs(old.get(row.time)) * 0.000001)) {
+    // Public index feeds publish different decimal precision; compare at their common 0.01 point precision.
+    const index = /^\d{6}\.(SH|SZ)$/.test(code);
+    const fresh = index ? Math.round(row.close * 100) : row.close;
+    const existing = index ? Math.round(old.get(row.time) * 100) : old.get(row.time);
+    if (Math.abs(fresh - existing) > (index ? 0 : Math.max(0.000001, Math.abs(existing) * 0.000001))) {
       throw new Error(`PUBLIC_HQ_PARITY: ${code} close mismatch on ${row.time}`);
     }
   }
   return overlap.length;
 }
 
-export function withPublicHq(connection, observations) {
+export function withPublicHq(connection, observations, { preferIfind = false } = {}) {
   const cache = new Map();
   const provenance = new Map();
   const parityFailures = [];
+  let quotaReserved = false;
   async function getBars(mapping) {
     const key = mapping.kind + ":" + mapping.symbol;
     if (!cache.has(key)) cache.set(key, (async () => {
@@ -80,6 +85,23 @@ export function withPublicHq(connection, observations) {
     assertHealthy() { if (parityFailures.length) throw new Error(`PUBLIC_HQ_PARITY: ${parityFailures.join(", ")}`); },
     async callTool(name, args) {
       if (name !== "THS_HQ") return connection.callTool(name, args);
+      if (preferIfind && !quotaReserved) {
+        try {
+          const result = await connection.callTool(name, args);
+          const payload = typeof result === "string" ? JSON.parse(result) : result;
+          if (payload?.success === false || (payload?.errorcode !== undefined && Number(payload.errorcode) !== 0)) {
+            const error = new Error("IFIND_HQ_UNAVAILABLE");
+            error.code = payload?.code;
+            throw error;
+          }
+          if (!Array.isArray(payload?.data) || !payload.data.length) throw new Error("IFIND_HQ_EMPTY");
+          provenance.set(args.thscode, { provider: "iFinD", collectedAt: new Date().toISOString() });
+          return payload;
+        } catch (error) {
+          quotaReserved ||= error.code === "QUOTA_RESERVED" || /QUOTA_RESERVED|预留水位/.test(String(error.message));
+          console.log(`iFinD ${args.thscode}: ${quotaReserved ? "QUOTA_RESERVED" : "request unavailable"}; trying public HQ backup`);
+        }
+      }
       const mapping = publicSymbol(args.thscode, args.endtime);
       if (!mapping) {
         provenance.set(args.thscode, { provider: "iFinD", status: "CARRIED_IDENTITY", reason: "Public continuous contract has a different roll identity" });
