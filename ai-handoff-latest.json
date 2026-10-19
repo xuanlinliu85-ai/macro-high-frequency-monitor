@@ -1,7 +1,7 @@
 {
   "contract": "AI_MACRO_HANDOFF",
   "version": "1.0.0",
-  "generatedAt": "2026-10-19T12:39:43.299Z",
+  "generatedAt": "2026-10-19T13:51:02.609Z",
   "asOf": "2026-10-19",
   "tradingDataAsOf": "2026-10-19",
   "runDate": "2026-10-19",
@@ -18,24 +18,23 @@
   "source": {
     "contract": "MACRO_SNAPSHOT",
     "version": "1.1.0",
-    "generatedAt": "2026-10-19T12:39:40.877Z",
-    "sha256": "12a0359aa259df1d17defeb7b8e53be3ef36addeef736de2c000fee97457339e",
+    "generatedAt": "2026-10-19T13:50:20.948Z",
+    "sha256": "2689cb6144a7f3e18df4723168a9173f2dfcfcf4c3fa604bdc5181a0074a64a3",
     "sourceCommit": "4f5609f234053ddcee1a3adb3bd17cb345e1e9ee",
     "sourceDirty": false,
     "data": "iFinD EDB; HQ per-indicator dataProvenance (iFinD preferred in ifind-first mode, Sina/Tencent backup); carried series retain their dates"
   },
   "headline": {
-    "composite": 47.9,
+    "composite": 52,
     "label": "中性震荡",
-    "compositeDelta": -0.2,
-    "anomalyCount": 30,
-    "highSeverityCount": 26,
-    "notableDeviationCount": 42,
-    "divergenceHits": 1,
+    "compositeDelta": null,
+    "anomalyCount": 34,
+    "highSeverityCount": 29,
+    "notableDeviationCount": 40,
+    "divergenceHits": 0,
     "freshness": {
-      "FRESH": 33,
-      "STALE": 18,
-      "EXPECTED": 20,
+      "FRESH": 66,
+      "EXPECTED": 5,
       "DISCONTINUED": 1
     },
     "indicatorTotal": 72,
@@ -50,9 +49,9 @@
       "highLabel": "增长偏强",
       "neutralLabel": "增长中性",
       "lowLabel": "增长偏弱",
-      "semanticLabel": "增长中性",
-      "score": 54.4,
-      "zMean": 0.2193,
+      "semanticLabel": "增长偏强",
+      "score": 65.6,
+      "zMean": 0.7803,
       "coverage": {
         "used": 7,
         "configured": 7,
@@ -63,33 +62,33 @@
           "id": "CN_PMI",
           "name_cn": "制造业PMI",
           "weight": 0.2,
-          "z": 0.1878,
-          "dirZ": 0.1878,
-          "status": "EXPECTED"
+          "z": 0.6886,
+          "dirZ": 0.6886,
+          "status": "FRESH"
         },
         {
           "id": "CN_PMI_PROD",
           "name_cn": "制造业PMI:生产",
           "weight": 0.12,
-          "z": -0.4487,
-          "dirZ": -0.4487,
-          "status": "EXPECTED"
+          "z": 1.1584,
+          "dirZ": 1.1584,
+          "status": "FRESH"
         },
         {
           "id": "CN_PMI_ORDER",
           "name_cn": "制造业PMI:新订单",
           "weight": 0.12,
-          "z": 0.6712,
-          "dirZ": 0.6712,
-          "status": "EXPECTED"
+          "z": 0.5075,
+          "dirZ": 0.5075,
+          "status": "FRESH"
         },
         {
           "id": "CN_IP",
           "name_cn": "规模以上工业增加值:当月同比",
           "weight": 0.2,
-          "z": -0.9899,
-          "dirZ": -0.9899,
-          "status": "STALE"
+          "z": 0.4481,
+          "dirZ": 0.4481,
+          "status": "FRESH"
         },
         {
           "id": "HF_COPPER",
@@ -116,9 +115,9 @@
           "status": "FRESH"
         }
       ],
-      "upCount": 4,
-      "downCount": 1,
-      "delta": 0
+      "upCount": 6,
+      "downCount": 0,
+      "delta": null
     },
     {
       "key": "consumption",
@@ -127,9 +126,9 @@
       "highLabel": "消费偏强",
       "neutralLabel": "消费中性",
       "lowLabel": "消费偏弱",
-      "semanticLabel": "消费偏弱",
-      "score": 36.4,
-      "zMean": -0.6818,
+      "semanticLabel": "消费中性",
+      "score": 48.6,
+      "zMean": -0.0725,
       "coverage": {
         "used": 2,
         "configured": 3,
@@ -140,22 +139,22 @@
           "id": "CN_RETAIL",
           "name_cn": "社会消费品零售总额:当月同比",
           "weight": 0.45,
-          "z": -0.8037,
-          "dirZ": -0.8037,
-          "status": "STALE"
+          "z": -0.1841,
+          "dirZ": -0.1841,
+          "status": "FRESH"
         },
         {
           "id": "CN_RETAIL_CATERING",
           "name_cn": "社会消费品零售总额:餐饮业:当月同比",
           "weight": 0.25,
-          "z": -0.4623,
-          "dirZ": -0.4623,
-          "status": "STALE"
+          "z": 0.1284,
+          "dirZ": 0.1284,
+          "status": "FRESH"
         }
       ],
       "upCount": 0,
-      "downCount": 1,
-      "delta": 0
+      "downCount": 0,
+      "delta": null
     },
     {
       "key": "property",
@@ -164,9 +163,9 @@
       "highLabel": "地产改善",
       "neutralLabel": "地产中性",
       "lowLabel": "地产承压",
-      "semanticLabel": "地产承压",
-      "score": 37.8,
-      "zMean": -0.6107,
+      "semanticLabel": "地产中性",
+      "score": 40,
+      "zMean": -0.501,
       "coverage": {
         "used": 6,
         "configured": 6,
@@ -177,33 +176,33 @@
           "id": "CN_RE_INV",
           "name_cn": "房地产开发投资:累计同比",
           "weight": 0.2,
-          "z": -1.6976,
-          "dirZ": -1.6976,
-          "status": "STALE"
+          "z": -1.4617,
+          "dirZ": -1.4617,
+          "status": "FRESH"
         },
         {
           "id": "CN_RE_START",
           "name_cn": "房屋新开工面积:累计值",
           "weight": 0.18,
-          "z": -0.2719,
-          "dirZ": -0.2719,
-          "status": "STALE"
+          "z": 0.1905,
+          "dirZ": 0.1905,
+          "status": "FRESH"
         },
         {
           "id": "CN_RE_COMPLETE_YOY",
           "name_cn": "房地产竣工面积:累计同比",
           "weight": 0.14,
-          "z": -0.5853,
-          "dirZ": -0.5853,
-          "status": "STALE"
+          "z": -0.7852,
+          "dirZ": -0.7852,
+          "status": "FRESH"
         },
         {
           "id": "CN_RE_SALES_YOY",
           "name_cn": "商品房销售额:累计同比",
           "weight": 0.22,
-          "z": -0.2178,
-          "dirZ": -0.2178,
-          "status": "STALE"
+          "z": -0.1848,
+          "dirZ": -0.1848,
+          "status": "FRESH"
         },
         {
           "id": "HF_GLASS",
@@ -224,7 +223,7 @@
       ],
       "upCount": 1,
       "downCount": 3,
-      "delta": 0
+      "delta": null
     },
     {
       "key": "inflation",
@@ -234,8 +233,8 @@
       "neutralLabel": "价格环境中性",
       "lowLabel": "价格压力偏强",
       "semanticLabel": "价格压力偏强",
-      "score": 36.8,
-      "zMean": -0.662,
+      "score": 31.2,
+      "zMean": -0.9422,
       "coverage": {
         "used": 5,
         "configured": 7,
@@ -246,25 +245,25 @@
           "id": "CN_CPI_NONFOOD",
           "name_cn": "CPI:非食品:当月同比",
           "weight": 0.14,
-          "z": 0.184,
-          "dirZ": -0.184,
-          "status": "EXPECTED"
+          "z": 0.7119,
+          "dirZ": -0.7119,
+          "status": "FRESH"
         },
         {
           "id": "CN_PPI",
           "name_cn": "PPI:当月同比",
           "weight": 0.22,
-          "z": 1.1492,
-          "dirZ": -1.1492,
-          "status": "EXPECTED"
+          "z": 1.3197,
+          "dirZ": -1.3197,
+          "status": "FRESH"
         },
         {
           "id": "CN_PMI_PRICE",
           "name_cn": "制造业PMI:主要原材料购进价格",
           "weight": 0.1,
-          "z": 0.0766,
-          "dirZ": -0.0766,
-          "status": "EXPECTED"
+          "z": 0.9242,
+          "dirZ": -0.9242,
+          "status": "FRESH"
         },
         {
           "id": "HF_PORK",
@@ -284,8 +283,8 @@
         }
       ],
       "upCount": 0,
-      "downCount": 2,
-      "delta": -1
+      "downCount": 4,
+      "delta": null
     },
     {
       "key": "liquidity",
@@ -295,8 +294,8 @@
       "neutralLabel": "中性",
       "lowLabel": "偏紧",
       "semanticLabel": "中性",
-      "score": 58.2,
-      "zMean": 0.4113,
+      "score": 58.3,
+      "zMean": 0.413,
       "coverage": {
         "used": 7,
         "configured": 7,
@@ -339,17 +338,17 @@
           "id": "CN_M2",
           "name_cn": "M2(货币和准货币):同比",
           "weight": 0.14,
-          "z": -1.8288,
-          "dirZ": -1.8288,
-          "status": "STALE"
+          "z": -1.8096,
+          "dirZ": -1.8096,
+          "status": "FRESH"
         },
         {
           "id": "CN_TSF",
           "name_cn": "社会融资规模存量:期末同比",
           "weight": 0.14,
-          "z": -1.5043,
-          "dirZ": -1.5043,
-          "status": "STALE"
+          "z": -1.511,
+          "dirZ": -1.511,
+          "status": "FRESH"
         },
         {
           "id": "MKT_CREDIT_SPREAD_3Y",
@@ -362,7 +361,7 @@
       ],
       "upCount": 4,
       "downCount": 3,
-      "delta": -0.4
+      "delta": null
     },
     {
       "key": "external",
@@ -372,8 +371,8 @@
       "neutralLabel": "外需中性",
       "lowLabel": "外需偏弱",
       "semanticLabel": "外需偏强",
-      "score": 64,
-      "zMean": 0.701,
+      "score": 68.4,
+      "zMean": 0.9186,
       "coverage": {
         "used": 4,
         "configured": 5,
@@ -384,25 +383,25 @@
           "id": "CN_EXPORT",
           "name_cn": "出口总值(美元计价):当月同比",
           "weight": 0.3,
-          "z": 0.8288,
-          "dirZ": 0.8288,
-          "status": "EXPECTED"
+          "z": 1.4305,
+          "dirZ": 1.4305,
+          "status": "FRESH"
         },
         {
           "id": "CN_IMPORT",
           "name_cn": "进口总值(美元计价):当月同比",
           "weight": 0.14,
-          "z": 0.7387,
-          "dirZ": 0.7387,
-          "status": "EXPECTED"
+          "z": 0.8188,
+          "dirZ": 0.8188,
+          "status": "FRESH"
         },
         {
           "id": "CN_PMI_EXPORT",
           "name_cn": "制造业PMI:新出口订单",
           "weight": 0.16,
-          "z": 1.0095,
-          "dirZ": 1.0095,
-          "status": "EXPECTED"
+          "z": 0.8175,
+          "dirZ": 0.8175,
+          "status": "FRESH"
         },
         {
           "id": "HF_BALTIC",
@@ -415,12 +414,12 @@
       ],
       "upCount": 3,
       "downCount": 0,
-      "delta": 0.2
+      "delta": null
     }
   ],
   "deviations": {
-    "total": 42,
-    "extreme": 5,
+    "total": 40,
+    "extreme": 4,
     "up": [
       {
         "id": "HF_PORK",
@@ -440,7 +439,7 @@
         "ageDays": 0,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:06.808Z"
+          "collectedAt": "2026-10-19T13:49:49.119Z"
         },
         "scorable": true,
         "latest": {
@@ -527,7 +526,7 @@
         "ageDays": 3,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:06.808Z"
+          "collectedAt": "2026-10-19T13:49:49.119Z"
         },
         "scorable": true,
         "latest": {
@@ -603,7 +602,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:20.184Z"
+          "collectedAt": "2026-10-19T13:50:02.985Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -649,7 +648,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:19.277Z"
+          "collectedAt": "2026-10-19T13:50:02.983Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -682,53 +681,6 @@
         "deviationLevel": "notable"
       },
       {
-        "id": "FUT_FU",
-        "name_cn": "燃料油",
-        "chain": "energy",
-        "chain_cn": "能源",
-        "chain_tier": "下游油品",
-        "code": "FU2611.SHF",
-        "requestedCode": "FU00.SHF",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "dataProvenance": {
-          "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:23.934Z"
-        },
-        "status": "FRESH",
-        "ageDays": 0,
-        "lastDate": "2026-10-19",
-        "value": 5797,
-        "d1": 0.045446,
-        "d5": 0.12826,
-        "d20": 0.351597,
-        "d60": 0.705,
-        "z1y": 3.4791,
-        "pct1y": 0.9978,
-        "pct3y": 0.9978,
-        "chg1Extreme": 0.8723,
-        "ma20": 4754.25,
-        "historyDays": 232,
-        "oi": 95430,
-        "oiChg5": -0.214775,
-        "oiChg20": -0.567934,
-        "mainContract": {
-          "fromCode": "FU00.SHF",
-          "toCode": "FU2611.SHF",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
-        },
-        "tags": [
-          "刷一年新高",
-          "位置极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
-      },
-      {
         "id": "FUT_LC",
         "name_cn": "碳酸锂",
         "chain": "newenergy",
@@ -742,7 +694,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:38.171Z"
+          "collectedAt": "2026-10-19T13:50:02.998Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -773,6 +725,52 @@
         ],
         "isNotable": true,
         "deviationLevel": "notable"
+      },
+      {
+        "id": "FUT_NI",
+        "name_cn": "沪镍",
+        "chain": "nonferrous",
+        "chain_cn": "有色金属",
+        "chain_tier": "基本金属",
+        "code": "NI2612.SHF",
+        "requestedCode": "NI00.SHF",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "dataProvenance": {
+          "provider": "iFinD",
+          "collectedAt": "2026-10-19T13:50:02.987Z"
+        },
+        "status": "FRESH",
+        "ageDays": 0,
+        "lastDate": "2026-10-19",
+        "value": 117330,
+        "d1": 0.018136,
+        "d5": -0.005762,
+        "d20": -0.073662,
+        "d60": -0.095165,
+        "z1y": -2.0698,
+        "pct1y": 0.0274,
+        "pct3y": 0.0274,
+        "chg1Extreme": 0.7825,
+        "ma20": 121660.5,
+        "historyDays": 201,
+        "oi": 154223,
+        "oiChg5": 0.105018,
+        "oiChg20": 1.662644,
+        "mainContract": {
+          "fromCode": "NI00.SHF",
+          "toCode": "NI2612.SHF",
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
+        },
+        "tags": [
+          "位置极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
       }
     ],
     "down": [
@@ -790,7 +788,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:35.918Z"
+          "collectedAt": "2026-10-19T13:50:02.995Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -800,12 +798,12 @@
         "d5": -0.061553,
         "d20": -0.162018,
         "d60": -0.223489,
-        "z1y": -3.5287,
-        "pct1y": 0.0023,
-        "pct3y": 0.0023,
-        "chg1Extreme": 0.9836,
+        "z1y": -3.7361,
+        "pct1y": 0.0029,
+        "pct3y": 0.0029,
+        "chg1Extreme": 0.9854,
         "ma20": 11296.25,
-        "historyDays": 215,
+        "historyDays": 172,
         "oi": 191578,
         "oiChg5": 0.186073,
         "oiChg20": 0.498998,
@@ -837,7 +835,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:19.287Z"
+          "collectedAt": "2026-10-19T13:50:02.984Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -870,54 +868,6 @@
         "deviationLevel": "extreme"
       },
       {
-        "id": "FUT_C",
-        "name_cn": "玉米",
-        "chain": "ags",
-        "chain_cn": "农产品",
-        "chain_tier": "上游原料",
-        "code": "C2701.DCE",
-        "requestedCode": "C00.DCE",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "dataProvenance": {
-          "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:32.616Z"
-        },
-        "status": "FRESH",
-        "ageDays": 0,
-        "lastDate": "2026-10-19",
-        "value": 2183,
-        "d1": -0.010426,
-        "d5": -0.009528,
-        "d20": -0.042544,
-        "d60": -0.036203,
-        "z1y": -2.0006,
-        "pct1y": 0.0068,
-        "pct3y": 0.0068,
-        "chg1Extreme": 0.957,
-        "ma20": 2213.9,
-        "historyDays": 222,
-        "oi": 1165964,
-        "oiChg5": 0.348642,
-        "oiChg20": 0.984322,
-        "mainContract": {
-          "fromCode": "C00.DCE",
-          "toCode": "C2701.DCE",
-          "rollRatio": 1,
-          "overlapDays": 0,
-          "fromCache": true
-        },
-        "tags": [
-          "刷一年新低",
-          "变化+位置双极端",
-          "持仓放大"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
-      {
         "id": "HF_VEG",
         "name_cn": "平均批发价:28种重点监测蔬菜",
         "layer": "highfreq",
@@ -935,7 +885,7 @@
         "ageDays": 0,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:06.808Z"
+          "collectedAt": "2026-10-19T13:49:49.119Z"
         },
         "scorable": true,
         "latest": {
@@ -991,6 +941,54 @@
         "deviationLevel": "notable"
       },
       {
+        "id": "FUT_C",
+        "name_cn": "玉米",
+        "chain": "ags",
+        "chain_cn": "农产品",
+        "chain_tier": "上游原料",
+        "code": "C2701.DCE",
+        "requestedCode": "C00.DCE",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "dataProvenance": {
+          "provider": "iFinD",
+          "collectedAt": "2026-10-19T13:50:02.993Z"
+        },
+        "status": "FRESH",
+        "ageDays": 0,
+        "lastDate": "2026-10-19",
+        "value": 2183,
+        "d1": -0.010426,
+        "d5": -0.009528,
+        "d20": -0.042544,
+        "d60": -0.036203,
+        "z1y": -1.9815,
+        "pct1y": 0.0084,
+        "pct3y": 0.0084,
+        "chg1Extreme": 0.9522,
+        "ma20": 2213.9,
+        "historyDays": 179,
+        "oi": 1165964,
+        "oiChg5": 0.348642,
+        "oiChg20": 0.984322,
+        "mainContract": {
+          "fromCode": "C00.DCE",
+          "toCode": "C2701.DCE",
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
+        },
+        "tags": [
+          "刷一年新低",
+          "变化显著",
+          "持仓放大"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
         "id": "FUT_J",
         "name_cn": "焦炭",
         "chain": "ferrous",
@@ -1004,7 +1002,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:19.630Z"
+          "collectedAt": "2026-10-19T13:50:02.984Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -1037,44 +1035,120 @@
         "deviationLevel": "notable"
       },
       {
-        "id": "FUT_EG",
-        "name_cn": "乙二醇",
-        "chain": "chemical",
-        "chain_cn": "化工",
-        "chain_tier": "上游原料",
-        "code": "EG2611.DCE",
-        "requestedCode": "EG00.DCE",
+        "id": "FUT_AP",
+        "name_cn": "苹果",
+        "chain": "ags",
+        "chain_cn": "农产品",
+        "chain_tier": "下游成品",
+        "code": "AP701.CZC",
+        "requestedCode": "AP00.CZC",
         "unit": "cny_per_ton",
         "importance": "medium",
         "seriesRole": null,
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:26.838Z"
+          "collectedAt": "2026-10-19T13:50:02.997Z"
         },
         "status": "FRESH",
         "ageDays": 0,
         "lastDate": "2026-10-19",
-        "value": 4976,
-        "d1": -0.04234,
-        "d5": -0.045646,
-        "d20": -0.087642,
-        "d60": 0.121478,
-        "z1y": 1.0277,
-        "pct1y": 0.8362,
-        "pct3y": 0.8362,
-        "chg1Extreme": 0.9338,
-        "ma20": 5349.1,
-        "historyDays": 235,
-        "oi": 244129,
-        "oiChg5": -0.076755,
-        "oiChg20": 0.797551,
+        "value": 5881,
+        "d1": -0.019507,
+        "d5": -0.127448,
+        "d20": -0.21219,
+        "d60": -0.201277,
+        "z1y": -3.5556,
+        "pct1y": 0.0028,
+        "pct3y": 0.0028,
+        "chg1Extreme": 0.9298,
+        "ma20": 6858.2,
+        "historyDays": 179,
+        "oi": 171173,
+        "oiChg5": 0.08262,
+        "oiChg20": 0.602503,
         "mainContract": {
-          "fromCode": "EG00.DCE",
-          "toCode": "EG2611.DCE",
+          "fromCode": "AP00.CZC",
+          "toCode": "AP701.CZC",
           "rollRatio": 1,
           "overlapDays": 0,
           "fromCache": true
+        },
+        "tags": [
+          "刷一年新低",
+          "变化+位置双极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "extreme"
+      }
+    ],
+    "releaseFrequency": [
+      {
+        "id": "CN_PPI",
+        "name_cn": "PPI:当月同比",
+        "layer": "official",
+        "dimension": "inflation",
+        "category": "inflation",
+        "frequency": "monthly",
+        "unit": "pct",
+        "importance": "high",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "marketIdentity": null,
+        "direction": "higher_is_tighter",
+        "polarity": -1,
+        "status": "FRESH",
+        "ageDays": 19,
+        "dataProvenance": {
+          "provider": "iFinD",
+          "collectedAt": "2026-10-19T07:33:56.259Z",
+          "status": "CARRIED",
+          "latestDate": "2026-09-30"
+        },
+        "scorable": true,
+        "latest": {
+          "date": "2026-09-30",
+          "value": 5
+        },
+        "changes": {
+          "chg1": 1.2,
+          "chg4": 1.1,
+          "chg5": 2.2,
+          "chg12": 7.3,
+          "chg13": 7.9,
+          "chg20": 7.3
+        },
+        "pctChg1": 0.315789,
+        "pctChg5": 0.785714,
+        "pctChg20": 3.173913,
+        "pctChg12": 3.173913,
+        "z1y": 1.3197,
+        "dirZ": -1.3197,
+        "pct1y": 0.9583,
+        "pct3y": 0.9861,
+        "ma20": -0.4,
+        "moveExtreme": 0.7917,
+        "chg1Extreme": 0.9306,
+        "changeView": {
+          "frequency": "monthly",
+          "items": [
+            {
+              "key": "yoy_level",
+              "label": "YoY",
+              "value": 5,
+              "status": "available"
+            },
+            {
+              "key": "trend3m",
+              "label": "3M",
+              "value": "up",
+              "status": "available"
+            }
+          ],
+          "legacy": {
+            "deprecated": true,
+            "field": "changes"
+          }
         },
         "tags": [
           "变化显著"
@@ -1082,40 +1156,9 @@
         "isNotable": true,
         "deviationLevel": "notable"
       }
-    ],
-    "releaseFrequency": []
+    ]
   },
   "anomalies": [
-    {
-      "id": "CN_GDP_REAL",
-      "name_cn": "GDP:不变价:当季同比",
-      "dimension": "growth",
-      "frequency": "quarterly",
-      "unit": "pct",
-      "status": "FRESH",
-      "latest": {
-        "date": "2026-06-30",
-        "value": 4.3
-      },
-      "z1y": -1.1257,
-      "dirZ": -1.1257,
-      "pct3y": 0.0417,
-      "changes": {
-        "chg1": -0.7,
-        "chg4": -0.9,
-        "chg5": -1.1,
-        "chg12": -2.2,
-        "chg13": -0.4,
-        "chg20": -3.8
-      },
-      "triggers": [
-        {
-          "id": "PERCENTILE_LOW",
-          "value": 0.0417
-        }
-      ],
-      "severity": "high"
-    },
     {
       "id": "CN_FAI_BUSINESS",
       "name_cn": "企业景气指数",
@@ -1152,51 +1195,21 @@
       "dimension": "consumption",
       "frequency": "monthly",
       "unit": "pct",
-      "status": "STALE",
+      "status": "FRESH",
       "latest": {
-        "date": "2026-07-31",
-        "value": 1.2
+        "date": "2026-09-30",
+        "value": 1.1
       },
-      "z1y": -1.3423,
-      "dirZ": -1.3423,
-      "pct3y": 0.0139,
-      "changes": {
-        "chg1": -0.1,
-        "chg4": -1.2,
-        "chg5": -1.6,
-        "chg12": -3.8,
-        "chg13": -3.8,
-        "chg20": -2.1
-      },
-      "triggers": [
-        {
-          "id": "PERCENTILE_LOW",
-          "value": 0.0139
-        }
-      ],
-      "severity": "high"
-    },
-    {
-      "id": "CN_TSF",
-      "name_cn": "社会融资规模存量:期末同比",
-      "dimension": "liquidity",
-      "frequency": "monthly",
-      "unit": "pct",
-      "status": "STALE",
-      "latest": {
-        "date": "2026-07-31",
-        "value": 7.4
-      },
-      "z1y": -1.5043,
-      "dirZ": -1.5043,
+      "z1y": -1.029,
+      "dirZ": -1.029,
       "pct3y": 0.0278,
       "changes": {
         "chg1": 0,
-        "chg4": -0.5,
+        "chg4": -0.3,
         "chg5": -0.8,
-        "chg12": -1.6,
-        "chg13": -1.5,
-        "chg20": -0.4
+        "chg12": -3.5,
+        "chg13": -3.7,
+        "chg20": -2.4
       },
       "triggers": [
         {
@@ -1207,26 +1220,176 @@
       "severity": "high"
     },
     {
+      "id": "CN_PPI",
+      "name_cn": "PPI:当月同比",
+      "dimension": "inflation",
+      "frequency": "monthly",
+      "unit": "pct",
+      "status": "FRESH",
+      "latest": {
+        "date": "2026-09-30",
+        "value": 5
+      },
+      "z1y": 1.3197,
+      "dirZ": -1.3197,
+      "pct3y": 0.9861,
+      "changes": {
+        "chg1": 1.2,
+        "chg4": 1.1,
+        "chg5": 2.2,
+        "chg12": 7.3,
+        "chg13": 7.9,
+        "chg20": 7.3
+      },
+      "triggers": [
+        {
+          "id": "PERCENTILE_HIGH",
+          "value": 0.9861
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "id": "CN_TSF",
+      "name_cn": "社会融资规模存量:期末同比",
+      "dimension": "liquidity",
+      "frequency": "monthly",
+      "unit": "pct",
+      "status": "FRESH",
+      "latest": {
+        "date": "2026-09-30",
+        "value": 7.1
+      },
+      "z1y": -1.511,
+      "dirZ": -1.511,
+      "pct3y": 0.0139,
+      "changes": {
+        "chg1": -0.1,
+        "chg4": -0.6,
+        "chg5": -0.7,
+        "chg12": -1.6,
+        "chg13": -1.7,
+        "chg20": -0.9
+      },
+      "triggers": [
+        {
+          "id": "PERCENTILE_LOW",
+          "value": 0.0139
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "id": "CN_EXPORT",
+      "name_cn": "出口总值(美元计价):当月同比",
+      "dimension": "external",
+      "frequency": "monthly",
+      "unit": "pct",
+      "status": "FRESH",
+      "latest": {
+        "date": "2026-09-30",
+        "value": 36.3
+      },
+      "z1y": 1.4305,
+      "dirZ": 1.4305,
+      "pct3y": 0.9583,
+      "changes": {
+        "chg1": 11.4,
+        "chg4": 17.1,
+        "chg5": 22.4,
+        "chg12": 28.133,
+        "chg13": 32.0701,
+        "chg20": 30.4097
+      },
+      "triggers": [
+        {
+          "id": "PERCENTILE_HIGH",
+          "value": 0.9583
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "id": "CN_IMPORT",
+      "name_cn": "进口总值(美元计价):当月同比",
+      "dimension": "external",
+      "frequency": "monthly",
+      "unit": "pct",
+      "status": "FRESH",
+      "latest": {
+        "date": "2026-09-30",
+        "value": 31
+      },
+      "z1y": 0.8188,
+      "dirZ": 0.8188,
+      "pct3y": 0.9583,
+      "changes": {
+        "chg1": 2.7,
+        "chg4": 3.6,
+        "chg5": 5.7,
+        "chg12": 22.9632,
+        "chg13": 29.3454,
+        "chg20": 47.252
+      },
+      "triggers": [
+        {
+          "id": "PERCENTILE_HIGH",
+          "value": 0.9583
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "id": "CN_TRADE",
+      "name_cn": "进出口总值(美元计价):当月同比",
+      "dimension": "external",
+      "frequency": "monthly",
+      "unit": "pct",
+      "status": "FRESH",
+      "latest": {
+        "date": "2026-09-30",
+        "value": 34.1
+      },
+      "z1y": 1.3969,
+      "dirZ": 1.3969,
+      "pct3y": 0.9861,
+      "changes": {
+        "chg1": 7.8,
+        "chg4": 11.6,
+        "chg5": 15.5,
+        "chg12": 25.988,
+        "chg13": 30.9332,
+        "chg20": 37.5284
+      },
+      "triggers": [
+        {
+          "id": "PERCENTILE_HIGH",
+          "value": 0.9861
+        }
+      ],
+      "severity": "high"
+    },
+    {
       "id": "CN_RE_INV",
       "name_cn": "房地产开发投资:累计同比",
       "dimension": "property",
       "frequency": "monthly",
       "unit": "pct",
-      "status": "STALE",
+      "status": "FRESH",
       "latest": {
-        "date": "2026-07-31",
-        "value": -19.2
+        "date": "2026-09-30",
+        "value": -20.6
       },
-      "z1y": -1.6976,
-      "dirZ": -1.6976,
+      "z1y": -1.4617,
+      "dirZ": -1.4617,
       "pct3y": 0.0139,
       "changes": {
-        "chg1": -1.2,
-        "chg4": -8,
-        "chg5": -8.1,
-        "chg12": -8,
-        "chg13": -8.5,
-        "chg20": -9.1
+        "chg1": -0.7,
+        "chg4": -4.4,
+        "chg5": -6.9,
+        "chg12": -7.7,
+        "chg13": -8.6,
+        "chg20": -10.2
       },
       "triggers": [
         {
@@ -1883,7 +2046,7 @@
       "triggers": [
         {
           "id": "THREE_SAME_DIRECTION",
-          "value": 4
+          "value": 6
         }
       ]
     },
@@ -1897,6 +2060,19 @@
         {
           "id": "THREE_SAME_DIRECTION",
           "value": 3
+        }
+      ]
+    },
+    {
+      "id": "DIM_INFLATION_SAME_DIRECTION",
+      "name_cn": "通胀维度同向聚集",
+      "dimension": "inflation",
+      "aggregate": true,
+      "severity": "medium",
+      "triggers": [
+        {
+          "id": "THREE_SAME_DIRECTION",
+          "value": 4
         }
       ]
     },
@@ -1944,12 +2120,12 @@
           {
             "id": "CN_PMI",
             "name_cn": "制造业PMI",
-            "value": 0.1878
+            "value": 0.6886
           },
           {
             "id": "CN_PMI_ORDER",
             "name_cn": "制造业PMI:新订单",
-            "value": 0.6712
+            "value": 0.5075
           },
           {
             "id": "HF_COPPER",
@@ -1959,7 +2135,7 @@
           {
             "id": "CN_RE_SALES_AREA",
             "name_cn": "商品房销售面积:累计值",
-            "value": -0.1477
+            "value": 0.3252
           },
           {
             "id": "HF_REBAR",
@@ -1968,9 +2144,9 @@
           }
         ],
         "usable": 5,
-        "positive": 3,
+        "positive": 4,
         "negative": 0,
-        "mean": 0.4923,
+        "mean": 0.6543,
         "direction": "positive"
       },
       "sideB": {
@@ -2016,18 +2192,18 @@
           {
             "id": "CN_RE_SALES_YOY",
             "name_cn": "商品房销售额:累计同比",
-            "value": -0.2178
+            "value": -0.1848
           },
           {
             "id": "CN_RE_START",
             "name_cn": "房屋新开工面积:累计值",
-            "value": -0.2719
+            "value": 0.1905
           }
         ],
         "usable": 2,
         "positive": 0,
         "negative": 0,
-        "mean": -0.2448,
+        "mean": 0.0029,
         "direction": "neutral"
       },
       "sideB": {
@@ -2093,13 +2269,13 @@
           {
             "id": "CN_PMI_ORDER",
             "name_cn": "制造业PMI:新订单",
-            "value": 0.6712
+            "value": 0.5075
           }
         ],
         "usable": 2,
         "positive": 2,
         "negative": 0,
-        "mean": 1.3439,
+        "mean": 1.262,
         "direction": "positive"
       },
       "interpretation": "流动性支持 positive / 增长确认 positive"
@@ -2113,19 +2289,19 @@
       "severity": "medium",
       "question": "外需拉动能否对冲内需疲弱？",
       "logic_cn": "外需与内需的方向校正均值相反时触发。",
-      "hit": true,
+      "hit": false,
       "sideA": {
         "label": "外需",
         "members": [
           {
             "id": "CN_EXPORT",
             "name_cn": "出口总值(美元计价):当月同比",
-            "value": 0.8288
+            "value": 1.4305
           },
           {
             "id": "CN_PMI_EXPORT",
             "name_cn": "制造业PMI:新出口订单",
-            "value": 1.0095
+            "value": 0.8175
           },
           {
             "id": "HF_BALTIC",
@@ -2136,7 +2312,7 @@
         "usable": 3,
         "positive": 2,
         "negative": 0,
-        "mean": 0.625,
+        "mean": 0.7616,
         "direction": "positive"
       },
       "sideB": {
@@ -2145,21 +2321,21 @@
           {
             "id": "CN_RETAIL",
             "name_cn": "社会消费品零售总额:当月同比",
-            "value": -0.8037
+            "value": -0.1841
           },
           {
             "id": "CN_IP",
             "name_cn": "规模以上工业增加值:当月同比",
-            "value": -0.9899
+            "value": 0.4481
           }
         ],
         "usable": 2,
         "positive": 0,
-        "negative": 2,
-        "mean": -0.8968,
-        "direction": "negative"
+        "negative": 0,
+        "mean": 0.132,
+        "direction": "neutral"
       },
-      "interpretation": "外需 positive / 内需 negative"
+      "interpretation": "外需 positive / 内需 neutral"
     }
   ],
   "aggregates": {
@@ -2167,43 +2343,43 @@
       "growth": {
         "count": 11,
         "usable": 11,
-        "medianDirZ": -0.084,
+        "medianDirZ": 0.4481,
         "median20DPct": -0.008338
       },
       "consumption": {
         "count": 3,
         "usable": 3,
-        "medianDirZ": -0.8037,
+        "medianDirZ": -0.1841,
         "median20DPct": null
       },
       "sentiment": {
         "count": 5,
         "usable": 5,
-        "medianDirZ": 0.1878,
+        "medianDirZ": 0.5075,
         "median20DPct": null
       },
       "external": {
         "count": 6,
         "usable": 6,
-        "medianDirZ": 0.7837,
+        "medianDirZ": 0.8181,
         "median20DPct": -0.250956
       },
       "inflation": {
         "count": 13,
         "usable": 13,
-        "medianDirZ": -0.1183,
+        "medianDirZ": -0.2406,
         "median20DPct": -0.042579
       },
       "credit": {
         "count": 7,
         "usable": 7,
-        "medianDirZ": -1.1928,
+        "medianDirZ": -1.1575,
         "median20DPct": -0.117621
       },
       "property": {
         "count": 10,
         "usable": 10,
-        "medianDirZ": -0.3178,
+        "medianDirZ": -0.118,
         "median20DPct": 0.017861
       },
       "liquidity": {
@@ -2233,9 +2409,8 @@
     }
   },
   "freshness": {
-    "FRESH": 33,
-    "STALE": 18,
-    "EXPECTED": 20,
+    "FRESH": 66,
+    "EXPECTED": 5,
     "DISCONTINUED": 1
   },
   "futures": {
@@ -2294,7 +2469,7 @@
               "d1": -0.00185,
               "d5": -0.00712,
               "d20": -0.02494,
-              "z1y": -1.3701,
+              "z1y": -1.5217,
               "breadth": 0,
               "count": 3
             }
@@ -2304,8 +2479,8 @@
           "d1": -0.00093,
           "d5": -0.00785,
           "d20": -0.02799,
-          "z1y": -1.1012,
-          "pct1y": 0.1762,
+          "z1y": -1.2328,
+          "pct1y": 0.1157,
           "breadth": 0.125,
           "oiChg5": 0.03754
         },
@@ -2348,23 +2523,23 @@
               "FUT_BC"
             ],
             "metrics": {
-              "d1": 0.00118,
-              "d5": -0.00777,
-              "d20": -0.03713,
-              "z1y": -0.0089,
+              "d1": 0.00216,
+              "d5": -0.0091,
+              "d20": -0.05029,
+              "z1y": -0.2731,
               "breadth": 0,
               "count": 7
             }
           }
         ],
         "metrics": {
-          "d1": 0.00135,
-          "d5": -0.00844,
-          "d20": -0.03006,
-          "z1y": -0.1342,
-          "pct1y": 0.3515,
+          "d1": 0.00184,
+          "d5": -0.01174,
+          "d20": -0.03664,
+          "z1y": -0.6467,
+          "pct1y": 0.244,
           "breadth": 0,
-          "oiChg5": -0.11688
+          "oiChg5": 0.14662
         },
         "leaders": [
           "FUT_CU",
@@ -2401,23 +2576,23 @@
               "FUT_PG"
             ],
             "metrics": {
-              "d1": 0.00577,
-              "d5": 0.01894,
-              "d20": 0.1138,
-              "z1y": 2.6047,
-              "breadth": 0.5,
+              "d1": 0.00711,
+              "d5": 0.02189,
+              "d20": 0.12267,
+              "z1y": 2.5608,
+              "breadth": 1,
               "count": 4
             }
           }
         ],
         "metrics": {
-          "d1": 0.00559,
-          "d5": -0.0027,
-          "d20": 0.10072,
-          "z1y": 2.5421,
-          "pct1y": 0.9766,
-          "breadth": 0.4,
-          "oiChg5": -0.21477
+          "d1": 0.00594,
+          "d5": 0.00319,
+          "d20": 0.11847,
+          "z1y": 2.516,
+          "pct1y": 0.9818,
+          "breadth": 0.8,
+          "oiChg5": 0.26159
         },
         "leaders": [
           "FUT_SC"
@@ -2448,7 +2623,7 @@
               "d1": -0.00792,
               "d5": -0.03489,
               "d20": 0.02181,
-              "z1y": 1.3794,
+              "z1y": 1.3977,
               "breadth": 0,
               "count": 10
             }
@@ -2509,7 +2684,7 @@
               "d1": -0.00074,
               "d5": -0.02928,
               "d20": -0.07447,
-              "z1y": -0.9811,
+              "z1y": -1.1921,
               "breadth": 0,
               "count": 2
             }
@@ -2519,10 +2694,10 @@
           "d1": -0.00074,
           "d5": -0.02928,
           "d20": -0.07447,
-          "z1y": -0.9811,
-          "pct1y": 0.1602,
+          "z1y": -1.1921,
+          "pct1y": 0.0827,
           "breadth": 0,
-          "oiChg5": -0.02953
+          "oiChg5": -0.02954
         },
         "leaders": [
           "FUT_AU",
@@ -2625,7 +2800,7 @@
               "d1": 0.00018,
               "d5": -0.00413,
               "d20": 0.13776,
-              "z1y": 2.3913,
+              "z1y": 1.9743,
               "breadth": 0,
               "count": 1
             }
@@ -2662,7 +2837,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:19.277Z"
+          "collectedAt": "2026-10-19T13:50:02.983Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -2708,7 +2883,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:19.287Z"
+          "collectedAt": "2026-10-19T13:50:02.984Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -2754,7 +2929,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:19.630Z"
+          "collectedAt": "2026-10-19T13:50:02.984Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -2836,7 +3011,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:19.880Z"
+          "collectedAt": "2026-10-19T13:50:02.984Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -2882,7 +3057,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:20.184Z"
+          "collectedAt": "2026-10-19T13:50:02.985Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -2928,7 +3103,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:20.406Z"
+          "collectedAt": "2026-10-19T13:50:02.985Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -2972,7 +3147,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:20.641Z"
+          "collectedAt": "2026-10-19T13:50:02.985Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3016,7 +3191,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:20.994Z"
+          "collectedAt": "2026-10-19T13:50:02.985Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3026,12 +3201,12 @@
         "d5": -0.008576,
         "d20": -0.024936,
         "d60": -0.084997,
-        "z1y": -1.107,
-        "pct1y": 0.207,
-        "pct3y": 0.207,
-        "chg1Extreme": 0.6358,
+        "z1y": -1.8777,
+        "pct1y": 0.0373,
+        "pct3y": 0.0373,
+        "chg1Extreme": 0.5775,
         "ma20": 13561,
-        "historyDays": 244,
+        "historyDays": 201,
         "oi": 132632,
         "oiChg5": 0.824951,
         "oiChg20": 10.863327,
@@ -3062,7 +3237,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:21.063Z"
+          "collectedAt": "2026-10-19T13:50:02.986Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3106,7 +3281,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:21.384Z"
+          "collectedAt": "2026-10-19T13:50:02.986Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3116,12 +3291,12 @@
         "d5": -0.007774,
         "d20": 0.01068,
         "d60": 0.063663,
-        "z1y": 1.2298,
-        "pct1y": 0.9488,
-        "pct3y": 0.9488,
-        "chg1Extreme": 0.0514,
+        "z1y": 1.2611,
+        "pct1y": 0.9434,
+        "pct3y": 0.9434,
+        "chg1Extreme": 0.0523,
         "ma20": 109493.5,
-        "historyDays": 244,
+        "historyDays": 221,
         "oi": 167976,
         "oiChg5": -0.139242,
         "oiChg20": 0.277617,
@@ -3142,7 +3317,7 @@
         "chain": "nonferrous",
         "chain_cn": "有色金属",
         "chain_tier": "基本金属",
-        "code": "AL2611.SHF",
+        "code": "AL2612.SHF",
         "requestedCode": "AL00.SHF",
         "unit": "cny_per_ton",
         "importance": "high",
@@ -3150,28 +3325,28 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:21.639Z"
+          "collectedAt": "2026-10-19T13:50:02.986Z"
         },
         "status": "FRESH",
         "ageDays": 0,
         "lastDate": "2026-10-19",
-        "value": 23340,
-        "d1": 0.003008,
-        "d5": -0.005327,
-        "d20": -0.037129,
-        "d60": 0.005818,
-        "z1y": -0.2595,
-        "pct1y": 0.3402,
-        "pct3y": 0.3402,
-        "chg1Extreme": 0.3395,
-        "ma20": 23808.75,
-        "historyDays": 244,
-        "oi": 187884,
-        "oiChg5": -0.252379,
-        "oiChg20": -0.096047,
+        "value": 22970,
+        "d1": 0.002182,
+        "d5": -0.014375,
+        "d20": -0.051806,
+        "d60": -0.009487,
+        "z1y": -1.4269,
+        "pct1y": 0.092,
+        "pct3y": 0.092,
+        "chg1Extreme": 0.2475,
+        "ma20": 23705.5,
+        "historyDays": 201,
+        "oi": 221389,
+        "oiChg5": 0.23215,
+        "oiChg20": 2.06854,
         "mainContract": {
           "fromCode": "AL00.SHF",
-          "toCode": "AL2611.SHF",
+          "toCode": "AL2612.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
           "fromCache": true
@@ -3186,7 +3361,7 @@
         "chain": "nonferrous",
         "chain_cn": "有色金属",
         "chain_tier": "基本金属",
-        "code": "ZN2611.SHF",
+        "code": "ZN2612.SHF",
         "requestedCode": "ZN00.SHF",
         "unit": "cny_per_ton",
         "importance": "medium",
@@ -3194,37 +3369,35 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:21.899Z"
+          "collectedAt": "2026-10-19T13:50:02.986Z"
         },
         "status": "FRESH",
         "ageDays": 0,
         "lastDate": "2026-10-19",
-        "value": 25500,
-        "d1": 0.001178,
-        "d5": -0.02355,
-        "d20": -0.050102,
-        "d60": 0.040604,
-        "z1y": 0.8487,
-        "pct1y": 0.8135,
-        "pct3y": 0.8135,
-        "chg1Extreme": 0.1502,
-        "ma20": 26182.25,
-        "historyDays": 244,
-        "oi": 69878,
-        "oiChg5": -0.321527,
-        "oiChg20": -0.438158,
+        "value": 25495,
+        "d1": 0.002162,
+        "d5": -0.024115,
+        "d20": -0.050289,
+        "d60": 0.03934,
+        "z1y": 0.6545,
+        "pct1y": 0.7711,
+        "pct3y": 0.7711,
+        "chg1Extreme": 0.1775,
+        "ma20": 26197,
+        "historyDays": 201,
+        "oi": 106655,
+        "oiChg5": 0.188224,
+        "oiChg20": 1.562713,
         "mainContract": {
           "fromCode": "ZN00.SHF",
-          "toCode": "ZN2611.SHF",
+          "toCode": "ZN2612.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
           "fromCache": true
         },
-        "tags": [
-          "持仓放大"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
+        "tags": [],
+        "isNotable": false,
+        "deviationLevel": "normal"
       },
       {
         "id": "FUT_PB",
@@ -3240,7 +3413,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:29.927Z"
+          "collectedAt": "2026-10-19T13:50:02.986Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3250,21 +3423,21 @@
         "d5": -0.003105,
         "d20": -0.008338,
         "d60": 0.005637,
-        "z1y": -1.1995,
-        "pct1y": 0.1578,
-        "pct3y": 0.1578,
-        "chg1Extreme": 0.2407,
+        "z1y": -1.0203,
+        "pct1y": 0.1915,
+        "pct3y": 0.1915,
+        "chg1Extreme": 0.2325,
         "ma20": 16156,
-        "historyDays": 244,
+        "historyDays": 201,
         "oi": 66778,
         "oiChg5": 0.202146,
         "oiChg20": 6.397585,
         "mainContract": {
           "fromCode": "PB00.SHF",
           "toCode": "PB2612.SHF",
-          "rollRatio": 1.0014845605700713,
-          "overlapDays": 201,
-          "fromCache": false
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
         },
         "tags": [],
         "isNotable": false,
@@ -3276,7 +3449,7 @@
         "chain": "nonferrous",
         "chain_cn": "有色金属",
         "chain_tier": "基本金属",
-        "code": "NI2611.SHF",
+        "code": "NI2612.SHF",
         "requestedCode": "NI00.SHF",
         "unit": "cny_per_ton",
         "importance": "medium",
@@ -3284,35 +3457,37 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:22.792Z"
+          "collectedAt": "2026-10-19T13:50:02.987Z"
         },
         "status": "FRESH",
         "ageDays": 0,
         "lastDate": "2026-10-19",
-        "value": 117150,
-        "d1": 0.018341,
-        "d5": -0.005602,
-        "d20": -0.07252,
-        "d60": -0.094388,
-        "z1y": -1.6156,
-        "pct1y": 0.0266,
-        "pct3y": 0.0266,
-        "chg1Extreme": 0.821,
-        "ma20": 121426.5,
-        "historyDays": 244,
-        "oi": 107633,
-        "oiChg5": -0.247643,
-        "oiChg20": -0.056587,
+        "value": 117330,
+        "d1": 0.018136,
+        "d5": -0.005762,
+        "d20": -0.073662,
+        "d60": -0.095165,
+        "z1y": -2.0698,
+        "pct1y": 0.0274,
+        "pct3y": 0.0274,
+        "chg1Extreme": 0.7825,
+        "ma20": 121660.5,
+        "historyDays": 201,
+        "oi": 154223,
+        "oiChg5": 0.105018,
+        "oiChg20": 1.662644,
         "mainContract": {
           "fromCode": "NI00.SHF",
-          "toCode": "NI2611.SHF",
+          "toCode": "NI2612.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
           "fromCache": true
         },
-        "tags": [],
-        "isNotable": false,
-        "deviationLevel": "normal"
+        "tags": [
+          "位置极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
       },
       {
         "id": "FUT_SN",
@@ -3328,7 +3503,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:22.802Z"
+          "collectedAt": "2026-10-19T13:50:02.987Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3338,12 +3513,12 @@
         "d5": -0.042413,
         "d20": -0.074326,
         "d60": -0.057239,
-        "z1y": -0.0089,
-        "pct1y": 0.3627,
-        "pct3y": 0.3627,
-        "chg1Extreme": 0.3519,
+        "z1y": -0.2731,
+        "pct1y": 0.2964,
+        "pct3y": 0.2964,
+        "chg1Extreme": 0.3114,
         "ma20": 398141.5,
-        "historyDays": 244,
+        "historyDays": 221,
         "oi": 30935,
         "oiChg5": -0.094515,
         "oiChg20": 0.567123,
@@ -3372,7 +3547,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:22.815Z"
+          "collectedAt": "2026-10-19T13:50:02.987Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3382,12 +3557,12 @@
         "d5": -0.009098,
         "d20": 0.012185,
         "d60": 0.070789,
-        "z1y": 1.3256,
-        "pct1y": 0.9406,
-        "pct3y": 0.9406,
-        "chg1Extreme": 0.4794,
+        "z1y": 1.3615,
+        "pct1y": 0.9344,
+        "pct3y": 0.9344,
+        "chg1Extreme": 0.4386,
         "ma20": 97858.5,
-        "historyDays": 244,
+        "historyDays": 221,
         "oi": 15621,
         "oiChg5": 0.011723,
         "oiChg20": 1.844837,
@@ -3421,7 +3596,7 @@
         },
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:23.965Z"
+          "collectedAt": "2026-10-19T13:50:02.987Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3459,7 +3634,7 @@
         "chain": "energy",
         "chain_cn": "能源",
         "chain_tier": "下游油品",
-        "code": "FU2611.SHF",
+        "code": "FU2701.SHF",
         "requestedCode": "FU00.SHF",
         "unit": "cny_per_ton",
         "importance": "medium",
@@ -3467,35 +3642,36 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:23.934Z"
+          "collectedAt": "2026-10-19T13:50:02.988Z"
         },
         "status": "FRESH",
         "ageDays": 0,
         "lastDate": "2026-10-19",
-        "value": 5797,
-        "d1": 0.045446,
-        "d5": 0.12826,
-        "d20": 0.351597,
-        "d60": 0.705,
-        "z1y": 3.4791,
-        "pct1y": 0.9978,
-        "pct3y": 0.9978,
-        "chg1Extreme": 0.8723,
-        "ma20": 4754.25,
-        "historyDays": 232,
-        "oi": 95430,
-        "oiChg5": -0.214775,
-        "oiChg20": -0.567934,
+        "value": 4917,
+        "d1": 0.020336,
+        "d5": 0.088795,
+        "d20": 0.237604,
+        "d60": 0.498172,
+        "z1y": 3.0048,
+        "pct1y": 0.9974,
+        "pct3y": 0.9974,
+        "chg1Extreme": 0.5931,
+        "ma20": 4233.3,
+        "historyDays": 189,
+        "oi": 230998,
+        "oiChg5": 0.34079,
+        "oiChg20": 0.932552,
         "mainContract": {
           "fromCode": "FU00.SHF",
-          "toCode": "FU2611.SHF",
+          "toCode": "FU2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
           "fromCache": true
         },
         "tags": [
           "刷一年新高",
-          "位置极端"
+          "位置极端",
+          "持仓放大"
         ],
         "isNotable": true,
         "deviationLevel": "notable"
@@ -3514,7 +3690,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:23.979Z"
+          "collectedAt": "2026-10-19T13:50:02.988Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3524,12 +3700,12 @@
         "d5": 0.040576,
         "d20": 0.126878,
         "d60": 0.459832,
-        "z1y": 2.6673,
-        "pct1y": 0.9892,
-        "pct3y": 0.9892,
-        "chg1Extreme": 0.2662,
+        "z1y": 2.6056,
+        "pct1y": 0.9882,
+        "pct3y": 0.9882,
+        "chg1Extreme": 0.2441,
         "ma20": 5486.65,
-        "historyDays": 232,
+        "historyDays": 212,
         "oi": 73125,
         "oiChg5": 0.127515,
         "oiChg20": 0.231973,
@@ -3552,7 +3728,7 @@
         "chain": "energy",
         "chain_cn": "能源",
         "chain_tier": "下游油品",
-        "code": "BU2611.SHF",
+        "code": "BU2701.SHF",
         "requestedCode": "BU00.SHF",
         "unit": "cny_per_ton",
         "importance": "medium",
@@ -3560,37 +3736,35 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:24.935Z"
+          "collectedAt": "2026-10-19T13:50:02.988Z"
         },
         "status": "FRESH",
         "ageDays": 0,
         "lastDate": "2026-10-19",
-        "value": 4813,
-        "d1": -0.023534,
-        "d5": -0.058306,
-        "d20": -0.057383,
-        "d60": 0.257315,
-        "z1y": 1.5785,
-        "pct1y": 0.8891,
-        "pct3y": 0.8891,
-        "chg1Extreme": 0.7932,
-        "ma20": 5159.7,
-        "historyDays": 221,
-        "oi": 103780,
-        "oiChg5": -0.316567,
-        "oiChg20": -0.582016,
+        "value": 4397,
+        "d1": -0.010353,
+        "d5": 0.003194,
+        "d20": -0.020058,
+        "d60": 0.203339,
+        "z1y": 1.8847,
+        "pct1y": 0.9194,
+        "pct3y": 0.9194,
+        "chg1Extreme": 0.5335,
+        "ma20": 4392.1,
+        "historyDays": 180,
+        "oi": 178948,
+        "oiChg5": 0.261592,
+        "oiChg20": 1.434203,
         "mainContract": {
           "fromCode": "BU00.SHF",
-          "toCode": "BU2611.SHF",
+          "toCode": "BU2701.SHF",
           "rollRatio": 1,
           "overlapDays": 0,
           "fromCache": true
         },
-        "tags": [
-          "持仓放大"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
+        "tags": [],
+        "isNotable": false,
+        "deviationLevel": "normal"
       },
       {
         "id": "FUT_PG",
@@ -3598,7 +3772,7 @@
         "chain": "energy",
         "chain_cn": "能源",
         "chain_tier": "下游油品",
-        "code": "PG2611.DCE",
+        "code": "PG2612.DCE",
         "requestedCode": "PG00.DCE",
         "unit": "cny_per_ton",
         "importance": "medium",
@@ -3606,28 +3780,28 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:25.400Z"
+          "collectedAt": "2026-10-19T13:50:02.988Z"
         },
         "status": "FRESH",
         "ageDays": 0,
         "lastDate": "2026-10-19",
-        "value": 7377,
-        "d1": 0.005589,
-        "d5": -0.002704,
-        "d20": 0.100716,
-        "d60": 0.395309,
-        "z1y": 2.5421,
-        "pct1y": 0.9766,
-        "pct3y": 0.9766,
-        "chg1Extreme": 0.3654,
-        "ma20": 6965.15,
-        "historyDays": 235,
-        "oi": 65191,
-        "oiChg5": -0.270558,
-        "oiChg20": -0.246486,
+        "value": 7194,
+        "d1": 0.008269,
+        "d5": 0.002928,
+        "d20": 0.11847,
+        "d60": 0.391489,
+        "z1y": 2.516,
+        "pct1y": 0.9818,
+        "pct3y": 0.9818,
+        "chg1Extreme": 0.3848,
+        "ma20": 6744.35,
+        "historyDays": 192,
+        "oi": 95083,
+        "oiChg5": 0.196494,
+        "oiChg20": 1.151442,
         "mainContract": {
           "fromCode": "PG00.DCE",
-          "toCode": "PG2611.DCE",
+          "toCode": "PG2612.DCE",
           "rollRatio": 1,
           "overlapDays": 0,
           "fromCache": true
@@ -3652,7 +3826,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:25.665Z"
+          "collectedAt": "2026-10-19T13:50:02.989Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3696,7 +3870,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:26.286Z"
+          "collectedAt": "2026-10-19T13:50:02.989Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3740,7 +3914,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:26.838Z"
+          "collectedAt": "2026-10-19T13:50:02.989Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3750,12 +3924,12 @@
         "d5": -0.045646,
         "d20": -0.087642,
         "d60": 0.121478,
-        "z1y": 1.0277,
-        "pct1y": 0.8362,
-        "pct3y": 0.8362,
-        "chg1Extreme": 0.9338,
+        "z1y": 0.9408,
+        "pct1y": 0.8209,
+        "pct3y": 0.8209,
+        "chg1Extreme": 0.9276,
         "ma20": 5349.1,
-        "historyDays": 235,
+        "historyDays": 215,
         "oi": 244129,
         "oiChg5": -0.076755,
         "oiChg20": 0.797551,
@@ -3786,7 +3960,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:27.081Z"
+          "collectedAt": "2026-10-19T13:50:02.989Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3830,7 +4004,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:27.733Z"
+          "collectedAt": "2026-10-19T13:50:02.990Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3877,7 +4051,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:28.051Z"
+          "collectedAt": "2026-10-19T13:50:02.990Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3887,12 +4061,12 @@
         "d5": -0.007659,
         "d20": 0.051577,
         "d60": 0.248171,
-        "z1y": 2.0797,
-        "pct1y": 0.9681,
-        "pct3y": 0.9681,
-        "chg1Extreme": 0.4551,
+        "z1y": 2.0359,
+        "pct1y": 0.9651,
+        "pct3y": 0.9651,
+        "chg1Extreme": 0.4229,
         "ma20": 9985,
-        "historyDays": 235,
+        "historyDays": 215,
         "oi": 252577,
         "oiChg5": -0.138021,
         "oiChg20": 0.191834,
@@ -3923,7 +4097,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:28.265Z"
+          "collectedAt": "2026-10-19T13:50:02.990Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3967,7 +4141,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:28.487Z"
+          "collectedAt": "2026-10-19T13:50:02.991Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -3977,12 +4151,12 @@
         "d5": -0.048808,
         "d20": 0.025704,
         "d60": 0.135117,
-        "z1y": 1.7136,
-        "pct1y": 0.957,
-        "pct3y": 0.957,
-        "chg1Extreme": 0.4295,
+        "z1y": 1.7193,
+        "pct1y": 0.9527,
+        "pct3y": 0.9527,
+        "chg1Extreme": 0.3875,
         "ma20": 16659.75,
-        "historyDays": 221,
+        "historyDays": 201,
         "oi": 71839,
         "oiChg5": -0.158498,
         "oiChg20": 0.431569,
@@ -4011,7 +4185,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:29.610Z"
+          "collectedAt": "2026-10-19T13:50:02.991Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4021,12 +4195,12 @@
         "d5": -0.035265,
         "d20": 0.050417,
         "d60": 0.176075,
-        "z1y": 1.4267,
-        "pct1y": 0.9593,
-        "pct3y": 0.9593,
-        "chg1Extreme": 0.4886,
+        "z1y": 1.4632,
+        "pct1y": 0.9552,
+        "pct3y": 0.9552,
+        "chg1Extreme": 0.4525,
         "ma20": 15386.5,
-        "historyDays": 221,
+        "historyDays": 201,
         "oi": 79273,
         "oiChg5": 0.274076,
         "oiChg20": 4.545893,
@@ -4055,7 +4229,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:29.855Z"
+          "collectedAt": "2026-10-19T13:50:02.991Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4065,12 +4239,12 @@
         "d5": -0.017048,
         "d20": -0.049839,
         "d60": -0.042915,
-        "z1y": -1.809,
-        "pct1y": 0.0023,
-        "pct3y": 0.0023,
-        "chg1Extreme": 0.5432,
+        "z1y": -1.8609,
+        "pct1y": 0.0028,
+        "pct3y": 0.0028,
+        "chg1Extreme": 0.5559,
         "ma20": 4909.4,
-        "historyDays": 221,
+        "historyDays": 180,
         "oi": 326936,
         "oiChg5": 0.455844,
         "oiChg20": 1.628378,
@@ -4102,7 +4276,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:30.210Z"
+          "collectedAt": "2026-10-19T13:50:02.991Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4146,7 +4320,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:30.233Z"
+          "collectedAt": "2026-10-19T13:50:02.991Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4190,7 +4364,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:30.574Z"
+          "collectedAt": "2026-10-19T13:50:02.992Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4236,7 +4410,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:30.872Z"
+          "collectedAt": "2026-10-19T13:50:02.992Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4282,7 +4456,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:30.918Z"
+          "collectedAt": "2026-10-19T13:50:02.992Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4326,7 +4500,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:31.350Z"
+          "collectedAt": "2026-10-19T13:50:02.992Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4370,7 +4544,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:31.572Z"
+          "collectedAt": "2026-10-19T13:50:02.992Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4414,7 +4588,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:31.797Z"
+          "collectedAt": "2026-10-19T13:50:02.993Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4458,7 +4632,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:32.019Z"
+          "collectedAt": "2026-10-19T13:50:02.993Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4474,9 +4648,9 @@
         "chg1Extreme": 0.0614,
         "ma20": 918.272,
         "historyDays": 221,
-        "oi": 222071,
-        "oiChg5": -0.02938,
-        "oiChg20": 0.402132,
+        "oi": 222070,
+        "oiChg5": -0.029385,
+        "oiChg20": 0.402125,
         "mainContract": {
           "fromCode": "AU00.SHF",
           "toCode": "AU2612.SHF",
@@ -4502,7 +4676,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:32.238Z"
+          "collectedAt": "2026-10-19T13:50:02.993Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4512,15 +4686,15 @@
         "d5": -0.055143,
         "d20": -0.103949,
         "d60": 0.031766,
-        "z1y": -0.8185,
-        "pct1y": 0.1824,
-        "pct3y": 0.1824,
-        "chg1Extreme": 0.0473,
+        "z1y": -1.2406,
+        "pct1y": 0.0274,
+        "pct3y": 0.0274,
+        "chg1Extreme": 0.0475,
         "ma20": 15105.1,
-        "historyDays": 244,
-        "oi": 279508,
-        "oiChg5": -0.029682,
-        "oiChg20": 0.445337,
+        "historyDays": 201,
+        "oi": 279505,
+        "oiChg5": -0.029692,
+        "oiChg20": 0.445322,
         "mainContract": {
           "fromCode": "AG00.SHF",
           "toCode": "AG2612.SHF",
@@ -4546,7 +4720,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:32.594Z"
+          "collectedAt": "2026-10-19T13:50:02.993Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4556,12 +4730,12 @@
         "d5": -0.023956,
         "d20": 0.057205,
         "d60": 0.132211,
-        "z1y": 2.0226,
-        "pct1y": 0.9707,
-        "pct3y": 0.9707,
-        "chg1Extreme": 0.8665,
+        "z1y": 2.339,
+        "pct1y": 0.9637,
+        "pct3y": 0.9637,
+        "chg1Extreme": 0.8399,
         "ma20": 5234.25,
-        "historyDays": 222,
+        "historyDays": 179,
         "oi": 341807,
         "oiChg5": 0.321785,
         "oiChg20": 1.009034,
@@ -4593,7 +4767,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:32.616Z"
+          "collectedAt": "2026-10-19T13:50:02.993Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4603,12 +4777,12 @@
         "d5": -0.009528,
         "d20": -0.042544,
         "d60": -0.036203,
-        "z1y": -2.0006,
-        "pct1y": 0.0068,
-        "pct3y": 0.0068,
-        "chg1Extreme": 0.957,
+        "z1y": -1.9815,
+        "pct1y": 0.0084,
+        "pct3y": 0.0084,
+        "chg1Extreme": 0.9522,
         "ma20": 2213.9,
-        "historyDays": 222,
+        "historyDays": 179,
         "oi": 1165964,
         "oiChg5": 0.348642,
         "oiChg20": 0.984322,
@@ -4621,11 +4795,11 @@
         },
         "tags": [
           "刷一年新低",
-          "变化+位置双极端",
+          "变化显著",
           "持仓放大"
         ],
         "isNotable": true,
-        "deviationLevel": "extreme"
+        "deviationLevel": "notable"
       },
       {
         "id": "FUT_P",
@@ -4641,7 +4815,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:32.952Z"
+          "collectedAt": "2026-10-19T13:50:02.993Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4685,7 +4859,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:39.594Z"
+          "collectedAt": "2026-10-19T13:50:02.994Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4707,9 +4881,9 @@
         "mainContract": {
           "fromCode": "LG00.DCE",
           "toCode": "LG2701.DCE",
-          "rollRatio": 1.0024615384615385,
-          "overlapDays": 172,
-          "fromCache": false
+          "rollRatio": 1,
+          "overlapDays": 0,
+          "fromCache": true
         },
         "tags": [],
         "isNotable": false,
@@ -4729,7 +4903,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:33.856Z"
+          "collectedAt": "2026-10-19T13:50:02.994Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4773,7 +4947,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:33.857Z"
+          "collectedAt": "2026-10-19T13:50:02.994Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4817,7 +4991,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:33.862Z"
+          "collectedAt": "2026-10-19T13:50:02.994Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4861,7 +5035,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:35.277Z"
+          "collectedAt": "2026-10-19T13:50:02.994Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4905,7 +5079,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:34.719Z"
+          "collectedAt": "2026-10-19T13:50:02.995Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4951,7 +5125,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:35.281Z"
+          "collectedAt": "2026-10-19T13:50:02.995Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -4961,12 +5135,12 @@
         "d5": -0.07507,
         "d20": -0.129908,
         "d60": -0.176969,
-        "z1y": -4.2715,
-        "pct1y": 0.0023,
-        "pct3y": 0.0023,
-        "chg1Extreme": 0.7266,
+        "z1y": -4.1544,
+        "pct1y": 0.0026,
+        "pct3y": 0.0026,
+        "chg1Extreme": 0.7199,
         "ma20": 3657.85,
-        "historyDays": 215,
+        "historyDays": 192,
         "oi": 285014,
         "oiChg5": -0.035143,
         "oiChg20": 0.713113,
@@ -4998,7 +5172,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:35.918Z"
+          "collectedAt": "2026-10-19T13:50:02.995Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5008,12 +5182,12 @@
         "d5": -0.061553,
         "d20": -0.162018,
         "d60": -0.223489,
-        "z1y": -3.5287,
-        "pct1y": 0.0023,
-        "pct3y": 0.0023,
-        "chg1Extreme": 0.9836,
+        "z1y": -3.7361,
+        "pct1y": 0.0029,
+        "pct3y": 0.0029,
+        "chg1Extreme": 0.9854,
         "ma20": 11296.25,
-        "historyDays": 215,
+        "historyDays": 172,
         "oi": 191578,
         "oiChg5": 0.186073,
         "oiChg20": 0.498998,
@@ -5045,7 +5219,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:36.414Z"
+          "collectedAt": "2026-10-19T13:50:02.995Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5089,7 +5263,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:36.409Z"
+          "collectedAt": "2026-10-19T13:50:02.997Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5133,7 +5307,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:36.916Z"
+          "collectedAt": "2026-10-19T13:50:02.997Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5180,7 +5354,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:37.531Z"
+          "collectedAt": "2026-10-19T13:50:02.998Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5227,7 +5401,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:37.539Z"
+          "collectedAt": "2026-10-19T13:50:02.998Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5273,7 +5447,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:38.171Z"
+          "collectedAt": "2026-10-19T13:50:02.998Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5319,7 +5493,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:38.692Z"
+          "collectedAt": "2026-10-19T13:50:02.998Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5363,7 +5537,7 @@
         "instrumentIdentity": null,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-10-19T12:39:38.832Z"
+          "collectedAt": "2026-10-19T13:50:02.999Z"
         },
         "status": "FRESH",
         "ageDays": 0,
@@ -5373,12 +5547,12 @@
         "d5": -0.004127,
         "d20": 0.137761,
         "d60": 0.541667,
-        "z1y": 2.3913,
-        "pct1y": 0.9682,
-        "pct3y": 0.9682,
-        "chg1Extreme": 0.0106,
+        "z1y": 1.9743,
+        "pct1y": 0.9235,
+        "pct3y": 0.9235,
+        "chg1Extreme": 0.0258,
         "ma20": 2693.55,
-        "historyDays": 236,
+        "historyDays": 98,
         "oi": 19311,
         "oiChg5": -0.126041,
         "oiChg20": 0.689206,
@@ -5389,11 +5563,9 @@
           "overlapDays": 0,
           "fromCache": true
         },
-        "tags": [
-          "位置极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "notable"
+        "tags": [],
+        "isNotable": false,
+        "deviationLevel": "normal"
       }
     ],
     "heatmap": {
@@ -5419,7 +5591,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:19.277Z"
+                "collectedAt": "2026-10-19T13:50:02.983Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5466,7 +5638,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:19.287Z"
+                "collectedAt": "2026-10-19T13:50:02.984Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5513,7 +5685,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:19.630Z"
+                "collectedAt": "2026-10-19T13:50:02.984Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5597,7 +5769,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:19.880Z"
+                "collectedAt": "2026-10-19T13:50:02.984Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5644,7 +5816,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:20.184Z"
+                "collectedAt": "2026-10-19T13:50:02.985Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5691,7 +5863,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:20.406Z"
+                "collectedAt": "2026-10-19T13:50:02.985Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5736,7 +5908,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:20.641Z"
+                "collectedAt": "2026-10-19T13:50:02.985Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5781,7 +5953,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:20.994Z"
+                "collectedAt": "2026-10-19T13:50:02.985Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5791,12 +5963,12 @@
               "d5": -0.008576,
               "d20": -0.024936,
               "d60": -0.084997,
-              "z1y": -1.107,
-              "pct1y": 0.207,
-              "pct3y": 0.207,
-              "chg1Extreme": 0.6358,
+              "z1y": -1.8777,
+              "pct1y": 0.0373,
+              "pct3y": 0.0373,
+              "chg1Extreme": 0.5775,
               "ma20": 13561,
-              "historyDays": 244,
+              "historyDays": 201,
               "oi": 132632,
               "oiChg5": 0.824951,
               "oiChg20": 10.863327,
@@ -5819,8 +5991,8 @@
         {
           "id": "nonferrous",
           "name_cn": "有色金属",
-          "d5": -0.00844,
-          "d20": -0.03006,
+          "d5": -0.01174,
+          "d20": -0.03664,
           "breadth": 0,
           "cells": [
             {
@@ -5837,7 +6009,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:21.063Z"
+                "collectedAt": "2026-10-19T13:50:02.986Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5882,7 +6054,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:21.384Z"
+                "collectedAt": "2026-10-19T13:50:02.986Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -5892,12 +6064,12 @@
               "d5": -0.007774,
               "d20": 0.01068,
               "d60": 0.063663,
-              "z1y": 1.2298,
-              "pct1y": 0.9488,
-              "pct3y": 0.9488,
-              "chg1Extreme": 0.0514,
+              "z1y": 1.2611,
+              "pct1y": 0.9434,
+              "pct3y": 0.9434,
+              "chg1Extreme": 0.0523,
               "ma20": 109493.5,
-              "historyDays": 244,
+              "historyDays": 221,
               "oi": 167976,
               "oiChg5": -0.139242,
               "oiChg20": 0.277617,
@@ -5919,7 +6091,7 @@
               "chain": "nonferrous",
               "chain_cn": "有色金属",
               "chain_tier": "基本金属",
-              "code": "AL2611.SHF",
+              "code": "AL2612.SHF",
               "requestedCode": "AL00.SHF",
               "unit": "cny_per_ton",
               "importance": "high",
@@ -5927,28 +6099,28 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:21.639Z"
+                "collectedAt": "2026-10-19T13:50:02.986Z"
               },
               "status": "FRESH",
               "ageDays": 0,
               "lastDate": "2026-10-19",
-              "value": 23340,
-              "d1": 0.003008,
-              "d5": -0.005327,
-              "d20": -0.037129,
-              "d60": 0.005818,
-              "z1y": -0.2595,
-              "pct1y": 0.3402,
-              "pct3y": 0.3402,
-              "chg1Extreme": 0.3395,
-              "ma20": 23808.75,
-              "historyDays": 244,
-              "oi": 187884,
-              "oiChg5": -0.252379,
-              "oiChg20": -0.096047,
+              "value": 22970,
+              "d1": 0.002182,
+              "d5": -0.014375,
+              "d20": -0.051806,
+              "d60": -0.009487,
+              "z1y": -1.4269,
+              "pct1y": 0.092,
+              "pct3y": 0.092,
+              "chg1Extreme": 0.2475,
+              "ma20": 23705.5,
+              "historyDays": 201,
+              "oi": 221389,
+              "oiChg5": 0.23215,
+              "oiChg20": 2.06854,
               "mainContract": {
                 "fromCode": "AL00.SHF",
-                "toCode": "AL2611.SHF",
+                "toCode": "AL2612.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
                 "fromCache": true
@@ -5964,7 +6136,7 @@
               "chain": "nonferrous",
               "chain_cn": "有色金属",
               "chain_tier": "基本金属",
-              "code": "ZN2611.SHF",
+              "code": "ZN2612.SHF",
               "requestedCode": "ZN00.SHF",
               "unit": "cny_per_ton",
               "importance": "medium",
@@ -5972,37 +6144,35 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:21.899Z"
+                "collectedAt": "2026-10-19T13:50:02.986Z"
               },
               "status": "FRESH",
               "ageDays": 0,
               "lastDate": "2026-10-19",
-              "value": 25500,
-              "d1": 0.001178,
-              "d5": -0.02355,
-              "d20": -0.050102,
-              "d60": 0.040604,
-              "z1y": 0.8487,
-              "pct1y": 0.8135,
-              "pct3y": 0.8135,
-              "chg1Extreme": 0.1502,
-              "ma20": 26182.25,
-              "historyDays": 244,
-              "oi": 69878,
-              "oiChg5": -0.321527,
-              "oiChg20": -0.438158,
+              "value": 25495,
+              "d1": 0.002162,
+              "d5": -0.024115,
+              "d20": -0.050289,
+              "d60": 0.03934,
+              "z1y": 0.6545,
+              "pct1y": 0.7711,
+              "pct3y": 0.7711,
+              "chg1Extreme": 0.1775,
+              "ma20": 26197,
+              "historyDays": 201,
+              "oi": 106655,
+              "oiChg5": 0.188224,
+              "oiChg20": 1.562713,
               "mainContract": {
                 "fromCode": "ZN00.SHF",
-                "toCode": "ZN2611.SHF",
+                "toCode": "ZN2612.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
                 "fromCache": true
               },
-              "tags": [
-                "持仓放大"
-              ],
-              "isNotable": true,
-              "deviationLevel": "notable",
+              "tags": [],
+              "isNotable": false,
+              "deviationLevel": "normal",
               "tier": "基本金属"
             },
             {
@@ -6019,7 +6189,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:29.927Z"
+                "collectedAt": "2026-10-19T13:50:02.986Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6029,21 +6199,21 @@
               "d5": -0.003105,
               "d20": -0.008338,
               "d60": 0.005637,
-              "z1y": -1.1995,
-              "pct1y": 0.1578,
-              "pct3y": 0.1578,
-              "chg1Extreme": 0.2407,
+              "z1y": -1.0203,
+              "pct1y": 0.1915,
+              "pct3y": 0.1915,
+              "chg1Extreme": 0.2325,
               "ma20": 16156,
-              "historyDays": 244,
+              "historyDays": 201,
               "oi": 66778,
               "oiChg5": 0.202146,
               "oiChg20": 6.397585,
               "mainContract": {
                 "fromCode": "PB00.SHF",
                 "toCode": "PB2612.SHF",
-                "rollRatio": 1.0014845605700713,
-                "overlapDays": 201,
-                "fromCache": false
+                "rollRatio": 1,
+                "overlapDays": 0,
+                "fromCache": true
               },
               "tags": [],
               "isNotable": false,
@@ -6056,7 +6226,7 @@
               "chain": "nonferrous",
               "chain_cn": "有色金属",
               "chain_tier": "基本金属",
-              "code": "NI2611.SHF",
+              "code": "NI2612.SHF",
               "requestedCode": "NI00.SHF",
               "unit": "cny_per_ton",
               "importance": "medium",
@@ -6064,35 +6234,37 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:22.792Z"
+                "collectedAt": "2026-10-19T13:50:02.987Z"
               },
               "status": "FRESH",
               "ageDays": 0,
               "lastDate": "2026-10-19",
-              "value": 117150,
-              "d1": 0.018341,
-              "d5": -0.005602,
-              "d20": -0.07252,
-              "d60": -0.094388,
-              "z1y": -1.6156,
-              "pct1y": 0.0266,
-              "pct3y": 0.0266,
-              "chg1Extreme": 0.821,
-              "ma20": 121426.5,
-              "historyDays": 244,
-              "oi": 107633,
-              "oiChg5": -0.247643,
-              "oiChg20": -0.056587,
+              "value": 117330,
+              "d1": 0.018136,
+              "d5": -0.005762,
+              "d20": -0.073662,
+              "d60": -0.095165,
+              "z1y": -2.0698,
+              "pct1y": 0.0274,
+              "pct3y": 0.0274,
+              "chg1Extreme": 0.7825,
+              "ma20": 121660.5,
+              "historyDays": 201,
+              "oi": 154223,
+              "oiChg5": 0.105018,
+              "oiChg20": 1.662644,
               "mainContract": {
                 "fromCode": "NI00.SHF",
-                "toCode": "NI2611.SHF",
+                "toCode": "NI2612.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
                 "fromCache": true
               },
-              "tags": [],
-              "isNotable": false,
-              "deviationLevel": "normal",
+              "tags": [
+                "位置极端"
+              ],
+              "isNotable": true,
+              "deviationLevel": "notable",
               "tier": "基本金属"
             },
             {
@@ -6109,7 +6281,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:22.802Z"
+                "collectedAt": "2026-10-19T13:50:02.987Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6119,12 +6291,12 @@
               "d5": -0.042413,
               "d20": -0.074326,
               "d60": -0.057239,
-              "z1y": -0.0089,
-              "pct1y": 0.3627,
-              "pct3y": 0.3627,
-              "chg1Extreme": 0.3519,
+              "z1y": -0.2731,
+              "pct1y": 0.2964,
+              "pct3y": 0.2964,
+              "chg1Extreme": 0.3114,
               "ma20": 398141.5,
-              "historyDays": 244,
+              "historyDays": 221,
               "oi": 30935,
               "oiChg5": -0.094515,
               "oiChg20": 0.567123,
@@ -6154,7 +6326,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:22.815Z"
+                "collectedAt": "2026-10-19T13:50:02.987Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6164,12 +6336,12 @@
               "d5": -0.009098,
               "d20": 0.012185,
               "d60": 0.070789,
-              "z1y": 1.3256,
-              "pct1y": 0.9406,
-              "pct3y": 0.9406,
-              "chg1Extreme": 0.4794,
+              "z1y": 1.3615,
+              "pct1y": 0.9344,
+              "pct3y": 0.9344,
+              "chg1Extreme": 0.4386,
               "ma20": 97858.5,
-              "historyDays": 244,
+              "historyDays": 221,
               "oi": 15621,
               "oiChg5": 0.011723,
               "oiChg20": 1.844837,
@@ -6190,9 +6362,9 @@
         {
           "id": "energy",
           "name_cn": "能源",
-          "d5": -0.0027,
-          "d20": 0.10072,
-          "breadth": 0.4,
+          "d5": 0.00319,
+          "d20": 0.11847,
+          "breadth": 0.8,
           "cells": [
             {
               "id": "FUT_SC",
@@ -6213,7 +6385,7 @@
               },
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:23.965Z"
+                "collectedAt": "2026-10-19T13:50:02.987Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6252,7 +6424,7 @@
               "chain": "energy",
               "chain_cn": "能源",
               "chain_tier": "下游油品",
-              "code": "FU2611.SHF",
+              "code": "FU2701.SHF",
               "requestedCode": "FU00.SHF",
               "unit": "cny_per_ton",
               "importance": "medium",
@@ -6260,35 +6432,36 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:23.934Z"
+                "collectedAt": "2026-10-19T13:50:02.988Z"
               },
               "status": "FRESH",
               "ageDays": 0,
               "lastDate": "2026-10-19",
-              "value": 5797,
-              "d1": 0.045446,
-              "d5": 0.12826,
-              "d20": 0.351597,
-              "d60": 0.705,
-              "z1y": 3.4791,
-              "pct1y": 0.9978,
-              "pct3y": 0.9978,
-              "chg1Extreme": 0.8723,
-              "ma20": 4754.25,
-              "historyDays": 232,
-              "oi": 95430,
-              "oiChg5": -0.214775,
-              "oiChg20": -0.567934,
+              "value": 4917,
+              "d1": 0.020336,
+              "d5": 0.088795,
+              "d20": 0.237604,
+              "d60": 0.498172,
+              "z1y": 3.0048,
+              "pct1y": 0.9974,
+              "pct3y": 0.9974,
+              "chg1Extreme": 0.5931,
+              "ma20": 4233.3,
+              "historyDays": 189,
+              "oi": 230998,
+              "oiChg5": 0.34079,
+              "oiChg20": 0.932552,
               "mainContract": {
                 "fromCode": "FU00.SHF",
-                "toCode": "FU2611.SHF",
+                "toCode": "FU2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
                 "fromCache": true
               },
               "tags": [
                 "刷一年新高",
-                "位置极端"
+                "位置极端",
+                "持仓放大"
               ],
               "isNotable": true,
               "deviationLevel": "notable",
@@ -6308,7 +6481,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:23.979Z"
+                "collectedAt": "2026-10-19T13:50:02.988Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6318,12 +6491,12 @@
               "d5": 0.040576,
               "d20": 0.126878,
               "d60": 0.459832,
-              "z1y": 2.6673,
-              "pct1y": 0.9892,
-              "pct3y": 0.9892,
-              "chg1Extreme": 0.2662,
+              "z1y": 2.6056,
+              "pct1y": 0.9882,
+              "pct3y": 0.9882,
+              "chg1Extreme": 0.2441,
               "ma20": 5486.65,
-              "historyDays": 232,
+              "historyDays": 212,
               "oi": 73125,
               "oiChg5": 0.127515,
               "oiChg20": 0.231973,
@@ -6347,7 +6520,7 @@
               "chain": "energy",
               "chain_cn": "能源",
               "chain_tier": "下游油品",
-              "code": "BU2611.SHF",
+              "code": "BU2701.SHF",
               "requestedCode": "BU00.SHF",
               "unit": "cny_per_ton",
               "importance": "medium",
@@ -6355,37 +6528,35 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:24.935Z"
+                "collectedAt": "2026-10-19T13:50:02.988Z"
               },
               "status": "FRESH",
               "ageDays": 0,
               "lastDate": "2026-10-19",
-              "value": 4813,
-              "d1": -0.023534,
-              "d5": -0.058306,
-              "d20": -0.057383,
-              "d60": 0.257315,
-              "z1y": 1.5785,
-              "pct1y": 0.8891,
-              "pct3y": 0.8891,
-              "chg1Extreme": 0.7932,
-              "ma20": 5159.7,
-              "historyDays": 221,
-              "oi": 103780,
-              "oiChg5": -0.316567,
-              "oiChg20": -0.582016,
+              "value": 4397,
+              "d1": -0.010353,
+              "d5": 0.003194,
+              "d20": -0.020058,
+              "d60": 0.203339,
+              "z1y": 1.8847,
+              "pct1y": 0.9194,
+              "pct3y": 0.9194,
+              "chg1Extreme": 0.5335,
+              "ma20": 4392.1,
+              "historyDays": 180,
+              "oi": 178948,
+              "oiChg5": 0.261592,
+              "oiChg20": 1.434203,
               "mainContract": {
                 "fromCode": "BU00.SHF",
-                "toCode": "BU2611.SHF",
+                "toCode": "BU2701.SHF",
                 "rollRatio": 1,
                 "overlapDays": 0,
                 "fromCache": true
               },
-              "tags": [
-                "持仓放大"
-              ],
-              "isNotable": true,
-              "deviationLevel": "notable",
+              "tags": [],
+              "isNotable": false,
+              "deviationLevel": "normal",
               "tier": "下游油品"
             },
             {
@@ -6394,7 +6565,7 @@
               "chain": "energy",
               "chain_cn": "能源",
               "chain_tier": "下游油品",
-              "code": "PG2611.DCE",
+              "code": "PG2612.DCE",
               "requestedCode": "PG00.DCE",
               "unit": "cny_per_ton",
               "importance": "medium",
@@ -6402,28 +6573,28 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:25.400Z"
+                "collectedAt": "2026-10-19T13:50:02.988Z"
               },
               "status": "FRESH",
               "ageDays": 0,
               "lastDate": "2026-10-19",
-              "value": 7377,
-              "d1": 0.005589,
-              "d5": -0.002704,
-              "d20": 0.100716,
-              "d60": 0.395309,
-              "z1y": 2.5421,
-              "pct1y": 0.9766,
-              "pct3y": 0.9766,
-              "chg1Extreme": 0.3654,
-              "ma20": 6965.15,
-              "historyDays": 235,
-              "oi": 65191,
-              "oiChg5": -0.270558,
-              "oiChg20": -0.246486,
+              "value": 7194,
+              "d1": 0.008269,
+              "d5": 0.002928,
+              "d20": 0.11847,
+              "d60": 0.391489,
+              "z1y": 2.516,
+              "pct1y": 0.9818,
+              "pct3y": 0.9818,
+              "chg1Extreme": 0.3848,
+              "ma20": 6744.35,
+              "historyDays": 192,
+              "oi": 95083,
+              "oiChg5": 0.196494,
+              "oiChg20": 1.151442,
               "mainContract": {
                 "fromCode": "PG00.DCE",
-                "toCode": "PG2611.DCE",
+                "toCode": "PG2612.DCE",
                 "rollRatio": 1,
                 "overlapDays": 0,
                 "fromCache": true
@@ -6458,7 +6629,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:25.665Z"
+                "collectedAt": "2026-10-19T13:50:02.989Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6503,7 +6674,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:26.286Z"
+                "collectedAt": "2026-10-19T13:50:02.989Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6548,7 +6719,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:26.838Z"
+                "collectedAt": "2026-10-19T13:50:02.989Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6558,12 +6729,12 @@
               "d5": -0.045646,
               "d20": -0.087642,
               "d60": 0.121478,
-              "z1y": 1.0277,
-              "pct1y": 0.8362,
-              "pct3y": 0.8362,
-              "chg1Extreme": 0.9338,
+              "z1y": 0.9408,
+              "pct1y": 0.8209,
+              "pct3y": 0.8209,
+              "chg1Extreme": 0.9276,
               "ma20": 5349.1,
-              "historyDays": 235,
+              "historyDays": 215,
               "oi": 244129,
               "oiChg5": -0.076755,
               "oiChg20": 0.797551,
@@ -6595,7 +6766,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:27.081Z"
+                "collectedAt": "2026-10-19T13:50:02.989Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6640,7 +6811,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:27.733Z"
+                "collectedAt": "2026-10-19T13:50:02.990Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6688,7 +6859,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:28.051Z"
+                "collectedAt": "2026-10-19T13:50:02.990Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6698,12 +6869,12 @@
               "d5": -0.007659,
               "d20": 0.051577,
               "d60": 0.248171,
-              "z1y": 2.0797,
-              "pct1y": 0.9681,
-              "pct3y": 0.9681,
-              "chg1Extreme": 0.4551,
+              "z1y": 2.0359,
+              "pct1y": 0.9651,
+              "pct3y": 0.9651,
+              "chg1Extreme": 0.4229,
               "ma20": 9985,
-              "historyDays": 235,
+              "historyDays": 215,
               "oi": 252577,
               "oiChg5": -0.138021,
               "oiChg20": 0.191834,
@@ -6735,7 +6906,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:28.265Z"
+                "collectedAt": "2026-10-19T13:50:02.990Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6780,7 +6951,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:28.487Z"
+                "collectedAt": "2026-10-19T13:50:02.991Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6790,12 +6961,12 @@
               "d5": -0.048808,
               "d20": 0.025704,
               "d60": 0.135117,
-              "z1y": 1.7136,
-              "pct1y": 0.957,
-              "pct3y": 0.957,
-              "chg1Extreme": 0.4295,
+              "z1y": 1.7193,
+              "pct1y": 0.9527,
+              "pct3y": 0.9527,
+              "chg1Extreme": 0.3875,
               "ma20": 16659.75,
-              "historyDays": 221,
+              "historyDays": 201,
               "oi": 71839,
               "oiChg5": -0.158498,
               "oiChg20": 0.431569,
@@ -6825,7 +6996,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:29.610Z"
+                "collectedAt": "2026-10-19T13:50:02.991Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6835,12 +7006,12 @@
               "d5": -0.035265,
               "d20": 0.050417,
               "d60": 0.176075,
-              "z1y": 1.4267,
-              "pct1y": 0.9593,
-              "pct3y": 0.9593,
-              "chg1Extreme": 0.4886,
+              "z1y": 1.4632,
+              "pct1y": 0.9552,
+              "pct3y": 0.9552,
+              "chg1Extreme": 0.4525,
               "ma20": 15386.5,
-              "historyDays": 221,
+              "historyDays": 201,
               "oi": 79273,
               "oiChg5": 0.274076,
               "oiChg20": 4.545893,
@@ -6870,7 +7041,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:29.855Z"
+                "collectedAt": "2026-10-19T13:50:02.991Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6880,12 +7051,12 @@
               "d5": -0.017048,
               "d20": -0.049839,
               "d60": -0.042915,
-              "z1y": -1.809,
-              "pct1y": 0.0023,
-              "pct3y": 0.0023,
-              "chg1Extreme": 0.5432,
+              "z1y": -1.8609,
+              "pct1y": 0.0028,
+              "pct3y": 0.0028,
+              "chg1Extreme": 0.5559,
               "ma20": 4909.4,
-              "historyDays": 221,
+              "historyDays": 180,
               "oi": 326936,
               "oiChg5": 0.455844,
               "oiChg20": 1.628378,
@@ -6918,7 +7089,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:30.210Z"
+                "collectedAt": "2026-10-19T13:50:02.991Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -6963,7 +7134,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:30.233Z"
+                "collectedAt": "2026-10-19T13:50:02.991Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7008,7 +7179,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:30.574Z"
+                "collectedAt": "2026-10-19T13:50:02.992Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7055,7 +7226,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:30.872Z"
+                "collectedAt": "2026-10-19T13:50:02.992Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7102,7 +7273,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:30.918Z"
+                "collectedAt": "2026-10-19T13:50:02.992Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7147,7 +7318,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:31.350Z"
+                "collectedAt": "2026-10-19T13:50:02.992Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7192,7 +7363,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:31.572Z"
+                "collectedAt": "2026-10-19T13:50:02.992Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7237,7 +7408,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:31.797Z"
+                "collectedAt": "2026-10-19T13:50:02.993Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7291,7 +7462,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:32.019Z"
+                "collectedAt": "2026-10-19T13:50:02.993Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7307,9 +7478,9 @@
               "chg1Extreme": 0.0614,
               "ma20": 918.272,
               "historyDays": 221,
-              "oi": 222071,
-              "oiChg5": -0.02938,
-              "oiChg20": 0.402132,
+              "oi": 222070,
+              "oiChg5": -0.029385,
+              "oiChg20": 0.402125,
               "mainContract": {
                 "fromCode": "AU00.SHF",
                 "toCode": "AU2612.SHF",
@@ -7336,7 +7507,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:32.238Z"
+                "collectedAt": "2026-10-19T13:50:02.993Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7346,15 +7517,15 @@
               "d5": -0.055143,
               "d20": -0.103949,
               "d60": 0.031766,
-              "z1y": -0.8185,
-              "pct1y": 0.1824,
-              "pct3y": 0.1824,
-              "chg1Extreme": 0.0473,
+              "z1y": -1.2406,
+              "pct1y": 0.0274,
+              "pct3y": 0.0274,
+              "chg1Extreme": 0.0475,
               "ma20": 15105.1,
-              "historyDays": 244,
-              "oi": 279508,
-              "oiChg5": -0.029682,
-              "oiChg20": 0.445337,
+              "historyDays": 201,
+              "oi": 279505,
+              "oiChg5": -0.029692,
+              "oiChg20": 0.445322,
               "mainContract": {
                 "fromCode": "AG00.SHF",
                 "toCode": "AG2612.SHF",
@@ -7390,7 +7561,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:32.594Z"
+                "collectedAt": "2026-10-19T13:50:02.993Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7400,12 +7571,12 @@
               "d5": -0.023956,
               "d20": 0.057205,
               "d60": 0.132211,
-              "z1y": 2.0226,
-              "pct1y": 0.9707,
-              "pct3y": 0.9707,
-              "chg1Extreme": 0.8665,
+              "z1y": 2.339,
+              "pct1y": 0.9637,
+              "pct3y": 0.9637,
+              "chg1Extreme": 0.8399,
               "ma20": 5234.25,
-              "historyDays": 222,
+              "historyDays": 179,
               "oi": 341807,
               "oiChg5": 0.321785,
               "oiChg20": 1.009034,
@@ -7438,7 +7609,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:32.616Z"
+                "collectedAt": "2026-10-19T13:50:02.993Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7448,12 +7619,12 @@
               "d5": -0.009528,
               "d20": -0.042544,
               "d60": -0.036203,
-              "z1y": -2.0006,
-              "pct1y": 0.0068,
-              "pct3y": 0.0068,
-              "chg1Extreme": 0.957,
+              "z1y": -1.9815,
+              "pct1y": 0.0084,
+              "pct3y": 0.0084,
+              "chg1Extreme": 0.9522,
               "ma20": 2213.9,
-              "historyDays": 222,
+              "historyDays": 179,
               "oi": 1165964,
               "oiChg5": 0.348642,
               "oiChg20": 0.984322,
@@ -7466,11 +7637,11 @@
               },
               "tags": [
                 "刷一年新低",
-                "变化+位置双极端",
+                "变化显著",
                 "持仓放大"
               ],
               "isNotable": true,
-              "deviationLevel": "extreme",
+              "deviationLevel": "notable",
               "tier": "上游原料"
             },
             {
@@ -7487,7 +7658,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:32.952Z"
+                "collectedAt": "2026-10-19T13:50:02.993Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7532,7 +7703,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:39.594Z"
+                "collectedAt": "2026-10-19T13:50:02.994Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7554,9 +7725,9 @@
               "mainContract": {
                 "fromCode": "LG00.DCE",
                 "toCode": "LG2701.DCE",
-                "rollRatio": 1.0024615384615385,
-                "overlapDays": 172,
-                "fromCache": false
+                "rollRatio": 1,
+                "overlapDays": 0,
+                "fromCache": true
               },
               "tags": [],
               "isNotable": false,
@@ -7577,7 +7748,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:33.856Z"
+                "collectedAt": "2026-10-19T13:50:02.994Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7622,7 +7793,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:33.857Z"
+                "collectedAt": "2026-10-19T13:50:02.994Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7667,7 +7838,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:33.862Z"
+                "collectedAt": "2026-10-19T13:50:02.994Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7712,7 +7883,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:35.277Z"
+                "collectedAt": "2026-10-19T13:50:02.994Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7757,7 +7928,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:34.719Z"
+                "collectedAt": "2026-10-19T13:50:02.995Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7804,7 +7975,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:35.281Z"
+                "collectedAt": "2026-10-19T13:50:02.995Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7814,12 +7985,12 @@
               "d5": -0.07507,
               "d20": -0.129908,
               "d60": -0.176969,
-              "z1y": -4.2715,
-              "pct1y": 0.0023,
-              "pct3y": 0.0023,
-              "chg1Extreme": 0.7266,
+              "z1y": -4.1544,
+              "pct1y": 0.0026,
+              "pct3y": 0.0026,
+              "chg1Extreme": 0.7199,
               "ma20": 3657.85,
-              "historyDays": 215,
+              "historyDays": 192,
               "oi": 285014,
               "oiChg5": -0.035143,
               "oiChg20": 0.713113,
@@ -7852,7 +8023,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:35.918Z"
+                "collectedAt": "2026-10-19T13:50:02.995Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7862,12 +8033,12 @@
               "d5": -0.061553,
               "d20": -0.162018,
               "d60": -0.223489,
-              "z1y": -3.5287,
-              "pct1y": 0.0023,
-              "pct3y": 0.0023,
-              "chg1Extreme": 0.9836,
+              "z1y": -3.7361,
+              "pct1y": 0.0029,
+              "pct3y": 0.0029,
+              "chg1Extreme": 0.9854,
               "ma20": 11296.25,
-              "historyDays": 215,
+              "historyDays": 172,
               "oi": 191578,
               "oiChg5": 0.186073,
               "oiChg20": 0.498998,
@@ -7900,7 +8071,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:36.414Z"
+                "collectedAt": "2026-10-19T13:50:02.995Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7945,7 +8116,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:36.409Z"
+                "collectedAt": "2026-10-19T13:50:02.997Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -7990,7 +8161,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:36.916Z"
+                "collectedAt": "2026-10-19T13:50:02.997Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -8038,7 +8209,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:37.531Z"
+                "collectedAt": "2026-10-19T13:50:02.998Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -8095,7 +8266,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:37.539Z"
+                "collectedAt": "2026-10-19T13:50:02.998Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -8142,7 +8313,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:38.171Z"
+                "collectedAt": "2026-10-19T13:50:02.998Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -8189,7 +8360,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:38.692Z"
+                "collectedAt": "2026-10-19T13:50:02.998Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -8234,7 +8405,7 @@
               "instrumentIdentity": null,
               "dataProvenance": {
                 "provider": "iFinD",
-                "collectedAt": "2026-10-19T12:39:38.832Z"
+                "collectedAt": "2026-10-19T13:50:02.999Z"
               },
               "status": "FRESH",
               "ageDays": 0,
@@ -8244,12 +8415,12 @@
               "d5": -0.004127,
               "d20": 0.137761,
               "d60": 0.541667,
-              "z1y": 2.3913,
-              "pct1y": 0.9682,
-              "pct3y": 0.9682,
-              "chg1Extreme": 0.0106,
+              "z1y": 1.9743,
+              "pct1y": 0.9235,
+              "pct3y": 0.9235,
+              "chg1Extreme": 0.0258,
               "ma20": 2693.55,
-              "historyDays": 236,
+              "historyDays": 98,
               "oi": 19311,
               "oiChg5": -0.126041,
               "oiChg20": 0.689206,
@@ -8260,11 +8431,9 @@
                 "overlapDays": 0,
                 "fromCache": true
               },
-              "tags": [
-                "位置极端"
-              ],
-              "isNotable": true,
-              "deviationLevel": "notable",
+              "tags": [],
+              "isNotable": false,
+              "deviationLevel": "normal",
               "tier": "航运"
             }
           ]
@@ -8280,17 +8449,18 @@
           "chain": "energy",
           "chain_cn": "能源",
           "chain_tier": "下游油品",
-          "d1": 0.045446,
-          "d5": 0.12826,
-          "d20": 0.351597,
-          "z1y": 3.4791,
-          "pct1y": 0.9978,
-          "value": 5797,
+          "d1": 0.020336,
+          "d5": 0.088795,
+          "d20": 0.237604,
+          "z1y": 3.0048,
+          "pct1y": 0.9974,
+          "value": 4917,
           "unit": "cny_per_ton",
-          "oiChg5": -0.214775,
+          "oiChg5": 0.34079,
           "tags": [
             "刷一年新高",
-            "位置极端"
+            "位置极端",
+            "持仓放大"
           ]
         },
         {
@@ -8302,8 +8472,8 @@
           "d1": 0.005943,
           "d5": 0.040576,
           "d20": 0.126878,
-          "z1y": 2.6673,
-          "pct1y": 0.9892,
+          "z1y": 2.6056,
+          "pct1y": 0.9882,
           "value": 5924,
           "unit": "cny_per_ton",
           "oiChg5": 0.127515,
@@ -8327,6 +8497,40 @@
           "oiChg5": 0.128253,
           "tags": [
             "变化显著"
+          ]
+        },
+        {
+          "id": "FUT_BU",
+          "name_cn": "沥青",
+          "chain": "energy",
+          "chain_cn": "能源",
+          "chain_tier": "下游油品",
+          "d1": -0.010353,
+          "d5": 0.003194,
+          "d20": -0.020058,
+          "z1y": 1.8847,
+          "pct1y": 0.9194,
+          "value": 4397,
+          "unit": "cny_per_ton",
+          "oiChg5": 0.261592,
+          "tags": []
+        },
+        {
+          "id": "FUT_PG",
+          "name_cn": "液化石油气",
+          "chain": "energy",
+          "chain_cn": "能源",
+          "chain_tier": "下游油品",
+          "d1": 0.008269,
+          "d5": 0.002928,
+          "d20": 0.11847,
+          "z1y": 2.516,
+          "pct1y": 0.9818,
+          "value": 7194,
+          "unit": "cny_per_ton",
+          "oiChg5": 0.196494,
+          "tags": [
+            "位置极端"
           ]
         },
         {
@@ -8383,24 +8587,6 @@
           ]
         },
         {
-          "id": "FUT_PG",
-          "name_cn": "液化石油气",
-          "chain": "energy",
-          "chain_cn": "能源",
-          "chain_tier": "下游油品",
-          "d1": 0.005589,
-          "d5": -0.002704,
-          "d20": 0.100716,
-          "z1y": 2.5421,
-          "pct1y": 0.9766,
-          "value": 7377,
-          "unit": "cny_per_ton",
-          "oiChg5": -0.270558,
-          "tags": [
-            "位置极端"
-          ]
-        },
-        {
           "id": "FUT_PB",
           "name_cn": "沪铅",
           "chain": "nonferrous",
@@ -8409,8 +8595,8 @@
           "d1": -0.001244,
           "d5": -0.003105,
           "d20": -0.008338,
-          "z1y": -1.1995,
-          "pct1y": 0.1578,
+          "z1y": -1.0203,
+          "pct1y": 0.1915,
           "value": 16055,
           "unit": "cny_per_ton",
           "oiChg5": 0.202146,
@@ -8429,7 +8615,7 @@
           "pct1y": 0.138,
           "value": 902.42,
           "unit": "cny_per_gram",
-          "oiChg5": -0.02938,
+          "oiChg5": -0.029385,
           "tags": []
         },
         {
@@ -8463,24 +8649,6 @@
           "unit": "cny_per_ton",
           "oiChg5": 0.057553,
           "tags": []
-        },
-        {
-          "id": "FUT_EC",
-          "name_cn": "集运欧线",
-          "chain": "newenergy",
-          "chain_cn": "新能源·航运",
-          "chain_tier": "航运",
-          "d1": 0.00018,
-          "d5": -0.004127,
-          "d20": 0.137761,
-          "z1y": 2.3913,
-          "pct1y": 0.9682,
-          "value": 2775,
-          "unit": "point",
-          "oiChg5": -0.126041,
-          "tags": [
-            "位置极端"
-          ]
         }
       ],
       "down": [
@@ -8530,8 +8698,8 @@
           "d1": -0.009004,
           "d5": -0.07507,
           "d20": -0.129908,
-          "z1y": -4.2715,
-          "pct1y": 0.0023,
+          "z1y": -4.1544,
+          "pct1y": 0.0026,
           "value": 3302,
           "unit": "cny_per_500kg",
           "oiChg5": -0.035143,
@@ -8549,32 +8717,14 @@
           "d1": -0.026215,
           "d5": -0.061553,
           "d20": -0.162018,
-          "z1y": -3.5287,
-          "pct1y": 0.0023,
+          "z1y": -3.7361,
+          "pct1y": 0.0029,
           "value": 10215,
           "unit": "cny_per_ton",
           "oiChg5": 0.186073,
           "tags": [
             "刷一年新低",
             "变化+位置双极端"
-          ]
-        },
-        {
-          "id": "FUT_BU",
-          "name_cn": "沥青",
-          "chain": "energy",
-          "chain_cn": "能源",
-          "chain_tier": "下游油品",
-          "d1": -0.023534,
-          "d5": -0.058306,
-          "d20": -0.057383,
-          "z1y": 1.5785,
-          "pct1y": 0.8891,
-          "value": 4813,
-          "unit": "cny_per_ton",
-          "oiChg5": -0.316567,
-          "tags": [
-            "持仓放大"
           ]
         },
         {
@@ -8604,11 +8754,11 @@
           "d1": -0.002138,
           "d5": -0.055143,
           "d20": -0.103949,
-          "z1y": -0.8185,
-          "pct1y": 0.1824,
+          "z1y": -1.2406,
+          "pct1y": 0.0274,
           "value": 13999,
           "unit": "cny_per_kg",
-          "oiChg5": -0.029682,
+          "oiChg5": -0.029692,
           "tags": []
         },
         {
@@ -8639,8 +8789,8 @@
           "d1": -0.005046,
           "d5": -0.048808,
           "d20": 0.025704,
-          "z1y": 1.7136,
-          "pct1y": 0.957,
+          "z1y": 1.7193,
+          "pct1y": 0.9527,
           "value": 16760,
           "unit": "cny_per_ton",
           "oiChg5": -0.158498,
@@ -8655,8 +8805,8 @@
           "d1": -0.04234,
           "d5": -0.045646,
           "d20": -0.087642,
-          "z1y": 1.0277,
-          "pct1y": 0.8362,
+          "z1y": 0.9408,
+          "pct1y": 0.8209,
           "value": 4976,
           "unit": "cny_per_ton",
           "oiChg5": -0.076755,
@@ -8689,12 +8839,30 @@
           "d1": 0.008279,
           "d5": -0.042413,
           "d20": -0.074326,
-          "z1y": -0.0089,
-          "pct1y": 0.3627,
+          "z1y": -0.2731,
+          "pct1y": 0.2964,
           "value": 379980,
           "unit": "cny_per_ton",
           "oiChg5": -0.094515,
           "tags": []
+        },
+        {
+          "id": "FUT_LC",
+          "name_cn": "碳酸锂",
+          "chain": "newenergy",
+          "chain_cn": "新能源·航运",
+          "chain_tier": "新能源金属",
+          "d1": 0.04402,
+          "d5": -0.039908,
+          "d20": -0.254117,
+          "z1y": -2.6867,
+          "pct1y": 0.014,
+          "value": 100560,
+          "unit": "cny_per_ton",
+          "oiChg5": -0.023886,
+          "tags": [
+            "位置极端"
+          ]
         }
       ]
     },
@@ -9245,10 +9413,10 @@
         "d1": 0.00281,
         "d5": 0.054738,
         "d20": 0.065791,
-        "z1y": 0.8628,
-        "pct1y": 0.8937,
-        "pct3y": 0.8937,
-        "chg1Extreme": 0.1341,
+        "z1y": 1.5025,
+        "pct1y": 0.9826,
+        "pct3y": 0.9826,
+        "chg1Extreme": 0.1375,
         "tags": [],
         "isNotable": false,
         "deviationLevel": "normal"
