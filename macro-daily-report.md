@@ -1,32 +1,34 @@
 # 宏观高频 × 期货产业链 · 每日汇报
 
-**2026-11-03 交易数据｜宏观支持度 50.3（中性震荡）**
+**2026-11-04 交易数据｜宏观支持度 50.8（中性震荡）**
 
-> Snapshot 生成：2026-11-03T10:05:28.680Z｜报告生成：2026-11-03T10:05:28.760Z｜运行日：2026-11-03｜所有判断来自 `public/macro-snapshot.json`。
+> Snapshot 生成：2026-11-04T13:29:04.333Z｜报告生成：2026-11-04T13:29:04.380Z｜运行日：2026-11-04｜所有判断来自 `public/macro-snapshot.json`。
 
 ## 一、摘要
 
-- 综合宏观支持度 50.3（中性震荡），较上一有效快照 +0.4。
-- 今日显著偏离 46 项，结构化背离触发 0 项，异常 31 项。
-- 六维中 增长增长中性、消费消费中性、地产地产承压、通胀价格压力偏强、流动性中性、外需外需偏强。
+- 综合宏观支持度 50.8（中性震荡），较上一有效快照 +0.5。
+- 今日显著偏离 45 项，结构化背离触发 0 项，异常 33 项。
+- 六维中 增长增长偏强、消费消费中性、地产地产承压、通胀价格压力偏强、流动性中性、外需外需偏强。
 - 六维权重为 DRAFT；综合分是宏观支持度 / 扩张友好度的规则化观察指标。
 
 | 数据截止 | 综合支持度 | 较前快照 | 显著偏离 | 背离 | 异常 |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-03 | 50.3 | +0.4 | 46 | 0 | 31 |
+| 2026-11-04 | 50.8 | +0.5 | 45 | 0 | 33 |
 
 ## 二、今日显著偏离
 
-结论：今日 46 项显著偏离，其中极端 3 项。成员与标签均由 snapshot 判定。
+结论：今日 45 项显著偏离，其中极端 7 项。成员与标签均由 snapshot 判定。
 
 上涨侧
 
 | 项目 | 频率 | 最新 | 1D | 变化极端度 | z(1Y) | 标签 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 即期汇率(16:30):美元兑人民币 | daily | 6.6765 cny | +0.5% | 96% | -1.34 | 变化显著 |
+| 中证1000指数 | daily | 6511.8065 index | +4.7% | 98% | -2.19 | 变化+位置双极端 |
+| 创业板指 | daily | 2544.73 index | +6.4% | 97% | -2.26 | 变化+位置双极端 |
+| 上证指数 | daily | 3686.1725 index | +2.2% | 96% | -2.23 | 变化+位置双极端 |
+| 沪深300指数 | daily | 4101.335 index | +2.3% | 94% | -2.67 | 变化+位置双极端 |
 | 烧碱 | daily | — | +0.8% | 47% | -2.46 | 位置极端 |
 | 沪金 | daily | — | +0.6% | 42% | -1.73 | 刷一年新低 |
-| 纸浆 | daily | — | +0.4% | 34% | -2.10 | 位置极端 |
 
 下跌侧
 
@@ -51,12 +53,12 @@
 
 | 维度 | 得分 | 语义标签 | 较前快照 | 轴定义 | 覆盖 |
 | --- | --- | --- | --- | --- | --- |
-| 增长 | 59.9 | 增长中性 | -1.1 | expansion_support | 7/7 |
+| 增长 | 60.4 | 增长偏强 | +0.5 | expansion_support | 7/7 |
 | 消费 | 48.6 | 消费中性 | 0.0 | demand_support | 2/3 |
-| 地产 | 36.4 | 地产承压 | +0.4 | property_support | 6/6 |
-| 通胀 | 34.7 | 价格压力偏强 | +2.6 | inflation_friendliness | 5/7 |
-| 流动性 | 53.3 | 中性 | +1.4 | liquidity_support | 7/7 |
-| 外需 | 69 | 外需偏强 | -0.5 | external_support | 4/5 |
+| 地产 | 37 | 地产承压 | +0.6 | property_support | 6/6 |
+| 通胀 | 34.5 | 价格压力偏强 | -0.2 | inflation_friendliness | 5/7 |
+| 流动性 | 55.1 | 中性 | +1.8 | liquidity_support | 7/7 |
+| 外需 | 69.3 | 外需偏强 | +0.3 | external_support | 4/5 |
 
 > 宏观支持度 / 扩张友好度的规则化观察指标；六维权重为 DRAFT，综合分用于观察。
 
@@ -64,28 +66,28 @@
 
 | 指标 | 频率 | 最新 | 频率原生变化 | z(1Y) | 1年分位 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- |
-| DR001 | daily | 1.2865 pct | 1D -0.00｜5D +0.01｜20D -0.07 | -0.69 | 29% | FRESH |
-| DR007 | daily | 1.3472 pct | 1D -0.02｜5D -0.00｜20D -0.02 | -1.01 | 16% | FRESH |
-| R001 | daily | 1.3416 pct | 5D +0.01｜20D -0.02 | -0.66 | 23% | 前一交易日值（2026-11-02） |
-| R007 | daily | 1.3973 pct | 5D -0.00｜20D -0.02 | -0.73 | 19% | 前一交易日值（2026-11-02） |
-| Shibor:1周 | daily | 1.342 pct | 5D -0.01｜20D -0.03 | -1.12 | 14% | FRESH |
-| 中债国债到期收益率:1年 | daily | 1.1701 pct | 5D -0.01｜20D -0.05 | -0.86 | 23% | FRESH |
-| 中债国债到期收益率:3年 | daily | 1.2445 pct | 5D -0.01｜20D -0.04 | -1.33 | 1% | FRESH |
-| 中债国债到期收益率:10年 | daily | 1.621 pct | 1D -0.01｜5D -0.00｜20D -0.06 | -2.18 | 0% | FRESH |
-| 中债国债到期收益率:30年 | daily | 2.0508 pct | 5D +0.01｜20D -0.05 | -2.09 | 1% | FRESH |
-| 10Y-1Y 期限利差 | daily | 0.4509 pct | 5D +0.01｜20D -0.01 | -1.07 | 15% | FRESH |
-| 30Y-10Y 期限利差 | daily | 0.4298 pct | 5D +0.01｜20D +0.01 | -0.48 | 28% | FRESH |
+| DR001 | daily | 1.2591 pct | 1D -0.03｜5D -0.02｜20D -0.11 | -1.12 | 11% | FRESH |
+| DR007 | daily | 1.3242 pct | 1D -0.02｜5D -0.02｜20D -0.06 | -1.31 | 7% | FRESH |
+| R001 | daily | 1.3356 pct | 5D +0.02｜20D -0.04 | -0.76 | 21% | 前一交易日值（2026-11-03） |
+| R007 | daily | 1.4006 pct | 5D +0.01｜20D +0.02 | -0.69 | 22% | 前一交易日值（2026-11-03） |
+| Shibor:1周 | daily | 1.329 pct | 5D -0.01｜20D -0.06 | -1.30 | 9% | FRESH |
+| 中债国债到期收益率:1年 | daily | 1.166 pct | 5D -0.00｜20D -0.06 | -0.90 | 20% | FRESH |
+| 中债国债到期收益率:3年 | daily | 1.236 pct | 5D -0.01｜20D -0.05 | -1.45 | 0% | FRESH |
+| 中债国债到期收益率:10年 | daily | 1.6077 pct | 1D -0.01｜5D -0.03｜20D -0.08 | -2.35 | 0% | FRESH |
+| 中债国债到期收益率:30年 | daily | 2.0415 pct | 5D -0.01｜20D -0.06 | -2.18 | 1% | FRESH |
+| 10Y-1Y 期限利差 | daily | 0.4417 pct | 5D -0.02｜20D -0.02 | -1.22 | 9% | FRESH |
+| 30Y-10Y 期限利差 | daily | 0.4338 pct | 5D +0.02｜20D +0.02 | -0.41 | 30% | FRESH |
 
 ## 五、权益与汇率
 
 | 指标 | 频率 | 最新 | 频率原生变化 | z(1Y) | 1年分位 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 中间价:美元兑人民币 | daily | 6.715 cny | 1D +0.00｜5D -0.00｜20D -0.03 | -1.46 | 1% | FRESH |
-| 即期汇率(16:30):美元兑人民币 | daily | 6.6765 cny | 1D +0.03｜5D +0.01｜20D -0.03 | -1.34 | 3% | FRESH |
-| 沪深300指数 | daily | 4008.8748 index | 1D -8.04｜5D -40.68｜20D -336.33 | -3.18 | 1% | FRESH |
-| 中证1000指数 | daily | 6221.2322 index | 1D -108.11｜5D -205.94｜20D -1104.12 | -2.71 | 1% | FRESH |
-| 创业板指 | daily | 2391.6518 index | 1D -67.05｜5D -156.50｜20D -750.91 | -2.69 | 0% | FRESH |
-| 上证指数 | daily | 3608.0976 index | 1D -29.93｜5D -40.20｜20D -222.35 | -2.86 | 1% | FRESH |
+| 中间价:美元兑人民币 | daily | 6.718 cny | 1D +0.00｜5D +0.00｜20D -0.02 | -1.42 | 3% | FRESH |
+| 即期汇率(16:30):美元兑人民币 | daily | 6.677 cny | 1D +0.00｜5D +0.01｜20D -0.03 | -1.33 | 4% | FRESH |
+| 沪深300指数 | daily | 4101.335 index | 1D +92.46｜5D +17.46｜20D -256.28 | -2.67 | 3% | FRESH |
+| 中证1000指数 | daily | 6511.8065 index | 1D +290.57｜5D -66.29｜20D -787.01 | -2.19 | 2% | FRESH |
+| 创业板指 | daily | 2544.73 index | 1D +153.08｜5D -90.03｜20D -590.55 | -2.26 | 2% | FRESH |
+| 上证指数 | daily | 3686.1725 index | 1D +78.07｜5D +4.70｜20D -156.02 | -2.23 | 3% | FRESH |
 
 ## 六、货币与信用
 
@@ -96,8 +98,8 @@
 | 社会融资规模存量:期末同比 | monthly | 7.1 pct | YoY +7.10｜3M down | -1.51 | 4% | FRESH |
 | 社会融资规模增量:当月值 | monthly | 35476 cny_100m | MoM +1.14 | +0.42 | 79% | FRESH |
 | 社会融资规模存量:政府债券:期末同比 | monthly | 13.7 pct | YoY +13.70 | -1.16 | 13% | FRESH |
-| 中债中短期票据到期收益率(AAA):3年 | daily | 1.616 pct | 5D +0.06｜20D -0.02 | -1.17 | 8% | FRESH |
-| AAA 3Y 信用利差 | daily | 0.3715 pct | 5D +0.07｜20D +0.02 | -0.72 | 28% | FRESH |
+| 中债中短期票据到期收益率(AAA):3年 | daily | 1.6003 pct | 5D +0.04｜20D -0.03 | -1.31 | 5% | FRESH |
+| AAA 3Y 信用利差 | daily | 0.3643 pct | 5D +0.05｜20D +0.02 | -0.85 | 24% | FRESH |
 
 ## 七、增长与景气
 
@@ -112,12 +114,12 @@
 | 制造业PMI:新订单 | monthly | 50.5 index | MoM -0.00 | +0.51 | 54% | FRESH |
 | 制造业PMI:产成品库存 | monthly | 47.6 index | MoM -0.02 | -0.23 | 38% | FRESH |
 | 制造业PMI:从业人员 | monthly | 48.4 index | MoM -0.01 | -0.23 | 42% | FRESH |
-| 现货价:铜 | daily | 109951.67 cny_per_ton | 1D +76.67｜5D -460.00｜20D -1080.00 | +1.14 | 89% | FRESH |
-| 热轧卷板主力 | daily | 3113 cny_per_ton | 5D -14.00｜20D -145.00 | -2.59 | 1% | FRESH |
-| 沪铜主力 | daily | 107300 cny_per_ton | 5D -1810.00｜20D -3010.00 | +0.82 | 77% | FRESH |
-| 沪铝主力 | daily | 23365 cny_per_ton | 5D -310.00｜20D -710.00 | -0.18 | 33% | FRESH |
-| 铁矿石主力 | daily | 664 cny_per_ton | 5D -1.50｜20D -43.50 | -2.36 | 0% | FRESH |
-| 焦煤主力 | daily | 1420 cny_per_ton | 5D -23.00｜20D +13.50 | +1.11 | 82% | FRESH |
+| 现货价:铜 | daily | 109285 cny_per_ton | 1D -666.67｜5D -1703.33｜20D -2128.33 | +1.05 | 84% | FRESH |
+| 热轧卷板主力 | daily | 3120 cny_per_ton | 5D -13.00｜20D -96.00 | -2.44 | 1% | FRESH |
+| 沪铜主力 | daily | 107670 cny_per_ton | 5D -2180.00｜20D -2920.00 | +0.86 | 77% | FRESH |
+| 沪铝主力 | daily | 23360 cny_per_ton | 5D -355.00｜20D -560.00 | -0.19 | 33% | FRESH |
+| 铁矿石主力 | daily | 686.5 cny_per_ton | 5D +13.50｜20D -15.00 | -1.86 | 4% | FRESH |
+| 焦煤主力 | daily | 1424.5 cny_per_ton | 5D -48.50｜20D -65.50 | +1.12 | 82% | FRESH |
 | 动力煤主力 | daily | 921 cny_per_ton | 5D +51.00｜20D +71.00 | -0.13 | 62% | DISCONTINUED |
 
 ## 八、通胀
@@ -130,13 +132,13 @@
 | CPI:非食品:当月同比 | monthly | 1.5 pct | YoY +1.50｜3M up | +0.71 | 75% | FRESH |
 | CPI:环比 | monthly | 0.2 pct | MoM +0.20｜3M up | +0.24 | 58% | FRESH |
 | PPI:当月同比 | monthly | 5 pct | YoY +5.00｜3M up | +1.32 | 96% | FRESH |
-| 平均批发价:猪肉 | daily | 15.14 cny_per_kg | 1D -0.01｜5D -0.24｜20D -0.78 | -0.53 | 35% | FRESH |
-| 平均批发价:牛肉 | daily | 73.75 cny_per_kg | 5D +0.43｜20D +0.93 | +2.26 | 99% | FRESH |
-| 平均批发价:鸡蛋 | daily | 9.53 cny_per_kg | 5D +0.18｜20D -0.16 | +0.03 | 45% | FRESH |
-| 平均批发价:28种重点监测蔬菜 | daily | 4.03 cny_per_kg | 5D -0.04｜20D -0.32 | -1.28 | 0% | FRESH |
-| 平均批发价:6种重点监测水果 | daily | 6.67 cny_per_kg | 5D +0.10｜20D +0.05 | -1.46 | 14% | FRESH |
-| Brent连续（iFinD） | daily | 104.36 usd_per_barrel | 1D -13.19｜5D -10.77｜20D +4.14 | +0.98 | 80% | FRESH |
-| INE原油主力连续（宏观评分口径） | daily | 698.2 cny_per_barrel | 5D -35.70｜20D -12.80 | +1.04 | 79% | FRESH |
+| 平均批发价:猪肉 | daily | 15.18 cny_per_kg | 1D +0.04｜5D -0.11｜20D -0.62 | -0.48 | 37% | FRESH |
+| 平均批发价:牛肉 | daily | 73.74 cny_per_kg | 5D +0.30｜20D +0.62 | +2.22 | 98% | FRESH |
+| 平均批发价:鸡蛋 | daily | 9.55 cny_per_kg | 5D +0.19｜20D -0.15 | +0.04 | 45% | FRESH |
+| 平均批发价:28种重点监测蔬菜 | daily | 4.05 cny_per_kg | 5D -0.05｜20D -0.32 | -1.24 | 1% | FRESH |
+| 平均批发价:6种重点监测水果 | daily | 6.65 cny_per_kg | 5D -0.03｜20D -0.08 | -1.49 | 10% | FRESH |
+| Brent连续（iFinD） | daily | 104.36 usd_per_barrel | 1D -13.19｜5D -10.77｜20D +4.14 | +0.98 | 80% | EXPECTED |
+| INE原油主力连续（宏观评分口径） | daily | 681.6 cny_per_barrel | 5D -51.60｜20D -8.40 | +0.89 | 77% | FRESH |
 
 ## 九、地产
 
@@ -150,8 +152,8 @@
 | 商品房销售面积:累计值 | monthly | 56483 sqm_10k | YoY -0.01｜3M up | +0.33 | 63% | FRESH |
 | 商品房销售额:累计同比 | monthly | -13.9 pct | YoY -13.90｜3M down | -0.18 | 29% | FRESH |
 | 商品房销售面积:住宅:累计值 | monthly | 46996 sqm_10k | YoY -0.02 | +0.32 | 63% | FRESH |
-| 螺纹钢主力 | daily | 2980 cny_per_ton | 1D -15.00｜5D -79.00｜20D -51.00 | -1.04 | 16% | FRESH |
-| 玻璃主力 | daily | 895 cny_per_ton | 5D +21.00｜20D -43.00 | -1.03 | 14% | FRESH |
+| 螺纹钢主力 | daily | 2995 cny_per_ton | 1D +15.00｜5D -28.00｜20D -39.00 | -0.84 | 19% | FRESH |
+| 玻璃主力 | daily | 895 cny_per_ton | 5D +20.00｜20D -19.00 | -1.02 | 14% | FRESH |
 
 ## 十、消费与外需
 
@@ -165,7 +167,7 @@
 | 出口总值(美元计价):当月同比 | monthly | 36.3 pct | YoY +36.30｜3M up | +1.43 | 88% | FRESH |
 | 进口总值(美元计价):当月同比 | monthly | 31 pct | YoY +31.00｜3M up | +0.82 | 88% | FRESH |
 | 进出口总值(美元计价):当月同比 | monthly | 34.1 pct | YoY +34.10 | +1.40 | 96% | FRESH |
-| 波罗的海运费指数:干散货(BDI) | daily | 2648 index | 5D +20.00｜20D -422.00 | +0.19 | 49% | FRESH |
+| 波罗的海运费指数:干散货(BDI) | daily | 2694 index | 5D +91.00｜20D -308.00 | +0.28 | 58% | FRESH |
 
 ## 十一、结构化背离
 
@@ -188,24 +190,26 @@
 | high | 进口总值(美元计价):当月同比 | 外需 | +0.82 | 96% | PERCENTILE_HIGH |
 | high | 进出口总值(美元计价):当月同比 | 外需 | +1.40 | 99% | PERCENTILE_HIGH |
 | high | 房地产开发投资:累计同比 | 地产 | -1.46 | 1% | PERCENTILE_LOW |
-| high | 平均批发价:牛肉 | 通胀 | +2.26 | 100% | ZSCORE_EXTREME、PERCENTILE_HIGH |
-| high | 平均批发价:28种重点监测蔬菜 | 通胀 | -1.28 | 0% | PERCENTILE_LOW |
-| high | 现货价:铜 | 增长 | +1.14 | 96% | PERCENTILE_HIGH |
+| high | 平均批发价:牛肉 | 通胀 | +2.22 | 99% | ZSCORE_EXTREME、PERCENTILE_HIGH |
+| high | 平均批发价:28种重点监测蔬菜 | 通胀 | -1.24 | 0% | PERCENTILE_LOW |
+| high | 平均批发价:6种重点监测水果 | 通胀 | -1.49 | 4% | PERCENTILE_LOW |
 | medium | Brent连续（iFinD） | 通胀 | +0.98 | 93% | FIVE_DAY_MOVE_EXTREME |
-| high | 热轧卷板主力 | 增长 | -2.59 | 1% | ZSCORE_EXTREME、PERCENTILE_LOW |
-| high | 铁矿石主力 | 增长 | -2.36 | 0% | ZSCORE_EXTREME、PERCENTILE_LOW |
-| high | 玻璃主力 | 地产 | -1.03 | 5% | PERCENTILE_LOW |
-| high | Shibor:1周 | 流动性 | -1.12 | 5% | PERCENTILE_LOW |
-| high | 中债国债到期收益率:3年 | 流动性 | -1.33 | 3% | PERCENTILE_LOW |
-| high | 中债国债到期收益率:10年 | 流动性 | -2.18 | 1% | ZSCORE_EXTREME、PERCENTILE_LOW |
-| high | 中债国债到期收益率:30年 | 流动性 | -2.09 | 23% | ZSCORE_EXTREME |
-| high | 中债中短期票据到期收益率(AAA):3年 | 流动性 | -1.17 | 3% | PERCENTILE_LOW |
-| high | 中间价:美元兑人民币 | 外需 | -1.46 | 0% | PERCENTILE_LOW |
-| high | 即期汇率(16:30):美元兑人民币 | 外需 | -1.34 | 1% | PERCENTILE_LOW |
-| high | 沪深300指数 | 流动性 | -3.18 | 56% | ZSCORE_EXTREME |
-| high | 中证1000指数 | 流动性 | -2.71 | 49% | ZSCORE_EXTREME |
-| high | 创业板指 | 流动性 | -2.69 | 60% | ZSCORE_EXTREME |
-| high | 上证指数 | 流动性 | -2.86 | 60% | ZSCORE_EXTREME |
+| high | 热轧卷板主力 | 增长 | -2.44 | 2% | ZSCORE_EXTREME、PERCENTILE_LOW |
+| high | 铁矿石主力 | 增长 | -1.86 | 2% | PERCENTILE_LOW |
+| high | 玻璃主力 | 地产 | -1.02 | 5% | PERCENTILE_LOW |
+| high | DR001 | 流动性 | -1.12 | 4% | PERCENTILE_LOW |
+| high | DR007 | 流动性 | -1.31 | 2% | PERCENTILE_LOW |
+| high | Shibor:1周 | 流动性 | -1.30 | 3% | PERCENTILE_LOW |
+| high | 中债国债到期收益率:3年 | 流动性 | -1.45 | 2% | PERCENTILE_LOW |
+| high | 中债国债到期收益率:10年 | 流动性 | -2.35 | 1% | ZSCORE_EXTREME、PERCENTILE_LOW |
+| high | 中债国债到期收益率:30年 | 流动性 | -2.18 | 22% | ZSCORE_EXTREME |
+| high | 中债中短期票据到期收益率(AAA):3年 | 流动性 | -1.31 | 2% | PERCENTILE_LOW |
+| high | 中间价:美元兑人民币 | 外需 | -1.42 | 1% | PERCENTILE_LOW |
+| high | 即期汇率(16:30):美元兑人民币 | 外需 | -1.33 | 1% | PERCENTILE_LOW |
+| high | 沪深300指数 | 流动性 | -2.67 | 59% | ZSCORE_EXTREME |
+| high | 中证1000指数 | 流动性 | -2.19 | 57% | ZSCORE_EXTREME |
+| high | 创业板指 | 流动性 | -2.26 | 61% | ZSCORE_EXTREME |
+| high | 上证指数 | 流动性 | -2.23 | 62% | ZSCORE_EXTREME |
 | medium | 增长维度同向聚集 | 增长 | — | — | THREE_SAME_DIRECTION |
 | medium | 地产维度同向聚集 | 地产 | — | — | THREE_SAME_DIRECTION |
 | medium | 通胀维度同向聚集 | 通胀 | — | — | THREE_SAME_DIRECTION |
@@ -349,60 +353,60 @@
 | 商品房销售面积:累计值 | property | 地产 | monthly | 56483 sqm_10k | YoY -0.01｜3M up | +0.33 | +0.33 | FRESH |
 | 商品房销售额:累计同比 | property | 地产 | monthly | -13.9 pct | YoY -13.90｜3M down | -0.18 | -0.18 | FRESH |
 | 商品房销售面积:住宅:累计值 | property | 地产 | monthly | 46996 sqm_10k | YoY -0.02 | +0.32 | +0.32 | FRESH |
-| 平均批发价:猪肉 | inflation | 通胀 | daily | 15.14 cny_per_kg | 1D -0.01｜5D -0.24｜20D -0.78 | -0.53 | +0.53 | FRESH |
-| 平均批发价:牛肉 | inflation | 通胀 | daily | 73.75 cny_per_kg | 5D +0.43｜20D +0.93 | +2.26 | -2.26 | FRESH |
-| 平均批发价:鸡蛋 | inflation | 通胀 | daily | 9.53 cny_per_kg | 5D +0.18｜20D -0.16 | +0.03 | -0.03 | FRESH |
-| 平均批发价:28种重点监测蔬菜 | inflation | 通胀 | daily | 4.03 cny_per_kg | 5D -0.04｜20D -0.32 | -1.28 | +1.28 | FRESH |
-| 平均批发价:6种重点监测水果 | inflation | 通胀 | daily | 6.67 cny_per_kg | 5D +0.10｜20D +0.05 | -1.46 | +1.46 | FRESH |
-| 现货价:铜 | growth | 增长 | daily | 109951.67 cny_per_ton | 1D +76.67｜5D -460.00｜20D -1080.00 | +1.14 | +1.14 | FRESH |
-| Brent连续（iFinD） | inflation | 通胀 | daily | 104.36 usd_per_barrel | 1D -13.19｜5D -10.77｜20D +4.14 | +0.98 | -0.98 | FRESH |
-| 波罗的海运费指数:干散货(BDI) | external | 外需 | daily | 2648 index | 5D +20.00｜20D -422.00 | +0.19 | +0.19 | FRESH |
-| 螺纹钢主力 | property | 地产 | daily | 2980 cny_per_ton | 1D -15.00｜5D -79.00｜20D -51.00 | -1.04 | -1.04 | FRESH |
-| 热轧卷板主力 | growth | 增长 | daily | 3113 cny_per_ton | 5D -14.00｜20D -145.00 | -2.59 | -2.59 | FRESH |
-| 沪铜主力 | growth | 增长 | daily | 107300 cny_per_ton | 5D -1810.00｜20D -3010.00 | +0.82 | +0.82 | FRESH |
-| 沪铝主力 | growth | 增长 | daily | 23365 cny_per_ton | 5D -310.00｜20D -710.00 | -0.18 | -0.18 | FRESH |
-| 铁矿石主力 | growth | 增长 | daily | 664 cny_per_ton | 5D -1.50｜20D -43.50 | -2.36 | -2.36 | FRESH |
-| 焦煤主力 | growth | 增长 | daily | 1420 cny_per_ton | 5D -23.00｜20D +13.50 | +1.11 | +1.11 | FRESH |
+| 平均批发价:猪肉 | inflation | 通胀 | daily | 15.18 cny_per_kg | 1D +0.04｜5D -0.11｜20D -0.62 | -0.48 | +0.48 | FRESH |
+| 平均批发价:牛肉 | inflation | 通胀 | daily | 73.74 cny_per_kg | 5D +0.30｜20D +0.62 | +2.22 | -2.22 | FRESH |
+| 平均批发价:鸡蛋 | inflation | 通胀 | daily | 9.55 cny_per_kg | 5D +0.19｜20D -0.15 | +0.04 | -0.04 | FRESH |
+| 平均批发价:28种重点监测蔬菜 | inflation | 通胀 | daily | 4.05 cny_per_kg | 5D -0.05｜20D -0.32 | -1.24 | +1.24 | FRESH |
+| 平均批发价:6种重点监测水果 | inflation | 通胀 | daily | 6.65 cny_per_kg | 5D -0.03｜20D -0.08 | -1.49 | +1.49 | FRESH |
+| 现货价:铜 | growth | 增长 | daily | 109285 cny_per_ton | 1D -666.67｜5D -1703.33｜20D -2128.33 | +1.05 | +1.05 | FRESH |
+| Brent连续（iFinD） | inflation | 通胀 | daily | 104.36 usd_per_barrel | 1D -13.19｜5D -10.77｜20D +4.14 | +0.98 | -0.98 | EXPECTED |
+| 波罗的海运费指数:干散货(BDI) | external | 外需 | daily | 2694 index | 5D +91.00｜20D -308.00 | +0.28 | +0.28 | FRESH |
+| 螺纹钢主力 | property | 地产 | daily | 2995 cny_per_ton | 1D +15.00｜5D -28.00｜20D -39.00 | -0.84 | -0.84 | FRESH |
+| 热轧卷板主力 | growth | 增长 | daily | 3120 cny_per_ton | 5D -13.00｜20D -96.00 | -2.44 | -2.44 | FRESH |
+| 沪铜主力 | growth | 增长 | daily | 107670 cny_per_ton | 5D -2180.00｜20D -2920.00 | +0.86 | +0.86 | FRESH |
+| 沪铝主力 | growth | 增长 | daily | 23360 cny_per_ton | 5D -355.00｜20D -560.00 | -0.19 | -0.19 | FRESH |
+| 铁矿石主力 | growth | 增长 | daily | 686.5 cny_per_ton | 5D +13.50｜20D -15.00 | -1.86 | -1.86 | FRESH |
+| 焦煤主力 | growth | 增长 | daily | 1424.5 cny_per_ton | 5D -48.50｜20D -65.50 | +1.12 | +1.12 | FRESH |
 | 动力煤主力 | growth | 增长 | daily | 921 cny_per_ton | 5D +51.00｜20D +71.00 | -0.13 | -0.13 | DISCONTINUED |
-| 玻璃主力 | property | 地产 | daily | 895 cny_per_ton | 5D +21.00｜20D -43.00 | -1.03 | -1.03 | FRESH |
-| INE原油主力连续（宏观评分口径） | inflation | 通胀 | daily | 698.2 cny_per_barrel | 5D -35.70｜20D -12.80 | +1.04 | -1.04 | FRESH |
-| DR001 | liquidity | 流动性 | daily | 1.2865 pct | 1D -0.00｜5D +0.01｜20D -0.07 | -0.69 | +0.69 | FRESH |
-| DR007 | liquidity | 流动性 | daily | 1.3472 pct | 1D -0.02｜5D -0.00｜20D -0.02 | -1.01 | +1.01 | FRESH |
-| R001 | liquidity | 流动性 | daily | 1.3416 pct | 5D +0.01｜20D -0.02 | -0.66 | +0.66 | EXPECTED |
-| R007 | liquidity | 流动性 | daily | 1.3973 pct | 5D -0.00｜20D -0.02 | -0.73 | +0.73 | EXPECTED |
-| Shibor:1周 | liquidity | 流动性 | daily | 1.342 pct | 5D -0.01｜20D -0.03 | -1.12 | +1.12 | FRESH |
-| 中债国债到期收益率:1年 | rates | 流动性 | daily | 1.1701 pct | 5D -0.01｜20D -0.05 | -0.86 | +0.86 | FRESH |
-| 中债国债到期收益率:3年 | rates | 流动性 | daily | 1.2445 pct | 5D -0.01｜20D -0.04 | -1.33 | +1.33 | FRESH |
-| 中债国债到期收益率:10年 | rates | 流动性 | daily | 1.621 pct | 1D -0.01｜5D -0.00｜20D -0.06 | -2.18 | +2.18 | FRESH |
-| 中债国债到期收益率:30年 | rates | 流动性 | daily | 2.0508 pct | 5D +0.01｜20D -0.05 | -2.09 | +2.09 | FRESH |
-| 10Y-1Y 期限利差 | rates | 流动性 | daily | 0.4509 pct | 5D +0.01｜20D -0.01 | -1.07 | -1.07 | FRESH |
-| 30Y-10Y 期限利差 | rates | 流动性 | daily | 0.4298 pct | 5D +0.01｜20D +0.01 | -0.48 | 0.00 | FRESH |
-| 中债中短期票据到期收益率(AAA):3年 | credit | 流动性 | daily | 1.616 pct | 5D +0.06｜20D -0.02 | -1.17 | +1.17 | FRESH |
-| AAA 3Y 信用利差 | credit | 流动性 | daily | 0.3715 pct | 5D +0.07｜20D +0.02 | -0.72 | +0.72 | FRESH |
-| 中间价:美元兑人民币 | fx | 外需 | daily | 6.715 cny | 1D +0.00｜5D -0.00｜20D -0.03 | -1.46 | 0.00 | FRESH |
-| 即期汇率(16:30):美元兑人民币 | fx | 外需 | daily | 6.6765 cny | 1D +0.03｜5D +0.01｜20D -0.03 | -1.34 | 0.00 | FRESH |
-| 沪深300指数 | risk | 流动性 | daily | 4008.8748 index | 1D -8.04｜5D -40.68｜20D -336.33 | -3.18 | -3.18 | FRESH |
-| 中证1000指数 | risk | 流动性 | daily | 6221.2322 index | 1D -108.11｜5D -205.94｜20D -1104.12 | -2.71 | -2.71 | FRESH |
-| 创业板指 | risk | 流动性 | daily | 2391.6518 index | 1D -67.05｜5D -156.50｜20D -750.91 | -2.69 | -2.69 | FRESH |
-| 上证指数 | risk | 流动性 | daily | 3608.0976 index | 1D -29.93｜5D -40.20｜20D -222.35 | -2.86 | -2.86 | FRESH |
+| 玻璃主力 | property | 地产 | daily | 895 cny_per_ton | 5D +20.00｜20D -19.00 | -1.02 | -1.02 | FRESH |
+| INE原油主力连续（宏观评分口径） | inflation | 通胀 | daily | 681.6 cny_per_barrel | 5D -51.60｜20D -8.40 | +0.89 | -0.89 | FRESH |
+| DR001 | liquidity | 流动性 | daily | 1.2591 pct | 1D -0.03｜5D -0.02｜20D -0.11 | -1.12 | +1.12 | FRESH |
+| DR007 | liquidity | 流动性 | daily | 1.3242 pct | 1D -0.02｜5D -0.02｜20D -0.06 | -1.31 | +1.31 | FRESH |
+| R001 | liquidity | 流动性 | daily | 1.3356 pct | 5D +0.02｜20D -0.04 | -0.76 | +0.76 | EXPECTED |
+| R007 | liquidity | 流动性 | daily | 1.4006 pct | 5D +0.01｜20D +0.02 | -0.69 | +0.69 | EXPECTED |
+| Shibor:1周 | liquidity | 流动性 | daily | 1.329 pct | 5D -0.01｜20D -0.06 | -1.30 | +1.30 | FRESH |
+| 中债国债到期收益率:1年 | rates | 流动性 | daily | 1.166 pct | 5D -0.00｜20D -0.06 | -0.90 | +0.90 | FRESH |
+| 中债国债到期收益率:3年 | rates | 流动性 | daily | 1.236 pct | 5D -0.01｜20D -0.05 | -1.45 | +1.45 | FRESH |
+| 中债国债到期收益率:10年 | rates | 流动性 | daily | 1.6077 pct | 1D -0.01｜5D -0.03｜20D -0.08 | -2.35 | +2.35 | FRESH |
+| 中债国债到期收益率:30年 | rates | 流动性 | daily | 2.0415 pct | 5D -0.01｜20D -0.06 | -2.18 | +2.18 | FRESH |
+| 10Y-1Y 期限利差 | rates | 流动性 | daily | 0.4417 pct | 5D -0.02｜20D -0.02 | -1.22 | -1.22 | FRESH |
+| 30Y-10Y 期限利差 | rates | 流动性 | daily | 0.4338 pct | 5D +0.02｜20D +0.02 | -0.41 | 0.00 | FRESH |
+| 中债中短期票据到期收益率(AAA):3年 | credit | 流动性 | daily | 1.6003 pct | 5D +0.04｜20D -0.03 | -1.31 | +1.31 | FRESH |
+| AAA 3Y 信用利差 | credit | 流动性 | daily | 0.3643 pct | 5D +0.05｜20D +0.02 | -0.85 | +0.85 | FRESH |
+| 中间价:美元兑人民币 | fx | 外需 | daily | 6.718 cny | 1D +0.00｜5D +0.00｜20D -0.02 | -1.42 | 0.00 | FRESH |
+| 即期汇率(16:30):美元兑人民币 | fx | 外需 | daily | 6.677 cny | 1D +0.00｜5D +0.01｜20D -0.03 | -1.33 | 0.00 | FRESH |
+| 沪深300指数 | risk | 流动性 | daily | 4101.335 index | 1D +92.46｜5D +17.46｜20D -256.28 | -2.67 | -2.67 | FRESH |
+| 中证1000指数 | risk | 流动性 | daily | 6511.8065 index | 1D +290.57｜5D -66.29｜20D -787.01 | -2.19 | -2.19 | FRESH |
+| 创业板指 | risk | 流动性 | daily | 2544.73 index | 1D +153.08｜5D -90.03｜20D -590.55 | -2.26 | -2.26 | FRESH |
+| 上证指数 | risk | 流动性 | daily | 3686.1725 index | 1D +78.07｜5D +4.70｜20D -156.02 | -2.23 | -2.23 | FRESH |
 
 ## 十八、数据质量与 Lineage
 
 | 项 | 值 |
 | --- | --- |
 | 契约 | MACRO_SNAPSHOT 1.1.0 |
-| 交易数据截止 | 2026-11-03 |
-| 运行日期 | 2026-11-03 |
-| 采集窗口结束 | 2026-11-03 |
+| 交易数据截止 | 2026-11-04 |
+| 运行日期 | 2026-11-04 |
+| 采集窗口结束 | 2026-11-04 |
 | 数据来源 | ifind-mcp |
-| 日期一致性 | 89% (35) |
-| 采集时间 | 2026-11-03T09:16:25.913Z |
+| 日期一致性 | 91% (35) |
+| 采集时间 | 2026-11-04T13:28:12.286Z |
 | 配置版本 | 2.0 |
 | 可评分 | 65/72 |
 | 权重状态 | draft |
 
-- 动力煤主力：DISCONTINUED（1404 calendar days）
+- 动力煤主力：DISCONTINUED（1405 calendar days）
 
-- 无
+- 沿用历史：动力煤主力，观测日 2022-12-30，来源 iFinD
 
 > 报告由 scripts/macro-report.mjs 渲染；统计、标签、聚合与结论级 delta 均来自 snapshot。
