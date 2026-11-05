@@ -1,37 +1,37 @@
 {
   "contract": "AI_MACRO_HANDOFF",
   "version": "1.0.0",
-  "generatedAt": "2026-11-04T13:29:04.479Z",
-  "asOf": "2026-11-04",
-  "tradingDataAsOf": "2026-11-04",
-  "runDate": "2026-11-04",
-  "sourceWindowEnd": "2026-11-04",
+  "generatedAt": "2026-11-05T09:38:47.111Z",
+  "asOf": "2026-11-05",
+  "tradingDataAsOf": "2026-11-05",
+  "runDate": "2026-11-05",
+  "sourceWindowEnd": "2026-11-05",
   "dateQuality": {
-    "coverage": 0.914286,
+    "coverage": 0.885714,
     "minimumCoverage": 0.8,
     "refreshedDailyCount": 35,
     "byDate": {
-      "2026-11-04": 32,
-      "2026-11-03": 2,
+      "2026-11-05": 31,
+      "2026-11-04": 3,
       "2026-11-02": 1
     }
   },
   "source": {
     "contract": "MACRO_SNAPSHOT",
     "version": "1.1.0",
-    "generatedAt": "2026-11-04T13:29:04.333Z",
-    "sha256": "caed066a0729df9958e50e2b3f3863b98a5de9f5c0b16cce168258dfba27dd06",
+    "generatedAt": "2026-11-05T09:38:46.833Z",
+    "sha256": "ad1006cb4e5aeb19f74577ebe4ceaa888f4a7bf3426d6ca98ee8d2d0c3262e75",
     "sourceCommit": "6f40178cc724048c2d849b32ef7fed4f51ac0574",
     "sourceDirty": false,
     "data": "ifind-mcp"
   },
   "headline": {
-    "composite": 50.8,
+    "composite": 51.4,
     "label": "中性震荡",
-    "compositeDelta": 0.5,
-    "anomalyCount": 33,
-    "highSeverityCount": 27,
-    "notableDeviationCount": 45,
+    "compositeDelta": 0.6,
+    "anomalyCount": 32,
+    "highSeverityCount": 25,
+    "notableDeviationCount": 43,
     "divergenceHits": 0,
     "freshness": {
       "FRESH": 67,
@@ -51,8 +51,8 @@
       "neutralLabel": "增长中性",
       "lowLabel": "增长偏弱",
       "semanticLabel": "增长偏强",
-      "score": 60.4,
-      "zMean": 0.5195,
+      "score": 61.4,
+      "zMean": 0.5724,
       "coverage": {
         "used": 7,
         "configured": 7,
@@ -95,30 +95,30 @@
           "id": "HF_COPPER",
           "name_cn": "沪铜主力",
           "weight": 0.11,
-          "z": 0.8649,
-          "dirZ": 0.8649,
+          "z": 0.8914,
+          "dirZ": 0.8914,
           "status": "FRESH"
         },
         {
           "id": "HF_COPPER_SPOT",
           "name_cn": "现货价:铜",
           "weight": 0.11,
-          "z": 1.0474,
-          "dirZ": 1.0474,
+          "z": 1.1689,
+          "dirZ": 1.1689,
           "status": "FRESH"
         },
         {
           "id": "HF_REBAR",
           "name_cn": "螺纹钢主力",
           "weight": 0.14,
-          "z": -0.8437,
-          "dirZ": -0.8437,
+          "z": -0.5823,
+          "dirZ": -0.5823,
           "status": "FRESH"
         }
       ],
       "upCount": 5,
       "downCount": 1,
-      "delta": 0.5
+      "delta": 1
     },
     {
       "key": "consumption",
@@ -165,8 +165,8 @@
       "neutralLabel": "地产中性",
       "lowLabel": "地产承压",
       "semanticLabel": "地产承压",
-      "score": 37,
-      "zMean": -0.6513,
+      "score": 37.7,
+      "zMean": -0.6167,
       "coverage": {
         "used": 6,
         "configured": 6,
@@ -209,22 +209,22 @@
           "id": "HF_GLASS",
           "name_cn": "玻璃主力",
           "weight": 0.13,
-          "z": -1.0227,
-          "dirZ": -1.0227,
+          "z": -1.0179,
+          "dirZ": -1.0179,
           "status": "FRESH"
         },
         {
           "id": "HF_REBAR",
           "name_cn": "螺纹钢主力",
           "weight": 0.13,
-          "z": -0.8437,
-          "dirZ": -0.8437,
+          "z": -0.5823,
+          "dirZ": -0.5823,
           "status": "FRESH"
         }
       ],
       "upCount": 0,
       "downCount": 4,
-      "delta": 0.6
+      "delta": 0.7
     },
     {
       "key": "inflation",
@@ -234,8 +234,8 @@
       "neutralLabel": "价格环境中性",
       "lowLabel": "价格压力偏强",
       "semanticLabel": "价格压力偏强",
-      "score": 34.5,
-      "zMean": -0.7757,
+      "score": 35.4,
+      "zMean": -0.7307,
       "coverage": {
         "used": 5,
         "configured": 7,
@@ -270,8 +270,8 @@
           "id": "HF_PORK",
           "name_cn": "平均批发价:猪肉",
           "weight": 0.12,
-          "z": -0.4759,
-          "dirZ": 0.4759,
+          "z": -0.7385,
+          "dirZ": 0.7385,
           "status": "FRESH"
         },
         {
@@ -283,9 +283,9 @@
           "status": "EXPECTED"
         }
       ],
-      "upCount": 0,
+      "upCount": 1,
       "downCount": 4,
-      "delta": -0.2
+      "delta": 0.9
     },
     {
       "key": "liquidity",
@@ -295,8 +295,8 @@
       "neutralLabel": "中性",
       "lowLabel": "偏紧",
       "semanticLabel": "中性",
-      "score": 55.1,
-      "zMean": 0.2537,
+      "score": 56,
+      "zMean": 0.3004,
       "coverage": {
         "used": 7,
         "configured": 7,
@@ -307,32 +307,32 @@
           "id": "MKT_DR007",
           "name_cn": "DR007",
           "weight": 0.22,
-          "z": -1.3075,
-          "dirZ": 1.3075,
+          "z": -1.3807,
+          "dirZ": 1.3807,
           "status": "FRESH"
         },
         {
           "id": "MKT_R007",
           "name_cn": "R007",
           "weight": 0.1,
-          "z": -0.6875,
-          "dirZ": 0.6875,
+          "z": -0.9144,
+          "dirZ": 0.9144,
           "status": "EXPECTED"
         },
         {
           "id": "MKT_CGB_10Y",
           "name_cn": "中债国债到期收益率:10年",
           "weight": 0.18,
-          "z": -2.351,
-          "dirZ": 2.351,
+          "z": -2.3727,
+          "dirZ": 2.3727,
           "status": "FRESH"
         },
         {
           "id": "MKT_CURVE_10Y1Y",
           "name_cn": "10Y-1Y 期限利差",
           "weight": 0.12,
-          "z": -1.2159,
-          "dirZ": -1.2159,
+          "z": -1.3618,
+          "dirZ": -1.3618,
           "status": "FRESH"
         },
         {
@@ -355,14 +355,14 @@
           "id": "MKT_CREDIT_SPREAD_3Y",
           "name_cn": "AAA 3Y 信用利差",
           "weight": 0.1,
-          "z": -0.8491,
-          "dirZ": 0.8491,
+          "z": -1.064,
+          "dirZ": 1.064,
           "status": "FRESH"
         }
       ],
       "upCount": 4,
       "downCount": 3,
-      "delta": 1.8
+      "delta": 0.9
     },
     {
       "key": "external",
@@ -415,92 +415,54 @@
       ],
       "upCount": 3,
       "downCount": 0,
-      "delta": 0.3
+      "delta": 0
     }
   ],
   "deviations": {
-    "total": 45,
-    "extreme": 7,
+    "total": 43,
+    "extreme": 3,
     "up": [
       {
-        "id": "MKT_CSI1000",
-        "name_cn": "中证1000指数",
-        "layer": "market",
-        "dimension": "liquidity",
-        "category": "risk",
-        "frequency": "daily",
-        "unit": "index",
+        "id": "FUT_SH",
+        "name_cn": "烧碱",
+        "chain": "chemical",
+        "chain_cn": "化工",
+        "chain_tier": "上游原料",
+        "code": "SH00.CZC",
+        "requestedCode": "SH00.CZC",
+        "unit": "cny_per_ton",
         "importance": "medium",
         "seriesRole": null,
         "instrumentIdentity": null,
-        "marketIdentity": null,
-        "direction": "higher_is_stronger",
-        "polarity": 1,
-        "status": "FRESH",
-        "ageDays": 0,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-11-04T13:28:12.286Z"
+          "collectedAt": "2026-11-03T09:16:25.913Z",
+          "status": "CARRIED",
+          "latestDate": "2026-11-03"
         },
-        "scorable": true,
-        "latest": {
-          "date": "2026-11-04",
-          "value": 6511.8065
-        },
-        "changes": {
-          "chg1": 290.5743,
-          "chg4": 133.0263,
-          "chg5": -66.2929,
-          "chg12": -186.4961,
-          "chg13": -170.1379,
-          "chg20": -787.0143
-        },
-        "pctChg1": 0.046707,
-        "pctChg5": -0.010078,
-        "pctChg20": -0.107828,
-        "pctChg12": -0.027842,
-        "z1y": -2.1919,
-        "dirZ": -2.1919,
-        "pct1y": 0.022,
-        "pct3y": 0.5727,
-        "ma20": 6670.0837,
-        "moveExtreme": 0.2487,
-        "chg1Extreme": 0.9793,
-        "changeView": {
-          "frequency": "daily",
-          "items": [
-            {
-              "key": "d1",
-              "label": "1D",
-              "value": 290.5743,
-              "pctValue": 0.046707,
-              "status": "available"
-            },
-            {
-              "key": "d5",
-              "label": "5D",
-              "value": -66.2929,
-              "pctValue": -0.010078,
-              "status": "available"
-            },
-            {
-              "key": "d20",
-              "label": "20D",
-              "value": -787.0143,
-              "pctValue": -0.107828,
-              "status": "available"
-            }
-          ],
-          "legacy": {
-            "deprecated": true,
-            "field": "changes"
-          }
-        },
+        "status": "EXPECTED",
+        "ageDays": 2,
+        "lastDate": "2026-11-03",
+        "value": 1491,
+        "d1": 0.008114,
+        "d5": 0.003365,
+        "d20": -0.201393,
+        "d60": -0.209019,
+        "z1y": -2.4565,
+        "pct1y": 0.0237,
+        "pct3y": 0.0237,
+        "chg1Extreme": 0.4735,
+        "ma20": 1654.8,
+        "historyDays": 190,
+        "oi": 289676,
+        "oiChg5": -0.088874,
+        "oiChg20": 2.412771,
+        "mainContract": null,
         "tags": [
-          "变化+位置双极端"
+          "位置极端"
         ],
         "isNotable": true,
-        "deviationLevel": "extreme"
+        "deviationLevel": "notable"
       },
       {
         "id": "MKT_CYB",
@@ -520,54 +482,54 @@
         "ageDays": 0,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-11-04T13:28:12.286Z"
+          "collectedAt": "2026-11-05T09:37:50.571Z"
         },
         "scorable": true,
         "latest": {
-          "date": "2026-11-04",
-          "value": 2544.73
+          "date": "2026-11-05",
+          "value": 2566.803
         },
         "changes": {
-          "chg1": 153.0782,
-          "chg4": 27.1418,
-          "chg5": -90.03,
-          "chg12": -201.561,
-          "chg13": -227.6536,
-          "chg20": -590.5467
+          "chg1": 22.073,
+          "chg4": 153.1739,
+          "chg5": 49.2148,
+          "chg12": -172.4001,
+          "chg13": -179.488,
+          "chg20": -469.8543
         },
-        "pctChg1": 0.064005,
-        "pctChg5": -0.03417,
-        "pctChg20": -0.188356,
-        "pctChg12": -0.073394,
-        "z1y": -2.2576,
-        "dirZ": -2.2576,
-        "pct1y": 0.018,
-        "pct3y": 0.614,
-        "ma20": 2700.6562,
-        "moveExtreme": 0.6753,
-        "chg1Extreme": 0.974,
+        "pctChg1": 0.008674,
+        "pctChg5": 0.019548,
+        "pctChg20": -0.154727,
+        "pctChg12": -0.062938,
+        "z1y": -2.1742,
+        "dirZ": -2.1742,
+        "pct1y": 0.026,
+        "pct3y": 0.6167,
+        "ma20": 2677.1635,
+        "moveExtreme": 0.4473,
+        "chg1Extreme": 0.4607,
         "changeView": {
           "frequency": "daily",
           "items": [
             {
               "key": "d1",
               "label": "1D",
-              "value": 153.0782,
-              "pctValue": 0.064005,
+              "value": 22.073,
+              "pctValue": 0.008674,
               "status": "available"
             },
             {
               "key": "d5",
               "label": "5D",
-              "value": -90.03,
-              "pctValue": -0.03417,
+              "value": 49.2148,
+              "pctValue": 0.019548,
               "status": "available"
             },
             {
               "key": "d20",
               "label": "20D",
-              "value": -590.5467,
-              "pctValue": -0.188356,
+              "value": -469.8543,
+              "pctValue": -0.154727,
               "status": "available"
             }
           ],
@@ -576,208 +538,6 @@
             "field": "changes"
           }
         },
-        "tags": [
-          "变化+位置双极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
-      {
-        "id": "MKT_SSE",
-        "name_cn": "上证指数",
-        "layer": "market",
-        "dimension": "liquidity",
-        "category": "risk",
-        "frequency": "daily",
-        "unit": "index",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "marketIdentity": null,
-        "direction": "higher_is_stronger",
-        "polarity": 1,
-        "status": "FRESH",
-        "ageDays": 0,
-        "dataProvenance": {
-          "provider": "iFinD",
-          "collectedAt": "2026-11-04T13:28:12.286Z"
-        },
-        "scorable": true,
-        "latest": {
-          "date": "2026-11-04",
-          "value": 3686.1725
-        },
-        "changes": {
-          "chg1": 78.0749,
-          "chg4": 34.7388,
-          "chg5": 4.7034,
-          "chg12": -44.7475,
-          "chg13": -30.1117,
-          "chg20": -156.0221
-        },
-        "pctChg1": 0.021639,
-        "pctChg5": 0.001278,
-        "pctChg20": -0.040608,
-        "pctChg12": -0.011994,
-        "z1y": -2.2305,
-        "dirZ": -2.2305,
-        "pct1y": 0.03,
-        "pct3y": 0.618,
-        "ma20": 3707.6325,
-        "moveExtreme": 0.0527,
-        "chg1Extreme": 0.9647,
-        "changeView": {
-          "frequency": "daily",
-          "items": [
-            {
-              "key": "d1",
-              "label": "1D",
-              "value": 78.0749,
-              "pctValue": 0.021639,
-              "status": "available"
-            },
-            {
-              "key": "d5",
-              "label": "5D",
-              "value": 4.7034,
-              "pctValue": 0.001278,
-              "status": "available"
-            },
-            {
-              "key": "d20",
-              "label": "20D",
-              "value": -156.0221,
-              "pctValue": -0.040608,
-              "status": "available"
-            }
-          ],
-          "legacy": {
-            "deprecated": true,
-            "field": "changes"
-          }
-        },
-        "tags": [
-          "变化+位置双极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
-      {
-        "id": "MKT_HS300",
-        "name_cn": "沪深300指数",
-        "layer": "market",
-        "dimension": "liquidity",
-        "category": "risk",
-        "frequency": "daily",
-        "unit": "index",
-        "importance": "high",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "marketIdentity": null,
-        "direction": "higher_is_stronger",
-        "polarity": 1,
-        "status": "FRESH",
-        "ageDays": 0,
-        "dataProvenance": {
-          "provider": "iFinD",
-          "collectedAt": "2026-11-04T13:28:12.286Z"
-        },
-        "scorable": true,
-        "latest": {
-          "date": "2026-11-04",
-          "value": 4101.335
-        },
-        "changes": {
-          "chg1": 92.4602,
-          "chg4": 59.4974,
-          "chg5": 17.4648,
-          "chg12": -73.1999,
-          "chg13": -69.2781,
-          "chg20": -256.2805
-        },
-        "pctChg1": 0.023064,
-        "pctChg5": 0.004277,
-        "pctChg20": -0.058812,
-        "pctChg12": -0.017535,
-        "z1y": -2.668,
-        "dirZ": -2.668,
-        "pct1y": 0.03,
-        "pct3y": 0.5913,
-        "ma20": 4135.8564,
-        "moveExtreme": 0.1633,
-        "chg1Extreme": 0.9447,
-        "changeView": {
-          "frequency": "daily",
-          "items": [
-            {
-              "key": "d1",
-              "label": "1D",
-              "value": 92.4602,
-              "pctValue": 0.023064,
-              "status": "available"
-            },
-            {
-              "key": "d5",
-              "label": "5D",
-              "value": 17.4648,
-              "pctValue": 0.004277,
-              "status": "available"
-            },
-            {
-              "key": "d20",
-              "label": "20D",
-              "value": -256.2805,
-              "pctValue": -0.058812,
-              "status": "available"
-            }
-          ],
-          "legacy": {
-            "deprecated": true,
-            "field": "changes"
-          }
-        },
-        "tags": [
-          "变化+位置双极端"
-        ],
-        "isNotable": true,
-        "deviationLevel": "extreme"
-      },
-      {
-        "id": "FUT_SH",
-        "name_cn": "烧碱",
-        "chain": "chemical",
-        "chain_cn": "化工",
-        "chain_tier": "上游原料",
-        "code": "SH00.CZC",
-        "requestedCode": "SH00.CZC",
-        "unit": "cny_per_ton",
-        "importance": "medium",
-        "seriesRole": null,
-        "instrumentIdentity": null,
-        "dataProvenance": {
-          "provider": "iFinD",
-          "collectedAt": "2026-11-03T09:16:25.913Z",
-          "status": "CARRIED",
-          "latestDate": "2026-11-03"
-        },
-        "status": "FRESH",
-        "ageDays": 1,
-        "lastDate": "2026-11-03",
-        "value": 1491,
-        "d1": 0.008114,
-        "d5": 0.003365,
-        "d20": -0.201393,
-        "d60": -0.209019,
-        "z1y": -2.4565,
-        "pct1y": 0.0237,
-        "pct3y": 0.0237,
-        "chg1Extreme": 0.4735,
-        "ma20": 1654.8,
-        "historyDays": 190,
-        "oi": 289676,
-        "oiChg5": -0.088874,
-        "oiChg20": 2.412771,
-        "mainContract": null,
         "tags": [
           "位置极端"
         ],
@@ -802,8 +562,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 844.12,
         "d1": 0.006366,
@@ -822,6 +582,201 @@
         "mainContract": null,
         "tags": [
           "刷一年新低"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
+        "id": "FUT_SP",
+        "name_cn": "纸浆",
+        "chain": "chemical",
+        "chain_cn": "化工",
+        "chain_tier": "上游原料",
+        "code": "SP00.SHF",
+        "requestedCode": "SP00.SHF",
+        "unit": "cny_per_ton",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "dataProvenance": {
+          "provider": "iFinD",
+          "collectedAt": "2026-11-03T09:16:25.913Z",
+          "status": "CARRIED",
+          "latestDate": "2026-11-03"
+        },
+        "status": "EXPECTED",
+        "ageDays": 2,
+        "lastDate": "2026-11-03",
+        "value": 4576,
+        "d1": 0.003509,
+        "d5": 0.009709,
+        "d20": -0.077419,
+        "d60": -0.064595,
+        "z1y": -2.0981,
+        "pct1y": 0.0183,
+        "pct3y": 0.0183,
+        "chg1Extreme": 0.3395,
+        "ma20": 4693.9,
+        "historyDays": 191,
+        "oi": 374349,
+        "oiChg5": -0.053295,
+        "oiChg20": 1.498358,
+        "mainContract": null,
+        "tags": [
+          "位置极端"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
+        "id": "MKT_CGB_3Y",
+        "name_cn": "中债国债到期收益率:3年",
+        "layer": "market",
+        "dimension": "liquidity",
+        "category": "rates",
+        "frequency": "daily",
+        "unit": "pct",
+        "importance": "medium",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "marketIdentity": null,
+        "direction": "higher_is_tighter",
+        "polarity": -1,
+        "status": "FRESH",
+        "ageDays": 0,
+        "dataProvenance": {
+          "provider": "iFinD",
+          "collectedAt": "2026-11-05T09:37:50.571Z"
+        },
+        "scorable": true,
+        "latest": {
+          "date": "2026-11-05",
+          "value": 1.2397
+        },
+        "changes": {
+          "chg1": 0.0037,
+          "chg4": -0.0243,
+          "chg5": 0.0005,
+          "chg12": -0.0231,
+          "chg13": -0.0277,
+          "chg20": -0.0419
+        },
+        "pctChg1": 0.002994,
+        "pctChg5": 0.000403,
+        "pctChg20": -0.032694,
+        "pctChg12": -0.018293,
+        "z1y": -1.3809,
+        "dirZ": 1.3809,
+        "pct1y": 0.01,
+        "pct3y": 0.026,
+        "ma20": 1.2606,
+        "moveExtreme": 0.0127,
+        "chg1Extreme": 0.3027,
+        "changeView": {
+          "frequency": "daily",
+          "items": [
+            {
+              "key": "d5",
+              "label": "5D",
+              "value": 0.0005,
+              "pctValue": 0.000403,
+              "status": "available"
+            },
+            {
+              "key": "d20",
+              "label": "20D",
+              "value": -0.0419,
+              "pctValue": -0.032694,
+              "status": "available"
+            }
+          ],
+          "legacy": {
+            "deprecated": true,
+            "field": "changes"
+          }
+        },
+        "tags": [
+          "刷一年新低"
+        ],
+        "isNotable": true,
+        "deviationLevel": "notable"
+      },
+      {
+        "id": "MKT_HS300",
+        "name_cn": "沪深300指数",
+        "layer": "market",
+        "dimension": "liquidity",
+        "category": "risk",
+        "frequency": "daily",
+        "unit": "index",
+        "importance": "high",
+        "seriesRole": null,
+        "instrumentIdentity": null,
+        "marketIdentity": null,
+        "direction": "higher_is_stronger",
+        "polarity": 1,
+        "status": "FRESH",
+        "ageDays": 0,
+        "dataProvenance": {
+          "provider": "iFinD",
+          "collectedAt": "2026-11-05T09:37:50.571Z"
+        },
+        "scorable": true,
+        "latest": {
+          "date": "2026-11-05",
+          "value": 4113.4112
+        },
+        "changes": {
+          "chg1": 12.0762,
+          "chg4": 127.9102,
+          "chg5": 71.5736,
+          "chg12": -38.6964,
+          "chg13": -61.1237,
+          "chg20": -196.8653
+        },
+        "pctChg1": 0.002944,
+        "pctChg5": 0.017708,
+        "pctChg20": -0.045673,
+        "pctChg12": -0.00932,
+        "z1y": -2.5624,
+        "dirZ": -2.5624,
+        "pct1y": 0.046,
+        "pct3y": 0.6007,
+        "ma20": 4126.0132,
+        "moveExtreme": 0.638,
+        "chg1Extreme": 0.2913,
+        "changeView": {
+          "frequency": "daily",
+          "items": [
+            {
+              "key": "d1",
+              "label": "1D",
+              "value": 12.0762,
+              "pctValue": 0.002944,
+              "status": "available"
+            },
+            {
+              "key": "d5",
+              "label": "5D",
+              "value": 71.5736,
+              "pctValue": 0.017708,
+              "status": "available"
+            },
+            {
+              "key": "d20",
+              "label": "20D",
+              "value": -196.8653,
+              "pctValue": -0.045673,
+              "status": "available"
+            }
+          ],
+          "legacy": {
+            "deprecated": true,
+            "field": "changes"
+          }
+        },
+        "tags": [
+          "位置极端"
         ],
         "isNotable": true,
         "deviationLevel": "notable"
@@ -850,10 +805,10 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "EXPECTED",
-        "ageDays": 2,
+        "ageDays": 3,
         "dataProvenance": {
           "provider": "iFinD",
-          "collectedAt": "2026-11-04T13:28:12.286Z"
+          "collectedAt": "2026-11-05T09:37:50.571Z"
         },
         "scorable": true,
         "latest": {
@@ -933,8 +888,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 9150,
         "d1": -0.036842,
@@ -976,8 +931,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5586,
         "d1": -0.029703,
@@ -1018,8 +973,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 8711,
         "d1": -0.04537,
@@ -1060,8 +1015,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 15695,
         "d1": -0.015987,
@@ -1108,8 +1063,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 698.2,
         "d1": -0.042906,
@@ -1149,7 +1104,7 @@
         "direction": "higher_is_tighter",
         "polarity": -1,
         "status": "FRESH",
-        "ageDays": 35,
+        "ageDays": 36,
         "dataProvenance": {
           "provider": "iFinD",
           "collectedAt": "2026-10-19T07:33:56.259Z",
@@ -1458,28 +1413,28 @@
       "unit": "cny_per_kg",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 73.74
+        "date": "2026-11-05",
+        "value": 73.77
       },
-      "z1y": 2.2194,
-      "dirZ": -2.2194,
-      "pct3y": 0.994,
+      "z1y": 2.2001,
+      "dirZ": -2.2001,
+      "pct3y": 0.996,
       "changes": {
-        "chg1": -0.01,
-        "chg4": 0.17,
-        "chg5": 0.3,
-        "chg12": 1.14,
-        "chg13": 1.12,
-        "chg20": 0.62
+        "chg1": 0.03,
+        "chg4": 0.33,
+        "chg5": 0.2,
+        "chg12": 0.73,
+        "chg13": 1.17,
+        "chg20": 0.16
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 2.2194
+          "value": 2.2001
         },
         {
           "id": "PERCENTILE_HIGH",
-          "value": 0.994
+          "value": 0.996
         }
       ],
       "severity": "high"
@@ -1492,54 +1447,54 @@
       "unit": "cny_per_kg",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 4.05
+        "date": "2026-11-05",
+        "value": 4.07
       },
-      "z1y": -1.2373,
-      "dirZ": 1.2373,
-      "pct3y": 0.0033,
+      "z1y": -1.1965,
+      "dirZ": 1.1965,
+      "pct3y": 0.0067,
       "changes": {
         "chg1": 0.02,
         "chg4": -0.01,
-        "chg5": -0.05,
-        "chg12": -0.16,
-        "chg13": -0.26,
-        "chg20": -0.32
+        "chg5": 0.01,
+        "chg12": -0.08,
+        "chg13": -0.14,
+        "chg20": -0.28
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0033
+          "value": 0.0067
         }
       ],
       "severity": "high"
     },
     {
-      "id": "HF_FRUIT",
-      "name_cn": "平均批发价:6种重点监测水果",
-      "dimension": "inflation",
+      "id": "HF_COPPER_SPOT",
+      "name_cn": "现货价:铜",
+      "dimension": "growth",
       "frequency": "daily",
-      "unit": "cny_per_kg",
+      "unit": "cny_per_ton",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 6.65
+        "date": "2026-11-05",
+        "value": 110205
       },
-      "z1y": -1.4886,
-      "dirZ": 1.4886,
-      "pct3y": 0.04,
+      "z1y": 1.1689,
+      "dirZ": 1.1689,
+      "pct3y": 0.966,
       "changes": {
-        "chg1": -0.02,
-        "chg4": 0.18,
-        "chg5": -0.03,
-        "chg12": -0.11,
-        "chg13": -0.01,
-        "chg20": -0.08
+        "chg1": 920,
+        "chg4": -150,
+        "chg5": -705,
+        "chg12": 285,
+        "chg13": -528.33,
+        "chg20": -2381.67
       },
       "triggers": [
         {
-          "id": "PERCENTILE_LOW",
-          "value": 0.04
+          "id": "PERCENTILE_HIGH",
+          "value": 0.966
         }
       ],
       "severity": "high"
@@ -1575,40 +1530,6 @@
       "severity": "medium"
     },
     {
-      "id": "HF_HRC",
-      "name_cn": "热轧卷板主力",
-      "dimension": "growth",
-      "frequency": "daily",
-      "unit": "cny_per_ton",
-      "status": "FRESH",
-      "latest": {
-        "date": "2026-11-04",
-        "value": 3120
-      },
-      "z1y": -2.4399,
-      "dirZ": -2.4399,
-      "pct3y": 0.0213,
-      "changes": {
-        "chg1": 7,
-        "chg4": -36,
-        "chg5": -13,
-        "chg12": -91,
-        "chg13": -99,
-        "chg20": -96
-      },
-      "triggers": [
-        {
-          "id": "ZSCORE_EXTREME",
-          "value": 2.4399
-        },
-        {
-          "id": "PERCENTILE_LOW",
-          "value": 0.0213
-        }
-      ],
-      "severity": "high"
-    },
-    {
       "id": "HF_IRON_ORE",
       "name_cn": "铁矿石主力",
       "dimension": "growth",
@@ -1616,87 +1537,57 @@
       "unit": "cny_per_ton",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 686.5
+        "date": "2026-11-05",
+        "value": 681
       },
-      "z1y": -1.8578,
-      "dirZ": -1.8578,
-      "pct3y": 0.0167,
+      "z1y": -1.9495,
+      "dirZ": -1.9495,
+      "pct3y": 0.014,
       "changes": {
-        "chg1": 22.5,
-        "chg4": 7.5,
-        "chg5": 13.5,
-        "chg12": -1,
-        "chg13": -3.5,
-        "chg20": -15
+        "chg1": -5.5,
+        "chg4": 8,
+        "chg5": 2,
+        "chg12": -6.5,
+        "chg13": -6.5,
+        "chg20": -2.5
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0167
+          "value": 0.014
         }
       ],
       "severity": "high"
     },
     {
-      "id": "HF_GLASS",
-      "name_cn": "玻璃主力",
-      "dimension": "property",
+      "id": "HF_CRUDE",
+      "name_cn": "INE原油主力连续（宏观评分口径）",
+      "dimension": "inflation",
       "frequency": "daily",
-      "unit": "cny_per_ton",
+      "unit": "cny_per_barrel",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 895
+        "date": "2026-11-05",
+        "value": 624.3
       },
-      "z1y": -1.0227,
-      "dirZ": -1.0227,
-      "pct3y": 0.05,
+      "z1y": 0.4101,
+      "dirZ": -0.4101,
+      "pct3y": 0.77,
       "changes": {
-        "chg1": 0,
-        "chg4": 20,
-        "chg5": 20,
-        "chg12": 15,
-        "chg13": 16,
-        "chg20": -19
+        "chg1": -57.3,
+        "chg4": -105.7,
+        "chg5": -105.2,
+        "chg12": -103.7,
+        "chg13": -91.2,
+        "chg20": -134.2
       },
       "triggers": [
         {
-          "id": "PERCENTILE_LOW",
-          "value": 0.05
+          "id": "FIVE_DAY_MOVE_EXTREME",
+          "value": 0.9833
         }
       ],
-      "severity": "high"
-    },
-    {
-      "id": "MKT_DR001",
-      "name_cn": "DR001",
-      "dimension": "liquidity",
-      "frequency": "daily",
-      "unit": "pct",
-      "status": "FRESH",
-      "latest": {
-        "date": "2026-11-04",
-        "value": 1.2591
-      },
-      "z1y": -1.1154,
-      "dirZ": 1.1154,
-      "pct3y": 0.0367,
-      "changes": {
-        "chg1": -0.0274,
-        "chg4": -0.0187,
-        "chg5": -0.0194,
-        "chg12": -0.0033,
-        "chg13": -0.0017,
-        "chg20": -0.11
-      },
-      "triggers": [
-        {
-          "id": "PERCENTILE_LOW",
-          "value": 0.0367
-        }
-      ],
-      "severity": "high"
+      "severity": "medium"
     },
     {
       "id": "MKT_DR007",
@@ -1706,24 +1597,84 @@
       "unit": "pct",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 1.3242
+        "date": "2026-11-05",
+        "value": 1.3179
       },
-      "z1y": -1.3075,
-      "dirZ": 1.3075,
-      "pct3y": 0.0247,
+      "z1y": -1.3807,
+      "dirZ": 1.3807,
+      "pct3y": 0.0067,
       "changes": {
-        "chg1": -0.023,
-        "chg4": -0.0176,
-        "chg5": -0.017,
-        "chg12": 0.003,
-        "chg13": -0.0016,
-        "chg20": -0.058
+        "chg1": -0.0063,
+        "chg4": -0.0719,
+        "chg5": -0.0239,
+        "chg12": -0.0016,
+        "chg13": -0.0033,
+        "chg20": -0.0116
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0247
+          "value": 0.0067
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "id": "MKT_R001",
+      "name_cn": "R001",
+      "dimension": "liquidity",
+      "frequency": "daily",
+      "unit": "pct",
+      "status": "EXPECTED",
+      "latest": {
+        "date": "2026-11-04",
+        "value": 1.3028
+      },
+      "z1y": -1.302,
+      "dirZ": 1.302,
+      "pct3y": 0.04,
+      "changes": {
+        "chg1": -0.0328,
+        "chg4": -0.0204,
+        "chg5": -0.0164,
+        "chg12": 0,
+        "chg13": -0.0035,
+        "chg20": -0.0864
+      },
+      "triggers": [
+        {
+          "id": "PERCENTILE_LOW",
+          "value": 0.04
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "id": "MKT_R007",
+      "name_cn": "R007",
+      "dimension": "liquidity",
+      "frequency": "daily",
+      "unit": "pct",
+      "status": "EXPECTED",
+      "latest": {
+        "date": "2026-11-04",
+        "value": 1.3789
+      },
+      "z1y": -0.9144,
+      "dirZ": 0.9144,
+      "pct3y": 0.0353,
+      "changes": {
+        "chg1": -0.0217,
+        "chg4": 0.0005,
+        "chg5": 0.0043,
+        "chg12": -0.0065,
+        "chg13": -0.0034,
+        "chg20": -0.033
+      },
+      "triggers": [
+        {
+          "id": "PERCENTILE_LOW",
+          "value": 0.0353
         }
       ],
       "severity": "high"
@@ -1736,24 +1687,24 @@
       "unit": "pct",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 1.329
+        "date": "2026-11-05",
+        "value": 1.323
       },
-      "z1y": -1.2984,
-      "dirZ": 1.2984,
-      "pct3y": 0.0293,
+      "z1y": -1.3757,
+      "dirZ": 1.3757,
+      "pct3y": 0.0173,
       "changes": {
-        "chg1": -0.013,
-        "chg4": -0.011,
-        "chg5": -0.011,
-        "chg12": 0.007,
-        "chg13": -0.01,
-        "chg20": -0.061
+        "chg1": -0.006,
+        "chg4": -0.069,
+        "chg5": -0.017,
+        "chg12": 0.003,
+        "chg13": 0.001,
+        "chg20": -0.018
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0293
+          "value": 0.0173
         }
       ],
       "severity": "high"
@@ -1766,24 +1717,24 @@
       "unit": "pct",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 1.236
+        "date": "2026-11-05",
+        "value": 1.2397
       },
-      "z1y": -1.448,
-      "dirZ": 1.448,
-      "pct3y": 0.0233,
+      "z1y": -1.3809,
+      "dirZ": 1.3809,
+      "pct3y": 0.026,
       "changes": {
-        "chg1": -0.0085,
-        "chg4": -0.0032,
-        "chg5": -0.0124,
-        "chg12": -0.0314,
-        "chg13": -0.0369,
-        "chg20": -0.0491
+        "chg1": 0.0037,
+        "chg4": -0.0243,
+        "chg5": 0.0005,
+        "chg12": -0.0231,
+        "chg13": -0.0277,
+        "chg20": -0.0419
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0233
+          "value": 0.026
         }
       ],
       "severity": "high"
@@ -1796,28 +1747,28 @@
       "unit": "pct",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 1.6077
+        "date": "2026-11-05",
+        "value": 1.6038
       },
-      "z1y": -2.351,
-      "dirZ": 2.351,
-      "pct3y": 0.0093,
+      "z1y": -2.3727,
+      "dirZ": 2.3727,
+      "pct3y": 0.0047,
       "changes": {
-        "chg1": -0.0133,
-        "chg4": -0.0156,
-        "chg5": -0.0268,
-        "chg12": -0.042,
-        "chg13": -0.0403,
-        "chg20": -0.0822
+        "chg1": -0.0039,
+        "chg4": -0.0462,
+        "chg5": -0.0195,
+        "chg12": -0.0316,
+        "chg13": -0.0459,
+        "chg20": -0.0826
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 2.351
+          "value": 2.3727
         },
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0093
+          "value": 0.0047
         }
       ],
       "severity": "high"
@@ -1830,24 +1781,24 @@
       "unit": "pct",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 2.0415
+        "date": "2026-11-05",
+        "value": 2.0425
       },
-      "z1y": -2.1799,
-      "dirZ": 2.1799,
-      "pct3y": 0.218,
+      "z1y": -2.1469,
+      "dirZ": 2.1469,
+      "pct3y": 0.2193,
       "changes": {
-        "chg1": -0.0093,
-        "chg4": -0.0052,
-        "chg5": -0.0074,
-        "chg12": -0.0195,
+        "chg1": 0.001,
+        "chg4": -0.0401,
+        "chg5": -0.0042,
+        "chg12": -0.0085,
         "chg13": -0.0185,
-        "chg20": -0.0645
+        "chg20": -0.049
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 2.1799
+          "value": 2.1469
         }
       ],
       "severity": "high"
@@ -1860,24 +1811,24 @@
       "unit": "pct",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 1.6003
+        "date": "2026-11-05",
+        "value": 1.5926
       },
-      "z1y": -1.307,
-      "dirZ": 1.307,
-      "pct3y": 0.0153,
+      "z1y": -1.3679,
+      "dirZ": 1.3679,
+      "pct3y": 0.014,
       "changes": {
-        "chg1": -0.0157,
-        "chg4": 0.0432,
-        "chg5": 0.0419,
-        "chg12": 0.0082,
-        "chg13": 0.0085,
-        "chg20": -0.0276
+        "chg1": -0.0077,
+        "chg4": -0.0164,
+        "chg5": 0.0355,
+        "chg12": 0.0175,
+        "chg13": 0.0005,
+        "chg20": -0.0307
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0153
+          "value": 0.014
         }
       ],
       "severity": "high"
@@ -1890,24 +1841,24 @@
       "unit": "cny",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 6.718
+        "date": "2026-11-05",
+        "value": 6.7156
       },
-      "z1y": -1.4213,
+      "z1y": -1.4318,
       "dirZ": 0,
-      "pct3y": 0.0107,
+      "pct3y": 0.006,
       "changes": {
-        "chg1": 0.003,
-        "chg4": 0.0033,
-        "chg5": 0.0015,
-        "chg12": -0.0028,
-        "chg13": -0.004,
-        "chg20": -0.0171
+        "chg1": -0.0024,
+        "chg4": 0.0018,
+        "chg5": 0.0009,
+        "chg12": -0.0044,
+        "chg13": -0.0052,
+        "chg20": -0.0211
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0107
+          "value": 0.006
         }
       ],
       "severity": "high"
@@ -1920,24 +1871,24 @@
       "unit": "cny",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 6.677
+        "date": "2026-11-05",
+        "value": 6.671
       },
-      "z1y": -1.3326,
+      "z1y": -1.3688,
       "dirZ": 0,
-      "pct3y": 0.0127,
+      "pct3y": 0.0087,
       "changes": {
-        "chg1": 0.0005,
-        "chg4": 0.0149,
-        "chg5": 0.0101,
-        "chg12": -0.0047,
-        "chg13": -0.0098,
-        "chg20": -0.0283
+        "chg1": -0.006,
+        "chg4": 0.0153,
+        "chg5": 0.0089,
+        "chg12": -0.0081,
+        "chg13": -0.0107,
+        "chg20": -0.0304
       },
       "triggers": [
         {
           "id": "PERCENTILE_LOW",
-          "value": 0.0127
+          "value": 0.0087
         }
       ],
       "severity": "high"
@@ -1950,54 +1901,24 @@
       "unit": "index",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 4101.335
+        "date": "2026-11-05",
+        "value": 4113.4112
       },
-      "z1y": -2.668,
-      "dirZ": -2.668,
-      "pct3y": 0.5913,
+      "z1y": -2.5624,
+      "dirZ": -2.5624,
+      "pct3y": 0.6007,
       "changes": {
-        "chg1": 92.4602,
-        "chg4": 59.4974,
-        "chg5": 17.4648,
-        "chg12": -73.1999,
-        "chg13": -69.2781,
-        "chg20": -256.2805
+        "chg1": 12.0762,
+        "chg4": 127.9102,
+        "chg5": 71.5736,
+        "chg12": -38.6964,
+        "chg13": -61.1237,
+        "chg20": -196.8653
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 2.668
-        }
-      ],
-      "severity": "high"
-    },
-    {
-      "id": "MKT_CSI1000",
-      "name_cn": "中证1000指数",
-      "dimension": "liquidity",
-      "frequency": "daily",
-      "unit": "index",
-      "status": "FRESH",
-      "latest": {
-        "date": "2026-11-04",
-        "value": 6511.8065
-      },
-      "z1y": -2.1919,
-      "dirZ": -2.1919,
-      "pct3y": 0.5727,
-      "changes": {
-        "chg1": 290.5743,
-        "chg4": 133.0263,
-        "chg5": -66.2929,
-        "chg12": -186.4961,
-        "chg13": -170.1379,
-        "chg20": -787.0143
-      },
-      "triggers": [
-        {
-          "id": "ZSCORE_EXTREME",
-          "value": 2.1919
+          "value": 2.5624
         }
       ],
       "severity": "high"
@@ -2010,24 +1931,24 @@
       "unit": "index",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 2544.73
+        "date": "2026-11-05",
+        "value": 2566.803
       },
-      "z1y": -2.2576,
-      "dirZ": -2.2576,
-      "pct3y": 0.614,
+      "z1y": -2.1742,
+      "dirZ": -2.1742,
+      "pct3y": 0.6167,
       "changes": {
-        "chg1": 153.0782,
-        "chg4": 27.1418,
-        "chg5": -90.03,
-        "chg12": -201.561,
-        "chg13": -227.6536,
-        "chg20": -590.5467
+        "chg1": 22.073,
+        "chg4": 153.1739,
+        "chg5": 49.2148,
+        "chg12": -172.4001,
+        "chg13": -179.488,
+        "chg20": -469.8543
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 2.2576
+          "value": 2.1742
         }
       ],
       "severity": "high"
@@ -2040,24 +1961,24 @@
       "unit": "index",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-04",
-        "value": 3686.1725
+        "date": "2026-11-05",
+        "value": 3689.9109
       },
-      "z1y": -2.2305,
-      "dirZ": -2.2305,
+      "z1y": -2.1732,
+      "dirZ": -2.1732,
       "pct3y": 0.618,
       "changes": {
-        "chg1": 78.0749,
-        "chg4": 34.7388,
-        "chg5": 4.7034,
-        "chg12": -44.7475,
-        "chg13": -30.1117,
-        "chg20": -156.0221
+        "chg1": 3.7384,
+        "chg4": 90.8943,
+        "chg5": 38.4772,
+        "chg12": -45.4595,
+        "chg13": -41.0091,
+        "chg20": -121.9934
       },
       "triggers": [
         {
           "id": "ZSCORE_EXTREME",
-          "value": 2.2305
+          "value": 2.1732
         }
       ],
       "severity": "high"
@@ -2155,7 +2076,7 @@
           {
             "id": "HF_COPPER",
             "name_cn": "沪铜主力",
-            "value": 0.8649
+            "value": 0.8914
           },
           {
             "id": "CN_RE_SALES_AREA",
@@ -2165,13 +2086,13 @@
           {
             "id": "HF_REBAR",
             "name_cn": "螺纹钢主力",
-            "value": -0.8437
+            "value": -0.5823
           }
         ],
         "usable": 5,
         "positive": 3,
         "negative": 1,
-        "mean": 0.3085,
+        "mean": 0.3661,
         "direction": "positive"
       },
       "sideB": {
@@ -2180,12 +2101,12 @@
           {
             "id": "MKT_CGB_10Y",
             "name_cn": "中债国债到期收益率:10年",
-            "value": 2.351
+            "value": 2.3727
           },
           {
             "id": "MKT_HS300",
             "name_cn": "沪深300指数",
-            "value": -2.668
+            "value": -2.5624
           },
           {
             "id": "MKT_USDCNY",
@@ -2196,7 +2117,7 @@
         "usable": 3,
         "positive": 1,
         "negative": 1,
-        "mean": -0.1057,
+        "mean": -0.0632,
         "direction": "neutral"
       },
       "interpretation": "宏观高频 positive / 市场确认 neutral"
@@ -2237,18 +2158,18 @@
           {
             "id": "MKT_AAA_3Y",
             "name_cn": "中债中短期票据到期收益率(AAA):3年",
-            "value": 1.307
+            "value": 1.3679
           },
           {
             "id": "MKT_CREDIT_SPREAD_3Y",
             "name_cn": "AAA 3Y 信用利差",
-            "value": 0.8491
+            "value": 1.064
           }
         ],
         "usable": 2,
         "positive": 2,
         "negative": 0,
-        "mean": 1.078,
+        "mean": 1.2159,
         "direction": "positive"
       },
       "interpretation": "地产销售 neutral / 信用确认 positive"
@@ -2269,18 +2190,18 @@
           {
             "id": "MKT_DR007",
             "name_cn": "DR007",
-            "value": 1.3075
+            "value": 1.3807
           },
           {
             "id": "MKT_R007",
             "name_cn": "R007",
-            "value": 0.6875
+            "value": 0.9144
           }
         ],
         "usable": 2,
         "positive": 2,
         "negative": 0,
-        "mean": 0.9975,
+        "mean": 1.1476,
         "direction": "positive"
       },
       "sideB": {
@@ -2289,7 +2210,7 @@
           {
             "id": "MKT_CGB_10Y",
             "name_cn": "中债国债到期收益率:10年",
-            "value": 2.351
+            "value": 2.3727
           },
           {
             "id": "CN_PMI_ORDER",
@@ -2300,7 +2221,7 @@
         "usable": 2,
         "positive": 2,
         "negative": 0,
-        "mean": 1.4292,
+        "mean": 1.4401,
         "direction": "positive"
       },
       "interpretation": "流动性支持 positive / 增长确认 positive"
@@ -2369,7 +2290,7 @@
         "count": 11,
         "usable": 11,
         "medianDirZ": 0.4481,
-        "median20DPct": -0.023411
+        "median20DPct": -0.011432
       },
       "consumption": {
         "count": 3,
@@ -2393,43 +2314,43 @@
         "count": 13,
         "usable": 13,
         "medianDirZ": -0.2406,
-        "median20DPct": -0.012174
+        "median20DPct": -0.005203
       },
       "credit": {
         "count": 7,
         "usable": 7,
         "medianDirZ": -1.1575,
-        "median20DPct": 0.022883
+        "median20DPct": 0.006932
       },
       "property": {
         "count": 10,
         "usable": 10,
         "medianDirZ": -0.2892,
-        "median20DPct": -0.016821
+        "median20DPct": -0.002369
       },
       "liquidity": {
         "count": 5,
         "usable": 5,
-        "medianDirZ": 1.1154,
-        "median20DPct": -0.041962
+        "medianDirZ": 1.302,
+        "median20DPct": -0.023373
       },
       "rates": {
         "count": 6,
         "usable": 6,
-        "medianDirZ": 1.1726,
-        "median20DPct": -0.040763
+        "medianDirZ": 1.1067,
+        "median20DPct": -0.035325
       },
       "fx": {
         "count": 2,
         "usable": 2,
         "medianDirZ": 0,
-        "median20DPct": -0.00338
+        "median20DPct": -0.003834
       },
       "risk": {
         "count": 4,
         "usable": 4,
-        "medianDirZ": -2.2441,
-        "median20DPct": -0.08332
+        "medianDirZ": -2.1737,
+        "median20DPct": -0.057048
       }
     }
   },
@@ -2866,8 +2787,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 671,
         "d1": -0.005189,
@@ -2908,8 +2829,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 1365.5,
         "d1": -0.010866,
@@ -2948,8 +2869,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 1848.5,
         "d1": -0.002428,
@@ -3024,8 +2945,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5718,
         "d1": -0.018538,
@@ -3066,8 +2987,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5830,
         "d1": -0.0041,
@@ -3106,8 +3027,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 2991,
         "d1": -0.005321,
@@ -3149,8 +3070,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 3147,
         "d1": -0.002852,
@@ -3192,8 +3113,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 13730,
         "d1": 0.013284,
@@ -3232,8 +3153,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 2621,
         "d1": -0.003043,
@@ -3272,8 +3193,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 106090,
         "d1": -0.015954,
@@ -3312,8 +3233,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 23035,
         "d1": -0.005182,
@@ -3352,8 +3273,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 25425,
         "d1": -0.004308,
@@ -3394,8 +3315,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 15695,
         "d1": -0.015987,
@@ -3437,8 +3358,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 116930,
         "d1": -0.000769,
@@ -3477,8 +3398,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 350380,
         "d1": -0.033888,
@@ -3519,8 +3440,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 94670,
         "d1": -0.017742,
@@ -3566,8 +3487,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 698.2,
         "d1": -0.042906,
@@ -3608,8 +3529,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5081,
         "d1": -0.028861,
@@ -3650,8 +3571,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5797,
         "d1": -0.03125,
@@ -3692,8 +3613,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5044,
         "d1": -0.029813,
@@ -3734,8 +3655,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 7650,
         "d1": -0.014175,
@@ -3776,8 +3697,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 9194,
         "d1": -0.022954,
@@ -3816,8 +3737,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 3506,
         "d1": -0.014338,
@@ -3859,8 +3780,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5049,
         "d1": -0.010776,
@@ -3901,8 +3822,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 970,
         "d1": -0.005128,
@@ -3941,8 +3862,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 1491,
         "d1": 0.008114,
@@ -3983,8 +3904,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 8711,
         "d1": -0.04537,
@@ -4025,8 +3946,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 19210,
         "d1": -0.005436,
@@ -4065,8 +3986,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 16265,
         "d1": -0.004285,
@@ -4105,8 +4026,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 16565,
         "d1": -0.026161,
@@ -4147,8 +4068,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 4576,
         "d1": 0.003509,
@@ -4189,8 +4110,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 6496,
         "d1": -0.011263,
@@ -4229,8 +4150,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 8266,
         "d1": -0.007206,
@@ -4271,8 +4192,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 8134,
         "d1": -0.015969,
@@ -4313,8 +4234,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 10364,
         "d1": -0.014079,
@@ -4355,8 +4276,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 9550,
         "d1": -0.004794,
@@ -4397,8 +4318,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5341,
         "d1": -0.016209,
@@ -4437,8 +4358,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 879,
         "d1": 0.001139,
@@ -4477,8 +4398,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 1789,
         "d1": 0.001119,
@@ -4517,8 +4438,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 844.12,
         "d1": 0.006366,
@@ -4559,8 +4480,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 11655,
         "d1": -0.019352,
@@ -4601,8 +4522,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5209,
         "d1": -0.015498,
@@ -4641,8 +4562,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 2230,
         "d1": -0.001791,
@@ -4681,8 +4602,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 9216,
         "d1": -0.008819,
@@ -4721,8 +4642,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 795.5,
         "d1": -0.006246,
@@ -4764,8 +4685,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 3147,
         "d1": -0.015947,
@@ -4806,8 +4727,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 8938,
         "d1": -0.008651,
@@ -4846,8 +4767,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 10199,
         "d1": 0.003147,
@@ -4886,8 +4807,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 2191,
         "d1": -0.012173,
@@ -4928,8 +4849,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 2498,
         "d1": -0.001998,
@@ -4968,8 +4889,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 3551,
         "d1": -0.003648,
@@ -5008,8 +4929,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 9150,
         "d1": -0.036842,
@@ -5051,8 +4972,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5230,
         "d1": 0.001149,
@@ -5091,8 +5012,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 14865,
         "d1": -0.001679,
@@ -5131,8 +5052,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 5586,
         "d1": -0.029703,
@@ -5173,8 +5094,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 7866,
         "d1": -0.002789,
@@ -5215,8 +5136,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 8535,
         "d1": -0.006403,
@@ -5258,8 +5179,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 89300,
         "d1": -0.015436,
@@ -5300,8 +5221,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 33250,
         "d1": -0.008203,
@@ -5343,8 +5264,8 @@
           "status": "CARRIED",
           "latestDate": "2026-11-03"
         },
-        "status": "FRESH",
-        "ageDays": 1,
+        "status": "EXPECTED",
+        "ageDays": 2,
         "lastDate": "2026-11-03",
         "value": 2465,
         "d1": -0.029528,
@@ -5395,8 +5316,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 671,
               "d1": -0.005189,
@@ -5438,8 +5359,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 1365.5,
               "d1": -0.010866,
@@ -5479,8 +5400,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 1848.5,
               "d1": -0.002428,
@@ -5557,8 +5478,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5718,
               "d1": -0.018538,
@@ -5600,8 +5521,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5830,
               "d1": -0.0041,
@@ -5641,8 +5562,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 2991,
               "d1": -0.005321,
@@ -5685,8 +5606,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 3147,
               "d1": -0.002852,
@@ -5729,8 +5650,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 13730,
               "d1": 0.013284,
@@ -5779,8 +5700,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 2621,
               "d1": -0.003043,
@@ -5820,8 +5741,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 106090,
               "d1": -0.015954,
@@ -5861,8 +5782,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 23035,
               "d1": -0.005182,
@@ -5902,8 +5823,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 25425,
               "d1": -0.004308,
@@ -5945,8 +5866,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 15695,
               "d1": -0.015987,
@@ -5989,8 +5910,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 116930,
               "d1": -0.000769,
@@ -6030,8 +5951,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 350380,
               "d1": -0.033888,
@@ -6073,8 +5994,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 94670,
               "d1": -0.017742,
@@ -6130,8 +6051,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 698.2,
               "d1": -0.042906,
@@ -6173,8 +6094,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5081,
               "d1": -0.028861,
@@ -6216,8 +6137,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5797,
               "d1": -0.03125,
@@ -6259,8 +6180,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5044,
               "d1": -0.029813,
@@ -6302,8 +6223,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 7650,
               "d1": -0.014175,
@@ -6354,8 +6275,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 9194,
               "d1": -0.022954,
@@ -6395,8 +6316,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 3506,
               "d1": -0.014338,
@@ -6439,8 +6360,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5049,
               "d1": -0.010776,
@@ -6482,8 +6403,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 970,
               "d1": -0.005128,
@@ -6523,8 +6444,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 1491,
               "d1": 0.008114,
@@ -6566,8 +6487,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 8711,
               "d1": -0.04537,
@@ -6609,8 +6530,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 19210,
               "d1": -0.005436,
@@ -6650,8 +6571,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 16265,
               "d1": -0.004285,
@@ -6691,8 +6612,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 16565,
               "d1": -0.026161,
@@ -6734,8 +6655,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 4576,
               "d1": 0.003509,
@@ -6777,8 +6698,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 6496,
               "d1": -0.011263,
@@ -6818,8 +6739,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 8266,
               "d1": -0.007206,
@@ -6861,8 +6782,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 8134,
               "d1": -0.015969,
@@ -6904,8 +6825,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 10364,
               "d1": -0.014079,
@@ -6947,8 +6868,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 9550,
               "d1": -0.004794,
@@ -6990,8 +6911,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5341,
               "d1": -0.016209,
@@ -7031,8 +6952,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 879,
               "d1": 0.001139,
@@ -7072,8 +6993,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 1789,
               "d1": 0.001119,
@@ -7122,8 +7043,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 844.12,
               "d1": 0.006366,
@@ -7165,8 +7086,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 11655,
               "d1": -0.019352,
@@ -7217,8 +7138,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5209,
               "d1": -0.015498,
@@ -7258,8 +7179,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 2230,
               "d1": -0.001791,
@@ -7299,8 +7220,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 9216,
               "d1": -0.008819,
@@ -7340,8 +7261,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 795.5,
               "d1": -0.006246,
@@ -7384,8 +7305,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 3147,
               "d1": -0.015947,
@@ -7427,8 +7348,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 8938,
               "d1": -0.008651,
@@ -7468,8 +7389,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 10199,
               "d1": 0.003147,
@@ -7509,8 +7430,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 2191,
               "d1": -0.012173,
@@ -7552,8 +7473,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 2498,
               "d1": -0.001998,
@@ -7593,8 +7514,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 3551,
               "d1": -0.003648,
@@ -7634,8 +7555,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 9150,
               "d1": -0.036842,
@@ -7678,8 +7599,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5230,
               "d1": 0.001149,
@@ -7719,8 +7640,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 14865,
               "d1": -0.001679,
@@ -7760,8 +7681,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 5586,
               "d1": -0.029703,
@@ -7803,8 +7724,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 7866,
               "d1": -0.002789,
@@ -7855,8 +7776,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 8535,
               "d1": -0.006403,
@@ -7899,8 +7820,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 89300,
               "d1": -0.015436,
@@ -7942,8 +7863,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 33250,
               "d1": -0.008203,
@@ -7986,8 +7907,8 @@
                 "status": "CARRIED",
                 "latestDate": "2026-11-03"
               },
-              "status": "FRESH",
-              "ageDays": 1,
+              "status": "EXPECTED",
+              "ageDays": 2,
               "lastDate": "2026-11-03",
               "value": 2465,
               "d1": -0.029528,
@@ -8888,7 +8809,7 @@
         }
       ]
     },
-    "asOf": "2026-11-04",
+    "asOf": "2026-11-05",
     "spreads": [
       {
         "id": "FUT_SPREAD_REBAR_ORE",
@@ -9054,20 +8975,20 @@
         "id": "MKT_R001",
         "name_cn": "R001",
         "latest": {
-          "date": "2026-11-03",
-          "value": 1.3356
+          "date": "2026-11-04",
+          "value": 1.3028
         },
         "status": "EXPECTED",
         "dataProvenance": {
           "provider": "Wind / 中国货币网",
           "transport": "Wind / 中国货币网 M1001794",
           "fieldCode": "L004109429",
-          "observationDate": "2026-11-03",
-          "collectedAt": "2026-11-04T13:27:23.291Z",
+          "observationDate": "2026-11-04",
+          "collectedAt": "2026-11-05T09:36:33.491Z",
           "sourceIndicator": "M1001794",
           "datePolicy": "PREVIOUS_TRADING_DAY",
           "status": "CARRIED",
-          "runDate": "2026-11-04",
+          "runDate": "2026-11-05",
           "label": "沿用前一交易日值，保留真实观测日期"
         }
       },
@@ -9075,20 +8996,20 @@
         "id": "MKT_R007",
         "name_cn": "R007",
         "latest": {
-          "date": "2026-11-03",
-          "value": 1.4006
+          "date": "2026-11-04",
+          "value": 1.3789
         },
         "status": "EXPECTED",
         "dataProvenance": {
           "provider": "Wind / 中国货币网",
           "transport": "Wind / 中国货币网 M0041653",
           "fieldCode": "L004109430",
-          "observationDate": "2026-11-03",
-          "collectedAt": "2026-11-04T13:27:23.369Z",
+          "observationDate": "2026-11-04",
+          "collectedAt": "2026-11-05T09:36:33.605Z",
           "sourceIndicator": "M0041653",
           "datePolicy": "PREVIOUS_TRADING_DAY",
           "status": "CARRIED",
-          "runDate": "2026-11-04",
+          "runDate": "2026-11-05",
           "label": "沿用前一交易日值，保留真实观测日期"
         }
       }
