@@ -1,0 +1,58 @@
+{
+  "contract": "AI_HANDOFF_META",
+  "version": "2.0.0",
+  "generatedAt": "2026-11-23T09:53:25.705Z",
+  "tradingDataAsOf": "2026-11-23",
+  "runDate": "2026-11-23",
+  "dateQuality": {
+    "coverage": 0.933333,
+    "minimumCoverage": 0.8,
+    "refreshedDailyCount": 30,
+    "byDate": {
+      "2026-11-23": 28,
+      "2026-11-20": 2
+    }
+  },
+  "sourceCommit": "0a8483b326a1716ceb87cc41295e5ea5df237b19",
+  "sourceDirty": false,
+  "snapshotSha256": "d6a0e82d894de329e10644868a78c4540755743606a6475848061c9e1284a55d",
+  "handoffSha256": "a36bad3fbe7de788c56fce4702df52072658ca2dd5380e1e4d4ddc4b0685e5f5",
+  "reportSha256": "4e10b7042655b971d26b1da19cda0b9778ce6ce9425130f5bd2cb6201c33f0d0",
+  "workbenchSha256": "cd4507246c0c734a7e2b9bca31e4f75f35376aa1f56cc6c2aae20dff1bc577d6",
+  "validationStatus": "PASS",
+  "validation": {
+    "handoff": {
+      "status": "PASS",
+      "passed": 21,
+      "total": 21,
+      "generatedAt": "2026-11-23T09:53:24.304Z"
+    },
+    "verify": {
+      "status": "PASS",
+      "passed": 26,
+      "total": 26,
+      "generatedAt": "2026-11-23T09:53:24.393Z"
+    }
+  },
+  "remoteBranch": "ai-runtime",
+  "remotePublishCommit": "b4468b7d712cd25438504e5a9fb394e093b7f930",
+  "historyPath": "history/2026-11-23",
+  "files": [
+    {
+      "name": "ai-handoff-latest.json",
+      "sha256": "a36bad3fbe7de788c56fce4702df52072658ca2dd5380e1e4d4ddc4b0685e5f5"
+    },
+    {
+      "name": "macro-daily-report.md",
+      "sha256": "4e10b7042655b971d26b1da19cda0b9778ce6ce9425130f5bd2cb6201c33f0d0"
+    },
+    {
+      "name": "macro-snapshot.json",
+      "sha256": "d6a0e82d894de329e10644868a78c4540755743606a6475848061c9e1284a55d"
+    },
+    {
+      "name": "macro-workbench.html",
+      "sha256": "cd4507246c0c734a7e2b9bca31e4f75f35376aa1f56cc6c2aae20dff1bc577d6"
+    }
+  ]
+}
