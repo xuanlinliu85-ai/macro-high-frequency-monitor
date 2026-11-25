@@ -1,57 +1,57 @@
 {
   "contract": "AI_HANDOFF_META",
   "version": "2.0.0",
-  "generatedAt": "2026-11-25T09:46:58.176Z",
+  "generatedAt": "2026-11-25T09:48:32.764Z",
   "tradingDataAsOf": "2026-11-25",
   "runDate": "2026-11-25",
   "dateQuality": {
     "coverage": 1,
     "minimumCoverage": 0.8,
-    "refreshedDailyCount": 30,
+    "refreshedDailyCount": 28,
     "byDate": {
-      "2026-11-25": 30
+      "2026-11-25": 28
     }
   },
   "sourceCommit": "0a8483b326a1716ceb87cc41295e5ea5df237b19",
   "sourceDirty": false,
-  "snapshotSha256": "9c5b13f7bbfa63227c64fef56d08098202d4357e85412d352ad4c243ac3eb93a",
-  "handoffSha256": "c082e70331e12a6904c94bf24ed97a2de4669655d6aba59b3689dfd7c3f9057a",
-  "reportSha256": "ee4abb844cc47d7abe9d436ffb4efa9e30e7039c5d2425fc29d49cb2b85d1b23",
-  "workbenchSha256": "cdcf2e158bc97d59fc34ccc69246d2829bcc0447b8f79c4d20edce4722cb2426",
+  "snapshotSha256": "4c73c062aa8b058dcab3fe3664016f7f791403f5215184b8a0a381fc38a611a9",
+  "handoffSha256": "8991dc77e97f6bbfaa459640f208c42f9242dd69aec3518595708e01b3e1d76e",
+  "reportSha256": "3c29c5d3499afe6fee5767e2e985f7f1f771f702815f6e3b604fc74869944d92",
+  "workbenchSha256": "cd68d45cf1b7149d37ffb25f96c3ce966f9aa3d85b6d5ed8aac0bc094780c4eb",
   "validationStatus": "PASS",
   "validation": {
     "handoff": {
       "status": "PASS",
       "passed": 21,
       "total": 21,
-      "generatedAt": "2026-11-25T09:46:56.798Z"
+      "generatedAt": "2026-11-25T09:48:31.480Z"
     },
     "verify": {
       "status": "PASS",
       "passed": 26,
       "total": 26,
-      "generatedAt": "2026-11-25T09:46:56.892Z"
+      "generatedAt": "2026-11-25T09:48:31.566Z"
     }
   },
   "remoteBranch": "ai-runtime",
-  "remotePublishCommit": "7487f216c85617f4ac0cb82405c7cc8fce6edd59",
+  "remotePublishCommit": "6fd7b2e57433b18ca1b54bb736a82ec6deecf4dc",
   "historyPath": "history/2026-11-25",
   "files": [
     {
       "name": "ai-handoff-latest.json",
-      "sha256": "c082e70331e12a6904c94bf24ed97a2de4669655d6aba59b3689dfd7c3f9057a"
+      "sha256": "8991dc77e97f6bbfaa459640f208c42f9242dd69aec3518595708e01b3e1d76e"
     },
     {
       "name": "macro-daily-report.md",
-      "sha256": "ee4abb844cc47d7abe9d436ffb4efa9e30e7039c5d2425fc29d49cb2b85d1b23"
+      "sha256": "3c29c5d3499afe6fee5767e2e985f7f1f771f702815f6e3b604fc74869944d92"
     },
     {
       "name": "macro-snapshot.json",
-      "sha256": "9c5b13f7bbfa63227c64fef56d08098202d4357e85412d352ad4c243ac3eb93a"
+      "sha256": "4c73c062aa8b058dcab3fe3664016f7f791403f5215184b8a0a381fc38a611a9"
     },
     {
       "name": "macro-workbench.html",
-      "sha256": "cdcf2e158bc97d59fc34ccc69246d2829bcc0447b8f79c4d20edce4722cb2426"
+      "sha256": "cd68d45cf1b7149d37ffb25f96c3ce966f9aa3d85b6d5ed8aac0bc094780c4eb"
     }
   ]
 }
