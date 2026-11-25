@@ -1,7 +1,7 @@
 {
   "contract": "MACRO_SNAPSHOT",
   "version": "1.1.0",
-  "generatedAt": "2026-11-25T09:46:56.396Z",
+  "generatedAt": "2026-11-25T09:48:31.064Z",
   "asOf": "2026-11-25",
   "tradingDataAsOf": "2026-11-25",
   "runDate": "2026-11-25",
@@ -9,9 +9,9 @@
   "dateQuality": {
     "coverage": 1,
     "minimumCoverage": 0.8,
-    "refreshedDailyCount": 30,
+    "refreshedDailyCount": 28,
     "byDate": {
-      "2026-11-25": 30
+      "2026-11-25": 28
     }
   },
   "window": {
@@ -27,6 +27,18 @@
     },
     "collectedAt": "2026-11-25T09:43:09.767Z",
     "carriedDaily": [
+      {
+        "id": "HF_BRENT",
+        "name_cn": "Brent连续（iFinD）",
+        "latestDate": "2026-11-24",
+        "provider": "iFinD"
+      },
+      {
+        "id": "HF_BALTIC",
+        "name_cn": "波罗的海运费指数:干散货(BDI)",
+        "latestDate": "2026-11-24",
+        "provider": "iFinD"
+      },
       {
         "id": "HF_THERMAL_COAL",
         "name_cn": "动力煤主力",
@@ -2476,17 +2488,17 @@
         "direction": "higher_is_stronger",
         "polarity": 1,
         "status": "FRESH",
-        "ageDays": 0,
+        "ageDays": 1,
         "dataProvenance": {
           "provider": "iFinD",
           "transport": "iFinD MCP existing Node Gateway; missing previous-day observation with actual source date retained",
           "fieldCode": "S000042890",
-          "observationDate": "2026-11-25",
+          "observationDate": "2026-11-24",
           "collectedAt": "2026-11-25T09:43:47.227Z"
         },
         "scorable": true,
         "latest": {
-          "date": "2026-11-25",
+          "date": "2026-11-24",
           "value": 3068
         },
         "changes": {
@@ -3674,7 +3686,7 @@
       "unit": "usd_per_barrel",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-25",
+        "date": "2026-11-24",
         "value": 90.96
       },
       "z1y": 0.1971,
@@ -7983,17 +7995,17 @@
       "direction": "higher_is_tighter",
       "polarity": -1,
       "status": "FRESH",
-      "ageDays": 0,
+      "ageDays": 1,
       "dataProvenance": {
         "provider": "iFinD",
         "transport": "iFinD MCP existing Node Gateway; missing previous-day observation with actual source date retained",
         "fieldCode": "S004111384",
-        "observationDate": "2026-11-25",
+        "observationDate": "2026-11-24",
         "collectedAt": "2026-11-25T09:43:47.132Z"
       },
       "scorable": true,
       "latest": {
-        "date": "2026-11-25",
+        "date": "2026-11-24",
         "value": 90.96
       },
       "changes": {
@@ -8064,17 +8076,17 @@
       "direction": "higher_is_stronger",
       "polarity": 1,
       "status": "FRESH",
-      "ageDays": 0,
+      "ageDays": 1,
       "dataProvenance": {
         "provider": "iFinD",
         "transport": "iFinD MCP existing Node Gateway; missing previous-day observation with actual source date retained",
         "fieldCode": "S000042890",
-        "observationDate": "2026-11-25",
+        "observationDate": "2026-11-24",
         "collectedAt": "2026-11-25T09:43:47.227Z"
       },
       "scorable": true,
       "latest": {
-        "date": "2026-11-25",
+        "date": "2026-11-24",
         "value": 3068
       },
       "changes": {
@@ -33790,7 +33802,7 @@
       "dirZ": -0.1971,
       "pct1y": 0.502,
       "latest": {
-        "date": "2026-11-25",
+        "date": "2026-11-24",
         "value": 90.96
       },
       "changeView": {
@@ -35901,7 +35913,7 @@
           89.33
         ],
         [
-          "2026-11-25",
+          "2026-11-24",
           90.96
         ]
       ]
@@ -35918,7 +35930,7 @@
       "dirZ": 0.9966,
       "pct1y": 0.838,
       "latest": {
-        "date": "2026-11-25",
+        "date": "2026-11-24",
         "value": 3068
       },
       "changeView": {
@@ -38022,7 +38034,7 @@
           3000
         ],
         [
-          "2026-11-25",
+          "2026-11-24",
           3068
         ]
       ]

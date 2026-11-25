@@ -1,7 +1,7 @@
 {
   "contract": "AI_MACRO_HANDOFF",
   "version": "1.0.0",
-  "generatedAt": "2026-11-25T09:46:56.670Z",
+  "generatedAt": "2026-11-25T09:48:31.357Z",
   "asOf": "2026-11-25",
   "tradingDataAsOf": "2026-11-25",
   "runDate": "2026-11-25",
@@ -9,16 +9,16 @@
   "dateQuality": {
     "coverage": 1,
     "minimumCoverage": 0.8,
-    "refreshedDailyCount": 30,
+    "refreshedDailyCount": 28,
     "byDate": {
-      "2026-11-25": 30
+      "2026-11-25": 28
     }
   },
   "source": {
     "contract": "MACRO_SNAPSHOT",
     "version": "1.1.0",
-    "generatedAt": "2026-11-25T09:46:56.396Z",
-    "sha256": "9c5b13f7bbfa63227c64fef56d08098202d4357e85412d352ad4c243ac3eb93a",
+    "generatedAt": "2026-11-25T09:48:31.064Z",
+    "sha256": "4c73c062aa8b058dcab3fe3664016f7f791403f5215184b8a0a381fc38a611a9",
     "sourceCommit": "0a8483b326a1716ceb87cc41295e5ea5df237b19",
     "sourceDirty": false,
     "data": "ifind-mcp"
@@ -1428,7 +1428,7 @@
       "unit": "usd_per_barrel",
       "status": "FRESH",
       "latest": {
-        "date": "2026-11-25",
+        "date": "2026-11-24",
         "value": 90.96
       },
       "z1y": 0.1971,
@@ -9485,6 +9485,18 @@
       }
     ],
     "carriedDaily": [
+      {
+        "id": "HF_BRENT",
+        "name_cn": "Brent连续（iFinD）",
+        "latestDate": "2026-11-24",
+        "provider": "iFinD"
+      },
+      {
+        "id": "HF_BALTIC",
+        "name_cn": "波罗的海运费指数:干散货(BDI)",
+        "latestDate": "2026-11-24",
+        "provider": "iFinD"
+      },
       {
         "id": "HF_THERMAL_COAL",
         "name_cn": "动力煤主力",
