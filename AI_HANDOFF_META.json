@@ -1,58 +1,57 @@
 {
   "contract": "AI_HANDOFF_META",
   "version": "2.0.0",
-  "generatedAt": "2026-11-24T09:52:30.774Z",
-  "tradingDataAsOf": "2026-11-24",
-  "runDate": "2026-11-24",
+  "generatedAt": "2026-11-25T09:46:58.176Z",
+  "tradingDataAsOf": "2026-11-25",
+  "runDate": "2026-11-25",
   "dateQuality": {
-    "coverage": 0.933333,
+    "coverage": 1,
     "minimumCoverage": 0.8,
     "refreshedDailyCount": 30,
     "byDate": {
-      "2026-11-24": 28,
-      "2026-11-23": 2
+      "2026-11-25": 30
     }
   },
   "sourceCommit": "0a8483b326a1716ceb87cc41295e5ea5df237b19",
   "sourceDirty": false,
-  "snapshotSha256": "4a09d19b318317e86210703ec6c6d8f927b8e2d1f40a2dc420f6717663bb24e8",
-  "handoffSha256": "79eabb54d76433d7862ec6a99019b9bc086f0aba495136bf7d68038f146f1bf9",
-  "reportSha256": "480d21ea6e6ab45cd3eef3f904696e45351c17731fd2ce2aed89b8b7b9be638e",
-  "workbenchSha256": "734607be51d8b0e7266fe67787b8e85315e8f2b6bf0dcd3135e070cc360d060c",
+  "snapshotSha256": "9c5b13f7bbfa63227c64fef56d08098202d4357e85412d352ad4c243ac3eb93a",
+  "handoffSha256": "c082e70331e12a6904c94bf24ed97a2de4669655d6aba59b3689dfd7c3f9057a",
+  "reportSha256": "ee4abb844cc47d7abe9d436ffb4efa9e30e7039c5d2425fc29d49cb2b85d1b23",
+  "workbenchSha256": "cdcf2e158bc97d59fc34ccc69246d2829bcc0447b8f79c4d20edce4722cb2426",
   "validationStatus": "PASS",
   "validation": {
     "handoff": {
       "status": "PASS",
       "passed": 21,
       "total": 21,
-      "generatedAt": "2026-11-24T09:52:29.072Z"
+      "generatedAt": "2026-11-25T09:46:56.798Z"
     },
     "verify": {
       "status": "PASS",
       "passed": 26,
       "total": 26,
-      "generatedAt": "2026-11-24T09:52:29.179Z"
+      "generatedAt": "2026-11-25T09:46:56.892Z"
     }
   },
   "remoteBranch": "ai-runtime",
-  "remotePublishCommit": "282a533a888c10257b1f7bbb6870c56cd9e0fed2",
-  "historyPath": "history/2026-11-24",
+  "remotePublishCommit": "7487f216c85617f4ac0cb82405c7cc8fce6edd59",
+  "historyPath": "history/2026-11-25",
   "files": [
     {
       "name": "ai-handoff-latest.json",
-      "sha256": "79eabb54d76433d7862ec6a99019b9bc086f0aba495136bf7d68038f146f1bf9"
+      "sha256": "c082e70331e12a6904c94bf24ed97a2de4669655d6aba59b3689dfd7c3f9057a"
     },
     {
       "name": "macro-daily-report.md",
-      "sha256": "480d21ea6e6ab45cd3eef3f904696e45351c17731fd2ce2aed89b8b7b9be638e"
+      "sha256": "ee4abb844cc47d7abe9d436ffb4efa9e30e7039c5d2425fc29d49cb2b85d1b23"
     },
     {
       "name": "macro-snapshot.json",
-      "sha256": "4a09d19b318317e86210703ec6c6d8f927b8e2d1f40a2dc420f6717663bb24e8"
+      "sha256": "9c5b13f7bbfa63227c64fef56d08098202d4357e85412d352ad4c243ac3eb93a"
     },
     {
       "name": "macro-workbench.html",
-      "sha256": "734607be51d8b0e7266fe67787b8e85315e8f2b6bf0dcd3135e070cc360d060c"
+      "sha256": "cdcf2e158bc97d59fc34ccc69246d2829bcc0447b8f79c4d20edce4722cb2426"
     }
   ]
 }
